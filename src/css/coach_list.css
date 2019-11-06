@@ -1,0 +1,245 @@
+        /* a 原生樣式處理 */
+        a , a:hover{
+            color:black;
+            text-decoration:none; 
+        }
+
+        /* 上方排序選擇 + 項目總數 */
+        .coach-arrange a , span{
+            font-size:1.25rem;
+            display:block;
+            padding-bottom: 10px;
+            border-bottom: 2px solid transparent;
+            margin-bottom:20px; 
+            font-weight:bold;          
+        }
+        /* .coach-arrange a:hover{
+            border-bottom: 2px solid  #FD702D;        
+        } */
+        /* .btn-rwd , .btn-active{
+            font-size: 1.25rem;
+            margin-top:30px;
+        } */
+
+        .coach-btn-active , .coach-btn-rwd-logo{
+            font-size:1.25rem
+        }
+        
+        .coach-btn-active , .coach-btn-rwd-logo, .coach-arrange{
+            margin-top:30px;
+        }
+
+        .coach-btn-active:focus,
+        .coach-btn-active:active:focus,
+        .coach-btn-active.active:focus,
+        .coach-btn-active.focus,
+        .coach-btn-active:active.focus,
+        .coach-btn-active.active.focus,
+        .coach-btn-rwd-logo:focus,
+        .coach-btn-rwd-logo:active:focus,
+        .coach-btn-rwd-logo.active:focus,
+        .coach-btn-rwd-logo.focus,
+        .coach-btn-rwd-logo:active.focus,
+        .coach-btn-rwd-logo.active.focus,{ 
+            outline: none;   
+            border-color: transparent;  
+            box-shadow:none;
+        }
+
+        /* part2 篩選btn + 排列選擇 + 總項目欄位 */
+        /* 左右邊 */
+        .bg_white{
+            background: rgb(255, 255, 255);
+        }
+        .left_menu{
+            width: 25%;
+            transition: 1s;
+        }
+        .right_content{
+            width: 75%;
+            transition: 1s;
+        }
+        .coach-all-content{
+            overflow: hidden;
+        }
+        /* 手風琴CSS -old */
+        .coach-select {
+            font-size :1.5rem;
+            display:block;
+            width: 100%;
+            font-weight:bold;
+            border-bottom:1px #ccc solid;
+            margin:20px 0px;
+            padding-bottom:20px ;
+            padding-left:20px ;
+            padding-right:20px ;
+        }
+
+        .coach-select2{
+            margin-left:40px; 
+            font-size :1.5rem;
+        }
+
+
+
+        .coach-select-item{
+            font-size:1.25rem;
+            margin-left:20px;
+        }
+    /* 手風琴 -react bootstrap - new*/
+        .card{
+            border:none
+        }
+        .card-header{
+            background:white;
+        }
+        .coach-react-item{
+            font-weight: bold;
+            margin:0px;
+        }
+
+    /* 右邊內容CARD - 參考 coach.html的熱門商品 */
+    .content-rwd{
+        justify-content: start;
+        flex-wrap: wrap;
+        margin-left:40px;
+    }
+    .coach-card{
+        width: 30%;
+        transition: 1s;
+        margin:10px;
+        /* margin-bottom: 20px; */
+    }
+    .hot_card_word{
+            padding: 15px;
+        }
+    .hot_img {
+            width:100%;
+            height: 150px;
+            overflow: hidden;
+            transition: 1s;
+    }
+    .font-blue{
+            color:#4c95eb
+        }
+
+    .coach_img_pic{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    .coach-btn-rwd{
+        display:none
+    }
+    /* rwd */
+    /* RWD消失 */
+    .btn-rwd{
+        display:none; 
+            }
+    /* RWD出現 */
+    @media (max-width: 1100px) {
+        /* .coach-bread{color:pink} */
+        .content-rwd{
+        margin-left:0px;
+        justify-content: space-around;
+        }
+        .coach-rwd-active , .coach-bread , .left_menu {
+            display:none;
+        }
+
+        .coach-btn-rwd{
+            display:block; 
+            width: 45%;  
+            margin:0 auto; 
+            padding-top: 10px; 
+            position: relative;
+        }
+
+        .coach-btn-rwd .coach-btn-rwd-logo{
+            width: 100%;
+            background: #ccc;
+            border:none;
+            /* margin:10px */
+        }
+        .coach-rwd-sort{
+            position: absolute;
+            background: rgb(255, 255, 255);
+            width: 95%;
+            /* border: 1px solid pink; */
+            margin-right:-10px;
+        }
+
+        .coach-rwd-sort a{
+            font-size :1.25rem;
+            padding: 20px;
+            line-height: 50px;
+        }
+
+        .coach-rwd-sort .accordion-inner{
+            padding-left: 20px; 
+        }
+        .rwd-drop-style{
+            width: 100%;
+            border-bottom:1px #e5e5e5 solid;
+            /* margin-right: 30px; */
+            padding-left:5px ;
+            padding-right:5px ;
+            border-left: 2px solid transparent;
+        }
+        .rwd-drop-style-price{
+            font-size: 1.25rem;
+            margin-left:20px;
+        }
+
+
+
+        .right_content{
+            width: 100%;
+        }
+        .hot_img{
+            height: 300px;
+        }
+        .coach-card{
+        width: 45%;
+        margin: 10px;
+         
+        }
+        .content-rwd{
+            /* flex-direction: column; */
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+    @media  (max-width: 450px) {
+        .coach-card{
+        width: 80%;
+        /* margin: 10px; */
+        }
+        .hot_img{
+            height:200px;
+        }
+        .coach-rwd-search{
+            flex-direction:column;
+        }
+        .coach-btn-rwd{
+            width: 80%;
+        }
+        .coach-btn-active, .coach-arrange {
+            margin-top: 0px;
+        }
+
+        /* #coach-btn-rwd3{
+            display:none;
+        } */
+        #coach-btn-rwd1 , #coach-btn-rwd2{
+            position: relative;
+            z-index: 1;
+        }
+        #coach-btn-rwd1-1 , #coach-btn-rwd2-1{
+            position: absolute;
+            z-index: 2;
+        }
+
+
+
+    }
