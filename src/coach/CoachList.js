@@ -10,6 +10,7 @@ import FilterSortWeb from '../components/goods/FilterSortWeb'
    
     function CoachList() {
         useEffect(() => {
+            //PC選單 
             $('.coach-arrange a').click((e) => {
                 $(e.currentTarget).css('border-bottom', '2px solid  #FD702D').siblings().css('border-bottom', '2px solid transparent');
               });
@@ -113,7 +114,7 @@ import FilterSortWeb from '../components/goods/FilterSortWeb'
                         {/* btn1 */}
                         <div className="coach-btn-rwd">
                             <div id="coach-btn-rwd1" className="btn coach-btn-rwd-logo"><i  className="fas fa-list"></i>篩選</div>
-                            <div id="coach-btn-rwd1-1" class="accordion coach-rwd-sort">
+                            <div id="coach-btn-rwd1-1" className="accordion coach-rwd-sort">
                             <FilterLeftMenu/>
                             {/* <Accordion  defaultActiveKey="0">
                                 <Card>
@@ -173,7 +174,7 @@ import FilterSortWeb from '../components/goods/FilterSortWeb'
                         {/* btn2  */}
                         <div className="coach-btn-rwd">
                         <div id="coach-btn-rwd2" className="btn coach-btn-rwd-logo"><i className="fas fa-sort-amount-down-alt"></i>排序</div>
-                        <div id="coach-btn-rwd2-1" class="coach-rwd-sort"> 
+                        <div id="coach-btn-rwd2-1" className="coach-rwd-sort"> 
                         <Accordion  defaultActiveKey="0">
                                 <Card>
                                     <Accordion.Toggle as={Card.Header} eventKey="1">

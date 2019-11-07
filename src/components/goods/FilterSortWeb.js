@@ -1,15 +1,11 @@
-import React from 'react'
+import React , { useState, useEffect }  from 'react';
 
-class FilterSortWeb extends React.Component{
-  constructor(){
-    super()
-    this.state = {}
-  }
 
-  render(){
-     return (
-      <>
-        <div className="row coach-rwd-active">
+function FilterSortWeb() {
+
+  return (
+    <>
+      <div className="row coach-rwd-active">
             <div className="col-3">
                     <button id="menu_active" className="btn coach-btn-active"><i  className="fas fa-list"></i> 顯示篩選列</button>
             </div>
@@ -19,11 +15,10 @@ class FilterSortWeb extends React.Component{
                     <a href="#">價格 ： 從低到高</a>
                     <span className="coach-item-num">10項目</span>
             </div>
-        </div>
-      </>
-    )
-  }
- 
+      </div>
+    </>
+  )
 }
+
 
 export default FilterSortWeb

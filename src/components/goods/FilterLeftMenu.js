@@ -1,17 +1,10 @@
 import React from 'react'
 import {Accordion , Card} from 'react-bootstrap'
 
-class FilterLeftMenu extends React.Component{
-  constructor(){
-    super()
-    this.state = {}
-  }
-
-  render(){
-     return (
+function FilterLeftMenu() {
+    return (
       <>
-         
-                        <Accordion className="left-accordion" defaultActiveKey="0">
+         <Accordion className="left-accordion" defaultActiveKey="0">
                                 <Card>
                                     <Accordion.Toggle  as={Card.Header} eventKey="0">
                                         <div className="coach-react-item d-flex justify-content-between coach-select">
@@ -78,12 +71,10 @@ class FilterLeftMenu extends React.Component{
                                     </Accordion.Collapse>
                                 </Card>
                             </Accordion>
-    
-                        
       </>
     )
   }
- 
-}
+
+
 
 export default FilterLeftMenu
