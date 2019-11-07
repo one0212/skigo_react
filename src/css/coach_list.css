@@ -29,7 +29,14 @@
             margin-top:30px;
         }
 
-        .coach-btn-active:focus,
+        .btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus { 
+            outline: none;   
+             border-color: transparent;  
+             box-shadow:none;
+
+}
+
+        /* .coach-btn-active:focus,
         .coach-btn-active:active:focus,
         .coach-btn-active.active:focus,
         .coach-btn-active.focus,
@@ -44,7 +51,7 @@
             outline: none;   
             border-color: transparent;  
             box-shadow:none;
-        }
+        } */
 
         /* part2 篩選btn + 排列選擇 + 總項目欄位 */
         /* 左右邊 */
@@ -63,7 +70,7 @@
             overflow: hidden;
         }
         /* 手風琴CSS -old */
-        .coach-select {
+        /* .coach-select {
             font-size :1.5rem;
             display:block;
             width: 100%;
@@ -73,7 +80,7 @@
             padding-bottom:20px ;
             padding-left:20px ;
             padding-right:20px ;
-        }
+        } */
 
         .coach-select2{
             margin-left:40px; 
@@ -176,7 +183,7 @@
         }
 
         .coach-rwd-sort .accordion-inner{
-            padding-left: 20px; 
+            /* padding-left: 20px;  */
         }
         .rwd-drop-style{
             width: 100%;
@@ -211,9 +218,23 @@
         }
     }
     @media  (max-width: 450px) {
+        body{
+
+        }
+        /* .container{
+            padding: 0px;
+            margin:0px;
+        } */
+
+        /* .col-sm-11{
+            padding-right: 0px;
+        } */
         .coach-card{
         width: 80%;
         /* margin: 10px; */
+        }
+        .card-header{
+            width: 100%;
         }
         .hot_img{
             height:200px;
@@ -222,7 +243,14 @@
             flex-direction:column;
         }
         .coach-btn-rwd{
-            width: 80%;
+            width: 100%;
+            margin-left:0px;
+            margin-right:0px;      
+        }
+
+        .coach-btn-rwd .coach-btn-rwd-logo{
+            background: white;
+            border-bottom:1px solid #ccc;
         }
         .coach-btn-active, .coach-arrange {
             margin-top: 0px;
@@ -231,9 +259,11 @@
         /* #coach-btn-rwd3{
             display:none;
         } */
+
         #coach-btn-rwd1 , #coach-btn-rwd2{
             position: relative;
             z-index: 1;
+            margin-top:10px
         }
         #coach-btn-rwd1-1 , #coach-btn-rwd2-1{
             position: absolute;
