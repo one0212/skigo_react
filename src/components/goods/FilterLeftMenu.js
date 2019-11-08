@@ -32,10 +32,9 @@ function FilterLeftMenu() {
                                     </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="1">
                                     <Card.Body>
-                                        <input type="checkbox" name="vehicle1" value="Bike"/> 初級<br/>
-                                        <input type="checkbox" name="vehicle2" value="Car" />中級<br/>
-                                        <input type="checkbox" name="vehicle3" value="Boat" />中高級<br/>
-                                        <input type="checkbox" name="vehicle3" value="Boat" /> 高級<br/>
+                                        <input type="radio" name="class_level" value="Bike"/>初級<br/>
+                                        <input type="radio" name="class_level" value="Car" />中級<br/>
+                                        <input type="radio" name="class_level" value="Boat" />高級<br/>
                                     </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>

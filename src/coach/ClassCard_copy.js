@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 class ClassCard extends React.Component {
     constructor() {
       super()
@@ -43,16 +42,7 @@ class ClassCard extends React.Component {
         console.log(this.state.total)
       }
     }
-
-    thousandComma = (number) => {
-      let num = number.toString();
-      const pattern = /(-?\d+)(\d{3})/;
-    
-      while (pattern.test(num)) {
-        num = num.replace(pattern, '$1,$2');
-      }
-      return num;
-    };
+  
   
     render() {
       return (
@@ -75,18 +65,18 @@ class ClassCard extends React.Component {
                   src={require('../images/coach/coach.jpg')}
                   alt=""
                 />
-                {console.log(value.class_pic)}
               </div>
               <div className="hot_card_word">
                 <p>{value.class_level}{value.class_board}滑雪|{value.class_name}</p>
                 <p className="language font-orange d-flex">
-                 {(value.class_langu_cha == 1)?<span>國語</span>:""}
-                 {(value.class_langu_eng == 1)?<span>英語</span>:""}
-                 {(value.class_langu_jap == 1)?<span>日語</span>:""}
+                 
+                  <span>英語</span>
+                  <span>日語</span>
+                  <span>國語</span>
                 </p>
                 <p>{value.snow_field}-{value.field_name}</p>
                 <div className="d-flex justify-content-end">
-                  <p className="price">NT {this.thousandComma(value.class_price)}</p>
+                  <p className="price">NT16,000</p>
                 </div>
                 <div className="font-blue d-flex justify-content-center">
                   <p>{value.class_sell_start}~{value.class_sell_end}</p>
