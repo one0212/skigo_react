@@ -20,7 +20,7 @@ import FilterSortWeb from '../components/goods/FilterSortWeb'
     
     
                 $('#coach-btn-rwd1').click((e) => {
-                if (coach_rwd_btn_state == false) {
+                if (coach_rwd_btn_state === false) {
                     $('#coach-btn-rwd1-1').hide();
                     coach_rwd_btn_state = true;
                 } else {
@@ -31,7 +31,7 @@ import FilterSortWeb from '../components/goods/FilterSortWeb'
                 });
     
                 $('#coach-btn-rwd2').click((e) => {
-                    if (coach_rwd_btn_state == false) {
+                    if (coach_rwd_btn_state === false) {
                       $('#coach-btn-rwd2-1').hide();
                       coach_rwd_btn_state = true;
                     } else {
