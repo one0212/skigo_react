@@ -1,7 +1,7 @@
 import React from 'react'
-import '../css/card_carousels.css';
-import CardCarousels from '../components/goods/CardCarousels';
-import CardCarouselsCopy from '../components/goods/CardCarouselsCopy';
+import '../../css/card_carousels.css';
+import CardCarousels from './CardCarousels';
+import CardCarouselsCopy from './CardCarouselsCopy';
 
 class Carousels extends React.Component{
   constructor(){

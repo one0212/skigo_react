@@ -7,8 +7,8 @@ import CoachList from './coach/CoachList'
 import Home from './pages/Home';
 import News from './pages/News';
 import Contact from './pages/Contact';
-import Carousels from './card_carousels/Carousels';
-import Comment from './comment/Comment';
+import Carousels from './components/goods/Carousels';
+import Comment from './components/goods/Comment';
 import Areas from './area/Areas';
 
 function App() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/area_home.css';
-import Carousels from '../card_carousels/Carousels';
-import Comment from '../comment/Comment';
+import Carousels from '../components/goods/Carousels';
+import Comment from '../components/goods/Comment';
 
 class Areas extends React.Component{
     constructor(){
