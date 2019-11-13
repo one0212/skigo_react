@@ -1,0 +1,115 @@
+section{
+    margin: 40px 0;
+}
+
+.area_comment{
+    margin-top: 50px;
+}
+.area_comment .comment_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.area_comment h4{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.area_comment .message_content{
+    margin-top: 30px;
+}
+.area_comment .message{
+    display: flex;
+}
+.area_comment .message .avatar{
+    width: 45px;
+    height: 45px;
+}
+.area_comment .message_all{
+    padding-left: 10px;
+}
+.area_comment .message_all .d-flex{
+    align-items: flex-end;
+}
+.area_comment .message_info{
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #535353;
+    font-weight: 700;
+}
+.area_comment .score{
+    font-size: 1.6rem;
+    color: #FF4343;
+    font-weight: 700;
+    margin: 0 2px 12px 8px;
+}
+.area_comment .star{
+    width: 15px;
+    margin:0 0 23px 4px;
+}
+.area_comment .message_text{
+    font-size: 1.2rem;
+    color: #797979;
+    margin-top: -7px;
+}
+
+/* @media screen and (max-width: 1835px) {} */
+/* @media screen and (max-width: 1300px) {} */
+/* @media screen and (max-width: 1200px) {} */
+/* @media screen and (max-width: 990px) {} */
+@media screen and (max-width: 768px) {
+    .area_comment h4{
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        width: 10px;
+        height: 33px;
+        background: #FD702D;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .area_comment h4{
+        font-size: 1.5rem;
+    }
+    .area_comment .message_content{
+        margin-top: 20px;
+    }
+    .area_comment .message{
+        display: block;
+    }
+    .area_comment .message .avatar{
+        width: 50px;
+        height: 50px;
+    }
+    .area_comment .message_all{
+        padding-left: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .area_comment .message_info{
+        margin-right: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .area_comment .score{
+        font-size: 1.2rem;
+        margin: 0 2px 12px 8px;
+    }
+    .area_comment .star{
+        width: 12px;
+        margin:0 0 20px 4px;
+    }
+    .area_comment .message_text{
+        font-size: 1rem;
+        margin: 0;
+    }
+    /* 標題線 */
+    .title_sign{
+        height: 28px;
+        margin-right: 11px;
+    }
+}

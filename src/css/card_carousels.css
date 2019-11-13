@@ -1,0 +1,192 @@
+/* bootstrap.css-container修改 */
+/* @media (min-width: 375px) {
+    .container {
+      max-width: 360px;
+    }
+}
+@media (min-width: 1300px) {
+    .container {
+      max-width: 1440px;
+    }
+} */
+/* 外層 */
+section{
+    margin: 40px 0;
+}
+.area_lesson{
+    margin-top: 50px;
+}
+.area_lesson .lesson_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.area_lesson h4{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.area_lesson .lesson{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Card */
+.area_lesson .lesson_card{
+    width: 250px;
+    box-shadow:0px 0px 1px gray;
+    transition: .3s;
+    margin: 0 2.8rem;
+}
+.area_lesson .lesson_card a{
+    text-decoration: none;
+    color: #000;
+}
+.area_lesson .lesson_card:hover{
+    text-decoration: none;
+    opacity: .6;
+}
+.area_lesson .coach_img_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.area_lesson .lesson_card_word{
+    padding: 15px;
+}
+.area_lesson .lesson_card_word .lesson_name{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.area_lesson .lesson_card_word .people{
+    color: #797979;
+}
+.area_lesson .lesson_card_word .price{
+    font-size: 1.8rem;
+}
+.area_lesson .lesson_card_word .font-blue{
+    color: #4C95E8;
+}
+.area_lesson .lesson_img{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.area_lesson .icon-style {
+    color: #707070;
+    font-size: 40px;
+}
+
+/* bootstrap-card輪播 */
+.area_lesson .carousel-control-prev,
+.area_lesson .carousel-control-next {
+    width: 6%;
+}
+.area_lesson .carousel-control-prev {
+    left: -1%;
+}
+.area_lesson .carousel-control-next {
+    right: -1%;
+}
+.area_lesson .carousel-inner{
+    min-height: 370px;
+    width: 1050px;
+}
+/* @media screen and (max-width: 1835px) {} */
+@media screen and (max-width: 1530px) {
+    .area_lesson .lesson_card{
+        margin: 0 1.8rem;
+    }
+}
+@media screen and (max-width: 1300px) {
+    /* bootstrap-card輪播 */
+    .area_lesson .carousel-inner{
+        min-height: 370px;
+        width: 960px;
+    }
+    .area_lesson .carousel-control-prev {
+        left: -1%;
+    }
+    .area_lesson .carousel-control-next {
+        right: -1%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .area_lesson .lesson_card{
+        margin: 0 1rem;
+    }
+    /* bootstrap-card輪播 */
+    .area_lesson .carousel-inner{
+        min-height: 370px;
+        width: 890px;
+    }
+    .carousel-control-prev {
+        left: -20px;
+    }
+    .carousel-control-next {
+        right: -20px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .area_lesson .lesson2{
+        display: none;
+    }
+    /* bootstrap-card輪播 */
+    .area_lesson .carousel-inner{
+        min-height: 370px;
+        width: 450px;
+    }
+    .area_lesson .carousel-control-prev {
+        left: 8px;
+    } 
+    .area_lesson .carousel-control-next {
+        right: 8px;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* 外層 */
+    .area_lesson h4{
+        color: #000;
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        width: 10px;
+        height: 33px;
+        background: #FD702D;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+    /* bootstrap-card輪播 */
+    .area_lesson .carousel-inner{
+        min-height: 370px;
+        width: 370px;
+    }
+    .area_lesson .carousel-control-prev {
+        left: 15px;
+    }
+    .area_lesson .carousel-control-next {
+        right: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    /* 外層 */
+    .area_lesson h4{
+        font-size: 1.5rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        height: 28px;
+        margin-right: 11px;
+    }
+    /* bootstrap-card輪播 */
+    .area_lesson .carousel-inner{
+        width: 320px;
+    }
+    .area_lesson .carousel-control-prev {
+        left: 1px;
+    }
+    .area_lesson .carousel-control-next {
+        right: 1px;
+    }
+}

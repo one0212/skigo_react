@@ -1,0 +1,555 @@
+*{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+section{
+    margin: 40px 0;
+}
+
+.area_header .introduction2{
+    display: none;
+}
+
+.area_slider{
+    position: relative;
+    padding: 0;
+    z-index: 1;
+}
+.area_slider .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.area_slider .col-xl-9{
+    padding-left: 0;
+    padding-right: 0;
+}
+.area_slider .col-xl-3{
+    padding-left: 0;
+    padding-right: 0;
+}
+.area_slider .carousel-item img{
+    height: 100vh;
+    object-fit: cover;
+    object-position: right top;
+}
+.area_slider .weather{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0 0 55px;
+}
+.area_slider .weather .weather_img{
+    width: 65px;
+}
+.area_slider .weather p{
+    font-size: 2.1rem;
+    margin: -7px 0 0 5px;
+}
+.area_slider .weather .circle{
+    width: 6px;
+    margin: -20px 0 0 2px;
+}
+.area_slider .carousel-indicators{
+    position: absolute;
+    left: 93%;
+    bottom: 27px;
+    z-index: 5;
+    margin-left: 0;
+    margin-right: 0;
+}
+.area_slider .introduction{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 47%;
+    height: 80vh;
+    background: #fff;
+    z-index: 2;
+}
+.area_slider .introduction .d-flex{
+    width: 650px;
+    flex-direction: column;
+    padding: 65px 0 0 7%;
+}
+.area_slider .introduction .d-flex h5{
+    font-size: 1.87rem;
+    color: #FD702D;
+    margin-bottom: 12px;
+}
+.area_slider .introduction .article{
+    font-size: 1.37rem;
+    line-height: 2.5rem;
+}
+.area_slider .introduction .d-flex h1{
+    font-size: 4.5rem;
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+.area_slider .introduction .number_box{
+    color: #797979;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    display: flex;
+}
+.area_slider .slider_number,.symbol{
+    font-size: 4.6rem;
+}
+.area_slider .number_box .total_number{
+    margin: 11px 15px;
+    font-size: 2.5rem;
+}
+
+.area_icon{
+    text-align: center;
+    margin: 1.4rem 0;
+}
+.area_icon div{
+    margin: 0 50px;
+}
+.area_icon img{
+    width: 80px;
+}
+.area_icon .img_p{
+    margin-top: 0.65rem;
+    font-size: 1.3rem;
+    color: #797979;
+}
+.area_icon .img_number{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FD702D;
+}
+
+.area_info{
+    display: flex;
+    flex-direction: column;
+}
+.area_info h4{
+    font-size: 1.7rem;
+    color: #797979;
+    padding-bottom: 10px;
+}
+.area_info .date{
+    font-size: 1.2rem;
+    color: #797979;
+}
+.area_info .time{
+    display: flex;
+} 
+.area_info .address{
+    font-size: 1.2rem;
+}
+.area_info .ski_map{
+    width: 200px;
+    height: 45px;
+    color: #fff;
+    background: #4C95E8;
+    text-align: center;
+    font-size: 1.2rem;
+    border: solid 1px#4C95E8;
+    border-radius: 3px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area_info .icon_map{
+    width: 35px;
+}
+
+.area_characteristic{
+   padding: 0 45px;
+    
+}
+.area_characteristic .d-flex{
+    flex-wrap: wrap;
+}
+.area_characteristic .box{
+    border: solid 1px rgb(210, 210, 210);
+    border-radius: 3px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+.area_characteristic img{
+    margin: 7.5px;
+    width: 50px;
+}
+.area_characteristic .box p{
+    margin: 0 3px;
+}
+.area_characteristic p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+
+
+.area_comment{
+    margin-top: 50px;
+}
+.area_comment .comment_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.area_comment h4{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.area_comment .message_content{
+    margin-top: 30px;
+}
+.area_comment .message{
+    display: flex;
+}
+.area_comment .message_all{
+    padding-left: 10px;
+}
+.area_comment .message_all .d-flex{
+    align-items: flex-end;
+}
+.area_comment .message_info{
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #535353;
+    font-weight: 700;
+}
+.area_comment .score{
+    font-size: 1.6rem;
+    color: #FF4343;
+    font-weight: 700;
+    margin: 0 2px 12px 8px;
+}
+.area_comment .star{
+    width: 15px;
+    margin:0 0 23px 4px;
+}
+.area_comment .message_text{
+    font-size: 1.2rem;
+    color: #797979;
+    margin-top: -7px;
+}
+
+.area_access{
+    margin-top: 30px;
+}
+.area_access .access_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.area_access h4{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.area_access iframe{
+    width: 100%;
+    height: 450px;
+    margin: 20px 0;
+}
+/* bootstrap.css */
+.carousel-indicators li{
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    margin-left: 8px;
+    background-color: #797979;
+    border: none;
+    border-radius: 50%;
+    opacity: 1;
+}
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin:-5px 10px 0 10px;
+    background-color: #fff;
+    border: 2px solid;
+    border-color: #797979;
+    opacity: 1;
+}
+
+@media screen and (max-width: 1835px) {
+    .area_slider .weather{
+        margin: 45px 0 0 45px;
+    }
+    .area_slider .weather .weather_img{
+        width: 55px;
+    }
+    .area_slider .weather p{
+        font-size: 1.7rem;
+        margin: -5px 0 0 5px;
+    }
+    .area_slider .weather .circle{
+        width: 5px;
+        margin: -20px 0 0 2px;
+    }
+    .area_slider .introduction .d-flex{
+        width: 600px;
+        flex-direction: column;
+        padding: 65px 0 0 7%;
+    }
+    .area_slider .introduction .d-flex h5{
+        font-size: 1.7rem;
+    }
+    .area_slider .introduction .d-flex h1{
+        font-size: 3.8rem;
+    }
+    .area_slider .introduction .article{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    .area_slider .slider_number,.symbol{
+        font-size: 3.8rem;
+    }
+    .area_slider .number_box .total_number{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 1530px) {
+    .area_slider .carousel-indicators{
+        left: 90%;
+    }
+    .area_slider .introduction .d-flex{
+        width: 500px;
+    }
+}
+/* @media screen and (max-width: 1300px) {} */
+@media screen and (max-width: 1200px) {
+    .area_slider .carousel-indicators{
+        left: 0;
+        bottom: 7px;
+    }
+    .area_slider .carousel-item img{
+        height: 500px;
+    }
+    .area_slider .introduction{
+        display: none;
+    }
+    .area_slider .col-xl-3{
+        display: none;
+    }
+
+    .area_header .introduction2{
+        display: block;
+        margin-top: 40px;
+    }
+    .area_header .introduction2 .area_title{
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .area_header .introduction2 h5{
+        font-size: 1.7rem;
+        color: #FD702D;
+    }
+    .area_header .weather{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .area_header .weather .weather_img{
+        width: 65px;
+    }
+    .area_header .weather p{
+        font-size: 2.1rem;
+        margin: -7px 0 0 5px;
+    }
+    .area_header .weather .circle{
+        width: 6px;
+        margin: -20px 0 0 2px;
+    }
+    .area_header .introduction2 .article{
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+        margin-top: 30px;
+    }
+    .area_header .introduction2 h1{
+        font-size: 3.5rem;
+        font-weight: 700;
+    }
+
+    .area_icon div{
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .area_icon div{
+        margin: 0 30px;
+    }
+
+    .area_info{
+        margin-top: 30px;
+    }
+    .area_info .ski_map{
+        display: none;
+    }
+    .area_characteristic{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .area_slider .carousel-item img{
+        height: 400px;
+    }
+
+    .area_header .introduction2 h5{
+        font-size: 1.5rem;
+    }
+    .area_header .weather .weather_img{
+        width: 55px;
+    }
+    .area_header .weather p{
+        font-size: 1.6rem;
+    }
+    .area_header .introduction2 .article{
+        line-height: 2.2rem;
+        margin-top: 24px;
+    }
+    .area_header .introduction2 h1{
+        font-size: 3rem;
+    }
+
+    .area_icon{
+        text-align: center;
+        margin: 0.2rem 0;
+    }
+    .area_icon div{
+        margin: 0 18px;
+    }
+    .area_icon img{
+        width: 70px;
+    }
+    .area_icon .img_p{
+        margin-top: 0.65rem;
+        font-size: 1.1rem;
+    }
+    .area_icon .img_number{
+        font-size: 1.5rem;
+    }
+
+    .area_info h4{
+        color: #000;
+        padding-bottom: 25px;
+        font-weight: 600;
+    }
+    .area_info .date{
+        color: #000;
+    }
+
+    .area_comment h4{
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+
+    .area_access h4{
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        width: 10px;
+        height: 33px;
+        background: #FD702D;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .area_slider .carousel-indicators{
+        display: none;
+    }
+    .area_slider .carousel-item img{
+        height: 250px;
+    }
+
+    .area_header .introduction2 h5{
+        font-size: 1rem;
+    }
+    .area_header .weather .weather_img{
+        width: 40px;
+        margin-bottom: 5px;
+    }
+    .area_header .weather p{
+        font-size: 1rem;
+    }
+    .area_header .introduction2 .article{
+        font-size: 1rem;
+        line-height: 1.8rem;
+        margin-top: 15px;
+    }
+    .area_header .introduction2 h1{
+        font-size: 1.8rem;
+    }
+
+    .area_icon{
+        margin: 0.4rem 0;
+    }
+    .area_icon div{
+        margin: 0 12px;
+    }
+    .area_icon img{
+        width: 50px;
+    }
+    .area_icon .img_p{
+        margin-top: 0.65rem;
+        font-size: 0.8rem;
+    }
+    .area_icon .img_number{
+        font-size: 1.2rem;
+    }
+    
+    .area_info h4{
+        font-size: 1.5rem;
+    }
+    .area_info .date{
+        font-size: 1rem;
+    }
+    .area_info .address{
+        font-size: 1rem;
+    }
+
+    .area_comment h4{
+        font-size: 1.5rem;
+    }
+    .area_comment .message_content{
+        margin-top: 20px;
+    }
+    .area_comment .message{
+        display: block;
+    }
+    .area_comment .message_all{
+        padding-left: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .area_comment .message_info{
+        margin-right: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .area_comment .score{
+        font-size: 1.2rem;
+        margin: 0 2px 12px 8px;
+    }
+    .area_comment .star{
+        width: 12px;
+        margin:0 0 20px 4px;
+    }
+    .area_comment .message_text{
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .area_access h4{
+        font-size: 1.5rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        height: 28px;
+        margin-right: 11px;
+    }
+}
