@@ -88,18 +88,18 @@ class ClassCard extends React.Component {
                 
               </div>
               <div className="hot_card_word">
-                <p>{value.class_level}{value.class_board}滑雪|{value.class_name}</p>
+                <p>{value.class_level}{value.class_board} | {value.class_name}</p>
                 <p className="language font-orange d-flex">
-                 {(value.class_langu_cha === 1)?<span>國語</span>:""}
-                 {(value.class_langu_eng === 1)?<span>英語</span>:""}
-                 {(value.class_langu_jap === 1)?<span>日語</span>:""}
+                 {(value.class_lang_cha === 1)?<span>國語</span>:""}
+                 {(value.class_lang_eng === 1)?<span>英語</span>:""}
+                 {(value.class_lang_jap === 1)?<span>日語</span>:""}
                 </p>
-                {/* <p>{value.snow_field}-{value.field_name}</p> */}
+                <p>北海道-OO雪場</p>
                 <div className="d-flex justify-content-end">
                   <p className="price">NT {this.thousandComma(value.class_price)}</p>
                 </div>
                 <div className="font-blue d-flex justify-content-center">
-                  <p>{value.class_sell_start}~{value.class_sell_end}</p>
+                  <p>即日起 ~ 2019.11.13</p>
                 </div>
               </div>
             </div> 

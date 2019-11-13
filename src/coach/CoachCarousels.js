@@ -1,11 +1,11 @@
 import React from 'react'
-import '../../css/card_carousels.css';
-// import CoachCardCarosol from '../../coach/CoachCardCarosol'
-import ClassCard from '../../coach/ClassCard';
-import CardCarousels from './CardCarousels';
-import CardCarouselsCopy from './CardCarouselsCopy';
+import '../css/card_carousels.css';
+import CoachCarouselCard from './CoachCarouselCard'
+// import ClassCard from '../../coach/ClassCard';
+// import CardCarousels from './CardCarousels';
+import CardCarouselsCopy from '../components/goods/CardCarouselsCopy';
 
-class Carousels extends React.Component{
+class CoachCarousels extends React.Component{
   constructor(){
     super()
     this.state = {}
@@ -25,15 +25,15 @@ class Carousels extends React.Component{
             <div className="carousel-inner">
             <div className="carousel-item active">
                 <div className="lesson d-flex justify-content-center">
-                <CardCarousels/>
-                <CardCarousels/>
-                <CardCarousels/>
+                <CoachCarouselCard />
+                <CoachCarouselCard />
+                <CoachCarouselCard />
                 </div>
             </div>
             <div className="carousel-item">
                 <div className="lesson d-flex justify-content-center">
                     {/* <!-- lesson1 --> */}
-                    <CardCarousels/>
+                    <CoachCarouselCard />
                     {/* <!-- lesson2 --> */}
                     <CardCarouselsCopy/>
                     {/* <!-- lesson3 --> */}
@@ -60,4 +60,4 @@ class Carousels extends React.Component{
  
 }
 
-export default Carousels
+export default CoachCarousels

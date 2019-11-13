@@ -4,9 +4,10 @@ import React  from 'react';
 
 
 class ClassCard extends React.Component {
-    constructor() {
-      super()
+    constructor(props) {
+      super(props)
       this.state = {
+
       }
     }
   
@@ -35,7 +36,7 @@ class ClassCard extends React.Component {
       } catch (e) {
         console.log(e)
       } finally {
-        await setTimeout(() => this.setState({ loading: false }), 1 * 1000)
+        await setTimeout(() => this.setState({ loading: false }))
         // await this.setState({ loading: false })
         console.log(this.state.total)
       }
@@ -55,6 +56,11 @@ class ClassCard extends React.Component {
     render() {
       return (       
         <>
+        {console.log(this.props.filter)}
+        {/* { if( this.props.filter == true ){
+
+        } } */}
+        
           {this.state.loading ? (
             <div className="fa-2x">
               <i className="fas fa-spinner fa-spin" />
@@ -62,8 +68,24 @@ class ClassCard extends React.Component {
             </div>
           ) : (
             <>
-            {this.state.total.map((value,index)=>{
-              return <div className="coach-card">
+            {
+              this.state.total.map((value,index)=>{
+                {/* 地區 */}
+                
+                  
+              if(
+                (
+                 value.snow_field === (this.props.filter[0] ? "北海道":"" ) ||
+                 value.snow_field === (this.props.filter[1] ? "青森縣":"" ) ||
+                 value.snow_field === (this.props.filter[2] ? "山形縣":"" ) ||
+                 value.snow_field === (this.props.filter[3] ? "新瀉縣":"" ) 
+                ) 
+                  ){
+
+
+                {/* 等級 */}
+                
+              return <div className="coach-card" key={index}>
               <div className="hot_img">
                 <img
                   className="coach_img_pic"
@@ -89,8 +111,14 @@ class ClassCard extends React.Component {
               </div>
             </div> 
               
+                
+              }
+              
             })}
 
+            
+            
+  
             </>
           )}
         </>
