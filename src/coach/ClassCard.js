@@ -16,7 +16,8 @@ class ClassCard extends React.Component {
       try {
         await this.setState({ loading: true })
   
-        const response = await fetch('http://localhost:5555/coach', {
+        // const response = await fetch('http://localhost:5000/try-db', {
+        const response = await fetch('http://localhost:5000/try-db', {
           method: 'GET',
           headers: new Headers({
             Accept: 'application/json',
@@ -62,8 +63,8 @@ class ClassCard extends React.Component {
         } } */}
         
           {this.state.loading ? (
-            <div className="fa-2x">
-              <i className="fas fa-spinner fa-spin" />
+            <div>
+              {/* <i className="fas fa-spinner fa-spin" /> */}
               資料載入中
             </div>
           ) : (
@@ -73,17 +74,6 @@ class ClassCard extends React.Component {
                 {/* 地區 */}
                 
                   
-              if(
-                (
-                 value.snow_field === (this.props.filter[0] ? "北海道":"" ) ||
-                 value.snow_field === (this.props.filter[1] ? "青森縣":"" ) ||
-                 value.snow_field === (this.props.filter[2] ? "山形縣":"" ) ||
-                 value.snow_field === (this.props.filter[3] ? "新瀉縣":"" ) 
-                ) && ( 
-
-                  value.class_level === (this.props.filter[0] ? "北海道":"" )
-                )
-                  ){
 
 
                 {/* 等級 */}
@@ -104,7 +94,7 @@ class ClassCard extends React.Component {
                  {(value.class_langu_eng === 1)?<span>英語</span>:""}
                  {(value.class_langu_jap === 1)?<span>日語</span>:""}
                 </p>
-                <p>{value.snow_field}-{value.field_name}</p>
+                {/* <p>{value.snow_field}-{value.field_name}</p> */}
                 <div className="d-flex justify-content-end">
                   <p className="price">NT {this.thousandComma(value.class_price)}</p>
                 </div>
@@ -113,9 +103,7 @@ class ClassCard extends React.Component {
                 </div>
               </div>
             </div> 
-              
                 
-              }
               
             })}
 
