@@ -1,0 +1,24 @@
+.coach-arrange a , span{ 
+    padding-bottom: 0px;
+    margin-bottom:0px;            
+}
+
+.MuiPickersToolbar-toolbar{
+    background-color:#fd702d !important; 
+}
+
+.MuiPickersDay-daySelected{
+    background-color:#fd702d !important;  
+}
+
+.MuiButton-textPrimary{
+    color:#fd702d !important;
+}
+
+.MuiInput-underline:before{
+    border-bottom:none !important;
+}
+
+.class_book label{
+    display:none;
+}

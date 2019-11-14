@@ -12,8 +12,9 @@ class CoachClass extends React.Component{
   render(){
      return (
       <>
-{/* part1 課程圖+介紹文字 */}
+
 <div className="coach_class_out">
+{/* part1 課程圖+介紹文字 */}
     <div className="d-flex coach_head">
       <div className="class_img">
         <img className="class_pic" src="./images/coach/coach.jpg" alt="" />

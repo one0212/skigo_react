@@ -16,7 +16,8 @@ class ClassCard extends React.Component {
       try {
         await this.setState({ loading: true })
   
-        const response = await fetch('http://localhost:5555/coach', {
+        // const response = await fetch('http://localhost:5000/try-db', {
+        const response = await fetch('http://localhost:5000/coach-table', {
           method: 'GET',
           headers: new Headers({
             Accept: 'application/json',
@@ -62,8 +63,8 @@ class ClassCard extends React.Component {
         } } */}
         
           {this.state.loading ? (
-            <div className="fa-2x">
-              <i className="fas fa-spinner fa-spin" />
+            <div>
+              {/* <i className="fas fa-spinner fa-spin" /> */}
               資料載入中
             </div>
           ) : (
@@ -73,47 +74,37 @@ class ClassCard extends React.Component {
                 {/* 地區 */}
                 
                   
-              if(
-                (
-                 value.snow_field === (this.props.filter[0] ? "北海道":"" ) ||
-                 value.snow_field === (this.props.filter[1] ? "青森縣":"" ) ||
-                 value.snow_field === (this.props.filter[2] ? "山形縣":"" ) ||
-                 value.snow_field === (this.props.filter[3] ? "新瀉縣":"" ) 
-                ) 
-                  ){
 
 
                 {/* 等級 */}
                 
-              return <div className="coach-card" key={index}>
+              return  <div className="coach-card" key={index}>
+              <a href="#">
               <div className="hot_img">
                 <img
                   className="coach_img_pic"
-                  src={value.class_pic} 
+                  src={'/images/coach/' + value.class_pic} 
                   alt=""
                 />
                 
               </div>
               <div className="hot_card_word">
-                <p>{value.class_level}{value.class_board}滑雪|{value.class_name}</p>
+                <p>{value.class_level}{value.class_board} | {value.class_name}</p>
                 <p className="language font-orange d-flex">
-                 {(value.class_langu_cha === 1)?<span>國語</span>:""}
-                 {(value.class_langu_eng === 1)?<span>英語</span>:""}
-                 {(value.class_langu_jap === 1)?<span>日語</span>:""}
+                 {(value.class_lang_cha === 1)?<span>國語</span>:""}
+                 {(value.class_lang_eng === 1)?<span>英語</span>:""}
+                 {(value.class_lang_jap === 1)?<span>日語</span>:""}
                 </p>
-                <p>{value.snow_field}-{value.field_name}</p>
+                <p>北海道-OO雪場</p>
                 <div className="d-flex justify-content-end">
                   <p className="price">NT {this.thousandComma(value.class_price)}</p>
                 </div>
                 <div className="font-blue d-flex justify-content-center">
-                  <p>{value.class_sell_start}~{value.class_sell_end}</p>
+                  <p>{value.class_sell_start} ~ {value.class_sell_end}</p>
                 </div>
               </div>
-            </div> 
-              
-                
-              }
-              
+              </a>
+            </div>  
             })}
 
             

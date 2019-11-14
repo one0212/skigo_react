@@ -85,14 +85,10 @@ class CoachList extends React.Component{
                 if (up_down_icon === false) {
                 up_down_icon = true; 
                 $(e.currentTarget).find('.fa-angle-up').show();
-                $(e.currentTarget).find('.fa-angle-down').hide();
-                
-                
-                  
+                $(e.currentTarget).find('.fa-angle-down').hide(); 
                 } else {
                 $(e.currentTarget).find('.fa-angle-up').hide();
                 $(e.currentTarget).find('.fa-angle-down').show();
-
                   up_down_icon = false; 
                 }
               });

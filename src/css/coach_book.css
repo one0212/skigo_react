@@ -1,0 +1,219 @@
+.coach_book_out .ski_class{
+    margin-left:30px;
+    }
+    .coach_book_out h1{
+        margin-top:80px;
+        font-size: 2rem;
+    }
+    .coach_book_out .coach-book-center{
+        width: 2%;
+    }
+    .coach_book_out .coach-book{
+        width: 49%;
+        /* margin-left:10px;  */
+        margin-bottom:40px;
+    }
+    .coach_book_out .coach-price-discount{
+        
+        color:red;
+    }
+    .coach_book_out .coach-snowfield{
+        font-size: 1.5rem;
+    }
+    .coach_book_out .coach-book-style{
+        border-bottom: #fd702d 3px solid;
+        padding-bottom: 3px ;
+        
+    }
+    .coach_book_out .coach-book-date{
+        width: calc(100% -30px);
+        /* margin-left:10px; */
+        margin-top:5px;
+        border-bottom: #fd702d 3px solid;
+        padding-bottom: 3px ;
+    }
+    
+    .coach_book_out .coach-book-style > input[type='number']{
+        -webkit-appearance:none;
+        width: 75%;
+    }
+    .coach_book_out .coach-book-date i{
+        font-size:1.5rem
+    }
+    .coach_book_out .coach-book-date a{
+        text-decoration:none;
+        color:black;
+    }
+    .coach_book_out .coach-book-date a:hover{
+      color:#fd702d;  
+    }
+    .coach_book_out .coach-book-num-js{
+        display:none;
+        margin-bottom: calc(1rem - 40px);
+    }
+    .coach_book_out .coach_book_num {
+    outline:none;
+    border:none;
+        }
+
+    
+    .coach_book_out .class_img{
+        max-width:50%;
+        max-height: 730px;
+        overflow: hidden;
+    }
+    /* .class_img_pic{
+        width: 100%;
+        height:100%;
+        background-images: url("https://www.visitzealandia.com/portals/0/imagess/Birds/Hihi-Janice-McKenna.jpg");
+    } */
+    .coach_book_out .class_pic{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .coach_book_out .font-orange{
+    color:#FD702D;
+}
+.coach_book_out .btn {
+    /* width: cal(100% - 30px); */
+    width: 100%;
+    background: #fd702d;
+    color: white;
+    padding: 10px 20px;
+    margin:5px 0px;
+    font-size: 1.25rem;
+  }
+/* part2 */
+.coach_book_out .part2{
+    margin-top:60px;
+}
+.coach_book_out h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.coach_book_out .coach{
+        width: 250px;
+    }
+    .coach_book_out .language span{
+      border: 1px #fd702d solid;
+      border-radius:5px;
+      font-size:1rem;
+      padding:2px 10px;
+  }
+
+  .coach_book_out .coach_img{
+        width: 230px;
+        height: 230px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    .coach_book_out .coach_img_pic{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .coach_book_out .coach-style{
+        margin-left:60px;
+    }
+    .coach_book_out .coach_introduce{
+        font-size: 1.5rem;
+    }
+    /* part3 */
+    .coach_book_out .evaluate_img{
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    .coach_book_out .evaluate_img_pic{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .coach_book_out .star_num{
+        font-size: 2rem;
+        color:#FD702D;
+        font-weight:bold;
+        margin-left:30px;
+    }
+    .coach_book_out .fa-star ,.fa-star-half-alt{
+        font-size: 2rem;
+        color:#FF9D00;
+    }
+    /* part4 */
+    .coach_book_out .part3{
+        margin-top:60px;
+        margin-bottom: 60px;
+        padding-bottom: 20px;
+    }
+    .coach_book_out h2{
+        font-size: 1.75rem;
+    }
+    .coach_book_out .hot{
+        margin-top: 20px;
+    }
+
+    .coach_book_out .recommend{
+        border-bottom: 2px solid #797979;
+    }
+
+    .coach_book_out .hot_card{
+        width: 250px;
+        margin-bottom:5px;
+        box-shadow: 0px 4px 5px #888888;
+        }
+    .coach_book_out .hot_card_word{
+        padding: 15px;
+    }
+    .coach_book_out .hot_img{
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+    }
+
+    .coach_book_out .font-blue{
+        color:#4c95eb
+    }
+
+    .coach_book_out .icon-style{
+        color:#707070;
+        font-size:40px;
+    }
+
+    /* part1 價錢 span非行內處理 */
+    .coach_book_out .coach_price{
+        display:inline-block;
+    }
+
+    @media (max-width: 1100px) {
+    .coach_book_out .coach_head{
+      flex-direction: column;
+      justify-content:center;
+    }
+    .coach_book_out .class_img{
+      max-width: 100%;
+    }
+    .coach_book_out .ski_class{
+        margin-left:0px ;
+        padding: 0px 30px;
+        }
+    .coach-book-days{width: 50%;}
+    .coach_book_out .coach-book-style > input[type='number']{
+        -webkit-appearance:none;
+        width: 90%;
+    }
+    /* .coach-book-date{width: cal(100% - 30px);} */
+  }
+  @media (max-width: 1100px) {
+
+    .coach_book_out .coach-book-style > input[type='number']{
+        -webkit-appearance:none;
+        width: 50%;
+    }  
+    .coach_book_out .part2{
+        flex-direction: column;
+    }
+  }
