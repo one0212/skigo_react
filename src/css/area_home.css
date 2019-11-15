@@ -27,10 +27,23 @@ section{
     padding-left: 0;
     padding-right: 0;
 }
-.area_slider .carousel-item img{
+.area_slider .area_carousel img{
     height: 100vh;
     object-fit: cover;
     object-position: right top;
+}
+.area_slider .carousel-indicators{
+    bottom: 28px;
+    left: 72%;
+    margin-right: 0;
+}
+.area_slider .carousel-indicators li{
+    background-color: #000;
+    width: 13px;
+    height: 13px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 50%;
 }
 .area_slider .weather{
     display: flex;
@@ -47,14 +60,6 @@ section{
 .area_slider .weather .circle{
     width: 6px;
     margin: -20px 0 0 2px;
-}
-.area_slider .carousel-indicators{
-    position: absolute;
-    left: 93%;
-    bottom: 27px;
-    z-index: 5;
-    margin-left: 0;
-    margin-right: 0;
 }
 .area_slider .introduction{
     position: absolute;
@@ -184,9 +189,6 @@ section{
     font-weight: 600;
 }
 
-
-
-
 .area_comment{
     margin-top: 50px;
 }
@@ -250,26 +252,6 @@ section{
     height: 450px;
     margin: 20px 0;
 }
-/* bootstrap.css */
-.carousel-indicators li{
-    width: 7px;
-    height: 7px;
-    margin-right: 8px;
-    margin-left: 8px;
-    background-color: #797979;
-    border: none;
-    border-radius: 50%;
-    opacity: 1;
-}
-.carousel-indicators .active {
-    width: 12px;
-    height: 12px;
-    margin:-5px 10px 0 10px;
-    background-color: #fff;
-    border: 2px solid;
-    border-color: #797979;
-    opacity: 1;
-}
 
 @media screen and (max-width: 1835px) {
     .area_slider .weather{
@@ -310,7 +292,9 @@ section{
 }
 @media screen and (max-width: 1530px) {
     .area_slider .carousel-indicators{
-        left: 90%;
+        /* bottom: 25px; */
+        left: 65%;
+        /* margin-right: 0; */
     }
     .area_slider .introduction .d-flex{
         width: 500px;
@@ -318,17 +302,7 @@ section{
 }
 /* @media screen and (max-width: 1300px) {} */
 @media screen and (max-width: 1200px) {
-    .area_slider .carousel-indicators{
-        left: 0;
-        bottom: 7px;
-    }
-    .area_slider .carousel-item img{
-        height: 500px;
-    }
-    .area_slider .introduction{
-        display: none;
-    }
-    .area_slider .col-xl-3{
+    .area_slider{
         display: none;
     }
 
@@ -391,10 +365,6 @@ section{
     }
 }
 @media screen and (max-width: 768px) {
-    .area_slider .carousel-item img{
-        height: 400px;
-    }
-
     .area_header .introduction2 h5{
         font-size: 1.5rem;
     }
@@ -458,13 +428,6 @@ section{
     }
 }
 @media screen and (max-width: 576px) {
-    .area_slider .carousel-indicators{
-        display: none;
-    }
-    .area_slider .carousel-item img{
-        height: 250px;
-    }
-
     .area_header .introduction2 h5{
         font-size: 1rem;
     }

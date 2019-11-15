@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/area_home.css';
+import { Carousel } from 'react-bootstrap';
 import Carousels from '../components/goods/Carousels';
 import Comment from '../components/goods/Comment';
 
@@ -14,27 +15,34 @@ class Areas extends React.Component{
         <>
             <div className="wrap">
             <div className="area_header">
-        
+        {/* src={require('../images/areas/scenery-1.jpg')} */}
                 <div className="container-fluid area_slider">
                     <div className="row">
                         <div className="col-xl-9 col-lg-12">
-                            <div id="carouselExampleIndicators" className="carousel slide slide_img" data-ride="carousel">
-                                <ol className="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                </ol>
-                                <div className="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <img src={require('../images/areas/scenery-1.jpg')} className="d-block w-100" alt="..."/>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={require('../images/areas/scenery-2.jpg')} className="d-block w-100" alt="..."/>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={require('../images/areas/scenery-3.jpg')} className="d-block w-100" alt="..."/>
-                                    </div>
-                                </div>
+                            <div className="area_carousel">
+                                <Carousel>
+                                    <Carousel.Item>
+                                        <img
+                                        className="d-block w-100"
+                                        src={require('../images/areas/scenery-1.jpg')}
+                                        alt="First slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                        className="d-block w-100"
+                                        src={require('../images/areas/scenery-2.jpg')}
+                                        alt="Third slide"
+                                        />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                        className="d-block w-100"
+                                        src={require('../images/areas/scenery-3.jpg')}
+                                        alt="Third slide"
+                                        />
+                                    </Carousel.Item>
+                                </Carousel>
                             </div>
                         </div>
                         <div className="col-xl-3">
@@ -144,7 +152,7 @@ class Areas extends React.Component{
                         <div className="d-flex"><div className="title_sign"></div><h4>交通路線</h4></div>
                     </div>
                     <hr/>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11607.988663140555!2d142.33874033325841!3d43.335248371799736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f73525ef98cb63d%3A0x9020eebf4f63234b!2z5a-M6Imv6YeO5ruR6Zuq5aC0!5e0!3m2!1szh-TW!2stw!4v1572185752833!5m2!1szh-TW!2stw" frameborder="0" style={{border:0,width:"100%",height:600}}/>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11607.988663140555!2d142.33874033325841!3d43.335248371799736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f73525ef98cb63d%3A0x9020eebf4f63234b!2z5a-M6Imv6YeO5ruR6Zuq5aC0!5e0!3m2!1szh-TW!2stw!4v1572185752833!5m2!1szh-TW!2stw" frameborder="0" style={{border:"0",width:"100%",height:"600"}}/>
                 </div>
             </section> 
             </div>
