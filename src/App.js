@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import CoachList from './coach/CoachList';
 import CoachClass from './coach/CoachClass';
 import CoachBook from './coach/CoachBook';
-import CoachDate from './coach/CoachDate'
+import CoachDate from './coach/CoachDate';
+import CoachCarousels2 from './coach/CoachCarousels2'
 import Home from './pages/Home';
 import News from './pages/News';
 import Contact from './pages/Contact';
@@ -24,7 +25,7 @@ function App() {
       <Link to="/coachclass">●2.coach_class</Link>
       <Link to="/CoachBook">●3.CoachBook</Link> 
       <Link to="/CoachDate">●CoachDate</Link>   
-      <Link to="/comment">●comment</Link><br/>
+      <Link to="/CoachCarousels2">●CoachCarousels2</Link><br/>
       <Link to="/area">●area</Link>
 
         <Switch>
@@ -33,7 +34,7 @@ function App() {
             <Route path="/coachclass" component={CoachClass} />
             <Route path="/CoachBook" component={CoachBook} />
             <Route path="/CoachDate" component={CoachDate} />
-            <Route path="/comment" component={Comment} />
+            <Route path="/CoachCarousels2" component={CoachCarousels2} />
             <Route path="/area" component={Areas} />
         </Switch>
     </>

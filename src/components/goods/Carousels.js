@@ -23,6 +23,7 @@ class Carousels extends React.Component{
                 <hr/>
         <div id="carouselExampleControls1" className="carousel slide lesson_slide d-flex justify-content-center" data-ride="carousel">
             <div className="carousel-inner">
+
             <div className="carousel-item active">
                 <div className="lesson d-flex justify-content-center">
                 <CardCarousels/>
@@ -30,6 +31,7 @@ class Carousels extends React.Component{
                 <CardCarousels/>
                 </div>
             </div>
+
             <div className="carousel-item">
                 <div className="lesson d-flex justify-content-center">
                     {/* <!-- lesson1 --> */}
@@ -39,7 +41,8 @@ class Carousels extends React.Component{
                     {/* <!-- lesson3 --> */}
                     <CardCarouselsCopy/>
                 </div>
-                </div>
+            </div>
+            
                 <a className="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
                 <i className="fas fa-chevron-left icon-style"></i>
                 <span className="sr-only">Previous</span>

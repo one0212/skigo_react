@@ -14,7 +14,7 @@ class ClassCard extends React.Component {
       await this.setState({ loading: true })
 
       // const response = await fetch('http://localhost:5000/try-db', {
-      const response = await fetch('http://localhost:5000/coach-table', {
+      const response = await fetch('http://localhost:5000/coach-list', {
         method: 'GET',
         headers: new Headers({
           Accept: 'application/json',
