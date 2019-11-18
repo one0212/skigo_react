@@ -13,7 +13,7 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 
 import Comment from './components/goods/Comment';
-import Areas from './area/Areas';
+import Areas from './components/area/Areas';
 
 
 function App() {
@@ -23,9 +23,9 @@ function App() {
       
       <Link to="/coachlist">●1.coach_list</Link>
       <Link to="/coachclass">●2.coach_class</Link>
-      <Link to="/CoachBook">●3.CoachBook</Link> 
+      <Link to="/CoachBook">●3.CoachBook</Link><br></br>
       <Link to="/CoachDate">●CoachDate</Link>   
-      <Link to="/CoachCarousels2">●CoachCarousels2</Link><br/>
+      <Link to="/CoachCarousels2">●CoachCarousels2</Link>
       <Link to="/area">●area</Link>
 
         <Switch>

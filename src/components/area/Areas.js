@@ -1,8 +1,8 @@
 import React from 'react'
-import '../css/area_home.css';
+import '../../css/area_home.css';
 import { Carousel } from 'react-bootstrap';
-import Carousels from '../components/goods/Carousels';
-import Comment from '../components/goods/Comment';
+import Carousels from '../goods/Carousels';
+import Comment from '../goods/Comment';
 
 class Areas extends React.Component{
     constructor(){
@@ -15,7 +15,7 @@ class Areas extends React.Component{
         <>
             <div className="wrap">
             <div className="area_header">
-        {/* src={require('../images/areas/scenery-1.jpg')} */}
+
                 <div className="container-fluid area_slider">
                     <div className="row">
                         <div className="col-xl-9 col-lg-12">
@@ -24,21 +24,21 @@ class Areas extends React.Component{
                                     <Carousel.Item>
                                         <img
                                         className="d-block w-100"
-                                        src={require('../images/areas/scenery-1.jpg')}
+                                        src={require('../../images/areas/scenery-1.jpg')}
                                         alt="First slide"
                                         />
                                     </Carousel.Item>
                                     <Carousel.Item>
                                         <img
                                         className="d-block w-100"
-                                        src={require('../images/areas/scenery-2.jpg')}
+                                        src={require('../../images/areas/scenery-2.jpg')}
                                         alt="Third slide"
                                         />
                                     </Carousel.Item>
                                     <Carousel.Item>
                                         <img
                                         className="d-block w-100"
-                                        src={require('../images/areas/scenery-3.jpg')}
+                                        src={require('../../images/areas/scenery-3.jpg')}
                                         alt="Third slide"
                                         />
                                     </Carousel.Item>
@@ -47,9 +47,9 @@ class Areas extends React.Component{
                         </div>
                         <div className="col-xl-3">
                             <div className="weather">
-                                <img src={require('../images/areas/weather.svg')} className="weather_img" alt=""/>
+                                <img src={require('../../images/areas/weather.svg')} className="weather_img" alt=""/>
                                 <div className="d-flex">
-                                    <p>-10</p><img src={require('../images/areas/circle-outline.svg')} className="circle" alt=""/><p className="tem">C</p>
+                                    <p>-10</p><img src={require('../../images/areas/circle-outline.svg')} className="circle" alt=""/><p className="tem">C</p>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +72,9 @@ class Areas extends React.Component{
                             <h1>富良野滑雪場</h1>   
                         </div>
                         <div className="weather">
-                            <img src={require('../images/areas/weather.svg')} className="weather_img" alt=""/>
+                            <img src={require('../../images/areas/weather.svg')} className="weather_img" alt=""/>
                             <div className="d-flex">
-                                <p>-10</p><img src={require('../images/areas/circle-outline.svg')} className="circle" alt=""/><p className="tem">C</p>
+                                <p>-10</p><img src={require('../../images/areas/circle-outline.svg')} className="circle" alt=""/><p className="tem">C</p>
                             </div>
                         </div>
                     </div>
@@ -89,10 +89,10 @@ class Areas extends React.Component{
                     <div className="row">
                         <div className="col-lg-8 col-md-12">
                             <div className="area_icon d-flex justify-content-center">
-                                <div><img className="number" src={require('../images/areas/05.svg')} alt=""/><p className="img_p">滑雪道</p><p className="img_number">23</p></div>
-                                <div><img className="longest" src={require('../images/areas/01.svg')} alt=""/><p className="img_p">雪道最長距離</p><p className="img_number">4,000m</p></div>
-                                <div><img className="gradient" src={require('../images/areas/04.svg')} alt=""/><p className="img_p">最大斜度</p><p className="img_number">35</p></div>
-                                <div><img className="lifts" src={require('../images/areas/06.svg')} alt=""/><p className="img_p">纜車</p><p className="img_number">8</p></div>
+                                <div><img className="number" src={require('../../images/areas/05.svg')} alt=""/><p className="img_p">滑雪道</p><p className="img_number">23</p></div>
+                                <div><img className="longest" src={require('../../images/areas/01.svg')} alt=""/><p className="img_p">最長距離</p><p className="img_number">4,000m</p></div>
+                                <div><img className="gradient" src={require('../../images/areas/04.svg')} alt=""/><p className="img_p">最大斜度</p><p className="img_number">35</p></div>
+                                <div><img className="lifts" src={require('../../images/areas/06.svg')} alt=""/><p className="img_p">纜車</p><p className="img_number">8</p></div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-12 area_info">
@@ -122,7 +122,11 @@ class Areas extends React.Component{
                                 </div>
                             </div>
                             <p className="address">〒076-8511 北海道富良野市字中御料</p>
-                            <a className="ski_map" href="#"><img className="icon_map" src={require('../images/areas/map.svg')} alt=""/>滑雪場地圖</a>
+                            <a className="ski_map" href="#notice1"><img className="icon_map" src={require('../../images/areas/map.svg')} alt=""/>滑雪場地圖</a>
+                            <div className="lightbox-target" id="notice1">
+                                <img src={require('../../images/areas/ski-map.jpg')} alt=""/>
+                                <a className="lightbox-close" href="#"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,12 +136,12 @@ class Areas extends React.Component{
                 <div className="container">
                     <div className="area_characteristic">
                         <div className="d-flex">
-                            <div className="box"><img src={require('../images/areas/mountains.svg')} alt=""/><p>美麗風景</p></div>
-                            <div className="box"><img src={require('../images/areas/snowflake.svg')} alt=""/><p>天然雪</p></div>
-                            <div className="box"><img src={require('../images/areas/ice-skating.svg')} alt=""/><p>適合初學者</p></div>
-                            <div className="box"><img src={require('../images/areas/signals-set.svg')} alt=""/><p>餐廳</p></div>
-                            <div className="box"><img src={require('../images/areas/snowmobile.svg')} alt=""/><p>戶外活動充實</p></div>
-                            <div className="box"><img src={require('../images/areas/bus.svg')} alt=""/><p>交通便利</p></div>
+                            <div className="box"><img src={require('../../images/areas/mountains.svg')} alt=""/><p>美麗風景</p></div>
+                            <div className="box"><img src={require('../../images/areas/snowflake.svg')} alt=""/><p>天然雪</p></div>
+                            <div className="box"><img src={require('../../images/areas/ice-skating.svg')} alt=""/><p>適合初學者</p></div>
+                            <div className="box"><img src={require('../../images/areas/signals-set.svg')} alt=""/><p>餐廳</p></div>
+                            <div className="box"><img src={require('../../images/areas/snowmobile.svg')} alt=""/><p>戶外活動充實</p></div>
+                            <div className="box"><img src={require('../../images/areas/bus.svg')} alt=""/><p>交通便利</p></div>
                         </div>
                     </div>
                 </div>
