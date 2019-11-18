@@ -1,0 +1,46 @@
+.user-photo {
+    width: 150px;
+    height: 150px;
+    background: #ddd;
+    border-radius: 50%;
+}
+.user-list li {
+    font-size: 1.25rem
+}
+.user-lightblue-text {
+    color: #8DAEC1;
+}
+/* 訂單標題 */
+.user-order-title {
+    height: 3rem;
+    box-sizing: border-box;
+}
+.user-order-title li a{
+    line-height: 3rem;
+    font-size: 1.25rem;
+}
+.user-order-title li  {
+    width: 6rem;
+}
+.user-order-title-active {
+    border-bottom: 4px solid #272F43;
+}
+.user-order-line {
+    border-top: 1px solid #827975;
+}
+/* 訂單內容 */
+.user-order-content {
+    width: 35rem;
+    height: 35rem;
+    margin: 0 auto;
+    /* display: none; */
+    /* flex */
+}
+.user-order-content img {
+    width: 75%;
+    height: 75%;
+}
+.user-order-date {
+    background: #eee;
+}
+
