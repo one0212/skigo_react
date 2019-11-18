@@ -5,7 +5,7 @@
         }
 
         /* 上方排序選擇 + 項目總數 */
-        .coach-arrange a , span{
+        .coach-arrange a , .coach-arrange span{
             font-size:1.25rem;
             display:block;
             padding-bottom: 10px;

@@ -19,6 +19,14 @@
     border-bottom:none !important;
 }
 
+.MuiFormLabel-root.Mui-focused{
+    color:white !important;
+}
+
+.MuiInput-underline:after{
+    border-bottom:none !important;
+}
+
 .class_book label{
     display:none;
 }
