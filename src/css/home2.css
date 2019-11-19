@@ -1,0 +1,849 @@
+*{
+    font-family: "Roboto", "Noto Sans TC", sans-serif;
+}
+
+/* 人氣雪場 */
+
+.home_second .col-12{
+    padding-left: 0;
+    padding-right: 0;
+}
+.home_areas{
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+.home_areas .bg-areas{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    background: url(../images/home/toa-heftiba.jpg) no-repeat center 0;
+    background-size: cover;
+}
+.home_areas .areas_main{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.home_areas .areas_title{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    margin: 3rem 0 5rem 6rem;
+}
+.home_areas h4{
+    color: #FF5200;
+    font-size: 5.5rem;
+    font-weight: 900;
+}
+.home_areas .h640{
+    display: none;
+}
+.home_areas .areas_title p{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #272F43;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+}
+.home_areas .areas_title .line_s{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.home_areas .areas{
+    margin-top: 20px;
+}
+.home_areas .areas_slide{
+    position: relative;
+    z-index: 3;
+    margin-left: 6.5rem;
+    width: 1045px;
+}
+.home_areas .card {
+    margin: 0px 1.5rem;
+    border: none;
+}
+.home_areas .slick-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.home_areas .card-body h5{
+    font-size: 1.6rem;
+}
+.home_areas .btn-primary{
+    background: #FF5200;
+    border: none;
+}
+/* card輪播 */
+.home_areas .slick-prev:before,
+.home_areas .slick-next:before {
+    color: rgb(46, 46, 46); 
+    font-size: 40px;
+}
+.home_areas .slick-prev, .slick-next{
+    width: 40px;
+    height: 40px;
+}
+.home_areas .slick-prev{
+    left: -4rem;
+}
+.home_areas .slick-next{
+    right: -3.4rem;
+}
+
+/* 視差捲動-scrolling */
+
+.home_third{
+    position: relative;
+    z-index: 1;
+}
+.home_third .container-fluid{
+    height: 100vh;
+    padding: 6.8rem 12rem;
+}
+.home_third .col-12{
+    padding-left: 0;
+    padding-right: 0;
+    height: 75vh;
+    background-image: url(../images/home/scrolling.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.home_third .home_skiing{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 65vh;
+    background: #FD702D;
+    z-index: 2;
+    flex-direction: column;
+    padding: 4.5rem 0 0 4.5rem;
+}
+.home_third .home_skiing p{
+    color: #fff;
+    font-weight: 800;
+    font-size: 5.4rem;
+    line-height: 5rem;
+}
+
+/* Featured Course-精選課程 */
+.home_fourth .col-12{
+    padding-left: 0;
+    padding-right: 0;
+}
+.home_featured{
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+.home_featured .bg-lesson{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    background: url(../images/home/toa-heftiba.jpg) no-repeat center 0;
+    background-size: cover;
+}
+.home_featured .featured_main{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.home_featured .featured_title{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    margin: 3rem 0 5rem 33rem;
+}
+.home_featured h4{
+    color: #FF5200;
+    font-size: 5.5rem;
+    font-weight: 900;
+}
+.home_featured .featured_title p{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #272F43;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+}
+.home_featured .featured_title .line_s{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.home_featured .featured{
+    margin-top: 20px;
+}
+.home_featured .featured_slide{
+    position: relative;
+    z-index: 3;
+    margin-left: 7rem;
+}
+.home_featured .featured_slide .justify-content-start{
+    display: flex;
+    flex-direction: column;
+}
+.home_featured .featured_card{
+    width: 300px;
+    height: 420px;
+    transition: .3s;
+    margin: 0 2rem;
+    background: #fff;
+}
+.home_featured .featured_card a{
+    text-decoration: none;
+    color: #000;
+}
+.home_featured .featured_card:hover{
+    box-shadow:0px 0px 9px gray;
+    text-decoration: none;
+}
+.home_featured .featured_img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.home_featured .home_img_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home_featured .featured_card_word{
+    padding: 15px 0 0 15px;
+}
+.home_featured .featured_card_word .areas{
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+.home_featured .featured_card_word img{
+    width: 30px;
+    margin-bottom: 5px;
+}
+.home_featured .featured_card_word .d-flex p{
+    color: #FD702D;
+    margin-top: 15px;
+}
+.home_featured .explore{
+    width: 664px;
+    height: 60px;
+    color: #fff;
+    background: #FD702D;
+    text-align: center;
+    font-size: 1.2rem;
+    border: solid 1px#FD702D;
+    text-decoration: none;
+    display: flex;
+    margin: 20px 0 0 32px;
+}
+
+/* recommend-推薦飯店 */
+
+
+.home_fifth .col-12{
+    padding-left: 0;
+    padding-right: 0;
+}
+.home_recommend{
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+.home_recommend .bg-hotel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    background: url(../images/home/hotel.jpg) no-repeat center 0;
+    background-size: cover;
+}
+.home_recommend .recommend_main{
+    flex-direction: column;
+    align-items: flex-end;
+}
+.home_recommend .recommend_title{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    margin: 3rem 33rem 5rem 0;
+}
+.home_recommend h4{
+    color: #FF5200;
+    font-size: 5.5rem;
+    font-weight: 900;
+}
+.home_recommend .h640{
+    display: none;
+}
+.home_recommend .recommend_title p{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #272F43;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+}
+.home_recommend .recommend_title .line_s{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.home_recommend .recommend{
+    margin-top: 20px;
+}
+.home_recommend .recommend_slide{
+    position: relative;
+    z-index: 3;
+    margin-right: 7rem;
+}
+.home_recommend .recommend_slide .justify-content-start{
+    display: flex;
+    flex-direction: column;
+}
+.home_recommend .recommend_card{
+    width: 300px;
+    height: 420px;
+    transition: .3s;
+    margin: 0 2rem;
+    background: #fff;
+}
+.home_recommend .recommend_card a{
+    text-decoration: none;
+    color: #000;
+}
+.home_recommend .recommend_card:hover{
+    box-shadow:0px 0px 9px gray;
+    text-decoration: none;
+}
+.home_recommend .recommend_img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.home_recommend .home_img_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home_recommend .recommend_card_word{
+    padding: 15px 0 0 15px;
+}
+.home_recommend .recommend_card_word .areas{
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+.home_recommend .recommend_card_word img{
+    width: 30px;
+    margin-bottom: 5px;
+}
+.home_recommend .recommend_card_word .d-flex p{
+    color: #FD702D;
+    margin-top: 15px;
+}
+.home_recommend .explore{
+    width: 664px;
+    height: 60px;
+    color: #fff;
+    background: #FD702D;
+    text-align: center;
+    font-size: 1.2rem;
+    border: solid 1px#FD702D;
+    text-decoration: none;
+    display: flex;
+    margin: 20px 0 0 32px;
+}
+
+
+
+
+
+
+/* RWD */
+@media screen and (max-width: 1400px) {
+    /* .home_third .home_skiing{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 65vh;
+        background: #FD702D;
+        z-index: 2;
+        flex-direction: column;
+        padding: 4.5rem 0 0 4.5rem;
+    } */
+    .home_third .home_skiing p{
+        /* color: #fff;
+        font-weight: 800; */
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+    .home_featured .featured_title{
+        /* position: relative;
+        z-index: 3;
+        display: flex; */
+        margin: 3rem 0 5rem 20rem;
+    }
+    .home_featured .featured_slide{
+        /* position: relative;
+        z-index: 3; */
+        margin-left: 6rem;
+    }
+    .home_recommend .recommend_title{
+        /* position: relative;
+        z-index: 3;
+        display: flex; */
+        margin: 3rem 20rem 5rem 0;
+    }
+    .home_recommend .recommend_slide{
+        /* position: relative;
+        z-index: 3; */
+        margin-right: 6rem;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .home_areas .areas_slide{
+        /* position: relative;
+        z-index: 3;
+        margin-left: 6.5rem; */
+        width: 710px;
+    }
+/* card輪播 */
+.home_areas .slick-prev{
+    left: -3.8rem;
+}
+.home_areas .slick-next{
+    right: -3.2rem;
+}
+}
+@media screen and (max-width: 1200px) {
+    .home_areas .areas_main{
+        /* flex-direction: column; */
+        align-items: center;
+    }
+    .home_areas .areas_title{
+        /* position: relative;
+        z-index: 3;
+        display: flex; */
+        margin: 3rem 0 5rem 0;
+    }
+    .home_areas .areas_slide{
+        /* position: relative; */
+        /* z-index: 3; */
+        margin-left: 0;
+        /* width: 710px; */
+    }
+    .home_third .home_skiing{
+        /* position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%; */
+        height: 50vh;
+        /* background: #FD702D;
+        z-index: 2;
+        flex-direction: column; */
+        padding: 4rem 0 0 4rem;
+    }
+    .home_third .home_skiing p{
+        /* color: #fff;
+        font-weight: 800; */
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .home_featured .featured_main{
+        /* flex-direction: column; */
+        align-items: center;
+    }
+    .home_featured .featured_title{
+        /* position: relative;
+        z-index: 3;
+        display: flex; */
+        margin: 3rem 0 5rem 0;
+    }
+    .home_featured .featured_slide{
+        /* position: relative;
+        z-index: 3; */
+        margin-left: 0;
+    }
+    .home_recommend .recommend_main{
+        /* flex-direction: column; */
+        align-items: center;
+    }
+    .home_recommend .recommend_title{
+        /* position: relative;
+        z-index: 3;
+        display: flex; */
+        margin: 3rem 0 5rem 0;
+    }
+    .home_recommend .recommend_slide{
+        /* position: relative;
+        z-index: 3; */
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 896px) {
+    .home_areas .bg-areas{
+        /* position: absolute;
+        top: 0;
+        right: 0; */
+        width: 100%;
+        /* height: 100vh;
+        overflow: hidden;
+        z-index: 2;
+        background: url(../images/home/toa-heftiba.jpg) no-repeat center 0;
+        background-size: cover; */
+    }
+    .home_areas h4{
+        /* color: #FF5200; */
+        font-size: 3.8rem;
+        /* font-weight: 900; */
+    }
+    .home_areas .areas_title p{
+        font-size: 1.4rem;
+        /* font-weight: 600;
+        color: #272F43;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 10px; */
+    }
+    .home_areas .areas_slide{
+        /* position: relative; */
+        /* z-index: 3; */
+        /* margin-left: 0; */
+        width: 312px;
+    }
+    .home_areas .card {
+        margin: 0px 0.7rem;
+    }
+    .home_areas .card-body h5{
+        font-size: 1.4rem;
+    }
+    .home_third .container-fluid{
+        /* height: 100vh; */
+        padding: 0 0.95rem;
+    }
+    .home_third .col-12{
+        /* padding-left: 0;
+        padding-right: 0; */
+        height: 100vh;
+        /* background-image: url(../images/home/scrolling.jpg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: hidden; */
+    }
+    .home_third .home_skiing{
+        /* position: absolute;
+        right: 0;
+        bottom: 0; */
+        width: 100vw;
+        /* height: 50vh; */
+        /* background: #FD702D;
+        z-index: 2;
+        flex-direction: column; */
+        /* padding: 4rem 0 0 4rem; */
+    }
+    /* .home_third .home_skiing p{
+        color: #fff;
+        font-weight: 800;
+        font-size: 3rem;
+        line-height: 3rem;
+    } */
+    .home_featured .bg-lesson{
+        /* position: absolute;
+        top: 0;
+        right: 0; */
+        width: 100%;
+        /* height: 100vh;
+        overflow: hidden;
+        z-index: 2;
+        background: url(../images/home/toa-heftiba.jpg) no-repeat center 0;
+        background-size: cover; */
+    }
+    .home_recommend .bg-hotel{
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+        width: 100%;
+        /* height: 100vh;
+        overflow: hidden;
+        z-index: 2;
+        background: url(../images/home/hotel.jpg) no-repeat center 0;
+        background-size: cover; */
+    }
+    .home_featured h4{
+        /* color: #FF5200; */
+        font-size: 3.8rem;
+        /* font-weight: 900; */
+    }
+    .home_featured .featured_title p{
+        font-size: 1.4rem;
+        /* font-weight: 600;
+        color: #272F43;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 10px; */
+    }
+    /* .home_featured .featured_title .line_s{
+        margin-left: 20px;
+        margin-right: 20px;
+    } */
+    .home_featured .featured_card{
+        width: 250px;
+        height: 360px;
+        /* transition: .3s; */
+        margin: 0 1.5rem;
+        /* background: #fff; */
+    }
+    .home_featured .featured_img{
+        /* width: 100%; */
+        height: 250px;
+        /* overflow: hidden; */
+    }
+    .home_featured .featured_card_word .areas{
+        font-size: 1.4rem;
+        /* margin-bottom: 0; */
+    }
+    .home_featured .featured_card_word img{
+        width: 25px;
+        /* margin-bottom: 5px; */
+    }
+    .home_featured .explore{
+        width: 548px;
+        height: 55px;
+        /* color: #fff;
+        background: #FD702D;
+        text-align: center;
+        font-size: 1.2rem;
+        border: solid 1px#FD702D;
+        text-decoration: none;
+        display: flex; */
+        margin: 20px 0 0 24px;
+    }   
+
+    .home_recommend h4{
+        /* color: #FF5200; */
+        font-size: 3.8rem;
+        /* font-weight: 900; */
+    }
+    .home_recommend .recommend_title p{
+        font-size: 1.4rem;
+        /* font-weight: 600;
+        color: #272F43;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 10px; */
+    }
+    /* .home_recommend .recommend_title .line_s{
+        margin-left: 20px;
+        margin-right: 10px;
+    } */
+    .home_recommend .recommend_card{
+        width: 250px;
+        height: 360px;
+        /* transition: .3s; */
+        margin: 0 1.5rem;
+        /* background: #fff; */
+    }
+    .home_recommend .recommend_img{
+        /* width: 100%; */
+        height: 250px;
+        /* overflow: hidden; */
+    }
+    .home_recommend .recommend_card_word .areas{
+        font-size: 1.4rem;
+        /* margin-bottom: 0; */
+    }
+    .home_recommend .recommend_card_word img{
+        width: 25px;
+        /* margin-bottom: 5px; */
+    }
+    .home_recommend .explore{
+        width: 548px;
+        height: 55px;
+        /* color: #fff;
+        background: #FD702D;
+        text-align: center;
+        font-size: 1.2rem;
+        border: solid 1px#FD702D;
+        text-decoration: none;
+        display: flex; */
+        margin: 20px 0 0 24px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .home_areas h4{
+        /* color: #FF5200; */
+        font-size: 3.5rem;
+        /* font-weight: 900; */
+    }
+    .home_areas .h640{
+        display: block;
+        margin-left: 0.5rem;
+    }
+    .home_areas .areas_title p{
+        /* font-size: 1.4rem;
+        font-weight: 600;
+        color: #272F43;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 10px; */
+        display: none;
+    }
+    .home_featured h4{
+        /* color: #FF5200; */
+        font-size: 3.5rem;
+        /* font-weight: 900; */
+    }
+    .home_featured .featured_title p{
+        /* font-size: 1.4rem; */
+        /* font-weight: 600;
+        color: #272F43;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 10px; */
+        display: none;
+    }
+    /* .home_featured .featured_title .line_s{
+        margin-left: 20px;
+        margin-right: 20px;
+    } */
+    .home_featured .featured2{
+        display: none;
+    }
+    /* .home_featured .featured_card{
+        width: 250px;
+        height: 360px;
+        transition: .3s;
+        margin: 0 1.5rem;
+        background: #fff;
+    }
+    .home_featured .featured_img{
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+    }
+    .home_featured .featured_card_word .areas{
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+    .home_featured .featured_card_word img{
+        width: 25px;
+        margin-bottom: 5px;
+    } */
+    .home_featured .explore{
+        width: 250px;
+        /* height: 55px; */
+        /* color: #fff;
+        background: #FD702D;
+        text-align: center;
+        font-size: 1.2rem;
+        border: solid 1px#FD702D;
+        text-decoration: none;
+        display: flex; */
+        /* margin: 20px 0 0 24px; */
+    } 
+
+    .home_recommend h4{
+        /* color: #FF5200; */
+        font-size: 3.5rem;
+        /* font-weight: 900; */
+    }
+    .home_recommend .h640{
+        display: block;
+        margin-left: 0.8rem;
+    }
+    .home_recommend .recommend_title p{
+        /* font-size: 1.4rem; */
+        /* font-weight: 600;
+        color: #272F43;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 10px; */
+        display: none;
+    }
+    /* .home_recommend .recommend_title .line_s{
+        margin-left: 20px;
+        margin-right: 20px;
+    } */
+    .home_recommend .recommend2{
+        display: none;
+    }
+    /* .home_recommend .recommend_card{
+        width: 250px;
+        height: 360px;
+        transition: .3s;
+        margin: 0 1.5rem;
+        background: #fff;
+    } */
+    /* .home_recommend .recommend_img{
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+    } */
+    /* .home_recommend .recommend_card_word .areas{
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    } */
+    /* .home_recommend .recommend_card_word img{
+        width: 25px;
+        margin-bottom: 5px;
+    } */
+    .home_recommend .explore{
+        width: 250px;
+        /* height: 55px; */
+        /* color: #fff;
+        background: #FD702D;
+        text-align: center;
+        font-size: 1.2rem;
+        border: solid 1px#FD702D;
+        text-decoration: none;
+        display: flex; */
+        /* margin: 20px 0 0 24px; */
+    } 
+}
+@media screen and (max-width: 499px) {
+    .home_areas h4{
+        /* color: #FF5200; */
+        font-size: 2.5rem;
+        /* font-weight: 900; */
+    }
+/* card輪播 */
+.home_areas .slick-prev{
+    left: 5.5rem;
+    top: 30.5rem;
+}
+.home_areas .slick-next{
+    right: 5.5rem;
+    top: 30.5rem;
+}
+    .home_third .home_skiing p{
+        /* color: #fff; */
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home_featured h4{
+        /* color: #FF5200; */
+        font-size: 2.5rem;
+        /* font-weight: 900; */
+    }
+    .home_recommend h4{
+        /* color: #FF5200; */
+        font-size: 2.5rem;
+        /* font-weight: 900; */
+    }
+}

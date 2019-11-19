@@ -1,0 +1,39 @@
+.user-photo {
+    width: 150px;
+    height: 150px;
+    background: #ddd;
+    border-radius: 50%;
+}
+.user-list li {
+    font-size: 1.25rem
+}
+/* 小提醒 */
+.user-address-remind {
+    background: #8DAEC1;
+    color: #fff;
+    border-radius: 5px;
+}
+.user-address-photo {
+    width: 35rem;
+    height: 35rem;
+}
+.user-address-photo img {
+    width: 75%;
+    height: 75%;
+}
+.user-address-data {
+    border-top: 2px solid #827975;
+    box-sizing: border-box;
+}
+.user-address-data p {
+    margin: 0.5rem 0;
+}
+.user-center-input {
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 22rem;
+    height: 2rem;
+    padding: 0.5rem;
+}

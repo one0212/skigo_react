@@ -109,7 +109,8 @@ section{
     margin: 1.4rem 0;
 }
 .area_icon div{
-    margin: 0 50px;
+    margin: 0 40px;
+
 }
 .area_icon img{
     width: 80px;
@@ -161,9 +162,81 @@ section{
 .area_info .icon_map{
     width: 35px;
 }
+/* 雪場地圖light-box */
+.lightbox-target {
+	position: fixed;
+	top: -100%;
+	width: 100%;
+	background: rgba(0,0,0,.7);
+	opacity: 0;
+    transition: .5s ease-in-out;
+    overflow: hidden;
+    z-index: 10;	
+}
+.lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 1000px;
+    max-width: 1000px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+    box-sizing: border-box;
+    transition: .5s ease-in-out;
+}
+.lightbox-target:target {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.lightbox-target:target .lightbox-close {
+    top: 5%;
+}
+.lightbox-close {
+	display: block;
+	width: 50px;
+	height: 50px;
+	box-sizing: border-box;
+	background: #4C95E8;
+	color: #fff;
+	position: absolute;
+	top: 10%;
+	right: 5%;
+	transition:.5s ease-in-out;
+}
+.lightbox-close:before {
+    content: " ";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: #fff;
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    transform:rotate(45deg);
+}
+.lightbox-close:after {
+    content: " ";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: #fff;
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    transform:rotate(45deg);
+}
+.lightbox-close:after {
+    transform:rotate(-45deg);
+}
 
 .area_characteristic{
-   padding: 0 45px;
+    padding: 0 45px;
     
 }
 .area_characteristic .d-flex{
@@ -300,7 +373,23 @@ section{
         width: 500px;
     }
 }
-/* @media screen and (max-width: 1300px) {} */
+@media screen and (max-width: 1300px) {
+    /* 雪場地圖light-box */
+    .lightbox-target img {
+        /* margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; */
+        max-height: 800px;
+        max-width: 800px;
+        /* border: 3px solid #fff;
+        box-shadow: 0 0 8px rgba(0,0,0,.3);
+        box-sizing: border-box;
+        transition: .5s ease-in-out; */
+    }
+}
 @media screen and (max-width: 1200px) {
     .area_slider{
         display: none;
