@@ -86,7 +86,7 @@ class SignUpModal extends Component {
           text: { email: '', pwd: '' },
         })
         this.props.signUpSucc()
-        this.props.showLoginIcon()
+        this.props.refreshLoginState()
       } else {
         if (response.status === 400) {
           this.setState({
@@ -108,7 +108,7 @@ class SignUpModal extends Component {
         </div>
         <img
           className="user-small-logo mb-2"
-          src="images/small-logo.svg"
+          src="/images/small-logo.svg"
           alt=""
         />
         <Form className="text-left p-2">
