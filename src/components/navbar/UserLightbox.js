@@ -263,7 +263,7 @@ class UserLightbox extends Component {
 
     return (
       <div
-        className="user-bg-modal pt-5"
+        className="user-bg-modal"
         onClick={this.closeModal}
         style={{ display: 'flex' }}
       >
