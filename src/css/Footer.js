@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/footer.css'
 import { FaFacebookSquare,FaTwitter,FaInstagram } from "react-icons/fa";
 
 
@@ -67,12 +68,12 @@ const Footer = props => (
               </div>
               <div class="row d-flex align-items-center pt-4" >
                 <div>
-                    <a class="footer-logo" href=""><img src="/images/footer/SKIGO_logo.svg" alt=""/></a>
+                    <a class="logo" href=""><img src="./images/SKIGO_logo.svg" alt=""/></a>
                 </div>
                 <div class="flex-grow-1 pt-3">
                     <p >© 2019 SkiGO. All Rights Reserved.</p>
                 </div>
-                <div class="d-flex footer-right align-items-center">
+                <div class="d-flex right align-items-center">
                     <a href="https://www.facebook.com/"><FaFacebookSquare/></a>
                     <a href="https://twitter.com/?lang=zh-tw"><FaTwitter/></a>
                     <a href="https://www.instagram.com/?hl=zh-tw"><FaInstagram/></a>
