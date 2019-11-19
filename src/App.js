@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
 
 import Header from './components/navbar/Header'
 import home from './components/home/Home'
@@ -23,11 +22,10 @@ import Areas from './components/area/Areas'
 function App() {
   return (
     <>
-      <Container>
-        <Header />
-        <Router>
-          <>
-            {/* <Link to="/coachlist">●1.coach_list</Link>
+      <Router>
+        <>
+          <Header />
+          {/* <Link to="/coachlist">●1.coach_list</Link>
         <Link to="/coachclass">●2.coach_class</Link>
         <Link to="/CoachBook">●3.CoachBook</Link>
         <br></br>
@@ -36,24 +34,23 @@ function App() {
         <Link to="/area">●area</Link>
         <br></br> */}
 
-            <Switch>
-              <Route path="/" exact component={home} />
-              <Route path="/coachlist" component={CoachList} />
-              <Route path="/coachclass" component={CoachClass} />
-              <Route path="/CoachBook" component={CoachBook} />
-              <Route path="/CoachDate" component={CoachDate} />
-              <Route path="/CoachCarousels2" component={CoachCarousels2} />
-              <Route path="/area" component={Areas} />
+          <Switch>
+            <Route path="/" exact component={home} />
+            <Route path="/coachlist" component={CoachList} />
+            <Route path="/coachclass" component={CoachClass} />
+            <Route path="/CoachBook" component={CoachBook} />
+            <Route path="/CoachDate" component={CoachDate} />
+            <Route path="/CoachCarousels2" component={CoachCarousels2} />
+            <Route path="/area" component={Areas} />
 
-              <Route path="/cart" component={UserCart} />
-              <Route path="/member/profile" component={UserAccount} />
-              <Route path="/member/address" component={UserAddress} />
-              <Route path="/member/order" component={UserOrder} />
-              <Route path="/activeUser" component={AccountActiveResult} />
-            </Switch>
-          </>
-        </Router>
-      </Container>
+            <Route path="/cart" component={UserCart} />
+            <Route path="/member/profile" component={UserAccount} />
+            <Route path="/member/address" component={UserAddress} />
+            <Route path="/member/order" component={UserOrder} />
+            <Route path="/activeUser" component={AccountActiveResult} />
+          </Switch>
+        </>
+      </Router>
     </>
   )
 }
