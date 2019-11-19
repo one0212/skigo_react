@@ -16,7 +16,6 @@ import UserAddress from './components/user/address/UserAddress'
 import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
 
-import Comment from './components/goods/Comment'
 import Areas from './components/area/Areas'
 
 function App() {

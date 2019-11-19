@@ -1,5 +1,5 @@
 import React from "react";
-import  '../../css/home.css'
+import  '../../scss/home.scss'
 import  '../../css/home2.css'
 import $ from 'jquery'
 import Slider from "react-slick";
@@ -201,6 +201,7 @@ class Home extends React.Component {
     };
   return (
     <>
+    <div className="home_first">
       <div className="slideshow" id="js-header">
             
             <div className="slideshow__slide js-slider-home-slide is-current" data-slide="1">
@@ -310,6 +311,8 @@ class Home extends React.Component {
                 </symbol>
             </svg>
       </div>
+      </div>
+
       <div className="home_second">
           <div className="container-fluid">
               <div className="row">
