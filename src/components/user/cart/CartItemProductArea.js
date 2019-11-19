@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class CartItemProduct extends Component {
+class CartItemProductArea extends Component {
   render() {
     return (
       <>
@@ -48,4 +48,4 @@ class CartItemProduct extends Component {
   }
 }
 
-export default CartItemProduct
+export default CartItemProductArea

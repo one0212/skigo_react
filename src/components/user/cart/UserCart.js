@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import CartHeader from './CartHeader'
-import CartItemProduct from './CartItemProduct'
+import CartItemProductArea from './CartItemProductArea'
 import CartItemHotel from './CartItemHotel'
 import CartToCheckout from './CartToCheckout'
 
@@ -17,7 +17,7 @@ function UserCart() {
         <Row className="justify-content-center align-items-start mt-4">
           <Col md={1}></Col>
           <Col md={7}>
-            <CartItemProduct />
+            <CartItemProductArea />
             <CartItemHotel />
           </Col>
           <Col md={3} className="shop-order p-0 mt-4">

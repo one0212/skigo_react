@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import '../../css/account_active_result.css'
+import '../../css/user/account_active_result.css'
 const ActiveSucc = () => {
   return (
     <>
