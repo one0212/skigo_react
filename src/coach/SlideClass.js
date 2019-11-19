@@ -1,8 +1,8 @@
 import React from 'react'
-import '../../css/card_carousels.css'
+import '../css/card_carousels.css'
 import Slider from 'react-slick'
 
-class Carousels extends React.Component {
+class SlideCoach extends React.Component {
   constructor() {
     super()
     this.state = {}
@@ -52,7 +52,7 @@ class Carousels extends React.Component {
                 <div className="card" style={{ width: '18rem' }}>
                   <img
                     className="home_img"
-                    src={require('../../images/coach/coach.jpg')}
+                    src='./images/coach/coach.jpg'
                     alt=""
                   />
                   <div className="card-body">
@@ -72,7 +72,7 @@ class Carousels extends React.Component {
                 <div className="card" style={{ width: '18rem' }}>
                   <img
                     className="home_img"
-                    src={require('../../images/coach/coach.jpg')}
+                    src='./images/coach/coach.jpg'
                     alt=""
                   />
                   <div className="card-body">
@@ -92,7 +92,7 @@ class Carousels extends React.Component {
                 <div className="card" style={{ width: '18rem' }}>
                   <img
                     className="home_img"
-                    src={require('../../images/coach/coach.jpg')}
+                    src='./images/coach/coach.jpg'
                     alt=""
                   />
                   <div className="card-body">
@@ -112,7 +112,7 @@ class Carousels extends React.Component {
                 <div className="card" style={{ width: '18rem' }}>
                   <img
                     className="home_img"
-                    src={require('../../images/coach/coach.jpg')}
+                    src='./images/coach/coach.jpg'
                     alt=""
                   />
                   <div className="card-body">
@@ -132,7 +132,7 @@ class Carousels extends React.Component {
                 <div className="card" style={{ width: '18rem' }}>
                   <img
                     className="home_img"
-                    src={require('../../images/coach/coach.jpg')}
+                    src='./images/coach/coach.jpg'
                     alt=""
                   />
                   <div className="card-body">
@@ -157,4 +157,4 @@ class Carousels extends React.Component {
   }
 }
 
-export default Carousels
+export default SlideCoach
