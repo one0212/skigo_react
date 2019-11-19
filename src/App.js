@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 
 import Header from './components/navbar/Header'
+import home from './components/home/Home'
 
 import CoachList from './coach/CoachList'
 import CoachClass from './coach/CoachClass'
@@ -16,8 +17,8 @@ import UserAddress from './components/user/address/UserAddress'
 import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
 
-import home from './components/home/Home'
-
+import Comment from './components/goods/Comment'
+import Areas from './components/area/Areas'
 
 function App() {
   return (
