@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import ActiveSucc from './ActiveSucc'
 import ActiveFail from './ActiveFail'
 
-import '../../css/account_active_result.css'
+import '../../css/user/account_active_result.css'
 
 class AccountActiveResult extends Component {
   constructor(props) {

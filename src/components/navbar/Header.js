@@ -79,7 +79,7 @@ class Header extends Component {
             className="navbar-light mt-4 mb-2"
             expand="lg"
           >
-            <Navbar.Brand href="">
+            <Navbar.Brand href="" className="ml-4">
               <img
                 className="logo mr-3"
                 src="/images/small-logo.svg"
