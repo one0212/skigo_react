@@ -9,12 +9,18 @@ import CoachBook from './coach/CoachBook'
 import CoachDate from './coach/CoachDate'
 import CoachCarousels2 from './coach/CoachCarousels2'
 
+
 import UserCart from './components/user/cart/UserCart'
 import UserAccount from './components/user/account/UserAccount'
 import UserAddress from './components/user/address/UserAddress'
 
 import Comment from './components/goods/Comment'
 import Areas from './components/area/Areas'
+
+import Comment from './components/goods/Comment'
+import Areas from './components/area/Areas'
+import home from './components/home/Home'
+
 
 function App() {
   return (
@@ -29,13 +35,16 @@ function App() {
         <Link to="/area">●area</Link>
         <br></br>
 
-        <Switch>
-          <Route path="/coachlist" component={CoachList} />
-          <Route path="/coachclass" component={CoachClass} />
-          <Route path="/CoachBook" component={CoachBook} />
-          <Route path="/CoachDate" component={CoachDate} />
-          <Route path="/CoachCarousels2" component={CoachCarousels2} />
-          <Route path="/area" component={Areas} />
+
+          <Switch>
+            <Route path="/" component={home} />
+            <Route path="/coachlist" component={CoachList} />
+            <Route path="/coachclass" component={CoachClass} />
+            <Route path="/CoachBook" component={CoachBook} />
+            <Route path="/CoachDate" component={CoachDate} />
+            <Route path="/CoachCarousels2" component={CoachCarousels2} />
+            <Route path="/area" component={Areas} />
+
 
           <Route path="/cart" component={UserCart} />
           <Route path="/member/profile" component={UserAccount} />
