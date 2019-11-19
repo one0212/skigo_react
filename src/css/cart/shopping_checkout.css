@@ -9,7 +9,7 @@
     color: #a8a8ab;
 }
 .shop-lightblue-text {
-    color: #AECAD9
+    color: #8DAEC1
 }
 .shop-step {
     height: 1.5rem;
@@ -56,6 +56,9 @@
 }
 .shop-subtotal span {
     font-weight: 500;
+}
+.border-gray {
+    border: 1px solid #ddd;
 }
 /* 填寫地址光箱 */
 /* .shop-bg-model {
