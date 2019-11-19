@@ -2,7 +2,7 @@ import React from 'react'
 import '../../css/area_home.css';
 import { Carousel } from 'react-bootstrap';
 import Carousels from '../goods/Carousels';
-import Comment from '../goods/Comment';
+
 
 class Areas extends React.Component{
     constructor(){
@@ -149,7 +149,7 @@ class Areas extends React.Component{
 
             <Carousels/>
             <Carousels/>
-            <Comment/>
+
             <section className="area_access">
                 <div className="container">
                     <div className="access_title">

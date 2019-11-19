@@ -1,7 +1,9 @@
 *{
     font-family: "Roboto", "Noto Sans TC", sans-serif;
 }
-
+html {
+    overflow-x: hidden;
+}
 /* 人氣雪場 */
 
 .home_second .col-12{
