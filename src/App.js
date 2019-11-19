@@ -10,11 +10,11 @@ import CoachDate from './coach/CoachDate'
 import CoachCarousels2 from './coach/CoachCarousels2'
 import Comment from './components/goods/Comment'
 import Areas from './components/area/Areas'
-
 import UserAccount from './components/user/account/UserAccount'
 import UserAddress from './components/user/address/UserAddress'
 import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
+import home from './components/home/Home'
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
           <br></br>
 
           <Switch>
+            <Route path="/" component={home} />
             <Route path="/coachlist" component={CoachList} />
             <Route path="/coachclass" component={CoachClass} />
             <Route path="/CoachBook" component={CoachBook} />
