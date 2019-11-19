@@ -4,7 +4,7 @@ import  '../../css/home2.css'
 import $ from 'jquery'
 import Slider from "react-slick";
 // import { FaMapMarkerAlt,FiMapPin,  } from "react-icons/fa";
-// import Footer from './components/Footer'
+import Footer from '../Footer'
 
 
 class Home extends React.Component {
@@ -520,7 +520,7 @@ class Home extends React.Component {
             </div>
         </div>
 
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
   }

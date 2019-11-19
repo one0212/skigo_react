@@ -116,6 +116,7 @@
     }
     .coach_book_out .coach-style{
         margin-left:60px;
+        width: 70%;
     }
     .coach_book_out .coach_introduce{
         font-size: 1.5rem;
@@ -215,5 +216,8 @@
     }  
     .coach_book_out .part2{
         flex-direction: column;
+    }
+    .coach_book_out .coach-style{
+        margin-left:0px;
     }
   }

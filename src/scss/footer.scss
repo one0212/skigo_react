@@ -1,0 +1,42 @@
+.ski-footer {
+    width: 100%;
+    padding: 64px;
+    background: #8daec1;
+    color: #ffffff;
+
+    .footer-item {
+        list-style: none;
+        a{
+            color: #ffffff;
+            font-weight: 300;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.footer-link {
+    border-bottom: solid #ffffff 1px;
+    padding: 1rem 0 1.5rem 0;
+}
+
+.footer-logo {
+    width: 100px;
+    margin: 20px;
+
+    img {
+        height: 30px;
+
+    }
+}
+
+
+
+
+.footer-right a {
+    display: inline;
+    font-size: 24px;
+    color: #ffffff;
+    padding-right: 1.5rem;
+    align-items: center;
+}

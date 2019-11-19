@@ -1,12 +1,17 @@
 import React from 'react'
 import '../css/coach_class.css'
-import CoachCarousels from './CoachCarousels'
-import CoachCarousels2 from './CoachCarousels2'
+import SlideCoach from './SlideCoach'
+// import '../css/card_carousels.css'
+// import CoachCarousels from './CoachCarousels'
+// import CoachCarousels2 from './CoachCarousels2'
 
 class CoachClass extends React.Component {
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      loading: true,
+      total: [],
+    }
   }
 
   async componentWillMount() {
@@ -14,13 +19,16 @@ class CoachClass extends React.Component {
       await this.setState({ loading: true })
 
       // const response = await fetch('http://localhost:5000/try-db', {
-      const response = await fetch('http://localhost:5000/coach-class', {
-        method: 'GET',
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        }),
-      })
+      const response = await fetch(
+        `http://localhost:5000/coach-class/${this.props.match.params.id}`,
+        {
+          method: 'GET',
+          headers: new Headers({
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          }),
+        }
+      )
 
       if (!response.ok) throw new Error(response.statusText)
 
@@ -66,7 +74,9 @@ class CoachClass extends React.Component {
                 <div className="class_img">
                   <img
                     className="class_pic"
-                    src="./images/coach/coach.jpg"
+                    src={  this.state.total[0].class_pic
+                        ? '/images/coach/'+ this.state.total[0].class_pic
+                        : ''}
                     alt=""
                   />
                 </div>
@@ -133,12 +143,11 @@ class CoachClass extends React.Component {
                 </div>
               </div>
               {/* part2 教練 */}
+              <SlideCoach />
+              {/* <CoachCarousels2 /> */}
 
-              <CoachCarousels2 />
-
-              
               {/* part3 推薦課程*/}
-              <CoachCarousels />
+              {/* <CoachCarousels /> */}
 
               {/* 最外層包css */}
             </div>

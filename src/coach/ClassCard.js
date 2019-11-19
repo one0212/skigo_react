@@ -1,11 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class ClassCard extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      
-    }
+    this.state = {}
   }
 
   // 元件 "已經 Did" 呈現在網頁上
@@ -68,46 +67,50 @@ class ClassCard extends React.Component {
         ) : (
           <>
             {this.state.total.map((value, index) => {
-              if(!value) return <></>
+              if (!value) return <></>
               console.log(value.class_sid)
-              {/* this.setState(classnum) */}
-              {/* if (value.class_sid !== value.class_sid) { */}
-                return (
-                  <div className="coach-card" key={index}>
-                    <a href="#">
-                      <div className="hot_img">
-                        <img
-                          className="coach_img_pic"
-                          src={'/images/coach/' + value.class_pic}
-                          alt=""
-                        />
+              return (
+                <Link
+                  className="coach-card"
+                  key={value.class_sid}
+                  to={'/CoachClass/' + value.class_sid}
+                >
+                  <a href="#">
+                    <div className="hot_img">
+                      <img
+                        className="coach_img_pic"
+                        src={'/images/coach/' + value.class_pic}
+                        alt=""
+                      />
+                    </div>
+                    <div className="hot_card_word">
+                      <p>
+                        {value.class_level}
+                        {value.class_board} | {value.class_name}
+                      </p>
+                      <p className="language font-orange d-flex">
+                        {value.class_lang_cha === 1 ? <span>國語</span> : ''}
+                        {value.class_lang_eng === 1 ? <span>英語</span> : ''}
+                        {value.class_lang_jap === 1 ? <span>日語</span> : ''}
+                      </p>
+                      <p>北海道-OO雪場</p>
+                      <div className="d-flex justify-content-end">
+                        <p className="price">
+                          NT {this.thousandComma(value.class_price)}
+                        </p>
                       </div>
-                      <div className="hot_card_word">
+                      <div className="font-blue d-flex justify-content-center">
                         <p>
-                          {value.class_level}
-                          {value.class_board} | {value.class_name}
+                          {value.class_sell_start} ~ {value.class_sell_end}
                         </p>
-                        <p className="language font-orange d-flex">
-                          {value.class_lang_cha === 1 ? <span>國語</span> : ''}
-                          {value.class_lang_eng === 1 ? <span>英語</span> : ''}
-                          {value.class_lang_jap === 1 ? <span>日語</span> : ''}
-                        </p>
-                        <p>北海道-OO雪場</p>
-                        <div className="d-flex justify-content-end">
-                          <p className="price">
-                            NT {this.thousandComma(value.class_price)}
-                          </p>
-                        </div>
-                        <div className="font-blue d-flex justify-content-center">
-                          <p>
-                            {value.class_sell_start} ~ {value.class_sell_end}
-                          </p>
-                        </div>
                       </div>
-                    </a>
-                  </div>
-                )
-              {/* } */}
+                    </div>
+                  </a>
+                </Link>
+              )
+              {
+                /* } */
+              }
             })}
           </>
         )}

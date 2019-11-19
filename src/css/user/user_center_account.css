@@ -1,0 +1,27 @@
+/* user照片上傳頭貼 */
+.user-photo {
+    width: 150px;
+    height: 150px;
+    background: #ddd;
+    border-radius: 50%;
+}
+.user-list li {
+    font-size: 1.25rem
+}
+/* user填寫 */
+.user-center-line {
+    border-right: 2px solid #827975
+}
+.user-center-title {
+    width: 4rem;
+}
+.user-center-input {
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 22rem;
+    height: 2rem;
+    padding: 0.5rem;
+}
+

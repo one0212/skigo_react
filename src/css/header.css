@@ -1,0 +1,162 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.wrapper {
+  max-width: 1920px;
+}
+.logo {
+  width: 12rem;
+}
+.nav-item {
+  list-style: none;
+  display: inline-block;
+  margin: 10px 20px;
+}
+.user-btn {
+  box-shadow: none;
+  color: #fff;
+}
+.user-orange-btn {
+  background: #fd702d;
+}
+.user-blue-btn {
+  background: #4c95e8;
+}
+.user-darkblue-text {
+  color: #272f43;
+}
+.user-orange-text {
+  color: #fd702d;
+}
+.cursor-point {
+  cursor: pointer;
+}
+/* user下拉選單 */
+.user-drop-list {
+  width: 9rem;
+  /* margin-left: -4rem; */
+  top:3.5rem;
+  right:10rem;
+  z-index:1
+}
+.drop-menu {
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  max-height: 0;
+  background-color: #ffffff;
+}
+/* .active .drop-menu {
+  opacity: 1;
+  max-height: 11rem;
+} */
+/* 偽元素預設display:inline-block */
+.user-drop-list::before {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom-color: rgb(255, 255, 255);
+  /* border-bottom-color: #000; */
+  top: -20px;
+  left: 55%;
+  transform: translateX(50%);
+}
+/* ＝＝＝＝＝光箱＝＝＝＝＝ */
+.user-bg-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  /* display:flex; */
+  justify-content: center;
+  align-items: center;
+}
+.user-or-line {
+  width: 12.5rem;
+  border-top: 1px solid #6a6a6a;
+  height: 5px;
+  margin: 0 5px;
+}
+/* 註冊 */
+.user-modal-content {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 350px;
+}
+.signup-content {
+  /* display:none; */
+  min-height: 500px;
+}
+.user-small-logo {
+  width: 45%;
+  height: 16%;
+}
+.user-text-input {
+  outline: none;
+  box-shadow: none;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 40px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  color: #6a6a6a;
+}
+.close-modal:hover {
+  color: #000;
+}
+.user-small-info {
+  color: #6a6a6a;
+  display: block;
+}
+.user-form-item > i {
+  right: 2%;
+  top: calc(50% - 0.45em);
+  color: #6a6a6a;
+  font-size: 1.4rem;
+}
+.user-third-input {
+  border: 1px solid #6a6a6a;
+  border-radius: 20px;
+  width: 50%;
+}
+.user-third-input {
+  cursor: pointer;
+}
+.user-inline-icon {
+  right: 3%;
+  top: calc(50% - 0.5em);
+  font-size: 1.5rem;
+  color: #6a6a6a;
+}
+.user-fa-facebook {
+  color: #054a98;
+  font-size: 1.2rem;
+}
+.user-fa-google {
+  color: #fd702d;
+  font-size: 1.2rem;
+}
+.login-text {
+  /* bottom:2%; */
+  top: 94%;
+  left: 5%;
+}
+/* 登入 */
+.login-content {
+  min-height: 500px;
+}
+
+/* ＝＝＝＝＝光箱＝＝＝＝＝ */
