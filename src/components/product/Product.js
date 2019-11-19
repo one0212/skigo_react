@@ -2,13 +2,15 @@ import React from 'react'
 import {
   Container,Row,Col,Form,Button,
 } from 'react-bootstrap'
-
-import Breadcrumb from '../components/Breadcrumb'
 import { FiShoppingCart} from 'react-icons/fi';
 import { IoMdHeartEmpty } from 'react-icons/io';
+// import '../../scss/product.scss'
+import Breadcrumb from '../Breadcrumb'
 import ProductShare from './ProductShare'
 import ProductAsNavFor from './ProductAsNavFor'
 import SwipeToSlide from './SwipeToSlide'
+import Footer from '../Footer'
+
 
 
 
@@ -83,6 +85,7 @@ class Product extends React.Component{
               </Row>
 
             </Container>
+            <Footer/>
             
         </>
     )

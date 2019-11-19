@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import Header from './components/navbar/Header'
 import home from './components/home/Home'
@@ -17,6 +18,7 @@ import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
 
 import Areas from './components/area/Areas'
+import Product from './components/product/Product'
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
             <Route path="/member/address" component={UserAddress} />
             <Route path="/member/order" component={UserOrder} />
             <Route path="/activeUser" component={AccountActiveResult} />
+
+            <Route path="/product" component={Product} />
           </Switch>
         </>
       </Router>

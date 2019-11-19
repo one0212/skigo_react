@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Card,
 } from 'react-bootstrap'
+import '../../scss/product_card.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
@@ -14,7 +15,7 @@ class ProductCard extends React.Component{
     render(){
       return (
         <>
-            <Card>
+            <Card className="product_card">
                 <div class="overlay">
                   <a href="#" class="item">加入購物車</a>
                   <a href="/product" class="item">查看商品</a>
@@ -22,7 +23,7 @@ class ProductCard extends React.Component{
                 <Card.Img variant="top" src="images/product/10549106620_3.png" />
                 <Card.Body>
                   <Card.Title>Paramount Snowboard</Card.Title>
-                  <div>
+                  <div className="product-card-pice">
                     <p>NT<span>1990</span></p>
                   </div>
                 </Card.Body>
