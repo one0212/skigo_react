@@ -17,7 +17,7 @@ const cursorPoint = {
 
 class UserLightbox extends Component {
   constructor(props) {
-    super()
+    super(props)
     console.log(props)
     this.state = {
       showModal: 1,
@@ -102,7 +102,7 @@ class UserLightbox extends Component {
       console.log(response)
       if (response.status === 200) {
         this.props.onClose()
-        this.props.showLoginIcon()
+        this.props.refreshLoginState()
         this.setState({ text: { email: '', pwd: '' } })
       } else {
         if (response.status === 400) {
@@ -139,7 +139,7 @@ class UserLightbox extends Component {
         </div>
         <img
           className="user-small-logo mb-2"
-          src="images/small-logo.svg"
+          src="/images/small-logo.svg"
           alt=""
         />
         <Form className="text-left p-2">
@@ -243,7 +243,7 @@ class UserLightbox extends Component {
         <SignUpModal
           onClose={this.props.onClose}
           showModal={() => this.setState({ showModal: 1 })}
-          showLoginIcon={this.props.showLoginIcon}
+          refreshLoginState={this.props.refreshLoginState}
           signUpSucc={this.signUpSucc}
           emailRegex={emailRegex}
         />

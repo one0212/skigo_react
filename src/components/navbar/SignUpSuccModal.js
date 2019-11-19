@@ -12,7 +12,7 @@ const SignUpSuccModal = props => {
       </div>
       <img
         className="user-small-logo mb-3"
-        src="images/small-logo.svg"
+        src="/images/small-logo.svg"
         alt=""
       />
       <h3 className="my-5">註冊成功！</h3>

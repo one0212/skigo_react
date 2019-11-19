@@ -55,7 +55,7 @@ class ForgotPwdModal extends Component {
         </div>
         <img
           className="user-small-logo mb-3"
-          src="images/small-logo.svg"
+          src="/images/small-logo.svg"
           alt=""
         />
         <h3 className="my-5">忘記密碼？</h3>
