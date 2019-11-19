@@ -12,6 +12,7 @@ import CoachDate from './coach/CoachDate'
 import CoachCarousels2 from './coach/CoachCarousels2'
 
 import UserCart from './components/user/cart/UserCart'
+import UserCheckout from './components/user/checkout/UserCheckout'
 import UserAccount from './components/user/account/UserAccount'
 import UserAddress from './components/user/address/UserAddress'
 import UserOrder from './components/user/order/UserOrder'
@@ -45,6 +46,7 @@ function App() {
             <Route path="/area" component={Areas} />
 
             <Route path="/cart" component={UserCart} />
+            <Route path="/checkout" component={UserCheckout} />
             <Route path="/member/profile" component={UserAccount} />
             <Route path="/member/address" component={UserAddress} />
             <Route path="/member/order" component={UserOrder} />

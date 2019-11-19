@@ -72,7 +72,7 @@ class Header extends Component {
 
         <Navbar collapseOnSelect className="navbar-light pt-2 mb-2" expand="lg">
           <Container>
-            <Navbar.Brand href="" className="ml-4">
+            <Navbar.Brand href="/" className="ml-4">
               <img
                 className="logo mr-3"
                 src="/images/small-logo.svg"
@@ -82,7 +82,7 @@ class Header extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="#" className="nav-item mx-3">
+                <Nav.Link href="/area" className="nav-item mx-3">
                   雪場票券
                 </Nav.Link>
                 <Nav.Link href="#" className="nav-item mx-3">
