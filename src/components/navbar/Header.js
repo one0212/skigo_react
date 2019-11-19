@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 import Cookies from 'universal-cookie'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
@@ -180,7 +180,6 @@ class Header extends Component {
             this.setState({ isOpen: false })
           }}
         />
-        {/* </Container> */}
       </>
     )
   }
