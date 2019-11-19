@@ -15,6 +15,10 @@ import Contact from './pages/Contact';
 import Comment from './components/goods/Comment';
 import Areas from './components/area/Areas';
 
+<<<<<<< Updated upstream
+=======
+import Areas from './components/area/Areas'
+>>>>>>> Stashed changes
 
 function App() {
   return (
