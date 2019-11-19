@@ -16,6 +16,10 @@ import UserAddress from './components/user/address/UserAddress'
 import Comment from './components/goods/Comment'
 import Areas from './components/area/Areas'
 
+import Comment from './components/goods/Comment'
+import Areas from './components/area/Areas'
+import home from './components/home/Home'
+
 function App() {
   return (
     <Router>
@@ -30,6 +34,7 @@ function App() {
         <br></br>
 
         <Switch>
+          <Route path="/" component={home} />
           <Route path="/coachlist" component={CoachList} />
           <Route path="/coachclass" component={CoachClass} />
           <Route path="/CoachBook" component={CoachBook} />
