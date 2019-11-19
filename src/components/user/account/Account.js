@@ -39,7 +39,10 @@ class Account extends Component {
         </Col>
         {/* 會員中心填寫end */}
         {/* 會員中心照片上傳star */}
-        <div className="col-4 p-5 d-flex flex-column align-items-center justify-content-center">
+        <Col
+          md={3}
+          className="p-5 d-flex flex-column align-items-center justify-content-center"
+        >
           <div className="user-photo my-4"></div>
           <label className="btn btn-outline-secondary my-2">
             <input className="d-none" type="file" />
@@ -47,7 +50,7 @@ class Account extends Component {
           </label>
           <span>檔案大小：最大1MB</span>
           <span>檔案限制：.JPEG、.PNG</span>
-        </div>
+        </Col>
       </>
     )
   }

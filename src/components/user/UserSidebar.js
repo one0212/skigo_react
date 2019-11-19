@@ -11,7 +11,7 @@ class UserSidebar extends Component {
   render() {
     return (
       <>
-        <Col md={2} className="d-flex flex-column align-items-center">
+        <Col md={2} className="d-flex flex-column align-items-center ml-3">
           <div className="user-photo"></div>
           <ul className="user-list list-unstyled m-3 d-flex flex-column align-items-start">
             <li className="m-2">
