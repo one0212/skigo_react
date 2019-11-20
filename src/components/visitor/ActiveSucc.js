@@ -21,10 +21,7 @@ const ActiveSucc = () => {
           <Card.Title as="h3">帳號啟用完成</Card.Title>
           <Card.Text>趕快點選以下連結進入SKIGO吧～</Card.Text>
           <Button variant="orange">
-            <Link
-              className="text-decoration-none text-light"
-              to="/member/profile"
-            >
+            <Link className="text-decoration-none text-light" to="/">
               點我到首頁
             </Link>
           </Button>

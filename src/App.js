@@ -1,4 +1,5 @@
 import React from 'react'
+// import { Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -47,9 +48,14 @@ function App() {
 
             <Route path="/cart" component={UserCart} />
             <Route path="/checkout" component={UserCheckout} />
-            <Route path="/member/profile" component={UserAccount} />
-            <Route path="/member/address" component={UserAddress} />
-            <Route path="/member/order" component={UserOrder} />
+            <Route path="/user/profile" component={UserAccount} />
+            <Route path="/user/address" component={UserAddress} />
+            <Route path="/user/order" component={UserOrder} />
+            {/* <Route
+              path="/user/order"
+              render={props => <UserOrder {...props} />}
+            /> */}
+
             <Route path="/activeUser" component={AccountActiveResult} />
 
             <Route path="/product" component={Product} />

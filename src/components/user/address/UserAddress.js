@@ -13,7 +13,6 @@ class UserAddress extends Component {
   render() {
     return (
       <>
-        <Header />
         <Container>
           <Row className="my-5 mx-2">
             <UserSidebar />
