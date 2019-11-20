@@ -5,7 +5,7 @@ const CartHeader = () => {
   return (
     <>
       <Navbar collapseOnSelect className="navbar-light mt-4 mb-2" expand="lg">
-        <Navbar.Brand href="" className="ml-4">
+        <Navbar.Brand href="/" className="ml-4">
           <img className="logo mr-3" src="/images/small-logo.svg" alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

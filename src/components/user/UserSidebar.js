@@ -16,7 +16,7 @@ class UserSidebar extends Component {
           <ul className="user-list list-unstyled m-3 d-flex flex-column align-items-start">
             <li className="m-2">
               <Link
-                to="/member/profile"
+                to="/user/profile"
                 className="text-dark text-decoration-none"
               >
                 我的帳號
@@ -29,7 +29,7 @@ class UserSidebar extends Component {
             </li>
             <li className="m-2">
               <Link
-                to="/member/address"
+                to="/user/address"
                 className="text-dark text-decoration-none"
               >
                 寄送地址
@@ -37,7 +37,7 @@ class UserSidebar extends Component {
             </li>
             <li className="m-2">
               <Link
-                to="/member/order"
+                to="/user/order"
                 className="text-dark text-decoration-none"
               >
                 我的訂單

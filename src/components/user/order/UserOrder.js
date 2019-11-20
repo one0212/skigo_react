@@ -11,10 +11,13 @@ import OrderEmpty from './OrderEmpty'
 import '../../../css/user/user_center_order.css'
 
 class UserOrder extends Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
   render() {
     return (
       <>
-        <Header />
         <Container>
           <Row className="my-5 mx-2">
             <UserSidebar />

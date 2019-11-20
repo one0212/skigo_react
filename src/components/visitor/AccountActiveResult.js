@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import ActiveSucc from './ActiveSucc'
 import ActiveFail from './ActiveFail'
 
+import 'bootstrap/dist/css/bootstrap.css'
 import '../../css/user/account_active_result.css'
 
 class AccountActiveResult extends Component {

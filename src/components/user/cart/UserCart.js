@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../../../css/cart/shopping_cart.css'
 import '../../../css/header.css'
 
-function UserCart() {
+const UserCart = props => {
   return (
     <>
       <Container>
         <CartHeader />
-        <Row className="justify-content-center align-items-start mt-4">
+        <Row className="align-items-start mt-4">
           <Col md={1}></Col>
           <Col md={7}>
             <CartItemProductArea />

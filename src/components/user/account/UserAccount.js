@@ -10,7 +10,6 @@ import '../../../css/user/user_center_account.css'
 const UserAccount = () => {
   return (
     <>
-      <Header />
       <Container>
         <Row className="my-5 mx-2">
           <UserSidebar />
