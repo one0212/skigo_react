@@ -3,7 +3,6 @@ import  '../../scss/home.scss'
 import  '../../css/home2.css'
 import $ from 'jquery'
 import Slider from "react-slick";
-// import { FaMapMarkerAlt,FiMapPin,  } from "react-icons/fa";
 import Footer from '../Footer'
 
 
