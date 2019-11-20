@@ -25,7 +25,7 @@
 /* 商品呈現 */
 .shop-box {
     padding: 1rem;
-    border: 1px solid #eeeeee;
+    border: 1px solid #dfdede;
     border-radius: 3px;
     margin: 0 0.75rem;
     box-sizing: border-box;
@@ -33,7 +33,7 @@
 .shop-vendor-title {
     font-size: 1.1rem;
     font-weight: 500;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #dfdede;
     margin: 0 0 1rem;
     padding-bottom: 1rem;
     box-sizing: border-box;
@@ -125,4 +125,10 @@
 }
 .checkout {
     height: 2.7rem;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-700 {
+    font-weight: 600;
 }
