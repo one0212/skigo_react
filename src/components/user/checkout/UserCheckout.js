@@ -22,7 +22,13 @@ class UserCheckout extends Component {
               <CheckoutToCart />
               <CheckoutItemProduct />
               <CheckoutItemAreaHotel />
-              <Col md={12} className="d-flex justify-content-end">
+              <Col
+                md={12}
+                className="d-flex mr-2 flex-column justify-content-end align-items-end"
+              >
+                <span className="my-2">
+                  總計：<span>多少錢</span>
+                </span>
                 <Button variant="orange">填寫信用卡資料</Button>
               </Col>
             </Col>

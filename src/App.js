@@ -18,6 +18,7 @@ import UserAccount from './components/user/account/UserAccount'
 import UserAddress from './components/user/address/UserAddress'
 import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
+import UserOrderDetail from './components/user/order/detail/UserOrderDetail';
 
 import Areas from './components/area/Areas'
 import Product from './components/product/Product'
@@ -50,7 +51,9 @@ function App() {
             <Route path="/checkout" component={UserCheckout} />
             <Route path="/user/profile" component={UserAccount} />
             <Route path="/user/address" component={UserAddress} />
-            <Route path="/user/order" component={UserOrder} />
+            <Route path="/user/order/" component={UserOrder} />
+            <Route path="/orderdetail" component={UserOrderDetail} />
+
             {/* <Route
               path="/user/order"
               render={props => <UserOrder {...props} />}

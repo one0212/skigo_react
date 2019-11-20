@@ -30,14 +30,14 @@
 /* 商品資訊 */
 .shop-box {
     padding: 1rem;
-    border: 1px solid #eeeeee;
+    border: 1px solid #dfdede;
     border-radius: 3px;
     margin: 0 0.75rem
 }
 .shop-vendor-name {
     font-size: 1.1rem;
     font-weight: 500;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #dfdede;
     margin: 0 0 1rem;
     padding-bottom: 1rem;
 }
