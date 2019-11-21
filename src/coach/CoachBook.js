@@ -3,6 +3,8 @@ import '../css/coach_book.css'
 import CoachDate from './CoachDate'
 import CoachCarousels from './CoachCarousels'
 import $ from 'jquery'
+import { exportDefaultSpecifier } from '@babel/types'
+import SlideClass from './SlideClass'
 
 // import pickers from '@material-ui/pickers';
 
@@ -12,6 +14,9 @@ class CoachBook extends React.Component {
     this.state = {
       loading: true,
       total: [],
+      people: 0,
+      day: 0,
+      pay:0,
     }
   }
 
@@ -39,16 +44,53 @@ class CoachBook extends React.Component {
 
       const jsonObject = await response.json()
 
-      await this.setState({ total: jsonObject }, function() {
-        
-      })
+      await this.setState({ total: jsonObject }, function() {})
     } catch (e) {
       console.log(e)
     } finally {
       await setTimeout(() => this.setState({ loading: false }))
       // await this.setState({ loading: false })
-      console.log('看我')
-      console.log(this.state.total[0].class_level)
+      // console.log('看我')
+      console.log(this.state.total[0].class_maxnum)
+    }
+  }
+
+  changepeople = event => {
+    // 處理人數<0
+    let target = event.target.value
+    if (target < 0) {
+      this.setState({ people: 0 })
+    } else {
+      if (target > this.state.total[0].class_maxnum) {
+        console.log('我已經到人數上限')
+        var coachBookNumJs = document.querySelector('.coach-book-num-js');
+        coachBookNumJs.style.display="block";
+        target = this.state.total[0].class_maxnum
+      } else if (target >= this.state.total[0].class_discount_num) {
+        var coachBookNumJs = document.querySelector('.coach-book-num-js');
+        coachBookNumJs.style.display="none";
+        var coachPrice = document.querySelector('.coach-price');
+        coachPrice.style.textDecoration ="line-through";
+        var coachPriceDiscount = document.querySelector('.coach-price-discount');
+        coachPriceDiscount.style.display="block";
+        var classdiscount = this.state.total[0].class_price * this.state.total[0].class_discount_off ;
+        coachPriceDiscount.innerHTML = classdiscount
+        console.log('我可以打折')
+      }else if( this.state.total[0].class_discount_num > target ){
+        var coachPriceDiscount = document.querySelector('.coach-price-discount');
+        coachPriceDiscount.style.display="none"
+      }
+      this.setState({ people: target })
+    }
+    this.setState({ pay: this.state.total[0].class_price * this.state.total[0].class_discount_off })
+  }
+  // 處理天數<0
+  changeday = event => {
+    const target = event.target.value
+    if (target < 0) {
+      this.setState({ day: 0 })
+    } else {
+      this.setState({ day: target })
     }
   }
 
@@ -77,6 +119,10 @@ class CoachBook extends React.Component {
       return num
     }
 
+    // const Test=()=>{
+    //   console.log('change')
+    // }
+
     // 當人數達到特價條件之判斷式
     function discountokJudge() {
       if (discountok === true) {
@@ -96,6 +142,7 @@ class CoachBook extends React.Component {
     // 課程人數超過上限 & 人數<0處理
     $('#coach-book-num').change(e => {
       // let bookNum = $(this).val();
+      // console.log('我變了')
       let bookNum = e.currentTarget.value
       if (bookNum < 0) {
         bookNum = 0
@@ -152,41 +199,51 @@ class CoachBook extends React.Component {
               </div>
               <div className="ski_class d-flex flex-column justify-content-around">
                 <div>
-                  <h1>{this.state.total[0].class_level}{this.state.total[0].class_board} | {this.state.total[0].class_name}</h1>
+                  <h1>
+                    {this.state.total[0].class_level}
+                    {this.state.total[0].class_board} |{' '}
+                    {this.state.total[0].class_name}
+                  </h1>
                   <p className="language font-orange d-flex">
-                  {this.state.total[0].class_lang_cha ? (
-                        this.state.total[0].class_lang_cha == 1 ? (
-                          <span>國語</span>
-                        ) : (
-                          ''
-                        )
+                    {this.state.total[0].class_lang_cha ? (
+                      this.state.total[0].class_lang_cha == 1 ? (
+                        <span>國語</span>
                       ) : (
                         ''
-                      )}
-                      {this.state.total[0].class_lang_eng ? (
-                        this.state.total[0].class_lang_eng == 1 ? (
-                          <span>英語</span>
-                        ) : (
-                          ''
-                        )
+                      )
+                    ) : (
+                      ''
+                    )}
+                    {this.state.total[0].class_lang_eng ? (
+                      this.state.total[0].class_lang_eng == 1 ? (
+                        <span>英語</span>
                       ) : (
                         ''
-                      )}
-                      {this.state.total[0].class_lang_jap ? (
-                        this.state.total[0].class_lang_jap == 1 ? (
-                          <span>日語</span>
-                        ) : (
-                          ''
-                        )
+                      )
+                    ) : (
+                      ''
+                    )}
+                    {this.state.total[0].class_lang_jap ? (
+                      this.state.total[0].class_lang_jap == 1 ? (
+                        <span>日語</span>
                       ) : (
                         ''
-                      )}
+                      )
+                    ) : (
+                      ''
+                    )}
                   </p>
-                  <div className="coach-snowfield">東京OO雪場</div>
+                  <div className="coach-snowfield">
+                    {this.state.total[0].class_field}
+                    {this.state.total[0].class_snow_field}雪場
+                  </div>
                   <div className="coach-snowfield d-flex align-items-center">
                     {' '}
-                    <span>單人 NT</span> <span className="coach-price">{this.state.total[0].class_price }</span>{' '}
-                    <span className="coach-price-discount"> </span>{' '}
+                    <span>單人 NT</span>{' '}
+                    <span className="coach-price">
+                      {this.state.total[0].class_price}
+                    </span>{' '}
+                    <span className="coach-price-discount">  </span>{' '}
                   </div>
                 </div>
                 <div>
@@ -195,7 +252,10 @@ class CoachBook extends React.Component {
                       <div className="coach-book-style">
                         人數 ：
                         <input
-                          id="coach-book-num"
+                          id="people"
+                          value={this.state.people}
+                          onChange={this.changepeople}
+                          name="people"
                           className="coach_book_num"
                           type="number"
                         />
@@ -210,11 +270,18 @@ class CoachBook extends React.Component {
                         天數 ：
                         <input
                           id="coach-book-days"
+                          value={this.state.day}
+                          onChange={this.changeday}
                           className="coach_book_num"
                           type="number"
                         />
                       </div>
-                      <p className="font-orange coach-book-num-js"> </p>
+                      <p
+                        id="coach-book-num-js"
+                        className="font-orange coach-book-num-js"
+                      >
+                        {' '}
+                      </p>
                     </div>
                   </div>
                   <div className="coach-book-date">
@@ -247,7 +314,7 @@ class CoachBook extends React.Component {
                 <div className="coach-style">
                   <h3>{this.state.total[0].coach_name}</h3>
                   <p className="coach_introduce">
-                  {this.state.total[0].coach_intr}
+                    {this.state.total[0].coach_intr}
                   </p>
                 </div>
               </div>
@@ -255,7 +322,7 @@ class CoachBook extends React.Component {
             {/* part3 評論 */}
 
             {/* part4 課程 */}
-            {/* <CoachCarousels /> */}
+            <SlideClass/>
           </div>
         )}
       </>

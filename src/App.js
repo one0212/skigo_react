@@ -18,7 +18,7 @@ import UserAccount from './components/user/account/UserAccount'
 import UserAddress from './components/user/address/UserAddress'
 import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
-import UserOrderDetail from './components/user/order/detail/UserOrderDetail';
+import UserOrderDetail from './components/user/order/detail/UserOrderDetail'
 
 import Areas from './components/area/Areas'
 import Product from './components/product/Product'
@@ -29,8 +29,8 @@ function App() {
       <Router>
         <>
           <Header />
-          {/* <Link to="/coachlist">●1.coach_list</Link>
-        <Link to="/coachclass">●2.coach_class</Link>
+          {/* <Link to="/coachlist">●1.coach_list</Link> */}
+          {/* <Link to="/coachclass">●2.coach_class</Link>
         <Link to="/CoachBook">●3.CoachBook</Link>
         <br></br>
         <Link to="/CoachDate">●CoachDate</Link>
@@ -41,8 +41,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={home} />
             <Route path="/coachlist" component={CoachList} />
-            <Route path="/coachclass" component={CoachClass} />
-            <Route path="/CoachBook" component={CoachBook} />
+            <Route path="/coachclass/:id?" component={CoachClass} />
+            <Route path="/CoachBook/:id2?" component={CoachBook} />
             <Route path="/CoachDate" component={CoachDate} />
             <Route path="/CoachCarousels2" component={CoachCarousels2} />
             <Route path="/area" component={Areas} />

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/coach_class.css'
 import SlideCoach from './SlideCoach'
+import SlideClass from './SlideClass'
 // import '../css/card_carousels.css'
 // import CoachCarousels from './CoachCarousels'
 // import CoachCarousels2 from './CoachCarousels2'
@@ -58,6 +59,8 @@ class CoachClass extends React.Component {
     return num
   }
 
+
+
   render() {
     return (
       <>
@@ -74,26 +77,16 @@ class CoachClass extends React.Component {
                 <div className="class_img">
                   <img
                     className="class_pic"
-                    src={  this.state.total[0].class_pic
-                        ? '/images/coach/'+ this.state.total[0].class_pic
-                        : ''}
+                    src={'/images/coach/' + this.state.total[0].class_pic}
                     alt=""
                   />
                 </div>
                 <div className="ski_class d-flex flex-column justify-content-around">
                   <div>
                     <h1>
-                      {' '}
-                      {this.state.total[0].class_level
-                        ? this.state.total[0].class_level
-                        : ''}
-                      {this.state.total[0].class_board
-                        ? this.state.total[0].class_board
-                        : ''}
-                      |{' '}
-                      {this.state.total[0].class_name
-                        ? this.state.total[0].class_name
-                        : ''}
+                      {this.state.total[0].class_level}
+                      {this.state.total[0].class_board}|
+                      {this.state.total[0].class_name}
                     </h1>
                     <p className="language font-orange d-flex">
                       {this.state.total[0].class_lang_cha ? (
@@ -125,16 +118,16 @@ class CoachClass extends React.Component {
                       )}
                     </p>
                     <div className="price">
-                      東京雪場 - NT
-                      {this.state.total[0].class_price
-                        ? this.thousandComma(this.state.total[0].class_price)
-                        : ''}
+                      {this.state.total[0].class_field}{this.state.total[0].class_snow_field}雪場<br/>
+                      單人NT
+                      { this.thousandComma(this.state.total[0].class_price)}
                     </div>
                   </div>
                   <div className="class_introduce">
-                    <p className="font-orange">課程時間：10：00 ~ 12：00</p>
+                    <p className="font-orange">課程時間：{this.state.total[0].class_time_start} ~ {this.state.total[0].class_time_end}</p>
+                    
                     <p className="">
-                      專業講師開班，2小時的雙板滑雪體驗課程，教您最基礎的滑雪知識!
+                    {this.state.total[0].class_intr}
                     </p>
                   </div>
                   <div className="notice">
@@ -144,10 +137,10 @@ class CoachClass extends React.Component {
               </div>
               {/* part2 教練 */}
               <SlideCoach />
-              {/* <CoachCarousels2 /> */}
+              
 
               {/* part3 推薦課程*/}
-              {/* <CoachCarousels /> */}
+              <SlideClass/>
 
               {/* 最外層包css */}
             </div>
