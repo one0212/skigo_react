@@ -2,6 +2,7 @@ import React from 'react'
 // import { Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
+import Example from './components/Example'
 
 import Header from './components/navbar/Header'
 import home from './components/home/Home'
@@ -56,6 +57,8 @@ function App() {
             <Route path="/activeUser" component={AccountActiveResult} />
 
             <Route path="/product" component={Product} />
+
+            <Route path="/example" component={Example} />
           </Switch>
         </>
       </Router>
