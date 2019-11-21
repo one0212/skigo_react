@@ -4,12 +4,11 @@ class OrderList extends Component {
   render() {
     return (
       <>
-        <div className="user-order-line">
-          <div className="user-order-date">
-            <ul className="list-unstyled p-3">
-              <li className="px-2">訂購的日期</li>
-            </ul>
-          </div>
+        <div className="px-5">
+          <ul className="user-order-date list-unstyled p-3">
+            <li className="px-2 fw-700">訂購的日期</li>
+          </ul>
+
           <div className="user-order-list py-2 px-2">
             <div className="order-list-status my-3 d-flex align-items-center">
               <span className="col-2 text-right mr-4">狀態</span>

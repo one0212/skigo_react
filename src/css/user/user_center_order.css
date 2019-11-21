@@ -25,9 +25,6 @@
 .user-order-title-active {
     border-bottom: 4px solid #272F43;
 }
-.user-order-line {
-    border-top: 1px solid #827975;
-}
 /* 訂單內容 */
 .user-order-content {
     width: 35rem;
@@ -41,6 +38,7 @@
     height: 75%;
 }
 .user-order-date {
-    background: #eee;
+   font-size: 18px;
+   border-bottom: 1px solid #eeeeee
 }
 

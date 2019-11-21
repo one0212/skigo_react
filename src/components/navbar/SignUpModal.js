@@ -119,6 +119,7 @@ class SignUpModal extends Component {
               className="btn-block p-2 signup-input user-text-input"
               type="email"
               autoComplete="off"
+              autoFocus
               placeholder="電子郵件地址"
               name="email"
               value={this.state.text.email}
