@@ -21,7 +21,7 @@ class CoachClass extends React.Component {
 
       // const response = await fetch('http://localhost:5000/try-db', {
       const response = await fetch(
-        `http://localhost:5000/coach-class/${this.props.match.params.id}`,
+        `http://localhost:3001/coach-class/${this.props.match.params.id}`,
         {
           method: 'GET',
           headers: new Headers({
