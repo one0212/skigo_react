@@ -150,6 +150,7 @@ class UserLightbox extends Component {
               className="btn-block p-2 login-input user-text-input"
               type="email"
               autoComplete="off"
+              autoFocus
               placeholder="電子郵件地址"
               name="email"
               value={this.state.text.email}

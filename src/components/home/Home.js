@@ -1,5 +1,5 @@
 import React from "react";
-// import  '../../scss/home.scss'
+import  '../../scss/home.scss'
 import  '../../css/home2.css'
 import $ from 'jquery'
 import Slider from "react-slick";
