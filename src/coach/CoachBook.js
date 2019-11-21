@@ -26,7 +26,7 @@ class CoachBook extends React.Component {
 
       // const response = await fetch('http://localhost:5000/try-db', {
       const response = await fetch(
-        `http://localhost:5000/coach-book/${this.props.match.params.id2}`,
+        `http://localhost:3001/coach-book/${this.props.match.params.id2}`,
         {
           method: 'GET',
           headers: new Headers({
