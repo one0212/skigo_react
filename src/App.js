@@ -21,6 +21,7 @@ import AccountActiveResult from './components/visitor/AccountActiveResult'
 
 import Areas from './components/area/Areas'
 import Product from './components/product/Product'
+import FilterProduct from './components/product/FilterProduct'
 
 function App() {
   return (
@@ -58,7 +59,8 @@ function App() {
 
             <Route path="/activeUser" component={AccountActiveResult} />
 
-            <Route path="/product" component={Product} />
+            <Route path="/store" component={FilterProduct } />
+            <Route path="/product/1" component={Product} />
           </Switch>
         </>
       </Router>
