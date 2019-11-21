@@ -22,6 +22,7 @@ import UserOrderDetail from './components/user/order/detail/UserOrderDetail'
 
 import Areas from './components/area/Areas'
 import Product from './components/product/Product'
+import FilterProduct from './components/product/FilterProduct'
 
 function App() {
   return (
@@ -55,7 +56,8 @@ function App() {
             <Route path="/orderdetail" component={UserOrderDetail} />
             <Route path="/activeUser" component={AccountActiveResult} />
 
-            <Route path="/product" component={Product} />
+            <Route path="/store" component={FilterProduct } />
+            <Route path="/product/1" component={Product} />
           </Switch>
         </>
       </Router>
