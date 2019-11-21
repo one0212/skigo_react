@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Cookies from 'universal-cookie'
 import { FaRegUserCircle } from 'react-icons/fa'
@@ -27,11 +28,20 @@ class Header extends Component {
   }
 
   refreshLoginState = () => {
-    // if (cookies.get('role') === 'VISITOR') {
-    //   this.setState({ showLoginIcon: false })
-    // } else {
-    //   this.setState({ showLoginIcon: true })
-    // }
+    // console.log(this.props)
+    if (cookies.get('role') === 'VISITOR') {
+      this.setState({ showLoginIcon: false })
+    } else {
+      this.setState({ showLoginIcon: true })
+    }
+  }
+
+  cartVerify = () => {
+    if (cookies.get('role') === 'VISITOR') {
+      this.setState({ isOpen: true })
+    } else {
+      window.location.href = '/cart'
+    }
   }
 
   componentDidMount() {
@@ -56,7 +66,7 @@ class Header extends Component {
   render() {
     return (
       <>
-        {console.log(window.location)}
+        {/* {console.log(window.location)} */}
         <style type="text/css">
           {`
         .btn-orange {
@@ -140,7 +150,11 @@ class Header extends Component {
                     ) : (
                       ''
                     )}
-                    <FiShoppingCart style={iconStyle} className="m-3" />
+                    <FiShoppingCart
+                      style={iconStyle}
+                      className="m-3"
+                      onClick={this.cartVerify}
+                    />
                   </Nav.Link>
                 </Nav>
                 <Nav>

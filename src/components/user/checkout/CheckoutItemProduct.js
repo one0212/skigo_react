@@ -6,6 +6,55 @@ function CheckoutItemProduct() {
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
+  const [text, setText] = useState({ receiveName: '', receivePhone: '', receiveAddress: '', buyName: '', buyPhone: '', buyAddress: '' })
+  const [borderRed, setBorder] = useState({ receiveName: false, receivePhone: false, receiveAddress: false, buyName: false, buyPhone: false, buyAddress: false })
+  const [errMsg, setErrMsg] = useState({ receiveName: '', receivePhone: '', receiveAddress: '', buyName: '', buyPhone: '', buyAddress: '' })
+
+  const handleTextChange = e => {
+    console.log(e.target.value)
+    setText({ ...text, [e.target.id]: e.target.value })
+  }
+
+  const handleKeyPress = e => {
+    setBorder({ ...borderRed, [e.target.id]: !e.target })
+    setErrMsg({ ...errMsg, [e.target.id]: '' })
+  }
+
+  const handleSubmit = () => {
+    let borderState = {}
+    let msgState = {}
+    if (document.querySelector('#receiveName').value === '') {
+      borderState.receiveName = true
+      msgState.receiveName = '本欄位為必填'
+    }
+    if (document.querySelector('#receivePhone').value === '') {
+      borderState.receivePhone = true
+      msgState.receivePhone = '本欄位為必填'
+    }
+    if (document.querySelector('#receiveAddress').value === '') {
+      borderState.receiveAddress = true
+      msgState.receiveAddress = '本欄位為必填'
+    }
+    if (document.querySelector('#buyName').value === '') {
+      borderState.buyName = true
+      msgState.buyName = '本欄位為必填'
+    }
+    if (document.querySelector('#buyPhone').value === '') {
+      borderState.buyPhone = true
+      msgState.buyPhone = '本欄位為必填'
+    }
+    if (document.querySelector('#buyAddress').value === '') {
+      borderState.buyAddress = true
+      msgState.buyAddress = '本欄位為必填'
+    }
+
+    if (Object.keys(borderState).length) {
+      setBorder(borderState)
+      setErrMsg(msgState)
+      return
+    }
+  }
   return (
     <>
       <div className="shop-box mb-3">
@@ -30,33 +79,55 @@ function CheckoutItemProduct() {
                     <Form.Label>收件人姓名</Form.Label>
                     <Form.Control
                       // className="btn-block my-1 p-2 user-text-input border-gray"
+                      id="receiveName"
                       type="text"
                       autoComplete="off"
                       placeholder="真實姓名"
                       autofocus="autofocus"
+                      onChange={handleTextChange}
+                      onKeyPress={handleKeyPress}
+                      style={{
+                        borderColor: borderRed.receiveName
+                          ? 'red'
+                          : '#ddd',
+                      }}
                     />
-                    <Form.Text>本欄位為必填</Form.Text>
+                    <Form.Text className="text-danger">{errMsg.receiveName}</Form.Text>
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label>收件人手機</Form.Label>
                     <Form.Control
-                      className="btn-block my-1 p-2 user-text-input border-gray"
+                      id="receivePhone"
                       type="text"
+                      onChange={handleTextChange}
+                      onKeyPress={handleKeyPress}
                       autoComplete="off"
+                      style={{
+                        borderColor: borderRed.receivePhone
+                          ? 'red'
+                          : '#ddd',
+                      }}
                     />
-                    <Form.Text>本欄位為必填</Form.Text>
+                    <Form.Text className="text-danger">{errMsg.receivePhone}</Form.Text>
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label>地址</Form.Label>
                     <Form.Control
-                      className="btn-block p-2 my-1 user-text-input border-gray"
+                      id="receiveAddress"
                       type="text"
                       autoComplete="off"
+                      onChange={handleTextChange}
+                      onKeyPress={handleKeyPress}
+                      style={{
+                        borderColor: borderRed.receiveAddress
+                          ? 'red'
+                          : '#ddd',
+                      }}
                       placeholder="例：台北市大安區復興南路一段390號2樓204室"
                     />
-                    <Form.Text>本欄位為必填</Form.Text>
+                    <Form.Text className="text-danger">{errMsg.receiveAddress}</Form.Text>
                   </Form.Group>
 
                   <Form.Group className="my-3">
@@ -66,33 +137,54 @@ function CheckoutItemProduct() {
                   <Form.Group>
                     <Form.Label>購買人姓名</Form.Label>
                     <Form.Control
-                      className="btn-block p-2 my-1 user-text-input border-gray"
+                      id="buyName"
                       type="text"
                       autoComplete="off"
+                      onChange={handleTextChange}
+                      onKeyPress={handleKeyPress}
+                      style={{
+                        borderColor: borderRed.buyName
+                          ? 'red'
+                          : '#ddd',
+                      }}
                       placeholder="真實姓名"
                     />
-                    <Form.Text>本欄位為必填</Form.Text>
+                    <Form.Text className="text-danger">{errMsg.buyName}</Form.Text>
                   </Form.Group>
 
                   <Form.Group>
-                    <Form.Label>收件人手機</Form.Label>
+                    <Form.Label>購買人手機</Form.Label>
                     <Form.Control
-                      className="btn-block p-2 my-1 user-text-input border-gray"
+                      id="buyPhone"
                       type="text"
+                      onChange={handleTextChange}
+                      onKeyPress={handleKeyPress}
+                      style={{
+                        borderColor: borderRed.buyPhone
+                          ? 'red'
+                          : '#ddd',
+                      }}
                       autoComplete="off"
                     />
-                    <Form.Text>本欄位為必填</Form.Text>
+                    <Form.Text className="text-danger">{errMsg.buyPhone}</Form.Text>
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label>地址</Form.Label>
                     <Form.Control
-                      className="btn-block p-2 my-1 user-text-input border-gray"
+                      id="buyAddress"
                       type="text"
                       autoComplete="off"
+                      onChange={handleTextChange}
+                      onKeyPress={handleKeyPress}
+                      style={{
+                        borderColor: borderRed.buyAddress
+                          ? 'red'
+                          : '#ddd',
+                      }}
                       placeholder="例：台北市大安區復興南路一段390號2樓204室"
                     />
-                    <Form.Text>本欄位為必填</Form.Text>
+                    <Form.Text className="text-danger">{errMsg.buyAddress}</Form.Text>
                   </Form.Group>
                 </Form>
               </Modal.Body>
@@ -104,7 +196,7 @@ function CheckoutItemProduct() {
                 >
                   取消
                 </Button>
-                <Button variant="orange" type="button" onClick={handleClose}>
+                <Button variant="orange" type="button" onClick={handleClose} onClick={handleSubmit}>
                   使用地址
                 </Button>
               </Modal.Footer>
