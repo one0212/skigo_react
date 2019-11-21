@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import ProductCard from './ProductCard';
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../Breadcrumb';
 
 
 
@@ -15,9 +15,18 @@ class  FilterProduct extends React.Component{
     render(){
        return (
         <>
-        <Breadcrumb/>
         <Container>
-          <div className="d-flex flex-wrap">
+          <Row>
+              <Col sm={12}>
+                <Breadcrumb/>
+              </Col>
+          </Row>
+        <Row>
+              <Col sm={12}>
+                <h1>123</h1>
+              </Col>
+        </Row>
+          <div className="d-flex flex-wrap" style={{background:"#ccc"}}>
           <ProductCard/>
           <ProductCard/>
           <ProductCard/>
@@ -27,8 +36,6 @@ class  FilterProduct extends React.Component{
           <ProductCard/>
           <ProductCard/>
           <ProductCard/>
-
-
         </div>
         </Container>
         </>
