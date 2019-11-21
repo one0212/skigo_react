@@ -27,7 +27,7 @@ class CoachList extends React.Component {
       ],
       total: [],
       allnum: 0,
-      sort: null,
+      sort: false,
     }
     // this.changeName = this.changeName.bind(this)
   }
@@ -36,9 +36,26 @@ class CoachList extends React.Component {
     try {
       await this.setState({ loading: true })
 
-      this.filterfetch()
-      
-
+      const response = await fetch('http://localhost:5000/coach-list', {
+        method: 'POST',
+        body: JSON.stringify({
+            sort: this.state.sort,
+            name: this.state.name,
+          }),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      })
+      const jsonObject = await response.json()
+      await this.setState({ total: jsonObject }, function() {})
+      let num = 0
+      for (var i = 0; i < this.state.total.length; i++) {
+        if (this.state.total[i] !== null) {
+          num = num + 1
+        }
+      }
+      await this.setState({ allnum: num }, function() {})
     } catch (e) {
       console.log(e)
     } finally {
@@ -179,11 +196,54 @@ class CoachList extends React.Component {
   }
   // 排序從高到低 sort = true
   ChangeSort = () => {
-    this.setState({ sort: true }, this.filterfetch)
+    this.setState({ sort: true }, () => {
+      let params = {
+        sort: this.state.sort,
+        name: this.state.name,
+      }
+      const responseSort = fetch('http://localhost:5000/coach-list', {
+        body: JSON.stringify(params), // must match 'Content-Type' header
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+          'user-agent': 'Mozilla/4.0 MDN Example',
+          'content-type': 'application/json',
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+      })
+        .then(response => response.json())
+        .then(json => {
+          this.setState({
+            total: json,
+          })
+        })
+    })
   }
   // 排序從低到高 sort = false
   ChangeSort2 = () => {
-    this.setState({ sort: false }, this.filterfetch)
+    this.setState({ sort: false }, () => {
+      let params = {
+        sort: this.state.sort,
+      }
+      const responseSort2 = fetch('http://localhost:5000/coach-list', {
+        body: JSON.stringify(params), // must match 'Content-Type' header
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+          'user-agent': 'Mozilla/4.0 MDN Example',
+          'content-type': 'application/json',
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+      })
+        .then(response => response.json())
+        .then(json => {
+          this.setState({
+            total: json,
+          })
+        })
+    })
   }
 
   render() {
