@@ -7,9 +7,30 @@ function CheckoutItemProduct() {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
-  const [text, setText] = useState({ receiveName: '', receivePhone: '', receiveAddress: '', buyName: '', buyPhone: '', buyAddress: '' })
-  const [borderRed, setBorder] = useState({ receiveName: false, receivePhone: false, receiveAddress: false, buyName: false, buyPhone: false, buyAddress: false })
-  const [errMsg, setErrMsg] = useState({ receiveName: '', receivePhone: '', receiveAddress: '', buyName: '', buyPhone: '', buyAddress: '' })
+  const [text, setText] = useState({
+    receiveName: '',
+    receivePhone: '',
+    receiveAddress: '',
+    buyName: '',
+    buyPhone: '',
+    buyAddress: '',
+  })
+  const [borderRed, setBorder] = useState({
+    receiveName: false,
+    receivePhone: false,
+    receiveAddress: false,
+    buyName: false,
+    buyPhone: false,
+    buyAddress: false,
+  })
+  const [errMsg, setErrMsg] = useState({
+    receiveName: '',
+    receivePhone: '',
+    receiveAddress: '',
+    buyName: '',
+    buyPhone: '',
+    buyAddress: '',
+  })
 
   const handleTextChange = e => {
     console.log(e.target.value)
@@ -87,12 +108,12 @@ function CheckoutItemProduct() {
                       onChange={handleTextChange}
                       onKeyPress={handleKeyPress}
                       style={{
-                        borderColor: borderRed.receiveName
-                          ? 'red'
-                          : '#ddd',
+                        borderColor: borderRed.receiveName ? 'red' : '#ddd',
                       }}
                     />
-                    <Form.Text className="text-danger">{errMsg.receiveName}</Form.Text>
+                    <Form.Text className="text-danger">
+                      {errMsg.receiveName}
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group>
@@ -104,12 +125,12 @@ function CheckoutItemProduct() {
                       onKeyPress={handleKeyPress}
                       autoComplete="off"
                       style={{
-                        borderColor: borderRed.receivePhone
-                          ? 'red'
-                          : '#ddd',
+                        borderColor: borderRed.receivePhone ? 'red' : '#ddd',
                       }}
                     />
-                    <Form.Text className="text-danger">{errMsg.receivePhone}</Form.Text>
+                    <Form.Text className="text-danger">
+                      {errMsg.receivePhone}
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group>
@@ -121,13 +142,13 @@ function CheckoutItemProduct() {
                       onChange={handleTextChange}
                       onKeyPress={handleKeyPress}
                       style={{
-                        borderColor: borderRed.receiveAddress
-                          ? 'red'
-                          : '#ddd',
+                        borderColor: borderRed.receiveAddress ? 'red' : '#ddd',
                       }}
                       placeholder="例：台北市大安區復興南路一段390號2樓204室"
                     />
-                    <Form.Text className="text-danger">{errMsg.receiveAddress}</Form.Text>
+                    <Form.Text className="text-danger">
+                      {errMsg.receiveAddress}
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group className="my-3">
@@ -143,13 +164,13 @@ function CheckoutItemProduct() {
                       onChange={handleTextChange}
                       onKeyPress={handleKeyPress}
                       style={{
-                        borderColor: borderRed.buyName
-                          ? 'red'
-                          : '#ddd',
+                        borderColor: borderRed.buyName ? 'red' : '#ddd',
                       }}
                       placeholder="真實姓名"
                     />
-                    <Form.Text className="text-danger">{errMsg.buyName}</Form.Text>
+                    <Form.Text className="text-danger">
+                      {errMsg.buyName}
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group>
@@ -160,13 +181,13 @@ function CheckoutItemProduct() {
                       onChange={handleTextChange}
                       onKeyPress={handleKeyPress}
                       style={{
-                        borderColor: borderRed.buyPhone
-                          ? 'red'
-                          : '#ddd',
+                        borderColor: borderRed.buyPhone ? 'red' : '#ddd',
                       }}
                       autoComplete="off"
                     />
-                    <Form.Text className="text-danger">{errMsg.buyPhone}</Form.Text>
+                    <Form.Text className="text-danger">
+                      {errMsg.buyPhone}
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group>
@@ -178,13 +199,13 @@ function CheckoutItemProduct() {
                       onChange={handleTextChange}
                       onKeyPress={handleKeyPress}
                       style={{
-                        borderColor: borderRed.buyAddress
-                          ? 'red'
-                          : '#ddd',
+                        borderColor: borderRed.buyAddress ? 'red' : '#ddd',
                       }}
                       placeholder="例：台北市大安區復興南路一段390號2樓204室"
                     />
-                    <Form.Text className="text-danger">{errMsg.buyAddress}</Form.Text>
+                    <Form.Text className="text-danger">
+                      {errMsg.buyAddress}
+                    </Form.Text>
                   </Form.Group>
                 </Form>
               </Modal.Body>
@@ -196,7 +217,12 @@ function CheckoutItemProduct() {
                 >
                   取消
                 </Button>
-                <Button variant="orange" type="button" onClick={handleClose} onClick={handleSubmit}>
+                <Button
+                  variant="orange"
+                  type="button"
+                  onClick={handleClose}
+                  onClick={handleSubmit}
+                >
                   使用地址
                 </Button>
               </Modal.Footer>
