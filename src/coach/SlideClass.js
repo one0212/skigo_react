@@ -33,7 +33,7 @@ class SlideCoach extends React.Component {
         name: this.state.filter,
       }
       // const response = await fetch('http://localhost:5000/try-db', {
-      const response = await fetch('http://localhost:5000/coach-random', {
+      const response = await fetch('http://localhost:3001/coach-random', {
         method: 'POST',
         body: JSON.stringify(filterparams),
         headers: new Headers({
