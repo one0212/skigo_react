@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Cookies from 'universal-cookie'
 import { FaRegUserCircle } from 'react-icons/fa'
@@ -174,20 +174,30 @@ class Header extends Component {
                       }}
                     >
                       <li className="my-3">
-                        <a
-                          href="#"
+                        <Link
+                          onClick={() => {
+                            this.setState({
+                              userDropdown: !this.state.userDropdown,
+                            })
+                          }}
+                          to="/user/profile"
                           class="user-darkblue-text text-decoration-none"
                         >
                           我的帳戶
-                        </a>
+                        </Link>
                       </li>
                       <li className="my-3">
-                        <a
-                          href="#"
+                        <Link
+                          onClick={() => {
+                            this.setState({
+                              userDropdown: !this.state.userDropdown,
+                            })
+                          }}
+                          to="/user/order"
                           class="user-darkblue-text text-decoration-none"
                         >
                           我的訂單
-                        </a>
+                        </Link>
                       </li>
                       <li className="my-3">
                         <a
@@ -201,6 +211,11 @@ class Header extends Component {
                         <a
                           href="#"
                           onClick={this.logout}
+                          onClick={() => {
+                            this.setState({
+                              userDropdown: !this.state.userDropdown,
+                            })
+                          }}
                           class="cursor-point user-darkblue-text text-decoration-none"
                         >
                           登出

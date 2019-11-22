@@ -15,7 +15,7 @@ const CartHeader = () => {
             1
           </span>
           <span className="shop-step-text user-darkblue-text">
-            選擇要結帳的XXX
+            確認要結帳的商品及數量
           </span>
           <span className="shop-step-line shop-gray-bg"></span>
           <span className="shop-step shop-gray-bg text-light text-center">

@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class CartItemProductArea extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+    console.log(props)
+  }
   render() {
     return (
       <>
@@ -20,7 +25,7 @@ class CartItemProductArea extends Component {
               </div>
               <div className="d-flex flex-column mt-2">
                 <a href="#" className="text-decoration-none text-dark">
-                  這裡放商品名稱
+                  {this.props.cartData.prodName}
                 </a>
                 <span>品項內容</span>
               </div>
@@ -36,10 +41,12 @@ class CartItemProductArea extends Component {
                 </select>
                 <div className="shop-select-tri position-relative d-flex align-items-center">
                   {/* 選擇數量動態修改 */}
-                  <span className="">數量</span>
+                  <span className="">{this.props.cartData.qty}</span>
                 </div>
               </div>
-              <div className="shop-item-price mt-2">NT$價格</div>
+              <div className="shop-item-price mt-2">
+                NT$ {this.props.cartData.price}
+              </div>
             </div>
           </div>
         </div>
