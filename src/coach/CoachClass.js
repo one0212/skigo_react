@@ -12,6 +12,46 @@ class CoachClass extends React.Component {
     this.state = {
       loading: true,
       total: [],
+      page: 'c1',
+    }
+  }
+
+  componentDidMount() {
+    if (!this.props.match.params.id)
+      this.props.history.push('/coachclass/' + this.state.page)
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      window.scrollTo(0, 0)
+
+      try {
+        const response = await fetch(
+          `http://localhost:3001/coach-class/${this.props.match.params.id}`,
+          {
+            method: 'GET',
+            headers: new Headers({
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            }),
+          }
+        )
+
+        if (!response.ok) throw new Error(response.statusText)
+
+        const jsonObject = await response.json()
+
+        await this.setState({ total: jsonObject }, function() {
+          console.log('this.state.total', this.state.total)
+        })
+      } catch (e) {
+        console.log(e)
+      } finally {
+        //await setTimeout(() => this.setState({ loading: false }))
+        // await this.setState({ loading: false })
+
+        console.log(this.state.total)
+      }
     }
   }
 
@@ -59,8 +99,6 @@ class CoachClass extends React.Component {
     return num
   }
 
-
-
   render() {
     return (
       <>
@@ -71,6 +109,13 @@ class CoachClass extends React.Component {
           </div>
         ) : (
           <>
+          {/* 麵包屑 */}
+            <div className="container d-flex">
+              <p>首頁</p>
+              <p> > </p>
+              <p> 課程： {this.state.total[0].class_name}</p>
+            </div>
+          {/* 麵包屑結束 */}
             <div className="coach_class_out">
               {/* part1 課程圖+介紹文字 */}
               <div className="d-flex coach_head">
@@ -118,17 +163,20 @@ class CoachClass extends React.Component {
                       )}
                     </p>
                     <div className="price">
-                      {this.state.total[0].class_field}{this.state.total[0].class_snow_field}雪場<br/>
+                      {this.state.total[0].class_field}
+                      {this.state.total[0].class_snow_field}雪場
+                      <br />
                       單人NT
-                      { this.thousandComma(this.state.total[0].class_price)}
+                      {this.thousandComma(this.state.total[0].class_price)}
                     </div>
                   </div>
                   <div className="class_introduce">
-                    <p className="font-orange">課程時間：{this.state.total[0].class_time_start} ~ {this.state.total[0].class_time_end}</p>
-                    
-                    <p className="">
-                    {this.state.total[0].class_intr}
+                    <p className="font-orange">
+                      課程時間：{this.state.total[0].class_time_start} ~{' '}
+                      {this.state.total[0].class_time_end}
                     </p>
+
+                    <p className="">{this.state.total[0].class_intr}</p>
                   </div>
                   <div className="notice">
                     注意事項：您所預約的課程成功與否將在48小時內收到回覆
@@ -137,10 +185,9 @@ class CoachClass extends React.Component {
               </div>
               {/* part2 教練 */}
               <SlideCoach />
-              
 
               {/* part3 推薦課程*/}
-              <SlideClass/>
+              <SlideClass notifyChangePage={this.notifyChangePage} />
 
               {/* 最外層包css */}
             </div>

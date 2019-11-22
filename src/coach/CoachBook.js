@@ -5,6 +5,7 @@ import CoachCarousels from './CoachCarousels'
 import $ from 'jquery'
 import { exportDefaultSpecifier } from '@babel/types'
 import SlideClass from './SlideClass'
+import { Link } from 'react-router-dom'
 
 // import pickers from '@material-ui/pickers';
 
@@ -16,7 +17,8 @@ class CoachBook extends React.Component {
       total: [],
       people: 0,
       day: 0,
-      pay:0,
+      pay: 0,
+      changeDate: 2019 - 11 - 22,
     }
   }
 
@@ -63,26 +65,32 @@ class CoachBook extends React.Component {
     } else {
       if (target > this.state.total[0].class_maxnum) {
         console.log('我已經到人數上限')
-        var coachBookNumJs = document.querySelector('.coach-book-num-js');
-        coachBookNumJs.style.display="block";
+        var coachBookNumJs = document.querySelector('.coach-book-num-js')
+        coachBookNumJs.style.display = 'block'
         target = this.state.total[0].class_maxnum
       } else if (target >= this.state.total[0].class_discount_num) {
-        var coachBookNumJs = document.querySelector('.coach-book-num-js');
-        coachBookNumJs.style.display="none";
-        var coachPrice = document.querySelector('.coach-price');
-        coachPrice.style.textDecoration ="line-through";
-        var coachPriceDiscount = document.querySelector('.coach-price-discount');
-        coachPriceDiscount.style.display="block";
-        var classdiscount = this.state.total[0].class_price * this.state.total[0].class_discount_off ;
+        var coachBookNumJs = document.querySelector('.coach-book-num-js')
+        coachBookNumJs.style.display = 'none'
+        var coachPrice = document.querySelector('.coach-price')
+        coachPrice.style.textDecoration = 'line-through'
+        var coachPriceDiscount = document.querySelector('.coach-price-discount')
+        coachPriceDiscount.style.display = 'block'
+        var classdiscount =
+          this.state.total[0].class_price *
+          this.state.total[0].class_discount_off
         coachPriceDiscount.innerHTML = classdiscount
         console.log('我可以打折')
-      }else if( this.state.total[0].class_discount_num > target ){
-        var coachPriceDiscount = document.querySelector('.coach-price-discount');
-        coachPriceDiscount.style.display="none"
+      } else if (this.state.total[0].class_discount_num > target) {
+        var coachPriceDiscount = document.querySelector('.coach-price-discount')
+        coachPriceDiscount.style.display = 'none'
       }
       this.setState({ people: target })
     }
-    this.setState({ pay: this.state.total[0].class_price * this.state.total[0].class_discount_off })
+    this.setState({
+      pay:
+        this.state.total[0].class_price *
+        this.state.total[0].class_discount_off,
+    })
   }
   // 處理天數<0
   changeday = event => {
@@ -92,6 +100,27 @@ class CoachBook extends React.Component {
     } else {
       this.setState({ day: target })
     }
+  }
+
+  // 日期由子元件傳父元件
+
+  changeDate = date => {
+    console.log(typeof date)
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+
+    console.log('date', year + ' ' + month + ' ' + day)
+
+    date = JSON.stringify(date)
+    console.log(date)
+
+    // const dateDeal = date.slice(0,3)
+    // console.log('dateDeal!! : ' + dateDeal[1])
+
+    this.setState({ changeDate: date }, () => {
+      console.log('現在時間2 : ' + this.state.changeDate)
+    })
   }
 
   componentDidMount() {
@@ -188,6 +217,13 @@ class CoachBook extends React.Component {
           </div>
         ) : (
           <div className="coach_book_out">
+            <div className="container d-flex">
+              <p>首頁</p>
+              <p> > </p>
+              <p className="bread"><Link to={'/CoachClass/' + this.state.total[0].class_sid}>課程： {this.state.total[0].class_name}</Link> </p>
+              <p> > </p>
+              <p> 教練： {this.state.total[0].coach_name}</p>
+            </div>
             {/* part1 */}
             <div className="d-flex coach_head">
               <div className="class_img">
@@ -243,7 +279,7 @@ class CoachBook extends React.Component {
                     <span className="coach-price">
                       {this.state.total[0].class_price}
                     </span>{' '}
-                    <span className="coach-price-discount">  </span>{' '}
+                    <span className="coach-price-discount"> </span>{' '}
                   </div>
                 </div>
                 <div>
@@ -285,7 +321,7 @@ class CoachBook extends React.Component {
                     </div>
                   </div>
                   <div className="coach-book-date">
-                    <CoachDate />
+                    <CoachDate changeDate={this.changeDate} />
                     {/* <a href="#">
                             <i className="far fa-calendar-alt"></i> 預約日期
                         </a>  */}
@@ -322,7 +358,7 @@ class CoachBook extends React.Component {
             {/* part3 評論 */}
 
             {/* part4 課程 */}
-            <SlideClass/>
+            <SlideClass />
           </div>
         )}
       </>

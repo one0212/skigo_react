@@ -163,6 +163,7 @@ class CoachList extends React.Component {
         }
         this.setState({ allnum: num2 }, function() {})
       })
+      console.log('what???' + this.state.name)
   }
 
   //篩選

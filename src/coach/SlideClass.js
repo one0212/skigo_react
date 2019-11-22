@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/card_carousels.css'
 import Slider from 'react-slick'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class SlideCoach extends React.Component {
   constructor() {
@@ -119,7 +119,14 @@ class SlideCoach extends React.Component {
                     if (!value) return <></>
 
                     return (
-                      <Link to={'/CoachClass/' + value.class_sid}>
+                      <div
+                        onClick={() => {
+                          this.props.history.push(
+                            '/CoachClass/' + value.class_sid
+                          )
+                          //this.props.notifyChangePage()
+                        }}
+                      >
                         <div className="card" style={{ width: '18rem' }}>
                           <img
                             className="home_img"
@@ -160,7 +167,7 @@ class SlideCoach extends React.Component {
                             </div>
                           </div>
                         </div>
-                      </Link>
+                      </div>
                     )
                   })}
                 </Slider>
@@ -173,4 +180,4 @@ class SlideCoach extends React.Component {
   }
 }
 
-export default SlideCoach
+export default withRouter(SlideCoach)
