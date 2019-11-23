@@ -6,6 +6,7 @@ import Example from './components/Example'
 
 import Header from './components/navbar/Header'
 import home from './components/home/Home'
+import Footer from './components/Footer'
 
 import CoachList from './coach/CoachList'
 import CoachClass from './coach/CoachClass'
@@ -57,14 +58,13 @@ function App() {
             <Route path="/orderdetail" component={UserOrderDetail} />
             <Route path="/activeUser" component={AccountActiveResult} />
 
-
             <Route path="/product" component={Product} />
-            <Route path="/store" component={FilterProduct } />
+            <Route path="/store" component={FilterProduct} />
             <Route path="/product/1" component={Product} />
-    
-            <Route path="/example" component={Example} />
 
+            <Route path="/example" component={Example} />
           </Switch>
+          <Footer />
         </>
       </Router>
     </>

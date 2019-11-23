@@ -80,11 +80,11 @@ class UserCheckout extends Component {
           item.prodType === 'hotels'
         ) {
           return (checkoutAreaHotel = (
-            <CheckoutItemAreaHotel checkoutData={items} />
+            <CheckoutItemAreaHotel key={index} checkoutData={items} />
           ))
         } else {
           return (checkoutProduct = (
-            <CheckoutItemProduct checkoutData={items} />
+            <CheckoutItemProduct key={index} checkoutData={items} />
           ))
         }
       })
@@ -116,10 +116,7 @@ class UserCheckout extends Component {
                 : ''} */}
               {checkoutProduct}
               {checkoutAreaHotel}
-
-              <CheckoutTotalAmt
-                checkoutData={this.state.checkoutResponse}
-              />
+              <CheckoutTotalAmt checkoutData={this.state.checkoutResponse} />
             </Col>
           </Row>
         </Container>

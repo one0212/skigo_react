@@ -3,10 +3,6 @@ import { Row, Col, Button, Modal, Form } from 'react-bootstrap'
 
 const CheckoutItemProduct = props => {
   const [show, setShow] = useState(false)
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-
   const [text, setText] = useState({
     receiveName: '',
     receivePhone: '',
@@ -31,9 +27,14 @@ const CheckoutItemProduct = props => {
     buyPhone: '',
     buyAddress: '',
   })
+  const [addressMsg, editAddress] = useState('尚未填寫')
+  const [isChecked, changeChecked] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   const handleTextChange = e => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     setText({ ...text, [e.target.id]: e.target.value })
   }
 
@@ -41,6 +42,7 @@ const CheckoutItemProduct = props => {
     setBorder({ ...borderRed, [e.target.id]: !e.target })
     setErrMsg({ ...errMsg, [e.target.id]: '' })
   }
+  const toggleChange = () => changeChecked(!isChecked)
 
   const handleSubmit = () => {
     let borderState = {}
@@ -48,33 +50,79 @@ const CheckoutItemProduct = props => {
     if (document.querySelector('#receiveName').value === '') {
       borderState.receiveName = true
       msgState.receiveName = '本欄位為必填'
+      setText({
+        ...text,
+        receiveName: document.querySelector('#receiveName').value,
+      })
     }
     if (document.querySelector('#receivePhone').value === '') {
       borderState.receivePhone = true
       msgState.receivePhone = '本欄位為必填'
+      setText({
+        ...text,
+        receivePhone: document.querySelector('#receivePhone').value,
+      })
     }
     if (document.querySelector('#receiveAddress').value === '') {
       borderState.receiveAddress = true
       msgState.receiveAddress = '本欄位為必填'
+      setText({
+        ...text,
+        receiveAddress: document.querySelector('#receiveAddress').value,
+      })
     }
     if (document.querySelector('#buyName').value === '') {
       borderState.buyName = true
       msgState.buyName = '本欄位為必填'
+      setText({
+        ...text,
+        buyName: document.querySelector('#buyName').value,
+      })
     }
     if (document.querySelector('#buyPhone').value === '') {
       borderState.buyPhone = true
       msgState.buyPhone = '本欄位為必填'
+      setText({
+        ...text,
+        buyPhone: document.querySelector('#buyPhone').value,
+      })
     }
     if (document.querySelector('#buyAddress').value === '') {
       borderState.buyAddress = true
       msgState.buyAddress = '本欄位為必填'
+      setText({
+        ...text,
+        buyAddress: document.querySelector('#buyAddress').value,
+      })
     }
-
+    // setText(...text)
     if (Object.keys(borderState).length) {
       setBorder(borderState)
       setErrMsg(msgState)
       return
+    } else {
+      handleClose()
+      setAddress()
     }
+  }
+  const setAddress = () =>
+    editAddress(
+      <>
+        <div>
+          收件人姓名：
+          <span className="name">
+            {document.querySelector('#receiveName').value}
+          </span>
+        </div>
+        <div className="my-1">
+          收件人手機：{document.querySelector('#receivePhone').value}
+        </div>
+        <div>地址：{document.querySelector('#receiveAddress').value}</div>
+      </>
+    )
+  const addressData = {
+    background: 'rgb(240, 240, 240)',
+    borderRadius: '5px',
   }
   return (
     <>
@@ -83,7 +131,10 @@ const CheckoutItemProduct = props => {
         <Row className="flex-row-reverse">
           <Col md={5} className="d-flex mt-0 flex-column px-5 py-3">
             <h5>收件資訊</h5>
-            <Button variant="orange" className="mt-3 mb-2" onClick={handleShow}>
+            <div style={addressData} className="p-3">
+              {addressMsg}
+            </div>
+            <Button variant="orange" className="mt-2 mb-2" onClick={handleShow}>
               請填寫收件人與購買人資料
             </Button>
             <p>運送方式：宅配</p>
@@ -98,8 +149,8 @@ const CheckoutItemProduct = props => {
                 <Form>
                   <Form.Group>
                     <Form.Label>收件人姓名</Form.Label>
-                    <Form.Control
-                      // className="btn-block my-1 p-2 user-text-input border-gray"
+                    <input
+                      className="btn-block my-1 p-2 user-text-input border-gray"
                       id="receiveName"
                       type="text"
                       autoComplete="off"
@@ -110,6 +161,7 @@ const CheckoutItemProduct = props => {
                       style={{
                         borderColor: borderRed.receiveName ? 'red' : '#ddd',
                       }}
+                      value={text.receiveName}
                     />
                     <Form.Text className="text-danger">
                       {errMsg.receiveName}
@@ -118,7 +170,8 @@ const CheckoutItemProduct = props => {
 
                   <Form.Group>
                     <Form.Label>收件人手機</Form.Label>
-                    <Form.Control
+                    <input
+                      className="btn-block my-1 p-2 user-text-input border-gray"
                       id="receivePhone"
                       type="text"
                       onChange={handleTextChange}
@@ -127,6 +180,7 @@ const CheckoutItemProduct = props => {
                       style={{
                         borderColor: borderRed.receivePhone ? 'red' : '#ddd',
                       }}
+                      value={text.receivePhone}
                     />
                     <Form.Text className="text-danger">
                       {errMsg.receivePhone}
@@ -135,7 +189,8 @@ const CheckoutItemProduct = props => {
 
                   <Form.Group>
                     <Form.Label>地址</Form.Label>
-                    <Form.Control
+                    <input
+                      className="btn-block my-1 p-2 user-text-input border-gray"
                       id="receiveAddress"
                       type="text"
                       autoComplete="off"
@@ -145,6 +200,7 @@ const CheckoutItemProduct = props => {
                         borderColor: borderRed.receiveAddress ? 'red' : '#ddd',
                       }}
                       placeholder="例：台北市大安區復興南路一段390號2樓204室"
+                      value={text.receiveAddress}
                     />
                     <Form.Text className="text-danger">
                       {errMsg.receiveAddress}
@@ -152,61 +208,75 @@ const CheckoutItemProduct = props => {
                   </Form.Group>
 
                   <Form.Group className="my-3">
-                    <Form.Check type="checkbox" label="購買人資料同上" />
-                  </Form.Group>
-
-                  <Form.Group>
-                    <Form.Label>購買人姓名</Form.Label>
-                    <Form.Control
-                      id="buyName"
-                      type="text"
-                      autoComplete="off"
-                      onChange={handleTextChange}
-                      onKeyPress={handleKeyPress}
-                      style={{
-                        borderColor: borderRed.buyName ? 'red' : '#ddd',
-                      }}
-                      placeholder="真實姓名"
+                    <Form.Check
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={toggleChange}
+                      label="購買人資料同上"
                     />
-                    <Form.Text className="text-danger">
-                      {errMsg.buyName}
-                    </Form.Text>
                   </Form.Group>
-
-                  <Form.Group>
-                    <Form.Label>購買人手機</Form.Label>
-                    <Form.Control
-                      id="buyPhone"
-                      type="text"
-                      onChange={handleTextChange}
-                      onKeyPress={handleKeyPress}
-                      style={{
-                        borderColor: borderRed.buyPhone ? 'red' : '#ddd',
-                      }}
-                      autoComplete="off"
-                    />
-                    <Form.Text className="text-danger">
-                      {errMsg.buyPhone}
-                    </Form.Text>
-                  </Form.Group>
-
-                  <Form.Group>
-                    <Form.Label>地址</Form.Label>
-                    <Form.Control
-                      id="buyAddress"
-                      type="text"
-                      autoComplete="off"
-                      onChange={handleTextChange}
-                      onKeyPress={handleKeyPress}
-                      style={{
-                        borderColor: borderRed.buyAddress ? 'red' : '#ddd',
-                      }}
-                      placeholder="例：台北市大安區復興南路一段390號2樓204室"
-                    />
-                    <Form.Text className="text-danger">
-                      {errMsg.buyAddress}
-                    </Form.Text>
-                  </Form.Group>
+                  {!isChecked ? (
+                    <>
+                      <Form.Group>
+                        <Form.Label>購買人姓名</Form.Label>
+                        <input
+                          className="btn-block my-1 p-2 user-text-input border-gray"
+                          id="buyName"
+                          type="text"
+                          autoComplete="off"
+                          onChange={handleTextChange}
+                          onKeyPress={handleKeyPress}
+                          style={{
+                            borderColor: borderRed.buyName ? 'red' : '#ddd',
+                          }}
+                          placeholder="真實姓名"
+                          value={text.buyName}
+                        />
+                        <Form.Text className="text-danger">
+                          {errMsg.buyName}
+                        </Form.Text>
+                      </Form.Group>
+                      <Form.Group>
+                        <Form.Label>購買人手機</Form.Label>
+                        <input
+                          className="btn-block my-1 p-2 user-text-input border-gray"
+                          id="buyPhone"
+                          type="text"
+                          onChange={handleTextChange}
+                          onKeyPress={handleKeyPress}
+                          style={{
+                            borderColor: borderRed.buyPhone ? 'red' : '#ddd',
+                          }}
+                          autoComplete="off"
+                          value={text.buyPhone}
+                        />
+                        <Form.Text className="text-danger">
+                          {errMsg.buyPhone}
+                        </Form.Text>
+                      </Form.Group>
+                      <Form.Group>
+                        <Form.Label>地址</Form.Label>
+                        <input
+                          className="btn-block my-1 p-2 user-text-input border-gray"
+                          id="buyAddress"
+                          type="text"
+                          autoComplete="off"
+                          onChange={handleTextChange}
+                          onKeyPress={handleKeyPress}
+                          style={{
+                            borderColor: borderRed.buyAddress ? 'red' : '#ddd',
+                          }}
+                          placeholder="例：台北市大安區復興南路一段390號2樓204室"
+                          value={text.buyAddress}
+                        />
+                        <Form.Text className="text-danger">
+                          {errMsg.buyAddress}
+                        </Form.Text>
+                      </Form.Group>{' '}
+                    </>
+                  ) : (
+                    ''
+                  )}
                 </Form>
               </Modal.Body>
               <Modal.Footer>
@@ -276,74 +346,6 @@ const CheckoutItemProduct = props => {
               )
             } else return ''
           })}
-          {/* <Col md={7} className="shop-item m-0 px-4 mb-5">
-            <div className="d-flex mt-2 justify-content-between">
-              <div className="d-flex">
-                <div className="shop-product-photo">
-                  <a href="" className="">
-                    <img
-                      className=""
-                      src="/images/coach/coach.jpg"
-                      alt="商品照片"
-                    />
-                  </a>
-                </div>
-                <div className="d-flex">
-                  <div className="d-flex flex-column justify-content-between ml-2">
-                    <div className="d-flex flex-column">
-                      <a href="" className="text-decoration-none text-dark">
-                        這裡放商品名稱
-                      </a>
-                      <span>品項內容</span>
-                    </div>
-                    <div>X 1</div>
-                  </div>
-                </div>
-              </div>
-              <div className="align-self-end flex-grow text-right">
-                NT $價格
-              </div>
-            </div>
-            <div className="shop-subtotal text-right pt-3">
-              商品小計
-              <span className="ml-2 user-darkblue-text">NT$ 多少錢</span>
-            </div>
-          </Col>
-          <Col md={5}></Col> */}
-          {/* <Col md={7} className="shop-item m-0 px-4 mb-5">
-            <div className="d-flex mt-2 justify-content-between">
-              <div className="d-flex">
-                <div className="shop-product-photo">
-                  <a href="" className="">
-                    <img
-                      className=""
-                      src="/images/coach/coach.jpg"
-                      alt="商品照片"
-                    />
-                  </a>
-                </div>
-                <div className="d-flex">
-                  <div className="d-flex flex-column justify-content-between ml-2">
-                    <div className="d-flex flex-column">
-                      <a href="" className="text-decoration-none text-dark">
-                        這裡放商品名稱
-                      </a>
-                      <span>品項內容</span>
-                    </div>
-                    <div>X 1</div>
-                  </div>
-                </div>
-              </div>
-              <div className="align-self-end flex-grow text-right">
-                NT $價格
-              </div>
-            </div>
-            <div className="shop-subtotal text-right pt-3">
-              商品小計
-              <span className="ml-2 user-darkblue-text">NT$ 多少錢</span>
-            </div>
-          </Col>
-          <Col md={5}></Col> */}
         </Row>
       </div>
     </>

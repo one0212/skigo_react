@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 
-import Header from '../../navbar/Header'
 import UserSidebar from '../UserSidebar'
 import Account from './Account'
 
