@@ -41,18 +41,19 @@ class OrderDetailProductContent extends Component {
             </div>
           </div>
           <div>
-            <Col md={6} className="pl-5 d-flex ml-auto">
-              <p className="mr-auto"></p>
-              <span className="mr-auto">小計</span>
+            <Col md={6} className="pl-4 d-flex ml-auto justify-content-between">
+              <span className="">小計</span>
               <span className="">$$</span>
             </Col>
-            <Col style={text} md={6} className="pl-5 d-flex ml-auto">
-              <p className="mr-auto"></p>
-              <span className="mr-auto">運費</span>
+            <Col
+              style={text}
+              md={6}
+              className="pl-4 d-flex ml-auto justify-content-between"
+            >
+              <span className="">運費</span>
               <span>$$</span>
             </Col>
-            <Col md={6} className="pl-5 d-flex ml-auto">
-              <p className="mr-auto"></p>
+            <Col md={6} className="pl-4 d-flex ml-auto">
               <span className="mr-auto fw-700">總計</span>
               <span className="fw-700">$$</span>
             </Col>

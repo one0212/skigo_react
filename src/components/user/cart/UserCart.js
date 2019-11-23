@@ -29,6 +29,7 @@ class UserCart extends Component {
     //   .then(json => {
     //     console.log(json)
     //     this.setState({ cartResponse: json })
+    //  // json值為mockResp
     //   })
     //   .catch(err => {
     //     console.log(err)

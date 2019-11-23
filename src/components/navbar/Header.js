@@ -59,6 +59,7 @@ class Header extends Component {
       if (response.status === 200) {
         this.refreshLoginState()
         this.setState({ userDropdown: false })
+        window.location.href = '/'
       }
     })
   }
@@ -181,7 +182,7 @@ class Header extends Component {
                             })
                           }}
                           to="/user/profile"
-                          class="user-darkblue-text text-decoration-none"
+                          className="user-darkblue-text text-decoration-none"
                         >
                           我的帳戶
                         </Link>
@@ -194,7 +195,7 @@ class Header extends Component {
                             })
                           }}
                           to="/user/order"
-                          class="user-darkblue-text text-decoration-none"
+                          className="user-darkblue-text text-decoration-none"
                         >
                           我的訂單
                         </Link>
@@ -202,7 +203,7 @@ class Header extends Component {
                       <li className="my-3">
                         <a
                           href="#"
-                          class="user-darkblue-text text-decoration-none"
+                          className="user-darkblue-text text-decoration-none"
                         >
                           紅利點數
                         </a>
@@ -216,7 +217,7 @@ class Header extends Component {
                               userDropdown: !this.state.userDropdown,
                             })
                           }}
-                          class="cursor-point user-darkblue-text text-decoration-none"
+                          className="cursor-point user-darkblue-text text-decoration-none"
                         >
                           登出
                         </a>
