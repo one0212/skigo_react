@@ -22,12 +22,14 @@ class CartItemHotel extends Component {
               </div>
               <div className="d-flex flex-column mt-2">
                 <a href="" className="text-decoration-none text-dark">
-                  這裡放商品名稱
+                  {this.props.cartData.prodName}
                 </a>
                 <span>品項內容</span>
               </div>
 
-              <div className="shop-item-price mt-2">NT$價格</div>
+              <div className="shop-item-price mt-2">
+                NT$ {this.props.cartData.price}
+              </div>
             </div>
           </div>
         </div>
