@@ -44,8 +44,10 @@ class Header extends Component {
     }
   }
 
-  componentDidMount() {
-    if (cookies.get('role') !== 'VISITOR') {
+  componentWillMount() {
+    if (!cookies || cookies.get('role') === 'VISITOR') {
+      this.setState({ showLoginIcon: false })
+    } else {
       this.setState({ showLoginIcon: true })
       // todo: 購物車點選跳轉頁
     }
