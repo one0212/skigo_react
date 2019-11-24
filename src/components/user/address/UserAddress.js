@@ -9,6 +9,23 @@ import AddressList from './AddressList'
 import '../../../css/user/user_center_address.css'
 
 class UserAddress extends Component {
+  constructor() {
+    super()
+    this.state = {
+      infoResponse: '',
+    }
+  }
+  componentWillMount() {
+    const url = 'http://localhost:3001/api/user/delivery-info'
+    fetch(url)
+      .then(response => {
+        return response.json()
+      })
+      .then(infos => {
+        // console.log(infos)
+        this.setState({ infoResponse: infos })
+      })
+  }
   render() {
     return (
       <>
