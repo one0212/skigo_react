@@ -42,84 +42,137 @@ const CheckoutItemProduct = props => {
     setBorder({ ...borderRed, [e.target.id]: !e.target })
     setErrMsg({ ...errMsg, [e.target.id]: '' })
   }
-  const toggleChange = () => changeChecked(!isChecked)
-
-  const handleSubmit = () => {
-    let borderState = {}
-    let msgState = {}
-    if (document.querySelector('#receiveName').value === '') {
-      borderState.receiveName = true
-      msgState.receiveName = '本欄位為必填'
-      setText({
-        ...text,
-        receiveName: document.querySelector('#receiveName').value,
-      })
-    }
-    if (document.querySelector('#receivePhone').value === '') {
-      borderState.receivePhone = true
-      msgState.receivePhone = '本欄位為必填'
-      setText({
-        ...text,
-        receivePhone: document.querySelector('#receivePhone').value,
-      })
-    }
-    if (document.querySelector('#receiveAddress').value === '') {
-      borderState.receiveAddress = true
-      msgState.receiveAddress = '本欄位為必填'
-      setText({
-        ...text,
-        receiveAddress: document.querySelector('#receiveAddress').value,
-      })
-    }
-    if (document.querySelector('#buyName').value === '') {
-      borderState.buyName = true
-      msgState.buyName = '本欄位為必填'
-      setText({
-        ...text,
-        buyName: document.querySelector('#buyName').value,
-      })
-    }
-    if (document.querySelector('#buyPhone').value === '') {
-      borderState.buyPhone = true
-      msgState.buyPhone = '本欄位為必填'
-      setText({
-        ...text,
-        buyPhone: document.querySelector('#buyPhone').value,
-      })
-    }
-    if (document.querySelector('#buyAddress').value === '') {
-      borderState.buyAddress = true
-      msgState.buyAddress = '本欄位為必填'
-      setText({
-        ...text,
-        buyAddress: document.querySelector('#buyAddress').value,
-      })
-    }
-    // setText(...text)
-    if (Object.keys(borderState).length) {
-      setBorder(borderState)
-      setErrMsg(msgState)
-      return
-    } else {
-      handleClose()
-      setAddress()
-    }
+  const toggleChange = () => {
+    changeChecked(!isChecked)
+    setText({
+      ...text,
+      buyName: text.receiveName,
+      buyPhone: text.receivePhone,
+      buyAddress: text.receiveAddress,
+    })
+    setBorder({
+      ...borderRed,
+      buyName: false,
+      buyPhone: false,
+      buyAddress: false,
+    })
+    setErrMsg({
+      ...errMsg,
+      buyName: '',
+      buyPhone: '',
+      buyAddress: '',
+    })
   }
-  const setAddress = () =>
+  const setAddress = () => {
     editAddress(
       <>
-        <div>
-          收件人姓名：
-          <span className="name">
-            {document.querySelector('#receiveName').value}
-          </span>
-        </div>
+        <div>收件人姓名：{document.querySelector('#receiveName').value}</div>
         <div className="my-1">
           收件人手機：{document.querySelector('#receivePhone').value}
         </div>
         <div>地址：{document.querySelector('#receiveAddress').value}</div>
       </>
     )
+  }
+  const handleSubmit = () => {
+    const {
+      receiveName,
+      receivePhone,
+      receiveAddress,
+      buyName,
+      buyPhone,
+      buyAddress,
+    } = text
+    if (
+      receiveName !== '' &&
+      receivePhone !== '' &&
+      receiveAddress !== '' &&
+      buyName !== '' &&
+      buyPhone !== '' &&
+      buyAddress !== ''
+    ) {
+      handleClose()
+      setAddress()
+      addDeliveryInfo()
+    } else {
+      let borderState = {}
+      let msgState = {}
+      if (document.querySelector('#receiveName').value === '') {
+        borderState.receiveName = true
+        msgState.receiveName = '本欄位為必填'
+        setText({
+          ...text,
+          receiveName: document.querySelector('#receiveName').value,
+        })
+      }
+      if (document.querySelector('#receivePhone').value === '') {
+        borderState.receivePhone = true
+        msgState.receivePhone = '本欄位為必填'
+        setText({
+          ...text,
+          receivePhone: document.querySelector('#receivePhone').value,
+        })
+      }
+      if (document.querySelector('#receiveAddress').value === '') {
+        borderState.receiveAddress = true
+        msgState.receiveAddress = '本欄位為必填'
+        setText({
+          ...text,
+          receiveAddress: document.querySelector('#receiveAddress').value,
+        })
+      }
+      if (document.querySelector('#buyName').value === '') {
+        borderState.buyName = true
+        msgState.buyName = '本欄位為必填'
+        setText({
+          ...text,
+          buyName: document.querySelector('#buyName').value,
+        })
+      }
+      if (document.querySelector('#buyPhone').value === '') {
+        borderState.buyPhone = true
+        msgState.buyPhone = '本欄位為必填'
+        setText({
+          ...text,
+          buyPhone: document.querySelector('#buyPhone').value,
+        })
+      }
+      if (document.querySelector('#buyAddress').value === '') {
+        borderState.buyAddress = true
+        msgState.buyAddress = '本欄位為必填'
+        setText({
+          ...text,
+          buyAddress: document.querySelector('#buyAddress').value,
+        })
+      }
+      if (Object.keys(borderState).length) {
+        setBorder(borderState)
+        setErrMsg(msgState)
+        return
+      }
+    }
+  }
+
+  const addDeliveryInfo = () => {
+    const url = 'http://localhost:3001/api/user/delivery-info'
+    const obj = {
+      receiver: document.querySelector('#receiveName').value,
+      mobile: document.querySelector('#receivePhone').value,
+      address: document.querySelector('#receiveAddress').value,
+    }
+    fetch(url, {
+      body: JSON.stringify(obj),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    }).then(response => {
+      if (response.status === 200) {
+        setAddress()
+      }
+    })
+  }
+
   const addressData = {
     background: 'rgb(240, 240, 240)',
     borderRadius: '5px',
