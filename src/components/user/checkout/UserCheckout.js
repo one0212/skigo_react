@@ -18,6 +18,14 @@ class UserCheckout extends Component {
     super()
     this.state = {
       checkoutResponse: '',
+      text: {
+        receiveName: '',
+        receivePhone: '',
+        receiveAddress: '',
+        buyName: '',
+        buyPhone: '',
+        buyAddress: '',
+      },
     }
   }
   componentWillMount() {
@@ -84,7 +92,11 @@ class UserCheckout extends Component {
           ))
         } else {
           return (checkoutProduct = (
-            <CheckoutItemProduct key={index} checkoutData={items} />
+            <CheckoutItemProduct
+              text={this.state.text}
+              key={index}
+              checkoutData={items}
+            />
           ))
         }
       })
