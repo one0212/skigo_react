@@ -138,22 +138,28 @@ class TicketAreas extends React.Component {
                           <Carousel.Item>
                             <img
                               className="d-block w-100"
-                              src="/images/areas/scenery-1.jpg"
+                              src={
+                                '/images/areas/' + this.state.total[0].area_pic1
+                              }
                               alt="First slide"
                             />
                           </Carousel.Item>
                           <Carousel.Item>
                             <img
                               className="d-block w-100"
-                              src="/images/areas/scenery-2.jpg"
-                              alt="Third slide"
+                              src={
+                                '/images/areas/' + this.state.total[0].area_pic2
+                              }
+                              alt="First slide"
                             />
                           </Carousel.Item>
                           <Carousel.Item>
                             <img
                               className="d-block w-100"
-                              src="/images/areas/scenery-3.jpg"
-                              alt="Third slide"
+                              src={
+                                '/images/areas/' + this.state.total[0].area_pic3
+                              }
+                              alt="First slide"
                             />
                           </Carousel.Item>
                         </Carousel>
@@ -188,7 +194,9 @@ class TicketAreas extends React.Component {
                       {/* {console.log('des: ' +this.state.total[0].area_description)} */}
                     </div>
                     <div className="number_box">
-                      <p className="slider_number">01</p>
+                      <p className="slider_number">
+                        {this.state.total[0].area_pic2 ? '02' : ''}
+                      </p>
                       <p className="symbol">/</p>
                       <p className="total_number">03</p>
                     </div>
@@ -318,7 +326,7 @@ class TicketAreas extends React.Component {
                       </a>
                       <div className="lightbox-target" id="notice1">
                         <img
-                          src={require('../../images/areas/ski-map.jpg')}
+                          src={'/images/areas/' + this.state.total[0].area_img}
                           alt=""
                         />
                         <a className="lightbox-close" href="#"></a>
@@ -327,7 +335,7 @@ class TicketAreas extends React.Component {
                   </div>
                 </div>
               </section>
-
+              {/* <img src="/images/areas/ski-map.jpg" alt="" /> */}
               <section>
                 <div className="container">
                   <div className="area_characteristic">
