@@ -12,7 +12,7 @@ class UserAddress extends Component {
   constructor() {
     super()
     this.state = {
-      infoResponse: '',
+      infoResponse: [],
     }
   }
   componentWillMount() {
@@ -22,8 +22,9 @@ class UserAddress extends Component {
         return response.json()
       })
       .then(infos => {
-        // console.log(infos)
+        console.log(infos)
         this.setState({ infoResponse: infos })
+        console.log(typeof infos)
       })
   }
   render() {
@@ -37,7 +38,11 @@ class UserAddress extends Component {
               <AddressTitle />
               {/* <AddressEmpty /> */}
               {/* 判斷是否有地址列表 */}
-              <AddressList />
+              {this.state.infoResponse && this.state.infoResponse.length
+                ? this.state.infoResponse.map((info, index) => {
+                    return <AddressList key={index} addressData={info} />
+                  })
+                : ''}
             </Col>
           </Row>
         </Container>
