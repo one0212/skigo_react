@@ -82,12 +82,19 @@ html {
     border: none;
 }
 /* card輪播 */
-.home_areas .slick-prev:before,
+.home_areas .slick-prev:before{
+    color: rgb(46, 46, 46); 
+    font-size: 40px;
+}
 .home_areas .slick-next:before {
     color: rgb(46, 46, 46); 
     font-size: 40px;
 }
-.home_areas .slick-prev, .slick-next{
+.area_lesson .slick-prev{
+    width: 40px;
+    height: 40px;
+}
+.area_lesson .slick-next{
     width: 40px;
     height: 40px;
 }
@@ -95,7 +102,7 @@ html {
     left: -4rem;
 }
 .home_areas .slick-next{
-    right: -3.4rem;
+    right: -2.1rem;
 }
 
 /* 視差捲動-scrolling */
@@ -427,7 +434,7 @@ html {
     left: -3.8rem;
 }
 .home_areas .slick-next{
-    right: -3.2rem;
+    right: -1.5rem;
 }
 }
 @media screen and (max-width: 1200px) {

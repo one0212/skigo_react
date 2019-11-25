@@ -22,7 +22,10 @@ import UserOrder from './components/user/order/UserOrder'
 import AccountActiveResult from './components/visitor/AccountActiveResult'
 import UserOrderDetail from './components/user/order/detail/UserOrderDetail'
 
-import Areas from './components/area/Areas'
+import TicketList from './components/area/TicketList'
+import TicketAreas from './components/area/TicketAreas'
+import TicketPage from './components/area/TicketPage'
+
 import Product from './components/product/Product'
 import FilterProduct from './components/product/FilterProduct'
 
@@ -32,7 +35,8 @@ function App() {
       <Router>
         <>
           <Header />
-          {/* <Link to="/coachlist">●1.coach_list</Link> */}
+          <Link to="/ticketlist">●ticketlist</Link>
+          <Link to="/coachlist">●1.coach_list</Link>
           {/* <Link to="/coachclass">●2.coach_class</Link>
         <Link to="/CoachBook">●3.CoachBook</Link>
         <br></br>
@@ -48,8 +52,11 @@ function App() {
             <Route path="/CoachBook/:id2?" component={CoachBook} />
             <Route path="/CoachDate" component={CoachDate} />
             <Route path="/CoachCarousels2" component={CoachCarousels2} />
-            <Route path="/area" component={Areas} />
-
+            
+            <Route path="/ticketlist" component={TicketList} />
+            <Route path="/ticketarea/:areaid?" component={TicketAreas} />
+            <Route path="/ticketpage/:ticketid?" component={TicketPage} />
+            
             <Route path="/cart" component={UserCart} />
             <Route path="/checkout" component={UserCheckout} />
             <Route path="/user/profile" component={UserAccount} />

@@ -241,6 +241,7 @@ section{
 }
 .area_characteristic .d-flex{
     flex-wrap: wrap;
+    justify-content: center;
 }
 .area_characteristic .box{
     border: solid 1px rgb(210, 210, 210);
