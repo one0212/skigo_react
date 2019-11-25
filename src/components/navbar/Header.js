@@ -6,6 +6,7 @@ import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
 
+
 import UserLightbox from './UserLightbox'
 import '../../css/header.css'
 
@@ -105,7 +106,7 @@ class Header extends Component {
                   <Nav.Link href="/area" className="nav-item mx-3">
                     雪場票券
                   </Nav.Link>
-                  <Nav.Link href="#" className="nav-item mx-3">
+                  <Nav.Link href="/CoachList" className="nav-item mx-3">
                     教練課程
                   </Nav.Link>
                   <Nav.Link href="#" className="nav-item mx-3">
