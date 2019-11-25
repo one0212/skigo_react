@@ -28,7 +28,7 @@ section{
     padding-right: 0;
 }
 .area_slider .area_carousel img{
-    height: 100vh;
+    height: 91vh;
     object-fit: cover;
     object-position: right top;
 }
@@ -45,7 +45,7 @@ section{
     margin-left: 15px;
     border-radius: 50%;
 }
-.area_slider .weather{
+/* .area_slider .weather{
     display: flex;
     flex-direction: column;
     margin: 40px 0 0 55px;
@@ -60,13 +60,13 @@ section{
 .area_slider .weather .circle{
     width: 6px;
     margin: -20px 0 0 2px;
-}
+} */
 .area_slider .introduction{
     position: absolute;
     right: 0;
     bottom: 0;
     width: 47%;
-    height: 80vh;
+    height: 77vh;
     background: #fff;
     z-index: 2;
 }
@@ -328,7 +328,7 @@ section{
 }
 
 @media screen and (max-width: 1835px) {
-    .area_slider .weather{
+    /* .area_slider .weather{
         margin: 45px 0 0 45px;
     }
     .area_slider .weather .weather_img{
@@ -341,7 +341,7 @@ section{
     .area_slider .weather .circle{
         width: 5px;
         margin: -20px 0 0 2px;
-    }
+    } */
     .area_slider .introduction .d-flex{
         width: 600px;
         flex-direction: column;
@@ -409,7 +409,7 @@ section{
         font-size: 1.7rem;
         color: #FD702D;
     }
-    .area_header .weather{
+    /* .area_header .weather{
         display: flex;
         flex-direction: column;
         margin-top: 10px;
@@ -424,7 +424,7 @@ section{
     .area_header .weather .circle{
         width: 6px;
         margin: -20px 0 0 2px;
-    }
+    } */
     .area_header .introduction2 .article{
         font-size: 1.2rem;
         line-height: 2.5rem;
@@ -458,12 +458,12 @@ section{
     .area_header .introduction2 h5{
         font-size: 1.5rem;
     }
-    .area_header .weather .weather_img{
+    /* .area_header .weather .weather_img{
         width: 55px;
     }
     .area_header .weather p{
         font-size: 1.6rem;
-    }
+    } */
     .area_header .introduction2 .article{
         line-height: 2.2rem;
         margin-top: 24px;
@@ -521,13 +521,13 @@ section{
     .area_header .introduction2 h5{
         font-size: 1rem;
     }
-    .area_header .weather .weather_img{
+    /* .area_header .weather .weather_img{
         width: 40px;
         margin-bottom: 5px;
     }
     .area_header .weather p{
         font-size: 1rem;
-    }
+    } */
     .area_header .introduction2 .article{
         font-size: 1rem;
         line-height: 1.8rem;
