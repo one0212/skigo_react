@@ -3,14 +3,9 @@ import { Row, Col, Button, Modal, Form } from 'react-bootstrap'
 
 const CheckoutItemProduct = props => {
   const [show, setShow] = useState(false)
-  const [text, setText] = useState({
-    receiveName: '',
-    receivePhone: '',
-    receiveAddress: '',
-    buyName: '',
-    buyPhone: '',
-    buyAddress: '',
-  })
+
+  const [changeText, setText] = useState({ ...props.text })
+  console.log(changeText)
   const [borderRed, setBorder] = useState({
     receiveName: false,
     receivePhone: false,
@@ -35,7 +30,7 @@ const CheckoutItemProduct = props => {
 
   const handleTextChange = e => {
     // console.log(e.target.value)
-    setText({ ...text, [e.target.id]: e.target.value })
+    setText({ ...changeText, [e.target.id]: e.target.value })
   }
 
   const handleKeyPress = e => {
@@ -45,10 +40,10 @@ const CheckoutItemProduct = props => {
   const toggleChange = () => {
     changeChecked(!isChecked)
     setText({
-      ...text,
-      buyName: text.receiveName,
-      buyPhone: text.receivePhone,
-      buyAddress: text.receiveAddress,
+      ...changeText,
+      buyName: changeText.receiveName,
+      buyPhone: changeText.receivePhone,
+      buyAddress: changeText.receiveAddress,
     })
     setBorder({
       ...borderRed,
@@ -75,33 +70,21 @@ const CheckoutItemProduct = props => {
     )
   }
   const handleSubmit = () => {
-    const {
-      receiveName,
-      receivePhone,
-      receiveAddress,
-      buyName,
-      buyPhone,
-      buyAddress,
-    } = text
     if (
-      receiveName !== '' &&
-      receivePhone !== '' &&
-      receiveAddress !== '' &&
-      buyName !== '' &&
-      buyPhone !== '' &&
-      buyAddress !== ''
+      changeText.receiveName === '' &&
+      changeText.receivePhone === '' &&
+      changeText.receiveAddress === '' &&
+      changeText.buyName === '' &&
+      changeText.buyPhone === '' &&
+      changeText.buyAddress === ''
     ) {
-      handleClose()
-      setAddress()
-      addDeliveryInfo()
-    } else {
       let borderState = {}
       let msgState = {}
       if (document.querySelector('#receiveName').value === '') {
         borderState.receiveName = true
         msgState.receiveName = '本欄位為必填'
         setText({
-          ...text,
+          ...changeText,
           receiveName: document.querySelector('#receiveName').value,
         })
       }
@@ -109,7 +92,7 @@ const CheckoutItemProduct = props => {
         borderState.receivePhone = true
         msgState.receivePhone = '本欄位為必填'
         setText({
-          ...text,
+          ...changeText,
           receivePhone: document.querySelector('#receivePhone').value,
         })
       }
@@ -117,7 +100,7 @@ const CheckoutItemProduct = props => {
         borderState.receiveAddress = true
         msgState.receiveAddress = '本欄位為必填'
         setText({
-          ...text,
+          ...changeText,
           receiveAddress: document.querySelector('#receiveAddress').value,
         })
       }
@@ -125,7 +108,7 @@ const CheckoutItemProduct = props => {
         borderState.buyName = true
         msgState.buyName = '本欄位為必填'
         setText({
-          ...text,
+          ...changeText,
           buyName: document.querySelector('#buyName').value,
         })
       }
@@ -133,7 +116,7 @@ const CheckoutItemProduct = props => {
         borderState.buyPhone = true
         msgState.buyPhone = '本欄位為必填'
         setText({
-          ...text,
+          ...changeText,
           buyPhone: document.querySelector('#buyPhone').value,
         })
       }
@@ -141,7 +124,7 @@ const CheckoutItemProduct = props => {
         borderState.buyAddress = true
         msgState.buyAddress = '本欄位為必填'
         setText({
-          ...text,
+          ...changeText,
           buyAddress: document.querySelector('#buyAddress').value,
         })
       }
@@ -150,6 +133,10 @@ const CheckoutItemProduct = props => {
         setErrMsg(msgState)
         return
       }
+    } else {
+      handleClose()
+      setAddress()
+      addDeliveryInfo()
     }
   }
 
@@ -214,7 +201,7 @@ const CheckoutItemProduct = props => {
                       style={{
                         borderColor: borderRed.receiveName ? 'red' : '#ddd',
                       }}
-                      value={text.receiveName}
+                      value={changeText.receiveName}
                     />
                     <Form.Text className="text-danger">
                       {errMsg.receiveName}
@@ -233,13 +220,12 @@ const CheckoutItemProduct = props => {
                       style={{
                         borderColor: borderRed.receivePhone ? 'red' : '#ddd',
                       }}
-                      value={text.receivePhone}
+                      value={changeText.receivePhone}
                     />
                     <Form.Text className="text-danger">
                       {errMsg.receivePhone}
                     </Form.Text>
                   </Form.Group>
-
                   <Form.Group>
                     <Form.Label>地址</Form.Label>
                     <input
@@ -253,13 +239,12 @@ const CheckoutItemProduct = props => {
                         borderColor: borderRed.receiveAddress ? 'red' : '#ddd',
                       }}
                       placeholder="例：台北市大安區復興南路一段390號2樓204室"
-                      value={text.receiveAddress}
+                      value={changeText.receiveAddress}
                     />
                     <Form.Text className="text-danger">
                       {errMsg.receiveAddress}
                     </Form.Text>
                   </Form.Group>
-
                   <Form.Group className="my-3">
                     <Form.Check
                       type="checkbox"
@@ -283,7 +268,7 @@ const CheckoutItemProduct = props => {
                             borderColor: borderRed.buyName ? 'red' : '#ddd',
                           }}
                           placeholder="真實姓名"
-                          value={text.buyName}
+                          value={changeText.buyName}
                         />
                         <Form.Text className="text-danger">
                           {errMsg.buyName}
@@ -301,7 +286,7 @@ const CheckoutItemProduct = props => {
                             borderColor: borderRed.buyPhone ? 'red' : '#ddd',
                           }}
                           autoComplete="off"
-                          value={text.buyPhone}
+                          value={changeText.buyPhone}
                         />
                         <Form.Text className="text-danger">
                           {errMsg.buyPhone}
@@ -320,7 +305,7 @@ const CheckoutItemProduct = props => {
                             borderColor: borderRed.buyAddress ? 'red' : '#ddd',
                           }}
                           placeholder="例：台北市大安區復興南路一段390號2樓204室"
-                          value={text.buyAddress}
+                          value={changeText.buyAddress}
                         />
                         <Form.Text className="text-danger">
                           {errMsg.buyAddress}
