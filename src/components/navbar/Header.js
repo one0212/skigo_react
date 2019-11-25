@@ -109,7 +109,7 @@ class Header extends Component {
                   <Nav.Link href="/CoachList" className="nav-item mx-3">
                     教練課程
                   </Nav.Link>
-                  <Nav.Link href="#" className="nav-item mx-3">
+                  <Nav.Link href="HotelHome" className="nav-item mx-3">
                     找飯店
                   </Nav.Link>
                   <Nav.Link href="/product" className="nav-item mx-3">

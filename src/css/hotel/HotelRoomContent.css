@@ -1,0 +1,97 @@
+.hotel_room_introduction_area{
+    margin-top: 10%;
+}
+.hotel_room_line_box{
+    content: " ";
+    display: block;
+    width: 100%;
+    border-top:1px solid #ccc;
+    margin-top: 30%;
+    padding: 5% 0;
+}
+.hotel_room_facility_items li{
+    float:left;
+    width: 33%;
+    height: 100%;
+    margin: 1% 0;
+}
+
+.hotel_room_order_area{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+}
+.hotel_rome_date_box{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.picker__container{
+    border: 1px #ccc solid;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.10);
+}
+
+.hotel_room_search_select{
+    width: 185px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-indent: 15%;
+    /* overflow: initial; */
+    /* background: url(/src/image/hotel/hotel_icons/person.svg) 5% 50% no-repeat; */
+}
+
+.hotel_room_order_list li {
+    font-size: 1.2rem;
+}
+.hotel_room_order_list{
+    content: " ";
+    display: block;
+    width: 100%;
+    border-bottom:1px solid #ccc;
+    /* margin-top: 30%; */
+    padding: 2% 0 0 0 ;
+}
+.hotel_room_order_list:last-child{ 
+    border-bottom:none;
+}
+.hotel_room_order_btn{
+    width: 100%;
+    height: 60px;
+    background: #FD702D;
+    border: none;
+}
+.hotel_room_order_btn:hover{
+    width: 100%;
+    height: 60px;
+    background: #f54f00;
+    border: none;
+}
+.hotel_room_form_star{
+    color: orange;
+    font-size: 1.8rem;
+}
+.hotel_room_form_star li{
+    padding-right: 2%;
+}
+.hotel_room_form_star li:last-child{
+    padding-left: 20px;
+    color: #aaa;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 9px;
+}
+.more_like_room_area{
+    content: " ";
+    display: block;
+    width: 100%;
+    border-top:1px solid #ccc;
+    margin-top: 10%;
+}
+.like_room_text{
+    margin: 5% 0 0 6%;
+}
+.css-1uccc91-singleValue{
+    overflow: initial !important; 
+}
+

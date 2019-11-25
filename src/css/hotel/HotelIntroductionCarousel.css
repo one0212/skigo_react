@@ -1,0 +1,34 @@
+.banner-user{
+    height: 900px;
+    position: relative;
+  }
+  .banner-user-elem > *{
+    color: #fff;
+    position: absolute;
+    overflow: hidden;
+}
+.banner-user-elem .banner-user-title{
+    /* font-size: 32px; */
+    left: 10%;
+    bottom: 20%;
+  }
+  .banner-user-elem .banner-user-title_p{
+    left: 10%;
+    bottom: 16%;
+  }
+  .banner-anim-elem .bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+
+.hotel_introduction_bg{
+    background-image:url(/images/hotel/hotel_01.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+}
