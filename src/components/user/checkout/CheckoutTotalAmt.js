@@ -7,31 +7,41 @@ class CheckoutTotalAmt extends Component {
     super(props)
     this.state = {}
   }
-  // handleClick = () => {
-  //   const url = 'http://localhost:3001/japi/orders'
-  //   const obj = {
-  //     orderNo: this.genOrderNo(),
-  //     // totalAmt: this.props.checkoutData.totalAmt + 300,
-  //     // orderItem: this.props.checkoutData.items,
-  //   }
-  //   console.log(obj)
-  //   fetch(url, {
-  //     body: JSON.stringify(obj),
-  //   })
-  // }
+  handleClick = () => {
+    const url = 'http://localhost:3001/api/order'
+    const obj = {
+      receiver: this.props.addressData.receiveName,
+      mobile: this.props.addressData.receivePhone,
+      address: this.props.addressData.receiveAddress,
+    }
+    console.log(obj)
+    fetch(url, {
+      body: JSON.stringify(obj),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        console.log(json)
+      })
+  }
 
-  // dateToString = date => {
-  //   return `${date.getYear()}`
-  // }
+  dateToString = date => {
+    return `${date.getYear()}`
+  }
 
-  // genOrderNo = () => {
-  //   return (
-  //     'ORD' +
-  //     Math.random()
-  //       .toString(36)
-  //       .substr(2, 9)
-  //   )
-  // }
+  genOrderNo = () => {
+    return (
+      'ORD' +
+      Math.random()
+        .toString(36)
+        .substr(2, 9)
+    )
+  }
 
   render() {
     return (
