@@ -1,0 +1,41 @@
+.slogan_font{
+    padding: 100px 0 0 0;
+    color: #aaa;
+}
+
+.slogan_font p{
+    padding: 50px;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.slogan_font span{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+.span_button{
+    width: 90%;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+.span_button span{
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #464743;
+    background: none;
+    border: solid 1px #464743;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+.span_button span:hover{
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #fff;
+    background: #464743;
+    border: solid 1px #464743;
+    margin: 10px 10px;
+}

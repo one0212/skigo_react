@@ -1,0 +1,35 @@
+.hot_area_slide-up{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    /* object-fit: cover; */
+}
+.hot_area_card{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    object-fit: cover;
+}
+.hot_area_title{
+    display: inline-block;
+    padding: 35% 0;
+    font-size: 3rem;
+    color: #fff;
+}
+.hot_area_title:hover{
+    color: #fff;
+}
+
+.hot_area_slide-up .text_overlay{
+    background-color: #0000005f;
+    line-height: 100%;
+    vertical-align: middle;
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+.hot_area_slide-up .hot_area_card:hover .text_overlay{
+    transform: translateY(0);
+}

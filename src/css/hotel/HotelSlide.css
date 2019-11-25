@@ -1,0 +1,55 @@
+/* slick ////////////////////////////////////  */
+.hotel_slider {
+    width: 100%;
+    padding: 5%;
+}
+.slick-slide {
+    padding: 0 20px;
+}
+
+/* 左右按鈕 */
+.slick-prev:before,
+.slick-next:before {
+    color: #ccc;
+    Font-size: 40px;
+}
+.slick-prev, .slick-next{
+    width: 60px;
+    height: 60px;
+}
+.slick-prev{
+    left: 0;
+}
+.slick-next{
+    right: 0;
+}
+/* /////////////////////////////////////////  */
+.hotel_slider_card{
+    /* position: relative; */
+    border:none;
+}
+.hotel_slider_card_text{
+    line-height: initial;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: #aaa;
+}
+.hotel_slider_star{
+    margin-top: 10%;
+    color: orange;
+}
+.hotel_slider_card .slider_card_btn{
+    position: absolute;
+    bottom: 6%;
+    right: 5%;
+    padding: 1% 8%;
+    background: #ccc;
+    color: #fff;
+}
+.hotel_slider_img{
+    width:100%;
+    height: 250px;
+    object-fit: cover;
+}
+/* /////////////////////////////////////////  */

@@ -1,0 +1,110 @@
+.hotel_list_page_wrapper{
+    background: linear-gradient(to right, #8DAEC1 20%,#F4F4F4 00%);
+    width: 100%;
+}
+.left_list{
+    background: #8DAEC1;
+}
+.left_list ul{
+    color: #fff;
+}
+.left_list{
+    padding: 10% 0;
+    font-size: 1.1rem;
+}
+.hotel_checkbox_a ul::after{
+    content: " ";
+    display: block;
+    width: 80%;
+    border-bottom:1px solid #fff;
+    text-align: center;
+    margin:40% 0;
+}
+.filter_area{
+    background-color: #fff;
+    border-radius: 10rem ;
+    height: 45px;
+    margin-top: 30px;
+}
+.filter_area li{
+    display: inline-block;
+}
+.filter_area_btn{
+    margin-bottom: 0;
+}
+.filter_area_btn li:first-child{
+    width: 80px;
+    padding: 10px;
+    margin:0 15px ;
+}
+.filter_area_btn li p{
+    display: inline-block;
+    padding: 10px 0 ;
+    width: 155px;
+    margin:0 5px 0 0;
+    color: #aaa;
+    cursor: pointer;
+}
+.filter_area_btn_active{
+    display: inline-block;
+    padding: 10px 0 ;
+    width: 155px;
+    margin-right: 5px;
+    background: #8DAEC1;
+    color: #fff;
+}
+.filter_area_btn::after{
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 30px;
+    border-right:1px solid #aaa;
+    margin-left: 30px;
+    margin-top: 7px;
+    
+}
+.filter_change li a{
+    display: inline-block;
+    padding: 10px 0 ;
+    width: 30px;
+    color: #aaa;
+}
+/* ////////////////////// */
+.hotel_list_card_text{
+    line-height: initial;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.hotel_list_card{
+    width: 24%;
+    height: 400px;
+    margin:  2% 0.5% 0;
+}
+.hotel_list_card_star{
+    color: orange;
+}
+.hotel_card_heart i{
+    color: red;
+}
+.hotel_card_money{
+    position: absolute;
+    padding: 0;
+    bottom: 2%;
+    left: 6%;
+    color: #aaa;
+}
+.hotel_list_card_btn{
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+    padding: 0.3% 5%;
+    background: #ccc;
+    color: #fff;
+    border: none;
+}

@@ -29,6 +29,11 @@ import TicketPage from './components/area/TicketPage'
 import Product from './components/product/Product'
 import FilterProduct from './components/product/FilterProduct'
 
+import HotelHome from './components/hotel/HotelHome'
+import HotelList from './components/hotel/HotelList'
+import HotelIntroduction from './components/hotel/HotelIntroduction'
+import HotelRoomOrder from './components/hotel/HotelRoomOrder'
+
 function App() {
   return (
     <>
@@ -52,11 +57,11 @@ function App() {
             <Route path="/CoachBook/:id2?" component={CoachBook} />
             <Route path="/CoachDate" component={CoachDate} />
             <Route path="/CoachCarousels2" component={CoachCarousels2} />
-            
+
             <Route path="/ticketlist" component={TicketList} />
             <Route path="/ticketarea/:areaid?" component={TicketAreas} />
             <Route path="/ticketpage/:ticketid?" component={TicketPage} />
-            
+
             <Route path="/cart" component={UserCart} />
             <Route path="/checkout" component={UserCheckout} />
             <Route path="/user/profile" component={UserAccount} />
@@ -68,6 +73,11 @@ function App() {
             <Route path="/product" component={Product} />
             <Route path="/store" component={FilterProduct} />
             <Route path="/product/1" component={Product} />
+
+            <Route path="/HotelHome" component={HotelHome} />
+            <Route path="/HotelList" component={HotelList} />
+            <Route path="/HotelIntroduction" component={HotelIntroduction} />
+            <Route path="/HotelRoomOrder" component={HotelRoomOrder} />
 
             <Route path="/example" component={Example} />
           </Switch>

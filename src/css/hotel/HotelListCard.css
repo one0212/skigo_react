@@ -1,0 +1,43 @@
+.hotel_list_card_text {
+    line-height: initial;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.hotel_list_card {
+    width: 24%;
+    height: 400px;
+    margin: 2% 0.5% 0;
+}
+
+.hotel_list_card_star {
+    color: orange;
+}
+
+.hotel_card_heart i {
+    color: red;
+}
+
+.hotel_card_money {
+    position: absolute;
+    padding: 0;
+    bottom: 2%;
+    left: 6%;
+    color: #aaa;
+}
+
+.hotel_list_card_btn {
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+    padding: 0.3% 5%;
+    background: #ccc;
+    color: #fff;
+    border: none;
+}

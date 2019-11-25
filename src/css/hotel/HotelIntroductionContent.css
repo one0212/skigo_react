@@ -1,0 +1,106 @@
+.hotel_title_name{
+    margin-top: 10%;
+}
+.title_star{
+    color: orange;
+    font-size: 1.2rem;
+}
+.title_star li{
+    padding-right: 2%;
+    font-size: 2rem;
+}
+.title_star li:last-child{
+    padding-left: 20px;
+    color: #aaa;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+.hotel_icon_area{
+    margin-top: 10%;
+}
+.hotel_icon_area::after{
+    content: " ";
+    display: block;
+    width: 100%;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+    margin-top: 10%;
+}
+.hotel_icon{
+    width: 200px;
+    height: 200px;
+    background: rgba(174, 202, 217, 0.3);
+    border-radius: 10%;
+}
+.hotel_icon p{
+    margin: 0;
+}
+.hotel_icon li span{
+    display: inline-block;
+    margin: 10%;
+    font-size: 2.5rem;
+    color: #8DAEC1;
+}
+.facility_area ul{
+    width: 480px;
+}
+.facility_area ul li{
+    float:left;
+    width: 33%;
+    height: 100%;
+}
+.facility_icon{
+    color: #ccc;
+}
+.facility_items{
+    content:" ";
+    display: block;
+    height: 100%;
+    border-left:1px solid #ccc;
+    margin-left: 2%;
+}
+/* card */
+.hotel_introduction_card{
+    width: 24%;
+    height: 430px;
+    margin:  2% 0.5% 0;
+    border: none;
+    position: relative;
+}
+.hotel_introduction_card:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.10);
+}
+.hotel_introduction_card_text{
+    line-height: initial;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.hotel_introduction_card_star{
+    color: orange;
+}
+.hotel_introduction_money{
+    position: absolute;
+    padding: 0;
+    bottom: 2%;
+    left: 6%;
+    color: #aaa;
+}
+.hotel_introduction_card_btn{
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+    padding: 0.3% 5%;
+    background: #ccc;
+    color: #fff;
+    border: none;
+}
+.css-1uccc91-singleValue{
+    overflow: none;
+}

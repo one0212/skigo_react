@@ -1,0 +1,61 @@
+.banner-user{
+  height: 200px;
+  position: relative;
+}
+.banner-anim{
+  min-height: 700px !important; 
+}
+.banner-user-elem *{
+  color: #fff;
+  position: absolute;
+  overflow: hidden;
+}
+.banner-user-elem .banner-user-title{
+  font-size: 32px;
+  left: 10%;
+  bottom: 20%;
+}
+.banner-user-elem .banner-user-title_p{
+  left: 10%;
+  bottom: 16%;
+}
+.banner-anim-elem .bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.custom-arrow-thumb .user-thumb {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  height: 40px;
+}
+.user-thumb{
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.235);
+  height: 110px;
+}
+.user-thumb span {
+  width: 150px;
+    height: 60px;
+    margin: 5px 5px;
+    box-shadow: 0 0 5px fade(#000, 15);
+    transition: background-color .3s;
+    background: transparent;
+}
+.user-thumb span.active {
+  background: fade(#fff, 45);
+}
+.user-thumb span i {
+  display: block;
+      width: 140px;
+      height: 90px;
+      margin: 5px;
+      background-size: cover;
+      background-position: center;
+}
+.banner-thumb-bottom .banner-anim-thumb {
+  background: #999;
+}
