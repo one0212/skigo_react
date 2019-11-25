@@ -128,7 +128,10 @@ class UserCheckout extends Component {
                 : ''} */}
               {checkoutProduct}
               {checkoutAreaHotel}
-              <CheckoutTotalAmt checkoutData={this.state.checkoutResponse} />
+              <CheckoutTotalAmt
+                checkoutData={this.state.checkoutResponse}
+                addressData={this.state.text}
+              />
             </Col>
           </Row>
         </Container>

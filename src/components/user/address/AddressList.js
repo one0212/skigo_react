@@ -14,7 +14,7 @@ class AddressList extends Component {
                 <input
                   type="text"
                   className="mb-2 user-center-input"
-                  // value="江宛婷"
+                  value={this.props.addressData.receiver}
                 />
               </div>
               <div className="">
@@ -22,7 +22,7 @@ class AddressList extends Component {
                 <input
                   type="text"
                   className="mb-2 user-center-input"
-                  // value="0911003909"
+                  value={this.props.addressData.mobile}
                 />
               </div>
               <div className="mb-3">
@@ -30,7 +30,7 @@ class AddressList extends Component {
                 <input
                   type="text"
                   className="mb-2 user-center-input"
-                  // value="台北市大安區復興南路一段390號"
+                  value={this.props.addressData.address}
                 />
               </div>
               <Button variant="orange" className="">
