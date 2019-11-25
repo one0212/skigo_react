@@ -189,6 +189,11 @@
         display:inline-block;
     }
 
+    /* 加入最愛樣式 */
+    #have-love{
+        display:none;
+    }
+
     @media (max-width: 1100px) {
     .coach_book_out .coach_head{
       flex-direction: column;

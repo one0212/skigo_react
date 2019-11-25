@@ -19,6 +19,7 @@ class CoachBook extends React.Component {
       day: 0,
       pay: 0,
       changeDate: 2019 - 11 - 22,
+      loveClick: false,
     }
   }
 
@@ -123,6 +124,60 @@ class CoachBook extends React.Component {
     })
   }
 
+  // 進入購物車
+  CoachCart = () => {
+    let coachcart = {
+      prodId: this.state.total[0].coach_sid, //這邊放資料庫的商品id
+      prodType: 'coach', //這邊放資料庫的商品類型 例如飯店傳hotel,
+      qty: this.state.people, //商品數量 不需用字串
+    }
+
+    // console.log(coachcart)
+
+    fetch('http://localhost:3001/api/cart/items', {
+      body: JSON.stringify(coachcart), // must match 'Content-Type' header
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, same-origin, *omit
+      headers: {
+        'user-agent': 'Mozilla/4.0 MDN Example',
+        'content-type': 'application/json',
+      },
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, cors, *same-origin
+    })
+      .then(response => {
+        console.log(response)
+        console.log('hihihi')
+        //   if (response.status === 200) {
+        //   // 所以可以用此判斷, 後續要做的事情就是放這邊
+        //   console.log('商品加入成功')
+        // }
+      }) // 輸出成 json
+      .then(json => {})
+  }
+
+  //加入最愛樣式
+  addLove = () => {
+    // console.log('加入最愛')
+    let noLove = document.querySelector('#no-love')
+    let haveLove = document.querySelector('#have-love')
+    let loveClick = this.state.loveClick
+
+    // console.log(loveClick)
+    if (loveClick == false) {
+      this.setState({ loveClick: true })
+      // loveClick = true;
+      noLove.style.display = 'none'
+      haveLove.style.display = 'inline-block'
+      console.log('加到最愛')
+    } else {
+      this.setState({ loveClick: false })
+      noLove.style.display = 'inline-block'
+      haveLove.style.display = 'none'
+      console.log('移除最愛')
+    }
+  }
+
   componentDidMount() {
     // 該課程人數上限
     const booknumlimit = 5
@@ -220,7 +275,11 @@ class CoachBook extends React.Component {
             <div className="container d-flex">
               <p>首頁</p>
               <p> > </p>
-              <p className="bread"><Link to={'/CoachClass/' + this.state.total[0].class_sid}>課程： {this.state.total[0].class_name}</Link> </p>
+              <p className="bread">
+                <Link to={'/CoachClass/' + this.state.total[0].class_sid}>
+                  課程： {this.state.total[0].class_name}
+                </Link>{' '}
+              </p>
               <p> > </p>
               <p> 教練： {this.state.total[0].coach_name}</p>
             </div>
@@ -328,11 +387,12 @@ class CoachBook extends React.Component {
                   </div>
                 </div>
                 <div className="d-flex flex-column">
-                  <button className="btn">
+                  <button className="btn" onClick={this.CoachCart}>
                     <i className="fas fa-shopping-cart"></i> 放入購物車
                   </button>
-                  <button className="btn">
-                    <i className="far fa-heart"></i> 收藏商品
+                  <button className="btn" onClick={this.addLove}>
+                    <i id="no-love" className="far fa-heart"></i>
+                    <i id="have-love" class="fas fa-heart"></i> 收藏商品
                   </button>
                 </div>
               </div>
