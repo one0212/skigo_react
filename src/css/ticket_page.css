@@ -1,0 +1,60 @@
+.ticket_book_out .class_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ticket_book_out h1 {
+    font-size: 2rem;
+}
+
+.ticket_book_out .font-orange {
+    color: #FD702D;
+    margin-top: 0.5rem;
+}
+
+.ticket_book_out .language span {
+    border: 1px #fd702d solid;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 8px 12px;
+}
+.ticket_book_out .ticket-snowfield span{
+    color: #FD702D;
+}
+.ticket_book_out .ticket-price{
+    font-size: 1.8rem;
+}
+.ticket_book_out .ticket-book{
+    margin-top: 0.5rem;
+}
+.ticket_book_out .ticket-book h5{
+    font-weight: 600;
+}
+.ticket_book_out .ticket-page-style{
+    padding-right: 7rem;
+}
+.ticket_book_out .ticket-page-style h5{
+    font-weight: 600;
+}
+.ticket_book_out .ticket-page-style p{
+    font-size: 1.2rem;
+    /* margin-bottom: 1.1rem; */
+}
+.ticket_book_out .ticket-page-style .ticket_time_line{
+    margin-bottom: 1.3rem;
+}
+.ticket_book_out .ticket-page-style .ticket_date_line{
+    margin-bottom: 0.75rem;
+}
+.ticket_book_out .ticket-date{
+    margin-bottom: 2rem;
+}
+.ticket_book_out .btn {
+    width: 100%;
+    background: #fd702d;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0px;
+    font-size: 1.25rem;
+}

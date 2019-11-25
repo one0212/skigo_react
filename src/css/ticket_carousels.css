@@ -1,0 +1,137 @@
+/* bootstrap.css-container修改 */
+/* @media (min-width: 375px) {
+    .container {
+      max-width: 360px;
+    }
+}
+@media (min-width: 1300px) {
+    .container {
+      max-width: 1440px;
+    }
+} */
+/* 外層 */
+section{
+    margin: 40px 0;
+}
+.area_lesson{
+    margin-top: 50px;
+}
+.area_lesson .lesson_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.area_lesson h4{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.area_lesson .lesson{
+    width: 1045px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.area_lesson .card{
+    margin: 0 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+.area_lesson .lesson img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.area_lesson .card-body h5{
+    font-size: 1.4rem;
+}
+.area_lesson .btn-primary{
+    background: #FD702D;
+    border: none;
+}
+/* card輪播 */
+.area_lesson .slick-prev:before,
+.area_lesson .slick-next:before {
+    color: #797979; 
+    font-size: 40px;
+}
+.area_lesson .slick-prev{
+    width: 40px;
+    height: 40px;
+}
+.area_lesson .slick-next{
+    width: 40px;
+    height: 40px;
+}
+.area_lesson .slick-prev{
+    left: -3.4rem;
+}
+.area_lesson .slick-next{
+    right: -3.4rem;
+}
+@media screen and (max-width: 1300px) {
+    .area_lesson .lesson{
+        width: 710px;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+    }
+}
+@media screen and (max-width: 896px) {
+    .area_lesson .lesson{
+        width: 360px;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+    }
+    .area_lesson .card{
+        margin: 0 1.3rem;
+        /* border: 1px solid #ddd;
+        border-radius: 0; */
+    }
+}
+@media screen and (max-width: 768px) {
+    /* 外層 */
+    .area_lesson h4{
+        color: #000;
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        width: 10px;
+        height: 33px;
+        background: #FD702D;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    /* 外層 */
+    .area_lesson h4{
+        font-size: 1.5rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        height: 28px;
+        margin-right: 11px;
+    }
+    /* card輪播 */
+    .area_lesson .slick-prev{
+        left: -2.5rem;
+
+    }
+    .area_lesson .slick-next{
+        right: -2.5rem;
+    }
+}
+@media screen and (max-width: 501px) {
+    .area_lesson{
+        margin-bottom: 70px;
+    }
+    /* card輪播 */
+    .area_lesson .slick-prev{
+        left: 6rem;
+        top: 30.5rem;
+    }
+    .area_lesson .slick-next{
+        right: 6rem;
+        top: 30.5rem;
+    }
+}
