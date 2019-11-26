@@ -11,37 +11,18 @@ class AreaCard extends React.Component {
   }
 
   // 元件 "已經 Did" 呈現在網頁上
-  async componentWillMount() {
-    // try {
-    //   await this.setState({ loading: true })
-
-      // const response = await fetch('http://localhost:5000/try-db', {
-    //   const response = await fetch('http://localhost:5000/ticket-list', {
-    //     method: 'GET',
-    //     headers: new Headers({
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //     }),
-    //   })
-
-    //   if (response) {
-    //     console.log('get data!')
-    //   }
-
-    //   if (!response.ok) throw new Error(response.statusText)
-
-    //   const jsonObject = await response.json()
-
-    //   await this.setState({ total: jsonObject }, function() {
-    //   })
-    // } catch (e) {
-    //   console.log(e)
-    // } finally {
-    //   await setTimeout(() => this.setState({ loading: false }))
-    //   // await this.setState({ loading: false })
-    //   console.log(this.state.total)
-    // }
+  async componentDidMount() {
+    this.setState({ total: this.props.filter ? this.props.filter : '' }, () => {
+      this.setState({ loading: false })
+    })
   }
+  // async componentDidUpdate(prevProps) {
+
+  //   if (this.props.filter !== prevProps.props.filter) {
+  //     // this.setState({ total: this.props.filter })
+  //     console.log('上次不等於這次')
+  //   }
+  // }
   // 金額轉千分位
   thousandComma = number => {
     let num = number.toString()
@@ -56,9 +37,10 @@ class AreaCard extends React.Component {
   render() {
     return (
       <>
+        {console.log('123')}
         {console.log(this.props.filter)}
         {/* { if( this.props.filter == true ){} } */}
-        {false ? (
+        {this.state.loading ? (
           <div>
             {/* <i className="fas fa-spinner fa-spin" /> */}
             資料載入中
@@ -66,15 +48,17 @@ class AreaCard extends React.Component {
         ) : (
           <>
             {this.props.filter.map((value, index) => {
-              if (!value) return <></>
-              console.log(value.area_sid)
+              console.log('ticket_sid:', value.ticket_sid, value.area_sid)
+              //if (!value) return <></>
+
+              //return `<h2>${value.ticket_sid}</h2>`
               return (
                 <Link
                   className="coach-card ticket-card"
-                  key={value.area_sid}
+                  key={value.ticket_sid}
                   to={'/ticketarea/' + value.area_sid}
                 >
-                  <div className="hot_img">
+                  <div className="hot_img" data-ticket_sid={value.ticket_sid}>
                     <img
                       className="coach_img_pic ticket_img_pic"
                       src={'/images/areas/' + value.ticket_pic}
@@ -87,9 +71,14 @@ class AreaCard extends React.Component {
                       {/* {value.ticket_type === 1 ? <span>天然雪</span> : ''} */}
                       <span>{value.ticket_age}</span>
                     </p>
-                    <p>{value.ticket_use_day}|{value.ticket_type}</p>
+                    <p>
+                      {value.ticket_use_day}|{value.ticket_type}
+                    </p>
                     <div className="d-flex justify-content-end">
-                      <p className="price" style={{color:"#fd702d",fontSize:"1.5rem"}}>
+                      <p
+                        className="price"
+                        style={{ color: '#fd702d', fontSize: '1.5rem' }}
+                      >
                         NT {this.thousandComma(value.ticket_price)}
                       </p>
                     </div>
@@ -99,7 +88,7 @@ class AreaCard extends React.Component {
                       </p>
                     </div>
                   </div>
-               </Link>
+                </Link>
               )
             })}
           </>
