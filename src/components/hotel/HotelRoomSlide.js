@@ -75,7 +75,10 @@ class HotelRoomSlide extends React.Component {
                 <span class="hotel_card_money">
                   約 $<span>2,400</span>TWD / 晚
                 </span>
-                <Button variant="light" className="slider_card_btn badge-pill">
+                <Button
+                  variant="light"
+                  className="hotel_room_slider_card_btn badge-pill"
+                >
                   more
                 </Button>
               </Card.Body>
@@ -122,7 +125,10 @@ class HotelRoomSlide extends React.Component {
                 <span class="hotel_card_money">
                   約 $<span>2,400</span>TWD / 晚
                 </span>
-                <Button variant="light" className="slider_card_btn badge-pill">
+                <Button
+                  variant="light"
+                  className="hotel_room_slider_card_btn badge-pill"
+                >
                   more
                 </Button>
               </Card.Body>
@@ -169,7 +175,10 @@ class HotelRoomSlide extends React.Component {
                 <span class="hotel_card_money">
                   約 $<span>2,400</span>TWD / 晚
                 </span>
-                <Button variant="light" className="slider_card_btn badge-pill">
+                <Button
+                  variant="light"
+                  className="hotel_room_slider_card_btn badge-pill"
+                >
                   more
                 </Button>
               </Card.Body>
@@ -216,7 +225,10 @@ class HotelRoomSlide extends React.Component {
                 <span class="hotel_card_money">
                   約 $<span>2,400</span>TWD / 晚
                 </span>
-                <Button variant="light" className="slider_card_btn badge-pill">
+                <Button
+                  variant="light"
+                  className="hotel_room_slider_card_btn badge-pill"
+                >
                   more
                 </Button>
               </Card.Body>
@@ -263,7 +275,10 @@ class HotelRoomSlide extends React.Component {
                 <span class="hotel_card_money">
                   約 $<span>2,400</span>TWD / 晚
                 </span>
-                <Button variant="light" className="slider_card_btn badge-pill">
+                <Button
+                  variant="light"
+                  className="hotel_room_slider_card_btn badge-pill"
+                >
                   more
                 </Button>
               </Card.Body>

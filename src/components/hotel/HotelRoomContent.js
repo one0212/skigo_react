@@ -79,7 +79,7 @@ class HotelRoomContent extends React.Component {
               </div>
               <p className="h4 hotel_room_line_box">服務設施</p>
               <Row className="mb-5">
-                <Col className="facility_items">
+                <Col>
                   <p className="font-weight-bold h5">所有客房均提供:</p>
                   <ul className="list-unstyled hotel_room_facility_items">
                     <li>

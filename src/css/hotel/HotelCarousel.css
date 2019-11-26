@@ -169,10 +169,11 @@
 }
 /* scrollDown */
 /* 搜尋日期開始 */
-.search_date_form{
+.hotel_search_date_form{
   background: rgba(255, 255, 255, 0.276);
   padding: 20px ;
   color: #000;
+  border-radius: 10px;
 }
 .search_setting_bg input, .search_select select{
   height: 60px;
@@ -181,22 +182,22 @@
   text-indent: 15%;
   margin-right:10px ;
 }
-.search_select{
-  width: 250px;
+.Hotel_home_search_select{
+  width: 150px;
   border: none; 
   /* text-indent: 15%; */
   margin-right:10px ;
   overflow: initial;
-  /* background: url(/src/image/hotel/hotel_icons/person.svg) 5% 50% no-repeat; */
+  /* background: url(../../images/hotel/hotel_icons/person.svg) 5% 50% no-repeat; */
 }
 .search_date_area_input input{
-  /* background: url(/src/image/hotel/hotel_icons/map-pin.svg) 5% 50% no-repeat; */
+  background: url(../../images/hotel/hotel_icons/map-pin.svg) 5% 50% no-repeat;
   background-color: #fff;
 }
-.hotel_date_search{
+.hotel_date_search_carousel{
   background: #fff;
-  border: none;
-  border-radius: 3px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
 }
 
 /* 搜尋日期結束 */

@@ -6,7 +6,6 @@ import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
 
-
 import UserLightbox from './UserLightbox'
 import '../../css/header.css'
 

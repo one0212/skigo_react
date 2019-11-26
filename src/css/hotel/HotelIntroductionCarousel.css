@@ -2,10 +2,10 @@
     height: 900px;
     position: relative;
   }
-  .banner-user-elem > *{
+  .banner-user-elem >*{
     color: #fff;
     position: absolute;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .banner-user-elem .banner-user-title{
     /* font-size: 32px; */

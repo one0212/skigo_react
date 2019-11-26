@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { Row, Col, Form } from 'react-bootstrap'
+import { Row, Col, Form, Button } from 'react-bootstrap'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../css/hotel/HotelCarousel.css'
 import UseAnimations from 'react-useanimations'
@@ -12,14 +12,22 @@ import {
 } from '../../../node_modules/@y0c/react-datepicker'
 import '../../../node_modules/@y0c/react-datepicker/assets/styles/calendar.scss'
 import Select from 'react-select'
+import Ink from 'react-ink'
 
 // 這裡是人數選單
-const options = [
+const options_p = [
   { value: '1位成人', label: '1位成人' },
   { value: '2位成人', label: '2位成人' },
   { value: '3位成人', label: '3位成人' },
   { value: '4位成人', label: '4位成人' },
   { value: '4位成人', label: '4位成人' },
+]
+const options_c = [
+  { value: '1位孩童', label: '1位孩童' },
+  { value: '2位孩童', label: '2位孩童' },
+  { value: '3位孩童', label: '3位孩童' },
+  { value: '4位孩童', label: '4位孩童' },
+  { value: '4位孩童', label: '4位孩童' },
 ]
 const customStyles = {
   control: base => ({
@@ -53,7 +61,8 @@ export default class HotelCarousel extends React.Component {
       sliderReady: false,
       isToggleOn: false,
       display: 'none',
-      selectedOption: null,
+      selectedOption_p: null,
+      selectedOption_c: null,
       windowHeight: false,
     }
   }
@@ -77,16 +86,19 @@ export default class HotelCarousel extends React.Component {
     // to normal Date object
     console.log(date.toDate())
   }
-  handleChange = selectedOption => {
-    this.setState({ selectedOption }, () =>
-      console.log(`Option selected:`, this.state.selectedOption)
+  handleChange = (selectedOption_p, selectedOption_c) => {
+    this.setState(
+      { selectedOption_p },
+      () => console.log(`Option selected:`, this.state.selectedOption_p),
+      { selectedOption_c },
+      () => console.log(`Option selected:`, this.state.selectedOption_c)
     )
   }
   handleScroll = () => {
     let scrollTop = window.pageYOffset,
       windowHeight = Math.round(scrollTop / 2)
     console.log(windowHeight)
-    if (windowHeight > 90) {
+    if (windowHeight > 140) {
       this.setState({
         windowHeight: true,
       })
@@ -190,7 +202,7 @@ export default class HotelCarousel extends React.Component {
                 <Form
                   action=""
                   method="get"
-                  class="search_area text-center pb-4 "
+                  className="search_area text-center pb-4 "
                   style={{ display: this.state.display }}
                   // style={{display: this.state.windowHeight ? 'none': 'block'}}
                 >
@@ -222,7 +234,7 @@ export default class HotelCarousel extends React.Component {
                 <Form
                   action=""
                   method="get"
-                  className="search_date_form align-self-center animated bounce fast"
+                  className="hotel_search_date_form align-self-center animated bounce fast"
                   style={{ display: this.state.display }}
                   // eslint-disable-next-line react/jsx-no-duplicate-props
                   style={{
@@ -238,7 +250,7 @@ export default class HotelCarousel extends React.Component {
                         placeholder="搜尋地區..."
                       />
                     </div>
-                    <div className="hotel_date_search">
+                    <div className="hotel_date_search_carousel">
                       <RangeDatePicker
                         styles={hotelDateSearchStyles}
                         dateFormat="YYYY/MM/DD"
@@ -248,13 +260,25 @@ export default class HotelCarousel extends React.Component {
                       />
                     </div>
                     <Select
-                      className="search_select ml-3"
+                      className="Hotel_home_search_select ml-2"
                       styles={customStyles}
                       value={selectedOption}
                       onChange={this.handleChange}
-                      options={options}
-                      placeholder="請選擇人數..."
+                      options={options_p}
+                      placeholder="1位成人"
                     />
+                    <Select
+                      className="Hotel_home_search_select"
+                      styles={customStyles}
+                      value={selectedOption}
+                      onChange={this.handleChange}
+                      options={options_c}
+                      placeholder="0位孩童"
+                    />
+                    <Button style={{ position: 'relative' }}>
+                      搜出好房 GO
+                      <Ink key="__ink" />
+                    </Button>
                   </div>
                 </Form>
                 {/* /////日期搜尋 end///// */}
