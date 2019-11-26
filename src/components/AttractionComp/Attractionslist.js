@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import '../css/Accordion_css.css'
+import '../../css/Accordion_css.css'
 import $ from 'jquery';
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker,withStateHandlers } from "react-google-maps"
 import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 import { Button, Card, Accordion, InputGroup, FormControl } from 'react-bootstrap'
-import AlistLeft from '../components/AlistLeft';
+import AlistLeft from './AlistLeft';
 import { thisExpression } from '@babel/types';
 
 
@@ -144,7 +143,7 @@ class AttractionsIndex extends Component {
           </div>
         ) : (
             <>
-              <Header />
+              
               <div style={{ weight: '100%', height: '35px' }}></div>
 
 
@@ -152,7 +151,7 @@ class AttractionsIndex extends Component {
 
 
                 {/* <!--關掉ROW間距no-gutters--> */}
-                <div className="row  box no-gutters ">
+                <div className="row  Abox no-gutters ">
                   {/* <!--顯示左邊區塊 --> */}
                   <div className="col-md-5">
                     <div className="outer-list-card-first overflow-auto">
@@ -206,10 +205,10 @@ class AttractionsIndex extends Component {
                       </div>
 
                       <div className="AselectThreeWidth" id="MapMode"  >
-                        <button type="button" className="btn  btn-sm AmapButton MapModeOnOFF" ><img src={require('../images/AttractionsImg/Amap.svg')}
+                        <button type="button" className="btn  btn-sm AmapButton MapModeOnOFF" ><img src={require('../../images/AttractionsImg/Amap.svg')}
                           className="AmapImg" />地圖模式</button>
 
-                        <button type="button" className="btn  btn-sm AmapButton MapModeOnOFF" style={{ display: 'none' }}><img src={require('../images/AttractionsImg/Alist.svg')}
+                        <button type="button" className="btn  btn-sm AmapButton MapModeOnOFF" style={{ display: 'none' }}><img src={require('../../images/AttractionsImg/Alist.svg')}
                           className="AmapImg" />卡片模式</button>
                       </div>
                     </div>
@@ -227,19 +226,21 @@ class AttractionsIndex extends Component {
                               <>
                                 <div className="AcardBodyTop"></div>
                                 <div className="card Acard" style={{ height: '400pX' }}>
-                                  <img src={require('../images/AttractionsImg/' + value.ImageName + '.jpg')} className="card-img-top AcardBodyImg" />
+                                  <img src={require('../../images/AttractionsImg/' + value.ImageName + '.jpg')} className="card-img-top AcardBodyImg" />
                                   <div className="card-body">
                                     <h5 className="card-title">{value.Name} </h5>
                                     <div className="AcardBody">
-                                      <img src={require('../images/AttractionsImg/AmapMarker.svg')} alt="" />
+                                      <img src={require('../../images/AttractionsImg/AmapMarker.svg')} alt="" />
                                       {value.address}
                                     </div>
                                     <div className="AcardBody">
-                                      <img src={require('../images/AttractionsImg/Aphone.svg')} alt="" />
+                                      <img src={require('../../images/AttractionsImg/Aphone.svg')} alt="" />
                                       {value.phone}
                                     </div>
                                     <div className="AcardBody">
-                                      <img src={require('../images/AttractionsImg/AClock.svg')} alt="" />
+
+                                  
+                                      <img src={require('../../images/AttractionsImg/AClock.svg')} alt="" />
                                       {value.BusinessHours}
                                     </div>
                                     <a href="#" className="btn btn-primary">加入我的排程</a>
@@ -257,19 +258,21 @@ class AttractionsIndex extends Component {
                           <>
                             <div className="AcardBodyTop"></div>
                             <div className="card Acard" style={{ height: '400pX' }}>
-                              <img src={require('../images/AttractionsImg/Naruto1.png')} className="card-img-top AcardBodyImg" />
+                              <img src={require('../../images/AttractionsImg/Naruto1.png')} className="card-img-top AcardBodyImg" />
                               <div className="card-body">
                                 <h5 className="card-title">北海道大學 銀杏並本</h5>
                                 <div className="AcardBody">
-                                  <img src={require('../images/AttractionsImg/AmapMarker.svg')} alt="" />
+                                  <img src={require('../../images/AttractionsImg/AmapMarker.svg')} alt="" />
                                   新潟県南魚沼市長森415
                 </div>
                                 <div className="AcardBody">
-                                  <img src={require('../images/AttractionsImg/Aphone.svg')} alt="" />
+                                  <img src={require('../../images/AttractionsImg/Aphone.svg')} alt="" />
                                   +81 134-32-7575
                 </div>
+
+              
                                 <div className="AcardBody">
-                                  <img src={require('../images/AttractionsImg/AClock.svg')} alt="" />
+                                  <img src={require('../../images/AttractionsImg/AClock.svg')} alt="" />
                                   12:00-100
                 </div>
                                 <a href="#" className="btn btn-primary">加入我的排程</a>
