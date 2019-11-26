@@ -1,0 +1,56 @@
+.coachsame{
+    margin-top:100px;
+    padding-right:1% ;
+}
+
+.coachsame .coachsameCard{
+    width: 30%;
+    margin-left:2%;
+    margin-right:1%;
+    margin-bottom:30px;
+}
+
+.coachsame .coachsameCardAll{
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.coachsame .coachsameImg{
+    overflow: hidden;
+    height: 250px;
+}
+.coachsame .coachsameImg img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+    .coachsame .coachsameCardAll{
+        flex-wrap: wrap;
+        justify-content:center;
+    }
+    .coachsame .coachsameCard{
+        
+        width: 45%;
+        margin:10px;
+
+        
+    } 
+}
+
+@media (max-width: 450px) {
+    .coachsame{
+        margin-top:50px;
+    }
+    .coachsame .coachsameCardAll{
+        flex-wrap: wrap;
+        justify-content:center;
+    }
+    .coachsame .coachsameCard{
+        
+        width: 80%;
+
+        
+    } 
+}
