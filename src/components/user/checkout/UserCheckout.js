@@ -28,53 +28,59 @@ class UserCheckout extends Component {
       },
     }
   }
+
+  changeAddressData = receiveData => {
+    this.setState({ text: { ...receiveData } }, function() {
+      console.log(this.state)
+    })
+  }
   componentWillMount() {
-    // const url = 'http://localhost:3001/api/cart'
-    // fetch(url, {
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    // })
-    //   .then(response => {
-    //     return response.json()
-    //   })
-    //   .then(json => {
-    //     console.log(json)
-    //     this.setState({ cartResponse: json })
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
-    const mockResp = {
-      items: [
-        {
-          price: 2500,
-          prodId: 123456,
-          prodName: '雪板',
-          prodType: 'products',
-          qty: 4,
-          totalAmt: 10000,
-        },
-        {
-          price: 4000,
-          prodId: 789123,
-          prodName: '三人房',
-          prodType: 'hotels',
-          qty: 4,
-          totalAmt: 10000,
-        },
-        {
-          price: 5000,
-          prodId: 777777,
-          prodName: '雪具123',
-          prodType: 'products',
-          qty: 3,
-          totalAmt: 15000,
-        },
-      ],
-      totalAmt: 10000,
-    }
-    this.setState({ checkoutResponse: mockResp })
+    const url = 'http://localhost:3001/api/cart'
+    fetch(url, {
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        console.log(json)
+        this.setState({ checkoutResponse: json })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    //   const mockResp = {
+    //     items: [
+    //       {
+    //         price: 2500,
+    //         prodId: 123456,
+    //         prodName: '雪板',
+    //         prodType: 'products',
+    //         qty: 4,
+    //         totalAmt: 10000,
+    //       },
+    //       {
+    //         price: 4000,
+    //         prodId: 789123,
+    //         prodName: '三人房',
+    //         prodType: 'hotels',
+    //         qty: 4,
+    //         totalAmt: 10000,
+    //       },
+    //       {
+    //         price: 5000,
+    //         prodId: 777777,
+    //         prodName: '雪具123',
+    //         prodType: 'products',
+    //         qty: 3,
+    //         totalAmt: 15000,
+    //       },
+    //     ],
+    //     totalAmt: 10000,
+    //   }
+    //   this.setState({ checkoutResponse: mockResp })
   }
   render() {
     let checkoutProduct = '',
@@ -96,6 +102,7 @@ class UserCheckout extends Component {
               text={this.state.text}
               key={index}
               checkoutData={items}
+              changeAddressData={this.changeAddressData}
             />
           ))
         }

@@ -128,8 +128,8 @@ class CoachBook extends React.Component {
   CoachCart = () => {
     let coachcart = {
       prodId: this.state.total[0].coach_sid, //這邊放資料庫的商品id
-      prodType: 'coach', //這邊放資料庫的商品類型 例如飯店傳hotel,
-      qty: this.state.people, //商品數量 不需用字串
+      prodType: 'coaches', //這邊放資料庫的商品類型 例如飯店傳hotel,
+      qty: +this.state.people, //商品數量 不需用字串
     }
 
     // console.log(coachcart)

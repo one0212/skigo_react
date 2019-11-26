@@ -103,13 +103,13 @@ class Header extends Component {
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="/area" className="nav-item mx-3">
+                  <Nav.Link href="/ticketlist" className="nav-item mx-3">
                     雪場票券
                   </Nav.Link>
                   <Nav.Link href="/CoachList" className="nav-item mx-3">
                     教練課程
                   </Nav.Link>
-                  <Nav.Link href="HotelHome" className="nav-item mx-3">
+                  <Nav.Link href="/HotelHome" className="nav-item mx-3">
                     找飯店
                   </Nav.Link>
                   <Nav.Link href="/store" className="nav-item mx-3">

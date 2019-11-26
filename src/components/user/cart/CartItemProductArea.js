@@ -10,7 +10,7 @@ class CartItemProductArea extends Component {
     return (
       <>
         <div className="shop-item shop-box my-4 position-relative">
-          <div className="shop-vendor-title">品牌、雪場廠商名稱</div>
+          <div className="shop-vendor-title">{this.props.cartData.vendor}</div>
           <div className="shop-close-item mt-2">+</div>
           <div className="pr-4">
             <div className="shop-data d-flex justify-content-between">
@@ -25,9 +25,9 @@ class CartItemProductArea extends Component {
               </div>
               <div className="d-flex flex-column mt-2">
                 <a href="#" className="text-decoration-none text-dark">
-                  {this.props.cartData.prodName}
+                  {this.props.cartData.name}
                 </a>
-                <span>品項內容</span>
+                <span>{this.props.cartData.info}</span>
               </div>
               <div className="shop-select position-relative mt-2">
                 <select className="position-absolute d-inline-block">

@@ -15,11 +15,12 @@ class CheckoutItemAreaHotel extends Component {
               <h5>收件資訊</h5>
               <p>付款後請至email確認商品</p>
             </Col>
+            {console.log(this.props.checkoutData)}
             {this.props.checkoutData.map((item, index) => {
               if (
                 item.prodType === 'hotels' ||
                 item.prodType === 'areas' ||
-                item.proType === 'coaches'
+                item.prodType === 'coaches'
               ) {
                 return (
                   <>
@@ -42,9 +43,9 @@ class CheckoutItemAreaHotel extends Component {
                                   href=""
                                   className="text-decoration-none text-dark"
                                 >
-                                  {item.prodName}
+                                  {item.name}
                                 </a>
-                                <span>品項內容</span>
+                                <span>{item.info}</span>
                               </div>
                               <div>X {item.qty}</div>
                             </div>

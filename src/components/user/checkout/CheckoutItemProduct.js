@@ -137,6 +137,8 @@ const CheckoutItemProduct = props => {
       handleClose()
       setAddress()
       addDeliveryInfo()
+      props.changeAddressData(changeText)
+      console.log(props.changeAddressData)
     }
   }
 
