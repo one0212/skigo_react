@@ -8,10 +8,68 @@ import '../../scss/filterProduct.scss'
 
 
 class  FilterProduct extends React.Component{
-    constructor(){
-      super()
-      this.state = {}
+  constructor(){
+    super()
+    this.state = {
+      products: ''
     }
+  }
+  handleClick = () => {
+    const url = 'http://localhost:3001/api/cart/items'
+    const id = document.querySelector('#product-id').textContent
+    const select = document.querySelector('#product-select')
+    const selectedValue = select.options[select.selectedIndex].value
+    const obj = {
+      // prodId, prodType, qty 這三個變數不可改
+      prodId: parseInt(id), //這邊放資料庫的商品id
+      prodType: 'products', //這邊放資料庫的商品類型 例如飯店傳hotel,
+      qty: parseInt(selectedValue), //商品數量 不需用字串
+    }
+    console.log(id, selectedValue, obj)
+    fetch(url, {
+      body: JSON.stringify(obj),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    }).then(response => {
+      // 如果response.status拿到200表示加入商品成功
+      if (response.status === 200) {
+        // 所以可以用此判斷, 後續要做的事情就是放這邊
+        console.log('商品加入成功')
+      }
+    })
+  }
+  
+  componentWillMount(){
+     fetch(
+      `http://localhost:3001/japi/products`,
+      {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      }
+    ).then(response=>{
+      return response.json()
+    }).then(json=>{
+      const uniqueNo = [];
+      const uniqueProd = [];
+      json.map(prod => {
+          if (uniqueNo.indexOf(prod.No) === -1) {
+            uniqueNo.push(prod.No);
+            uniqueProd.push(prod);
+          }
+      });
+      console.log(uniqueNo);
+      this.setState({ products: uniqueProd})
+      console.log(this.state.products)
+    })
+    .catch((error) => {
+      "error"
+    })
+  }
   
     render(){
        return (
@@ -134,10 +192,12 @@ class  FilterProduct extends React.Component{
           </Col>
           <Col sm={9}>
           <div className="d-flex flex-wrap">
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
+        {this.state.products !== '' ?
+        this.state.products.map((product,index)=>{
+          return <ProductCard key={index} productData={product}/>
+        })
+         : ''}
+          
         </div>
         </Col>
         </Row>

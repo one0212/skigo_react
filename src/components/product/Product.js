@@ -11,8 +11,14 @@ import SwipeToSlide from './SwipeToSlide'
 import Footer from '../Footer'
 
 
-const Product = () => {
-  const handleClick = () => {
+class Product extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      products: ''
+    }
+  }
+  handleClick = () => {
     const url = 'http://localhost:3001/api/cart/items'
     const id = document.querySelector('#product-id').textContent
     const select = document.querySelector('#product-select')
@@ -39,6 +45,14 @@ const Product = () => {
     })
   }
   
+
+  
+
+
+  
+
+
+  render(){
   return (
     <>
 <Container>
@@ -87,7 +101,7 @@ const Product = () => {
           </Form.Group>
           </div>
           <div className="product-btn">
-            <Button className="btn-buy" type="submit" size="lg" block onClick={handleClick} ><FiShoppingCart/>放入購物車</Button>
+            <Button className="btn-buy" type="submit" size="lg" block onClick={this.handleClick} ><FiShoppingCart/>放入購物車</Button>
             <Button className="btn-collect" type="submit" size="lg" block><IoMdHeartEmpty/>收藏商品</Button>
           </div>
             <p>付款後，從備貨到寄出商品為 4 個工作天。（不包含假日）</p>
@@ -105,6 +119,6 @@ const Product = () => {
 <Footer/>
 
 </>
-  )
+  )}
 }
 export default Product
