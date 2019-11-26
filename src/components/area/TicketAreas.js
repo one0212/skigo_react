@@ -166,7 +166,7 @@ class TicketAreas extends React.Component {
                       </div>
                     </div>
                     <div className="col-xl-3">
-                      <div className="weather">
+                      {/* <div className="weather">
                         <img
                           src={require('../../images/areas/weather.svg')}
                           className="weather_img"
@@ -181,7 +181,7 @@ class TicketAreas extends React.Component {
                           />
                           <p className="tem">C</p>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="introduction">
@@ -208,7 +208,7 @@ class TicketAreas extends React.Component {
                       <h5>{this.state.total[0].area_addr}</h5>
                       <h1>{this.state.total[0].area_name}</h1>
                     </div>
-                    <div className="weather">
+                    {/* <div className="weather">
                       <img
                         src={require('../../images/areas/weather.svg')}
                         className="weather_img"
@@ -223,7 +223,7 @@ class TicketAreas extends React.Component {
                         />
                         <p className="tem">C</p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div>
                     <p className="article">

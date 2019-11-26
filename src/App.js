@@ -40,8 +40,8 @@ function App() {
       <Router>
         <>
           <Header />
-          <Link to="/ticketlist">●ticketlist</Link>
-          <Link to="/coachlist">●1.coach_list</Link>
+          {/* <Link to="/ticketlist">●ticketlist</Link> */}
+          {/* <Link to="/coachlist">●1.coach_list</Link> */}
           {/* <Link to="/coachclass">●2.coach_class</Link>
         <Link to="/CoachBook">●3.CoachBook</Link>
         <br></br>
