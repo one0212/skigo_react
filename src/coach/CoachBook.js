@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/coach_book.css'
 import CoachDate from './CoachDate'
 import CoachCarousels from './CoachCarousels'
+import CoachSame from './CoachSame'
 import $ from 'jquery'
 import { exportDefaultSpecifier } from '@babel/types'
 import SlideClass from './SlideClass'
@@ -20,6 +21,7 @@ class CoachBook extends React.Component {
       pay: 0,
       changeDate: 2019 - 11 - 22,
       loveClick: false,
+      loveNum: null,
     }
   }
 
@@ -39,9 +41,9 @@ class CoachBook extends React.Component {
         }
       )
 
-      if (response) {
-        console.log('get data!')
-      }
+      // if (response) {
+      //   console.log('get data!')
+      // }
 
       if (!response.ok) throw new Error(response.statusText)
 
@@ -52,9 +54,10 @@ class CoachBook extends React.Component {
       console.log(e)
     } finally {
       await setTimeout(() => this.setState({ loading: false }))
-      // await this.setState({ loading: false })
-      // console.log('看我')
-      console.log(this.state.total[0].class_maxnum)
+      // 加到最愛
+      await this.setState({ loveNum: this.state.total[0].coach_love })
+      console.log('look at me!!')
+      console.log(this.state.total[0].coach_name)
     }
   }
 
@@ -162,6 +165,23 @@ class CoachBook extends React.Component {
     let noLove = document.querySelector('#no-love')
     let haveLove = document.querySelector('#have-love')
     let loveClick = this.state.loveClick
+    let loveActive = {
+      loveNum: this.state.loveNum,
+      loveState: loveClick,
+      coachSid: this.state.total[0].coach_sid,
+    }
+
+    fetch('http://localhost:3001/coach-love', {
+      body: JSON.stringify(loveActive), // must match 'Content-Type' header
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, same-origin, *omit
+      headers: {
+        'user-agent': 'Mozilla/4.0 MDN Example',
+        'content-type': 'application/json',
+      },
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, cors, *same-origin
+    }).then(response => response.json())
 
     // console.log(loveClick)
     if (loveClick == false) {
@@ -170,11 +190,15 @@ class CoachBook extends React.Component {
       noLove.style.display = 'none'
       haveLove.style.display = 'inline-block'
       console.log('加到最愛')
+      let loveChangeadd = this.state.loveNum + 1
+      this.setState({ loveNum: loveChangeadd })
     } else {
       this.setState({ loveClick: false })
       noLove.style.display = 'inline-block'
       haveLove.style.display = 'none'
       console.log('移除最愛')
+      let loveChangedel = this.state.loveNum - 1
+      this.setState({ loveNum: loveChangedel })
     }
   }
 
@@ -395,6 +419,9 @@ class CoachBook extends React.Component {
                     <i id="have-love" class="fas fa-heart"></i> 收藏商品
                   </button>
                 </div>
+                <div className="d-flex justify-content-end">
+                  共{this.state.loveNum}人收藏
+                </div>
               </div>
             </div>
             {/* part2 教練介紹*/}
@@ -415,9 +442,10 @@ class CoachBook extends React.Component {
                 </div>
               </div>
             </div>
-            {/* part3 評論 */}
 
-            {/* part4 課程 */}
+            {/* part3 同教練的其他課程 */}
+            <CoachSame samecoach={this.state.total[0].coach_name}/>
+            {/* part4 推薦課程 */}
             <SlideClass />
           </div>
         )}
