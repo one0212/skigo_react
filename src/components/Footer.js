@@ -69,7 +69,7 @@ const Footer = props => (
                 <div>
                     <a className="footer-logo" href=""><img src="/images/footer/SKIGO_logo.svg" alt=""/></a>
                 </div>
-                <div class="flex-grow-1 pt-3">
+                <div className="flex-grow-1 pt-3">
                     <p >© 2019 SkiGO. All Rights Reserved.</p>
                 </div>
                 <div className="d-flex footer-right align-items-center">
