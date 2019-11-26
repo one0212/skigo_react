@@ -4,7 +4,6 @@ import {
 } from 'react-bootstrap'
 import { FiShoppingCart} from 'react-icons/fi';
 import { IoMdHeartEmpty } from 'react-icons/io';
-// import '../../scss/product.scss'
 import Breadcrumb from '../Breadcrumb'
 import ProductShare from './ProductShare'
 import ProductAsNavFor from './ProductAsNavFor'
@@ -39,6 +38,7 @@ const Product = () => {
       }
     })
   }
+  
   return (
     <>
 <Container>
@@ -50,6 +50,7 @@ const Product = () => {
         <ProductAsNavFor/>
     </Col>
     <Col lg={5}>
+    <div id="product-id" style={{ display: 'none' }}>4</div>
         <div className="product-info">
           <div class="product-title">
             <h2 class="">ALL MOUNTAIN SNOWBOARD</h2>
@@ -64,15 +65,15 @@ const Product = () => {
             <Form.Label column sm={2}>尺寸</Form.Label>
             <Col sm={10}>
               <Form.Control as="select">
-                <option>150</option>
-                <option>160</option>
-                <option>165</option>
-                <option>165W</option>
-                <option>150W</option>
+                <option value="1">150</option>
+                <option value="2">160</option>
+                <option value="3">165</option>
+                <option value="4">165W</option>
+                <option value="5">150W</option>
               </Form.Control>
             </Col>
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlSelect1" as={Row}>
+          <Form.Group controlId="exampleForm.ControlSelect2" as={Row}>
             <Form.Label column sm={2}>數量</Form.Label>
             <Col sm={4}>
               <Form.Control as="select" id="product-select">
