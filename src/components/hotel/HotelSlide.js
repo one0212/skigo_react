@@ -35,7 +35,7 @@ class HotelSlider extends React.Component {
             <Card className="hotel_slider_card">
               <Card.Img
                 variant="top"
-                src={require('../../../public/images/hotel/hotel_slider/hotel_1.jpg')}
+                src="/images/hotel/hotel_slider/hotel_1.jpg"
                 alt="..."
                 className="hotel_slider_img"
               />
@@ -74,7 +74,7 @@ class HotelSlider extends React.Component {
             <Card className="hotel_slider_card">
               <Card.Img
                 variant="top"
-                src={require('../../../public/images/hotel/hotel_slider/hotel_2.jpg')}
+                src="/images/hotel/hotel_slider/hotel_2.jpg"
                 alt="..."
                 className="hotel_slider_img"
               />
@@ -113,7 +113,7 @@ class HotelSlider extends React.Component {
             <Card className="hotel_slider_card">
               <Card.Img
                 variant="top"
-                src={require('../../../public/images/hotel/hotel_slider/hotel_3.jpg')}
+                src="/images/hotel/hotel_slider/hotel_3.jpg"
                 alt="..."
                 className="hotel_slider_img"
               />
@@ -152,7 +152,7 @@ class HotelSlider extends React.Component {
             <Card className="hotel_slider_card">
               <Card.Img
                 variant="top"
-                src={require('../../../public/images/hotel/hotel_slider/hotel_4.jpg')}
+                src="/images/hotel/hotel_slider/hotel_4.jpg"
                 alt="..."
                 className="hotel_slider_img"
               />

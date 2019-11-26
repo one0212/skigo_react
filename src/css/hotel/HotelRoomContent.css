@@ -26,12 +26,6 @@
     border-radius: 5px;
     width: 100%;
 }
-.picker__container{
-    border: 1px #ccc solid;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.10);
-}
-
 .hotel_room_search_select{
     width: 185px;
     border: 1px solid #ccc;

@@ -8,6 +8,7 @@ import { FaThLarge, FaListUl } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 // import { TiStarFullOutline, TiStarHalfOutline, TiStarOutline } from "react-icons/ti";
 // import UseAnimations from 'react-useanimations';
+import HotelSearchForm from './HotelSearchForm'
 
 import HotelListCard from './HotelListCard'
 
@@ -245,7 +246,9 @@ class HotelList extends React.Component {
               </div>
             </Col>
             <Col md={9} className="">
-              <div></div>
+              <div className="d-flex justify-content-center hotel_room_search">
+                <HotelSearchForm />
+              </div>
               <div className="d-flex justify-content-center">
                 <h1>飯店搜尋結果</h1>
               </div>

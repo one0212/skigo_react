@@ -14,14 +14,14 @@
     Font-size: 40px;
 }
 .slick-prev, .slick-next{
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
 }
 .slick-prev{
     left: 0;
 }
 .slick-next{
-    right: 0;
+    right: 20px;
 }
 /* /////////////////////////////////////////  */
 .hotel_slider_card{
@@ -33,7 +33,7 @@
     letter-spacing: 0.5px;
     font-size: 0.8rem;
     font-weight: lighter;
-    color: #aaa;
+    color: #000;
 }
 .hotel_slider_star{
     margin-top: 10%;

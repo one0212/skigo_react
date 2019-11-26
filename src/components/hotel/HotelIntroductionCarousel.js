@@ -46,7 +46,7 @@ class HotelIntroductionCarousel extends React.Component {
           ref={c => {
             this.banner = c
           }}
-          autoPlay
+          // autoPlay
         >
           <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
             <BgElement key="bg" className="bg hotel_introduction_bg" />
