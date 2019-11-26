@@ -6,7 +6,7 @@ class CartItemHotel extends Component {
       <>
         <div className="shop-item shop-box my-4 position-relative">
           <div className="shop-vendor-title">
-            <span>飯店(無數量修改)</span>
+            <span>{this.props.cartData.vendor}</span>
           </div>
           <div className="shop-close-item mt-2">+</div>
           <div className=" pr-4">
@@ -22,9 +22,9 @@ class CartItemHotel extends Component {
               </div>
               <div className="d-flex flex-column mt-2">
                 <a href="" className="text-decoration-none text-dark">
-                  {this.props.cartData.prodName}
+                  {this.props.cartData.name}
                 </a>
-                <span>品項內容</span>
+                <span>{this.props.cartData.info}</span>
               </div>
 
               <div className="shop-item-price mt-2">
