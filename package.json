@@ -31,7 +31,8 @@
     "react-slick": "^0.25.2",
     "react-useanimations": "^1.2.11",
     "slick-carousel": "^1.8.1",
-    "universal-cookie": "^4.0.2"
+    "universal-cookie": "^4.0.2",
+    "react-google-maps": "^9.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
