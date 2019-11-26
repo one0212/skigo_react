@@ -1,0 +1,108 @@
+body {
+    margin: 0px;
+
+}
+
+@keyframes animate-cloud {
+    from {
+        background-position: 1920px 100%;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
+}
+
+.Acloud {
+    background: url(../images/AttractionsImg/globe-clouds-2.png) repeat;
+    /* -webkit-animation: animate-cloud 100s linear infinite; */
+    animation: animate-cloud 100s linear infinite;
+    height: 80vh;
+    width: 100vh;
+
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    opacity: .3;
+
+
+    mask-image: url(../images/AttractionsImg/earth3-right.png);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: left bottom;
+
+    -webkit-mask-image: url(../images/AttractionsImg/earth3-right.png);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left bottom;
+
+}
+
+.ABoxImgPositionImg {
+    display: block;
+    height: 80vh;
+    width: 100vh;
+    object-fit: contain;
+    object-position: left bottom;
+    position: relative;
+   
+}
+
+.ABoxImgPosition {
+    position: absolute;
+    bottom: 0;
+
+}
+
+.AGlobal {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    border-radius: 50%;
+}
+
+.AGlobal img{
+    height: 15px;
+}
+
+.AGlobalIconPositionFu{
+    position: absolute;
+    bottom: 69%;
+    left: 45%;
+}
+.AGlobalIconPositionJ{
+    position: absolute;
+    bottom: 68%;
+    left: 43%;
+}
+.AGlobalIconPositionSum{
+    position: absolute;
+    bottom: 61%;
+    left: 40%;
+}
+.AGlobalIconPositionMia{
+    position: absolute;
+    bottom: 60%;
+    left: 38%;
+}
+.AGlobalIconPositionMia2{
+    position: absolute;
+    bottom: 58%;
+    left: 40%;
+}
+.AGlobalIconPositionZun{
+    position: absolute;
+    bottom: 63%;
+    left: 42%;
+}
+
+.AGlobalIconPositionBa{
+    position: absolute;
+    bottom: 66%;
+    left: 43%;
+}
+
+
