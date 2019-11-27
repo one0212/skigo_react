@@ -1,16 +1,14 @@
 import React from 'react'
-import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Breadcrumb } from 'react-bootstrap'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoMdHeartEmpty } from 'react-icons/io'
-import Breadcrumb from '../Breadcrumb'
+// import Breadcrumb from '../Breadcrumb'
 import ProductShare from './ProductShare'
-// import SwipeToSlide from './SwipeToSlide'
+import SwipeToSlide from './SwipeToSlide'
 
-
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 class Product extends React.Component {
   constructor(props) {
@@ -18,8 +16,7 @@ class Product extends React.Component {
     console.log(props.location)
     this.state = {
       products: '',
-      allSize:''
-      
+      allSize: '',
     }
   }
   handleClick = () => {
@@ -68,11 +65,10 @@ class Product extends React.Component {
       })
       .then(json => {
         console.log(json)
-        const allSize = json.map((v) => ({ id: v.id, size: v.size }));
+        const allSize = json.map(v => ({ id: v.id, size: v.size }))
         console.log(allSize)
-        this.setState({ allSize: allSize})
-        this.setState({ products: json[0] 
-        })
+        this.setState({ allSize: allSize })
+        this.setState({ products: json[0] })
         console.log(this.state.products)
         console.log(this.state.allSize)
       })
@@ -81,89 +77,83 @@ class Product extends React.Component {
   componentDidMount() {
     this.setState({
       nav1: this.slider1,
-      nav2: this.slider2
-    });
+      nav2: this.slider2,
+    })
   }
-
 
   render() {
     return (
       <>
         <Container>
           <Row>
-            <Breadcrumb />
+            <Breadcrumb>
+              <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
+              <Breadcrumb.Item href="/store">Store</Breadcrumb.Item>
+              <Breadcrumb.Item disabled>
+                {this.state.products.name}
+              </Breadcrumb.Item>
+            </Breadcrumb>
           </Row>
           <Row>
             <Col lg={7} sm={12}>
-      <div className="product-carousel">
-            <Slider
-              asNavFor={this.state.nav2}
-              ref={slider => (this.slider1 = slider)}
-              arrows={false}
-              className="pro-img1">
-              <div>
-                {/* <img src="/images/Product/10707106000150_1.png"/> */}
-                {console.log(this.state.products) }
+              <div className="product-carousel">
+                <Slider
+                  asNavFor={this.state.nav2}
+                  ref={slider => (this.slider1 = slider)}
+                  arrows={false}
+                  className="pro-img1"
+                >
+                  {console.log(this.state.products.img)}
+                  {this.state.products !== ''
+                    ? this.state.products.img.map((img, index) => {
+                        return (
+                          <>
+                            <div key={index}>
+                              <img src={img} />
+                            </div>
+                          </>
+                        )
+                      })
+                    : ''}
+                  {/* {const {img} = this.state.products.img} */}
+                  {/* <div >
+              <img src={this.state.products.img}/>
+            </div> */}
+                </Slider>
+                <Slider
+                  asNavFor={this.state.nav1}
+                  ref={slider => (this.slider2 = slider)}
+                  slidesToShow={4}
+                  swipeToSlide={true}
+                  focusOnSelect={true}
+                  className="pro-img2"
+                >
+                  {this.state.products !== ''
+                    ? this.state.products.img.map((img, index) => {
+                        return (
+                          <>
+                            <div key={index}>
+                              <img src={img} />
+                            </div>
+                          </>
+                        )
+                      })
+                    : ''}
+                </Slider>
               </div>
-              <div  >
-              <img src="/images/Product/10707106000150_2.png"/>
-              </div>
-              <div  >
-              <img src="/images/Product/10707106000150_3.png"/>
-              </div>
-              <div  >
-              <img src="/images/Product/10707106000150_4.png"/>
-              </div>
-              <div  >
-              <img src="/images/Product/10707106000150_5.png"/>
-              </div>
-              <div  >
-              <img src="/images/Product/10707106000150_6.png"/>
-              </div>
-            </Slider>
-            <Slider
-              asNavFor={this.state.nav1}
-              ref={slider => (this.slider2 = slider)}
-              slidesToShow={4}
-              swipeToSlide={true}
-              focusOnSelect={true}
-              className="pro-img2">
-              <div >
-              <img src="/images/Product/10707106000150_1.png"/>
-              </div>
-              <div>
-              <img src="/images/Product/10707106000150_2.png"/>
-              </div>
-              <div>
-              <img src="/images/Product/10707106000150_3.png"/>
-              </div>
-              <div>
-              <img src="/images/Product/10707106000150_4.png"/>
-              </div>
-              <div>
-              <img src="/images/Product/10707106000150_5.png"/>
-              </div>
-              <div>
-              <img src="/images/Product/10707106000150_6.png"/>
-              </div>
-            </Slider>
-      </div>
             </Col>
-
             <Col lg={5}>
               <div className="product-info">
                 <div className="product-title">
-                  <h2 className="">{this.state.products.info}</h2>
-                  <h1 className="product-name">
-                  {this.state.products.name}
-                  </h1>
+                  <h2>{this.state.products.info}</h2>
+                  <h1 className="product-name">{this.state.products.name}</h1>
                 </div>
                 <div className="product-price">
                   <span className="symbol">NT</span>
                   <span className="amount">{this.state.products.price}</span>
                 </div>
                 <div className="product-quantity">
-                  <Form.Group  as={Row}>
+                  <Form.Group as={Row}>
                     <Form.Label column sm={2}>
                       尺寸
                     </Form.Label>
@@ -171,13 +161,17 @@ class Product extends React.Component {
                       <Form.Control as="select" id="product-size">
                         {this.state.allSize !== ''
                           ? this.state.allSize.map((size, index) => {
-                              return <option key={index} value={size.id}>{size.size}</option>
+                              return (
+                                <option key={index} value={size.id}>
+                                  {size.size}
+                                </option>
+                              )
                             })
                           : ''}
                       </Form.Control>
                     </Col>
                   </Form.Group>
-                  <Form.Group  as={Row}>
+                  <Form.Group as={Row}>
                     <Form.Label column sm={2}>
                       數量
                     </Form.Label>
@@ -203,7 +197,7 @@ class Product extends React.Component {
                     <FiShoppingCart />
                     放入購物車
                   </Button>
-                  <Button className="btn-collect" type="submit" size="lg" block> 
+                  <Button className="btn-collect" type="submit" size="lg" block>
                     <IoMdHeartEmpty />
                     收藏商品
                   </Button>
@@ -216,11 +210,10 @@ class Product extends React.Component {
           <Row>
             <Col sm={12} className="recommend-product">
               <h5>推薦商品</h5>
-              {/* <SwipeToSlide/> */}
+              <SwipeToSlide/>
             </Col>
           </Row>
         </Container>
-
       </>
     )
   }

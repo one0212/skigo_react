@@ -7,7 +7,7 @@ import '../../scss/product_card.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
-class ProductCard extends React.Component{
+class ProductCard2 extends React.Component{
     constructor(props){
       super(props)
       this.state = {
@@ -39,7 +39,7 @@ class ProductCard extends React.Component{
  
 }
 
-export default ProductCard
+export default ProductCard2
  
 
 

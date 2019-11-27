@@ -129,10 +129,19 @@ $blue-color:#AECAD9;
             object-fit: cover;
         }
     }
+    .slick-prev{
+        left: 0 !important;
+        z-index: 99 !important;
+    }
+    .slick-next{
+        right: 0 !important;
+    }
 
     .slick-prev:before,
     .slick-next:before {
         color: $title-color !important;
+        Font-size: 20px !important;
+
     }
 
 }
