@@ -1,32 +1,34 @@
 import React from 'react'
-import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Breadcrumb } from 'react-bootstrap'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoMdHeartEmpty } from 'react-icons/io'
-import Breadcrumb from '../Breadcrumb'
+// import Breadcrumb from '../Breadcrumb'
 import ProductShare from './ProductShare'
-import ProductAsNavFor from './ProductAsNavFor'
 import SwipeToSlide from './SwipeToSlide'
-import Footer from '../Footer'
-import { colors } from '@material-ui/core'
+
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 class Product extends React.Component {
   constructor(props) {
     super(props)
     console.log(props.location)
     this.state = {
-      product: {},
+      products: '',
+      allSize: '',
     }
   }
   handleClick = () => {
     const url = 'http://localhost:3001/api/cart/items'
-    const id = document.querySelector('#product-id').textContent
+    // const id = document.querySelector('#product-id').textContent
     const size = document.querySelector('#product-size')
-    const sizeID = select.options[select.selectedIndex].value
+    const id = size.options[size.selectedIndex].value
     const select = document.querySelector('#product-select')
     const selectedValue = select.options[select.selectedIndex].value
     const obj = {
       // prodId, prodType, qty 這三個變數不可改
-      prodId: parseInt(sizeID), //這邊放資料庫的商品id
+      prodId: parseInt(id), //這邊放資料庫的商品id
       prodType: 'products', //這邊放資料庫的商品類型 例如飯店傳hotel,
       qty: parseInt(selectedValue), //商品數量 不需用字串
     }
@@ -62,13 +64,21 @@ class Product extends React.Component {
         return response.json()
       })
       .then(json => {
-        const allSize = json.map((v) => ({ id: v.id, size: v.size }));
-        this.setState({ 
-          allSize,
-          product: json[0] 
-        })
+        console.log(json)
+        const allSize = json.map(v => ({ id: v.id, size: v.size }))
+        console.log(allSize)
+        this.setState({ allSize: allSize })
+        this.setState({ products: json[0] })
         console.log(this.state.products)
+        console.log(this.state.allSize)
       })
+  }
+
+  componentDidMount() {
+    this.setState({
+      nav1: this.slider1,
+      nav2: this.slider2,
+    })
   }
 
   render() {
@@ -76,44 +86,92 @@ class Product extends React.Component {
       <>
         <Container>
           <Row>
-            <Breadcrumb />
+            <Breadcrumb>
+              <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
+              <Breadcrumb.Item href="/store">Store</Breadcrumb.Item>
+              <Breadcrumb.Item disabled>
+                {this.state.products.name}
+              </Breadcrumb.Item>
+            </Breadcrumb>
           </Row>
           <Row>
             <Col lg={7} sm={12}>
-              <ProductAsNavFor />
-            </Col>
-
-            <Col lg={5}>
-              <div id="product-id" style={{ display: 'none' }}>
-                4
+              <div className="product-carousel">
+                <Slider
+                  asNavFor={this.state.nav2}
+                  ref={slider => (this.slider1 = slider)}
+                  arrows={false}
+                  className="pro-img1"
+                >
+                  {console.log(this.state.products.img)}
+                  {this.state.products !== ''
+                    ? this.state.products.img.map((img, index) => {
+                        return (
+                          <>
+                            <div key={index}>
+                              <img src={img} />
+                            </div>
+                          </>
+                        )
+                      })
+                    : ''}
+                  {/* {const {img} = this.state.products.img} */}
+                  {/* <div >
+              <img src={this.state.products.img}/>
+            </div> */}
+                </Slider>
+                <Slider
+                  asNavFor={this.state.nav1}
+                  ref={slider => (this.slider2 = slider)}
+                  slidesToShow={4}
+                  swipeToSlide={true}
+                  focusOnSelect={true}
+                  className="pro-img2"
+                >
+                  {this.state.products !== ''
+                    ? this.state.products.img.map((img, index) => {
+                        return (
+                          <>
+                            <div key={index}>
+                              <img src={img} />
+                            </div>
+                          </>
+                        )
+                      })
+                    : ''}
+                </Slider>
               </div>
+            </Col>
+            <Col lg={5}>
               <div className="product-info">
-                <div class="product-title">
-                  <h2 class="">ALL MOUNTAIN SNOWBOARD</h2>
-                  <h1 class="product-name">
-                    Men's Burton Custom Camber Snowboard
-                  </h1>
+                <div className="product-title">
+                  <h2>{this.state.products.info}</h2>
+                  <h1 className="product-name">{this.state.products.name}</h1>
                 </div>
                 <div className="product-price">
                   <span className="symbol">NT</span>
-                  <span className="amount">1,280</span>
+                  <span className="amount">{this.state.products.price}</span>
                 </div>
                 <div className="product-quantity">
-                  <Form.Group controlId="exampleForm.ControlSelect1" as={Row}>
+                  <Form.Group as={Row}>
                     <Form.Label column sm={2}>
                       尺寸
                     </Form.Label>
                     <Col sm={10}>
                       <Form.Control as="select" id="product-size">
-                        {this.state.allSize
+                        {this.state.allSize !== ''
                           ? this.state.allSize.map((size, index) => {
-                              return <option key={index} value={size.id}>{size.size}</option>
+                              return (
+                                <option key={index} value={size.id}>
+                                  {size.size}
+                                </option>
+                              )
                             })
                           : ''}
                       </Form.Control>
                     </Col>
                   </Form.Group>
-                  <Form.Group controlId="exampleForm.ControlSelect2" as={Row}>
+                  <Form.Group as={Row}>
                     <Form.Label column sm={2}>
                       數量
                     </Form.Label>
@@ -152,11 +210,10 @@ class Product extends React.Component {
           <Row>
             <Col sm={12} className="recommend-product">
               <h5>推薦商品</h5>
-              {/* <SwipeToSlide/> */}
+              <SwipeToSlide/>
             </Col>
           </Row>
         </Container>
-        <Footer />
       </>
     )
   }

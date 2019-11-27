@@ -29,6 +29,8 @@ import TicketPage from './components/area/TicketPage'
 import Product from './components/product/Product'
 import FilterProduct from './components/product/FilterProduct'
 
+import ProductAsNavFor from './components/product/ProductAsNavFor'
+
 import HotelHome from './components/hotel/HotelHome'
 import HotelList from './components/hotel/HotelList'
 import HotelIntroduction from './components/hotel/HotelIntroduction'
@@ -76,8 +78,8 @@ function App() {
             <Route path="/activeUser" component={AccountActiveResult} />
 
             <Route path="/product/:prodNo" component={Product} />
-            <Route path="/store" component={FilterProduct} />
-            {/* <Route path="/product" component={Product} /> */}
+            <Route path="/product" component={FilterProduct} />
+            <Route path="/333" component={ProductAsNavFor} />
 
             <Route path="/HotelHome" component={HotelHome} />
             <Route path="/HotelList" component={HotelList} />

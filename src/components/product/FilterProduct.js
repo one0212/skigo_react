@@ -125,7 +125,7 @@ class  FilterProduct extends React.Component{
           </Row>
         <Row className="product-main">
 
-          <Col sm={3}>
+          {/* <Col sm={3}>
             <Accordion defaultActiveKey="0">
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="1">
@@ -189,8 +189,8 @@ class  FilterProduct extends React.Component{
                 </Accordion.Collapse>
               </Card>
             </Accordion>
-          </Col>
-          <Col sm={9}>
+          </Col> */}
+          <Col sm={12}>
           <div className="d-flex flex-wrap">
         {this.state.products !== '' ?
         this.state.products.map((product,index)=>{
