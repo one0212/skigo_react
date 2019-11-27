@@ -156,7 +156,7 @@ class FilterLeftMenu2 extends React.Component {
                   name="class_board"
                   checked={this.state.class8}
                 />
-                一般
+                成人
                 <br />
                 <input
                   onChange={this.changeBox(9)}
@@ -164,7 +164,7 @@ class FilterLeftMenu2 extends React.Component {
                   name="class_board"
                   checked={this.state.class9}
                 />
-                優待
+                兒童
                 <br />
                 <input
                   onChange={this.changeBox(10)}
