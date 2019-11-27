@@ -5,6 +5,7 @@ import $ from 'jquery'
 import FilterBread2 from '../goods/FilterBread2'
 import FilterLeftMenu2 from '../goods/FilterLeftMenu2'
 import AreaCard from './AreaCard'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 
 class TicketList extends React.Component {
   constructor(props) {
@@ -45,11 +46,11 @@ class TicketList extends React.Component {
       // console.log('total：' + JSON.stringify(this.state.total.length))
     }
     //PC選單
-    $('.coach-arrange a').click(e => {
+    $('.ticket_arrange a').click(e => {
       $(e.currentTarget)
-        .css('border-bottom', '2px solid  #FD702D')
+        .css('color', '#FD702D')
         .siblings()
-        .css('border-bottom', '2px solid transparent')
+        .css('color', '#000')
     })
     // rwd 上方選單*2
     let coach_rwd_btn_state = true
@@ -177,13 +178,13 @@ class TicketList extends React.Component {
   }
 
   // 排序從高到低 sort = true
-  // ChangeSort = () => {
-  //   this.setState({ sort: true }, this.filterfetch)
-  // }
+  ChangeSort = () => {
+    this.setState({ sort: true }, this.filterfetch)
+  }
   // 排序從低到高 sort = false
-  // ChangeSort2 = () => {
-  //   this.setState({ sort: false }, this.filterfetch)
-  // }
+  ChangeSort2 = () => {
+    this.setState({ sort: false }, this.filterfetch)
+  }
 
   render() {
     return (
@@ -196,17 +197,39 @@ class TicketList extends React.Component {
           <div className="row coach-rwd-active">
             <div className="col-3">
               <button id="menu_active" className="btn coach-btn-active">
-                <i className="fas fa-list"></i> 顯示篩選列
+                <i className="fas fa-list"></i> 顯示
               </button>
             </div>
-            <div className="coach-arrange col-9 d-flex justify-content-between">
-              {/* <a href="#" onClick={this.ChangeSort}> */}
-              <a href="#">價格 ： 從高到低</a>
-              {/* </a> */}
-              {/* <a href="#" onClick={this.ChangeSort2}> */}
-              <a href="#">價格 ： 從低到高</a>
-              {/* </a> */}
-              <span className="coach-item-num">{this.state.allnum}項目</span>
+            <div className="ticket_arrange coach-arrange col-9 d-flex justify-content-between">
+              <div className="d-flex">
+                <p
+                  style={{
+                    fontSize: '1.25rem',
+                    fontWeight: 'bold',
+                    marginTop: '1rem',
+                    marginRight: '0.3rem',
+                  }}
+                >
+                  價格
+                </p>
+                <div>
+                  <a href="#" onClick={this.ChangeSort}>
+                    <MdKeyboardArrowUp />
+                  </a>
+                  <a href="#" onClick={this.ChangeSort2}>
+                    <MdKeyboardArrowDown />
+                  </a>
+                </div>
+              </div>
+              <span
+                style={{
+                  marginTop: '1rem',
+                  marginLeft: '0.3rem',
+                }}
+                className="coach-item-num"
+              >
+                {this.state.allnum}項目
+              </span>
             </div>
           </div>
           {/*  rwd 最上方搜尋 bar */}

@@ -66,9 +66,8 @@ class AreaCard extends React.Component {
                     />
                   </div>
                   <div className="hot_card_word">
-                    <p>{value.area_name}</p>
+                    <p className="ticket_name">{value.area_name}</p>
                     <p className="language font-orange d-flex">
-                      {/* {value.ticket_type === 1 ? <span>天然雪</span> : ''} */}
                       <span>{value.ticket_age}</span>
                     </p>
                     <p>

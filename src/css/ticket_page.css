@@ -9,15 +9,17 @@
 }
 
 .ticket_book_out .font-orange {
-    color: #FD702D;
+    color: #fff;
+    font-weight: 700;
     margin-top: 0.5rem;
 }
 
 .ticket_book_out .language span {
+    background: #FD702D;
     border: 1px #fd702d solid;
     border-radius: 5px;
     font-size: 1rem;
-    padding: 8px 12px;
+    padding: 8px 12px 9px 12px;
 }
 .ticket_book_out .ticket-snowfield span{
     color: #FD702D;
@@ -57,4 +59,15 @@
     padding: 10px 20px;
     margin: 5px 0px;
     font-size: 1.25rem;
+}
+.ticket_intro h5{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.ticket_intro p{
+    width: 630px;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 2rem;
 }

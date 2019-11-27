@@ -5,12 +5,12 @@
         }
 
         /* 上方排序選擇 + 項目總數 */
-        .coach-arrange a , .coach-arrange span{
+        .ticket_arrange a , .ticket_arrange span{
             font-size:1.25rem;
             display:block;
-            padding-bottom: 10px;
-            border-bottom: 2px solid transparent;
-            margin-bottom:20px; 
+            /* padding-bottom: 10px; */
+            /* border-bottom: 2px solid transparent; */
+            /* margin-bottom:20px;  */
             font-weight:bold;          
         }
         /* .coach-arrange a:hover{
@@ -128,6 +128,10 @@
     .coach-card .hot_card_word{
             padding: 15px;
         }
+    .coach-card .ticket_name{
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
     .coach-card .hot_img {
             width:100%;
             height: 150px;
@@ -150,11 +154,12 @@
     .coach-card .ticket_img_pic:hover{
             transform:scale(1.2,1.2);
     }
-    .coach-card .language span{
+    .ticket-card .language span{
+            background: #FD702D;
             border: 1px #fd702d solid;
             border-radius:5px;
             font-size:1rem;
-            padding:2px 10px;
+            padding:2px 10px 3px 10px;
             margin-right:10px;
             margin-bottom:0px;
             
@@ -163,8 +168,8 @@
             margin-bottom:10px;
         }
         
-    .font-orange {
-                color: #fd702d;
+    .ticket-card .font-orange {
+                color: #fff;
         }
     /*classcard END  */
     .coach-btn-rwd{
@@ -172,7 +177,7 @@
     }
     /* 滑鼠點擊觸發 */
     .coach-card:hover{
-        box-shadow: 0px 2px 5px #ccc;
+        box-shadow: 0 1px 4px 0.5px #fd6f2db9;
     }
 
     /* rwd */
@@ -252,9 +257,7 @@
 
     }
     @media  (max-width: 450px) {
-        body{
-
-        }
+        
         /* .container{
             padding: 0px;
             margin:0px;
