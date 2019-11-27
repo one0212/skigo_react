@@ -1,5 +1,7 @@
 import React from 'react'
 import '../css/coachsame.css'
+import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class CoachSame extends React.Component {
   constructor(props) {
@@ -57,7 +59,11 @@ class CoachSame extends React.Component {
                 if (!value) return <></>
                 console.log(value.class_sid)
                 return (
-                  <div className="coachsameCard">
+                  <Link
+                    key={value.class_sid}
+                    to={'/CoachClass/' + value.class_sid}
+                    className="coachsameCard"
+                  >
                     <div className="coachsameImg">
                       <img src={'/images/coach/' + value.class_pic} alt="" />
                     </div>
@@ -78,7 +84,7 @@ class CoachSame extends React.Component {
                           : ''}
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 )
               })}
             </div>

@@ -37,8 +37,6 @@ class CoachList extends React.Component {
       await this.setState({ loading: true })
 
       this.filterfetch()
-      
-
     } catch (e) {
       console.log(e)
     } finally {
@@ -55,28 +53,46 @@ class CoachList extends React.Component {
     })
     // rwd 上方選單*2
     let coach_rwd_btn_state = true
-    $('.coach-rwd-sort').hide()
+    // $('.coach-rwd-sort').hide()
+
+    // $('#coach-btn-rwd1').click(e => {
+    //   if (coach_rwd_btn_state === false) {
+    //     $('#coach-btn-rwd1-1').hide()
+    //     coach_rwd_btn_state = true
+    //   } else {
+    //     $('#coach-btn-rwd1-1').show()
+    //     coach_rwd_btn_state = false
+    //   }
+    //   console.log(coach_rwd_btn_state)
+    // })
 
     $('#coach-btn-rwd1').click(e => {
-      if (coach_rwd_btn_state === false) {
-        $('#coach-btn-rwd1-1').hide()
-        coach_rwd_btn_state = true
-      } else {
-        $('#coach-btn-rwd1-1').show()
-        coach_rwd_btn_state = false
-      }
-      console.log(coach_rwd_btn_state)
+      $('#coach-btn-rwd1-1').slideToggle()
+      $('#coach-btn-rwd2-1').css('display','none')
+    })
+    $('#coach-btn-rwd2').click(e => {
+      $('#coach-btn-rwd2-1').slideToggle()
+      $('#coach-btn-rwd1-1').css('display','none')
     })
 
-    $('#coach-btn-rwd2').click(e => {
-      if (coach_rwd_btn_state === false) {
-        $('#coach-btn-rwd2-1').hide()
-        coach_rwd_btn_state = true
-      } else {
-        $('#coach-btn-rwd2-1').show()
-        coach_rwd_btn_state = false
-      }
+    // RWD 價格排列選擇樣式
+    $('.coach-rwd-sort-click').click(function(){
+      $(this)
+        .css('border-left', '5px solid  #FD702D')
+        .siblings()
+        .css('border-left', '5px solid transparent')
+      // console.log('點我排序')
     })
+
+    // $('#coach-btn-rwd2').click(e => {
+    //   if (coach_rwd_btn_state === false) {
+    //     $('#coach-btn-rwd2-1').hide()
+    //     coach_rwd_btn_state = true
+    //   } else {
+    //     $('#coach-btn-rwd2-1').show()
+    //     coach_rwd_btn_state = false
+    //   }
+    // })
 
     //左方側欄動畫
     let move = true
@@ -163,7 +179,7 @@ class CoachList extends React.Component {
         }
         this.setState({ allnum: num2 }, function() {})
       })
-      console.log('what???' + this.state.name)
+    console.log('what???' + this.state.name)
   }
 
   //篩選
@@ -190,9 +206,9 @@ class CoachList extends React.Component {
   render() {
     return (
       <>
-        <div className="container">
+        <div className="container coach-list-all">
           {/* part1 麵包屑 */}
-          <FilterBread />
+          {/* <FilterBread /> */}
 
           {/* part2 篩選btn + 排列選擇 + 總項目欄位 */}
 
@@ -230,35 +246,12 @@ class CoachList extends React.Component {
                 <i className="fas fa-sort-amount-down-alt"></i>排序
               </div>
               <div id="coach-btn-rwd2-1" className="coach-rwd-sort">
-                <Accordion defaultActiveKey="0">
-                  <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="1">
-                      人氣
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="1">
-                      <Card.Body>
-                        <input type="checkbox" name="vehicle1" value="Bike" />
-                        收藏數
-                        <br />
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="0">
-                      價錢
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="0">
-                      <Card.Body>
-                        <input type="checkbox" name="vehicle1" value="Bike" />
-                        從高到低
-                        <br />
-                        <input type="checkbox" name="vehicle1" value="Bike" />
-                        從低到高
-                        <br />
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                </Accordion>
+                <div id="coach-HtoL" className="coach-rwd-sort-click" onClick={this.ChangeSort}>
+                  從高到低
+                </div>
+                <div id="coach-LtoH" className="coach-rwd-sort-click" onClick={this.ChangeSort2}>
+                  從低到高
+                </div>
               </div>
             </div>
           </div>

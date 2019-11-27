@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/coach_class.css'
 import SlideCoach from './SlideCoach'
 import SlideClass from './SlideClass'
+import { Link, withRouter } from 'react-router-dom'
 // import '../css/card_carousels.css'
 // import CoachCarousels from './CoachCarousels'
 // import CoachCarousels2 from './CoachCarousels2'
@@ -109,16 +110,21 @@ class CoachClass extends React.Component {
           </div>
         ) : (
           <>
-          {/* 麵包屑 */}
-            <div className="container d-flex">
-              <p>首頁</p>
+            {/* 麵包屑 */}
+            <div className="container d-flex coach_class_out_bread">
+              <p>
+                {' '}
+                <Link to={'/coachlist'} className="coach_list_bread">
+                  課程列表
+                </Link>
+              </p>
               <p> > </p>
               <p> 課程： {this.state.total[0].class_name}</p>
             </div>
-          {/* 麵包屑結束 */}
+            {/* 麵包屑結束 */}
             <div className="coach_class_out">
               {/* part1 課程圖+介紹文字 */}
-              <div className="d-flex coach_head">
+              <div className="d-flex coach_head container">
                 <div className="class_img">
                   <img
                     className="class_pic"
