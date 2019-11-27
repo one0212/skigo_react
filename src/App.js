@@ -71,8 +71,8 @@ function App() {
             <Route path="/checkout" component={UserCheckout} />
             <Route path="/user/profile" component={UserAccount} />
             <Route path="/user/address" component={UserAddress} />
+            <Route path="/user/order/:orderNo" component={UserOrderDetail} />
             <Route path="/user/order" component={UserOrder} />
-            <Route path="/orderdetail" component={UserOrderDetail} />
             <Route path="/activeUser" component={AccountActiveResult} />
 
             <Route path="/product" component={Product} />

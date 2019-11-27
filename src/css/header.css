@@ -37,7 +37,7 @@ body {
   width: 9rem;
   /* margin-left: -4rem; */
   top:3.75rem;
-  right:20.5rem;
+  right:24.5rem;
   z-index:1
 }
 .drop-menu {
@@ -59,7 +59,7 @@ body {
   border-bottom-color: rgb(255, 255, 255);
   /* border-bottom-color: #000; */
   top: -20px;
-  left: 57%;
+  left: 56%;
   transform: translateX(50%);
 }
 /* ＝＝＝＝＝光箱＝＝＝＝＝ */
