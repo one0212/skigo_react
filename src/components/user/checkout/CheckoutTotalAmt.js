@@ -22,19 +22,19 @@ class CheckoutTotalAmt extends Component {
       },
       method: 'POST',
     })
-      .then(response => {
-        return response.json()
-      })
+      .then(resp => resp.json())
       .then(json => {
-        console.log(json)
+        console.log(`orderNo=${json.orderNo}`)
+        window.location.replace(`/user/order/${json.orderNo}`)
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 
   render() {
     return (
       <>
-        {console.log(this.props.checkoutData.items)}
-
         <div className="shop-box my-3">
           <div className="shop-vendor-name">付款資訊</div>
           <Row className="align-items-center">

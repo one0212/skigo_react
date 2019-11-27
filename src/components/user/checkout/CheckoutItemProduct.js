@@ -350,7 +350,7 @@ const CheckoutItemProduct = props => {
                           <a href="" className="">
                             <img
                               className=""
-                              src="/images/coach/coach.jpg"
+                              src={item.coverImg}
                               alt="商品照片"
                             />
                           </a>
@@ -362,7 +362,7 @@ const CheckoutItemProduct = props => {
                                 href=""
                                 className="text-decoration-none text-dark"
                               >
-                                {item.prodName}
+                                {item.name}
                               </a>
                               <span>品項內容</span>
                             </div>
