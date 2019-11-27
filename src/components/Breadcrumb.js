@@ -16,7 +16,7 @@ class breadcrumb extends React.Component{
         <>
         <Breadcrumb>
                 <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-                <Breadcrumb.Item href="/FilterProduct">品項</Breadcrumb.Item>
+                <Breadcrumb.Item href="/store">Store</Breadcrumb.Item>
                 <Breadcrumb.Item >商品詳細頁</Breadcrumb.Item>
         </Breadcrumb>
         </>

@@ -75,9 +75,9 @@ function App() {
             <Route path="/orderdetail" component={UserOrderDetail} />
             <Route path="/activeUser" component={AccountActiveResult} />
 
-            <Route path="/product" component={Product} />
+            <Route path="/product/:prodNo" component={Product} />
             <Route path="/store" component={FilterProduct} />
-            <Route path="/product/1" component={Product} />
+            {/* <Route path="/product" component={Product} /> */}
 
             <Route path="/HotelHome" component={HotelHome} />
             <Route path="/HotelList" component={HotelList} />
