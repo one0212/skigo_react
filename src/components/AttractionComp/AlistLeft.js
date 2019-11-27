@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/Accordion_css.css'
+import '../../css/Accordion_css.css'
 import { Button, Card, Accordion, InputGroup, FormControl } from 'react-bootstrap'
 
 
@@ -24,7 +24,7 @@ class AlistLeft extends Component {
 
                             <InputGroup size="sm" >
                               <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/Acalendar.svg')} /></InputGroup.Text>
+                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/Acalendar.svg')} /></InputGroup.Text>
                               </InputGroup.Prepend>
                               <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="出發日期" />
                             </InputGroup>
@@ -35,7 +35,7 @@ class AlistLeft extends Component {
 
                             <InputGroup size="sm" >
                               <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/AClock.svg')} /></InputGroup.Text>
+                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/AClock.svg')} /></InputGroup.Text>
                               </InputGroup.Prepend>
                               <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="出發時間" />
                             </InputGroup>
@@ -44,7 +44,7 @@ class AlistLeft extends Component {
 
                           <div className="CardHearderDown">
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                              <img src={require('../images/AttractionsImg/Aup.svg')} alt="" className="Aup "></img>
+                              <img src={require('../../images/AttractionsImg/Aup.svg')} alt="" className="Aup "></img>
                             </Accordion.Toggle>
                           </div>
 
@@ -65,7 +65,7 @@ class AlistLeft extends Component {
                               <div>
                                 上午8:00
                         </div>
-                              <img src={require('../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
+                              <img src={require('../../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
                               <div>
                                 下午1:00
                         </div>
@@ -80,7 +80,7 @@ class AlistLeft extends Component {
                           <div style={{ width: '33%' }}>
                             <InputGroup size="sm" >
                               <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
+                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
                               </InputGroup.Prepend>
                               <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="停留時間" />
                             </InputGroup>
@@ -100,7 +100,7 @@ class AlistLeft extends Component {
                             </div>
 
                             <div className="">
-                              <img src={require('../images/AttractionsImg/AdotCircle.svg')} className="CardbodyBoxImg" alt="" /> 選擇交通方案
+                              <img src={require('../../images/AttractionsImg/AdotCircle.svg')} className="CardbodyBoxImg" alt="" /> 選擇交通方案
                       </div>
                           </div>
                         </div>
@@ -114,7 +114,7 @@ class AlistLeft extends Component {
                                 <div>
                                   上午8:00
                           </div>
-                                <img src={require('../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
+                                <img src={require('../../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
                                 <div>
                                   下午1:00
                           </div>
@@ -129,14 +129,14 @@ class AlistLeft extends Component {
                             <div style={{ width: '33%' }}>
                               <InputGroup size="sm" >
                                 <InputGroup.Prepend>
-                                  <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
+                                  <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
                                 </InputGroup.Prepend>
                                 <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="停留時間" />
                               </InputGroup>
                             </div>
 
                             <div className="CardBodyBox">
-                              <img src={require('../images/AttractionsImg/Agarbage.svg')} alt="" className="CardbodyBoxImg ml-2" />
+                              <img src={require('../../images/AttractionsImg/Agarbage.svg')} alt="" className="CardbodyBoxImg ml-2" />
 
                             </div>
 
@@ -166,13 +166,13 @@ class AlistLeft extends Component {
                     </div>
 
                           <div className="CardHearderBox2 CardHearderBox2-W2">
-                            <img src={require('../images/AttractionsImg/Acalendar.svg')} alt="" className="CardHearderBoxicon" />出發日期+1
+                            <img src={require('../../images/AttractionsImg/Acalendar.svg')} alt="" className="CardHearderBoxicon" />出發日期+1
                     </div>
 
                           <div className="CardHearderBox2 CardHearderBox2-W3 ">
                             <InputGroup size="sm" >
                               <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/AClock.svg')} /></InputGroup.Text>
+                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/AClock.svg')} /></InputGroup.Text>
                               </InputGroup.Prepend>
                               <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="出發時間" />
                             </InputGroup>
@@ -183,11 +183,11 @@ class AlistLeft extends Component {
 
                         <div className="d-flex justify-content-end CardHearderBox2-W4">
 
-                          <img src={require('../images/AttractionsImg/Agarbage.svg')} alt="" className="CardHearderBoxicon" />
+                          <img src={require('../../images/AttractionsImg/Agarbage.svg')} alt="" className="CardHearderBoxicon" />
 
 
                           <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                            <img src={require('../images/AttractionsImg/Aup.svg')} alt="" className="Aup" />
+                            <img src={require('../../images/AttractionsImg/Aup.svg')} alt="" className="Aup" />
                           </Accordion.Toggle>
                         </div>
 
@@ -205,7 +205,7 @@ class AlistLeft extends Component {
                               <div>
                                 上午8:00
     </div>
-                              <img src={require('../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
+                              <img src={require('../../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
                               <div>
                                 下午1:00
     </div>
@@ -220,7 +220,7 @@ class AlistLeft extends Component {
                           <div style={{ width: '33%' }}>
                             <InputGroup size="sm" >
                               <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
+                                <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
                               </InputGroup.Prepend>
                               <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="停留時間" />
                             </InputGroup>
@@ -240,7 +240,7 @@ class AlistLeft extends Component {
                             </div>
 
                             <div className="">
-                              <img src={require('../images/AttractionsImg/AdotCircle.svg')} className="CardbodyBoxImg" alt="" /> 選擇交通方案
+                              <img src={require('../../images/AttractionsImg/AdotCircle.svg')} className="CardbodyBoxImg" alt="" /> 選擇交通方案
   </div>
                           </div>
                         </div>
@@ -254,7 +254,7 @@ class AlistLeft extends Component {
                                 <div>
                                   上午8:00
       </div>
-                                <img src={require('../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
+                                <img src={require('../../images/AttractionsImg/Alocation.svg')} className="CardbodyBoxImg" alt="" />
                                 <div>
                                   下午1:00
       </div>
@@ -269,14 +269,14 @@ class AlistLeft extends Component {
                             <div style={{ width: '33%' }}>
                               <InputGroup size="sm" >
                                 <InputGroup.Prepend>
-                                  <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
+                                  <InputGroup.Text id="inputGroup-sizing-sm"><img className="CardHearderBoxicon" src={require('../../images/AttractionsImg/Ahourglass.svg')} /></InputGroup.Text>
                                 </InputGroup.Prepend>
                                 <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="停留時間" />
                               </InputGroup>
                             </div>
 
                             <div className="CardBodyBox">
-                              <img src={require('../images/AttractionsImg/Agarbage.svg')} alt="" className="CardbodyBoxImg ml-2" />
+                              <img src={require('../../images/AttractionsImg/Agarbage.svg')} alt="" className="CardbodyBoxImg ml-2" />
 
                             </div>
 

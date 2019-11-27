@@ -34,6 +34,9 @@ import HotelList from './components/hotel/HotelList'
 import HotelIntroduction from './components/hotel/HotelIntroduction'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
 
+
+import AttractionsIndex from './components/AttractionComp/AttractionsIndex'
+import Attractionslist from './components/AttractionComp/Attractionslist'
 function App() {
   return (
     <>
@@ -49,6 +52,8 @@ function App() {
         <Link to="/CoachCarousels2">●CoachCarousels2</Link>
         <Link to="/area">●area</Link>
         <br></br> */}
+           {/* <Link to="/AttractionsIndex">●AttractionsIndex</Link> */}
+           {/* <Link to="/Attractionslist">●Attractionslist</Link> */}
 
           <Switch>
             <Route path="/" exact component={home} />
@@ -66,8 +71,8 @@ function App() {
             <Route path="/checkout" component={UserCheckout} />
             <Route path="/user/profile" component={UserAccount} />
             <Route path="/user/address" component={UserAddress} />
+            <Route path="/user/order/:orderNo" component={UserOrderDetail} />
             <Route path="/user/order" component={UserOrder} />
-            <Route path="/orderdetail" component={UserOrderDetail} />
             <Route path="/activeUser" component={AccountActiveResult} />
 
             <Route path="/product/:prodNo" component={Product} />
@@ -78,6 +83,9 @@ function App() {
             <Route path="/HotelList" component={HotelList} />
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
             <Route path="/HotelRoomOrder" component={HotelRoomOrder} />
+
+            <Route path="/AttractionsIndex" component={AttractionsIndex} />
+            <Route path="/Attractionslist" component={Attractionslist} />
 
             <Route path="/example" component={Example} />
           </Switch>

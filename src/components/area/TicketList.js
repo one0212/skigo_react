@@ -6,7 +6,6 @@ import FilterBread2 from '../goods/FilterBread2'
 import FilterLeftMenu2 from '../goods/FilterLeftMenu2'
 import AreaCard from './AreaCard'
 
-
 class TicketList extends React.Component {
   constructor(props) {
     super(props)
@@ -39,8 +38,6 @@ class TicketList extends React.Component {
       await this.setState({ loading: true })
 
       this.filterfetch()
-      
-
     } catch (e) {
       console.log(e)
     } finally {
@@ -164,6 +161,7 @@ class TicketList extends React.Component {
         }
         this.setState({ allnum: num2 }, function() {})
       })
+    console.log('what???' + this.state.name)
   }
   //篩選
   changeName = (pos, value) => {
@@ -179,13 +177,13 @@ class TicketList extends React.Component {
   }
 
   // 排序從高到低 sort = true
-  ChangeSort = () => {
-    this.setState({ sort: true }, this.filterfetch)
-  }
+  // ChangeSort = () => {
+  //   this.setState({ sort: true }, this.filterfetch)
+  // }
   // 排序從低到高 sort = false
-  ChangeSort2 = () => {
-    this.setState({ sort: false }, this.filterfetch)
-  }
+  // ChangeSort2 = () => {
+  //   this.setState({ sort: false }, this.filterfetch)
+  // }
 
   render() {
     return (
@@ -202,12 +200,12 @@ class TicketList extends React.Component {
               </button>
             </div>
             <div className="coach-arrange col-9 d-flex justify-content-between">
-              <a href="#" onClick={this.ChangeSort}>
-                價格 ： 從高到低
-              </a>
-              <a href="#" onClick={this.ChangeSort2}>
-                價格 ： 從低到高
-              </a>
+              {/* <a href="#" onClick={this.ChangeSort}> */}
+              <a href="#">價格 ： 從高到低</a>
+              {/* </a> */}
+              {/* <a href="#" onClick={this.ChangeSort2}> */}
+              <a href="#">價格 ： 從低到高</a>
+              {/* </a> */}
               <span className="coach-item-num">{this.state.allnum}項目</span>
             </div>
           </div>
@@ -273,6 +271,7 @@ class TicketList extends React.Component {
               className="content-rwd d-flex  right_content bg_white "
             >
               <AreaCard filter={this.state.total} />
+              {console.log('total:' + this.state.total)}
             </div>
             {/* 右邊內容列END */}
           </div>

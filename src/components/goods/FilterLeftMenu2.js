@@ -20,11 +20,11 @@ class FilterLeftMenu2 extends React.Component {
       class13: false,
     }
   }
-  changeNme(newName) {
-    this.props.partentfc(newName)
+  // changeNme(newName) {
+  //   this.props.partentfc(newName)
 
-    // console.log("我是Chilren");
-  }
+  //   console.log("我是Chilren");
+  // }
 
   // checkbox抓取
   changeBox = pos => event => {
