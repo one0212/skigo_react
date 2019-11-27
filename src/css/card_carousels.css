@@ -128,10 +128,10 @@ section{
     /* card輪播 */
     .area_lesson .slick-prev{
         left: 6rem;
-        top: 30.5rem;
+        top: 32rem;
     }
     .area_lesson .slick-next{
         right: 6rem;
-        top: 30.5rem;
+        top: 32rem;
     }
 }

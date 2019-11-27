@@ -87,6 +87,8 @@ class CoachBook extends React.Component {
       } else if (this.state.total[0].class_discount_num > target) {
         var coachPriceDiscount = document.querySelector('.coach-price-discount')
         coachPriceDiscount.style.display = 'none'
+        var coachPrice = document.querySelector('.coach-price')
+        coachPrice.style.textDecoration = 'none'
       }
       this.setState({ people: target })
     }
@@ -297,10 +299,22 @@ class CoachBook extends React.Component {
         ) : (
           <div className="coach_book_out">
             <div className="container d-flex">
-              <p>首頁</p>
+              <p>
+                {' '}
+                <Link
+                  to={'/coachlist'}
+                  className="coach_list_bread"
+                  className="coach_bread"
+                >
+                  課程列表
+                </Link>
+              </p>
               <p> > </p>
               <p className="bread">
-                <Link to={'/CoachClass/' + this.state.total[0].class_sid}>
+                <Link
+                  to={'/CoachClass/' + this.state.total[0].class_sid}
+                  className="coach_bread"
+                >
                   課程： {this.state.total[0].class_name}
                 </Link>{' '}
               </p>
@@ -308,7 +322,7 @@ class CoachBook extends React.Component {
               <p> 教練： {this.state.total[0].coach_name}</p>
             </div>
             {/* part1 */}
-            <div className="d-flex coach_head">
+            <div className="d-flex coach_head container">
               <div className="class_img">
                 <img
                   className="class_pic"
@@ -444,7 +458,7 @@ class CoachBook extends React.Component {
             </div>
 
             {/* part3 同教練的其他課程 */}
-            <CoachSame samecoach={this.state.total[0].coach_name}/>
+            <CoachSame samecoach={this.state.total[0].coach_name} />
             {/* part4 推薦課程 */}
             <SlideClass />
           </div>

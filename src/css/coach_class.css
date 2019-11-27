@@ -1,3 +1,11 @@
+ .coach_class_out_bread .coach_list_bread{
+  color:#fd702d;
+  border-bottom:1px transparent solid;
+ }
+ .coach_class_out_bread .coach_list_bread:hover{
+  border-bottom:1px #fd702d solid;
+}
+ 
  /* part1 */
   .coach_class_out .ski_class {
     margin-left: 30px;
