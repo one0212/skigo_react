@@ -1,26 +1,26 @@
  .mytab-container {
     overflow-x: hidden;
-    /* color: #fff; */
-    /* font-size: 1.15rem; */
     width: 150%;
     display: flex;
     flex-direction: column;
-    background: #AECAD9;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: rgb(255, 255, 255);
+    border: 1px solid #dfdede;
+    border-radius: 5px;
+    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); */
   }
   
   .activeTab-indicator {
     display: inline-block;
     height: 2px;
     width: 25%;
-    background-color: #fff;
+    background-color: #FD702D;
     transition: transform 0.4s ease-out;
   }
   
   .tabHeader-container {
     display: flex;
     justify-content: space-between;
-    background-color: #8DAEC1;
+    background-color: #fff;
      font-size: 1.15rem;
   }
   
@@ -31,7 +31,7 @@
   
   .tabHeader {
     cursor: pointer;
-    color: rgb(192, 223, 240);
+    color: #8daec1;
     transition: color 0.4s ease;
     padding: 15px 20px;
     flex-grow: 1;
@@ -43,7 +43,7 @@
     flex-shrink: 0;
     padding: 15px 0;
     box-sizing: border-box;
-    background: #AECAD9;
+    background: #fff;
   }
   
   .tabContent h1 {

@@ -45,7 +45,10 @@ class Header extends Component {
   }
 
   componentWillMount() {
-    if (!cookies || cookies.get('role') === 'VISITOR') {
+    if (
+      cookies.get('role') === 'undefined' ||
+      cookies.get('role') === 'VISITOR'
+    ) {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
@@ -61,7 +64,7 @@ class Header extends Component {
       if (response.status === 200) {
         this.refreshLoginState()
         this.setState({ userDropdown: false })
-        window.location.href = '/'
+        // window.location.href = '/'
       }
     })
   }
@@ -211,18 +214,13 @@ class Header extends Component {
                         </a>
                       </li>
                       <li className="my-3">
-                        <a
-                          href="#"
+                        <Link
+                          to="/"
                           onClick={this.logout}
-                          onClick={() => {
-                            this.setState({
-                              userDropdown: !this.state.userDropdown,
-                            })
-                          }}
                           className="cursor-point user-darkblue-text text-decoration-none"
                         >
                           登出
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </Nav.Link>
