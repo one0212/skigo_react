@@ -4,16 +4,11 @@ import { Container, Row, Col } from 'react-bootstrap'
 import UserSidebar from '../UserSidebar'
 import OrderTitle from './OrderTitle'
 import OrderStatus from './OrderStatus'
-import OrderList from './OrderList'
 import OrderEmpty from './OrderEmpty'
 
 import '../../../css/user/user_center_order.css'
 
 class UserOrder extends Component {
-  constructor() {
-    super()
-    this.state = {}
-  }
   render() {
     return (
       <>
