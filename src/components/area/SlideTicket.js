@@ -95,9 +95,9 @@ class SlideTicket extends React.Component {
             資料載入中
           </div>
         ) : (
-          <section className="area_lesson">
+          <section className="area_slide">
             <div className="container">
-              <div className="lesson_title">
+              <div className="slide_title">
                 <div className="d-flex">
                   <div className="title_sign"></div>
                   <h4>票券</h4>
@@ -105,7 +105,7 @@ class SlideTicket extends React.Component {
               </div>
               <hr />
             </div>
-            <div className="container lesson">
+            <div className="container slide">
               <Slider {...settings}>
                 {/* card */}
                 {this.state.total.map((value, index) => {

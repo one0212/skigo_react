@@ -13,80 +13,80 @@
 section{
     margin: 40px 0;
 }
-.area_lesson{
+.area_slide{
     margin-top: 50px;
 }
-.area_lesson .lesson_title{
+.area_slide .slide_title{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
-.area_lesson h4{
+.area_slide h4{
     margin-bottom: 0;
     font-size: 2rem;
 }
-.area_lesson .lesson{
+.area_slide .slide{
     width: 1045px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.area_lesson .card{
+.area_slide .card{
     margin: 0 1.5rem;
     border: 1px solid #ddd;
     border-radius: 0;
 }
-.area_lesson .lesson img{
+.area_slide .slide img{
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
-.area_lesson .card-body h5{
+.area_slide .card-body h5{
     font-size: 1.4rem;
 }
-.area_lesson .btn-primary{
+.area_slide .btn-primary{
     background: #FD702D;
     border: none;
 }
-.area_lesson .btn-primary:hover{
+.area_slide .btn-primary:hover{
     background: rgb(255, 131, 74);
 }
-.area_lesson .btn-primary:active{
+.area_slide .btn-primary:active{
     background: rgb(255, 131, 74) !important;
 }
 /* card輪播 */
-.area_lesson .slick-prev:before,
-.area_lesson .slick-next:before {
+.area_slide .slick-prev:before,
+.area_slide .slick-next:before {
     color: #797979; 
     font-size: 40px;
 }
-.area_lesson .slick-prev{
+.area_slide .slick-prev{
     width: 40px;
     height: 40px;
 }
-.area_lesson .slick-next{
+.area_slide .slick-next{
     width: 40px;
     height: 40px;
 }
-.area_lesson .slick-prev{
+.area_slide .slick-prev{
     left: -3.4rem;
 }
-.area_lesson .slick-next{
+.area_slide .slick-next{
     right: -3.4rem;
 }
 @media screen and (max-width: 1300px) {
-    .area_lesson .lesson{
+    .area_slide .slide{
         width: 710px;
         /* margin-top: 20px;
         margin-bottom: 20px; */
     }
 }
 @media screen and (max-width: 896px) {
-    .area_lesson .lesson{
+    .area_slide .slide{
         width: 360px;
         /* margin-top: 20px;
         margin-bottom: 20px; */
     }
-    .area_lesson .card{
+    .area_slide .card{
         margin: 0 1.3rem;
         /* border: 1px solid #ddd;
         border-radius: 0; */
@@ -94,7 +94,7 @@ section{
 }
 @media screen and (max-width: 768px) {
     /* 外層 */
-    .area_lesson h4{
+    .area_slide h4{
         color: #000;
         font-weight: 600;
         font-size: 1.7rem;
@@ -110,7 +110,7 @@ section{
 }
 @media screen and (max-width: 576px) {
     /* 外層 */
-    .area_lesson h4{
+    .area_slide h4{
         font-size: 1.5rem;
     }
     /* 標題線 */
@@ -119,24 +119,24 @@ section{
         margin-right: 11px;
     }
     /* card輪播 */
-    .area_lesson .slick-prev{
+    .area_slide .slick-prev{
         left: -2.5rem;
 
     }
-    .area_lesson .slick-next{
+    .area_slide .slick-next{
         right: -2.5rem;
     }
 }
 @media screen and (max-width: 501px) {
-    .area_lesson{
+    .area_slide{
         margin-bottom: 70px;
     }
     /* card輪播 */
-    .area_lesson .slick-prev{
+    .area_slide .slick-prev{
         left: 6rem;
         top: 30.5rem;
     }
-    .area_lesson .slick-next{
+    .area_slide .slick-next{
         right: 6rem;
         top: 30.5rem;
     }
