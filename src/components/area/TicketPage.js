@@ -85,8 +85,6 @@ class TicketPage extends React.Component {
       }
       return num
     }
-
-    
   }
 
   render() {
@@ -103,7 +101,7 @@ class TicketPage extends React.Component {
             <FilterBread2 />
             <div id="ticket-id" style={{ display: 'none' }}>
               {this.state.total[0].ticket_sid}
-              {console.log('id:'+this.state.total[0].ticket_sid)}
+              {console.log('id:' + this.state.total[0].ticket_sid)}
             </div>
             {/* 圖+內容 */}
             <div class="ticket_head row mb-5">

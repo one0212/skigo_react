@@ -34,76 +34,79 @@ class HotelIntroductionCarousel extends React.Component {
 
   render() {
     return (
-      <div>
-        {/* <a onClick={this.onClick}>点击跳到第二块</a> */}
-        <BannerAnim
-          prefixCls="banner-user"
-          type="across"
-          onChange={this.onChange}
-          duration={1000}
-          ease="easeInOutExpo"
-          sync
-          ref={c => {
-            this.banner = c
-          }}
-          // autoPlay
-        >
-          <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
-            <BgElement key="bg" className="bg hotel_introduction_bg" />
-            <QueueAnim
-              name="QueueAnim"
-              className="banner-user-title"
-              key="1"
-              delay={[600, 0]}
-            >
-              <h1 key="h1">【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h1>
-            </QueueAnim>
-            <TweenOne
-              className="banner-user-title_p"
-              animation={{ y: 50, opacity: 0, type: 'from', delay: 800 }}
-              key="2"
-            >
-              Ant Motion Demo.Ant Motion Demo.Ant Motion Demo.Ant Motion Demo
-            </TweenOne>
-          </Element>
-          <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
-            <BgElement key="bg" className="bg hotel_introduction_bg" />
-            <QueueAnim
-              name="QueueAnim"
-              className="banner-user-title"
-              key="1"
-              delay={[600, 0]}
-            >
-              <h1 key="h1">【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h1>
-            </QueueAnim>
-            <TweenOne
-              className="banner-user-title_p"
-              animation={{ y: 50, opacity: 0, type: 'from', delay: 800 }}
-              key="2"
-            >
-              Ant Motion Demo.Ant Motion Demo.Ant Motion Demo.Ant Motion Demo
-            </TweenOne>
-          </Element>
-          <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
-            <BgElement key="bg" className="bg hotel_introduction_bg" />
-            <QueueAnim
-              name="QueueAnim"
-              className="banner-user-title"
-              key="1"
-              delay={[600, 0]}
-            >
-              <h1 key="h1">【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h1>
-            </QueueAnim>
-            <TweenOne
-              className="banner-user-title_p"
-              animation={{ y: 50, opacity: 0, type: 'from', delay: 800 }}
-              key="2"
-            >
-              Ant Motion Demo.Ant Motion Demo.Ant Motion Demo.Ant Motion Demo
-            </TweenOne>
-          </Element>
-        </BannerAnim>
-      </div>
+      <>
+        {console.log(this.props.hotelInt)}
+        <div>
+          {/* <a onClick={this.onClick}>点击跳到第二块</a> */}
+          <BannerAnim
+            prefixCls="banner-user"
+            type="across"
+            onChange={this.onChange}
+            duration={1000}
+            ease="easeInOutExpo"
+            sync
+            ref={c => {
+              this.banner = c
+            }}
+            // autoPlay
+          >
+            <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
+              <BgElement key="bg" className="bg hotel_introduction_bg" />
+              <QueueAnim
+                name="QueueAnim"
+                className="banner-user-title"
+                key="1"
+                delay={[600, 0]}
+              >
+                <h1 key="h1">{this.props.hotelInt.name}</h1>
+              </QueueAnim>
+              <TweenOne
+                className="banner-user-title_p"
+                animation={{ y: 50, opacity: 0, type: 'from', delay: 800 }}
+                key="2"
+              >
+                {this.props.hotelInt.slogan}
+              </TweenOne>
+            </Element>
+            <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
+              <BgElement key="bg" className="bg hotel_introduction_bg" />
+              <QueueAnim
+                name="QueueAnim"
+                className="banner-user-title"
+                key="1"
+                delay={[600, 0]}
+              >
+                <h1 key="h1">{this.props.hotelInt.name}</h1>
+              </QueueAnim>
+              <TweenOne
+                className="banner-user-title_p"
+                animation={{ y: 50, opacity: 0, type: 'from', delay: 800 }}
+                key="2"
+              >
+                {this.props.hotelInt.slogan}
+              </TweenOne>
+            </Element>
+            <Element key="aaa" prefixCls="banner-user-elem" leaveChildHide>
+              <BgElement key="bg" className="bg hotel_introduction_bg" />
+              <QueueAnim
+                name="QueueAnim"
+                className="banner-user-title"
+                key="1"
+                delay={[600, 0]}
+              >
+                <h1 key="h1">{this.props.hotelInt.name}</h1>
+              </QueueAnim>
+              <TweenOne
+                className="banner-user-title_p"
+                animation={{ y: 50, opacity: 0, type: 'from', delay: 800 }}
+                key="2"
+              >
+                {this.props.hotelInt.slogan}
+              </TweenOne>
+            </Element>
+          </BannerAnim>
+        </div>
+      </>
     )
   }
 }

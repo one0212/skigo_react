@@ -31,7 +31,10 @@ import FilterProduct from './components/product/FilterProduct'
 
 import HotelHome from './components/hotel/HotelHome'
 import HotelList from './components/hotel/HotelList'
+import HotelListCard from './components/hotel/HotelListCard'
+
 import HotelIntroduction from './components/hotel/HotelIntroduction'
+import HotelIntroductionContent from './components/hotel/HotelIntroductionContent'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
 
 function App() {
@@ -76,7 +79,17 @@ function App() {
 
             <Route path="/HotelHome" component={HotelHome} />
             <Route path="/HotelList" component={HotelList} />
+            <Route
+              path="HotelIntroductionContent/all_room/:id"
+              component={HotelIntroductionContent}
+            />
+            <Route path="/HotelListCard" component={HotelListCard} />
+
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
+            <Route
+              path="/HotelIntroductionContent"
+              component={HotelIntroductionContent}
+            />
             <Route path="/HotelRoomOrder" component={HotelRoomOrder} />
 
             <Route path="/example" component={Example} />

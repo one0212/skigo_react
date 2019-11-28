@@ -55,10 +55,35 @@ class HotelRoomContent extends React.Component {
     }
   }
 
+  handleClick = () => {
+    const url = 'http://localhost:3001/api/cart/items'
+    const id = document.querySelector('#hotel-id').textContent
+    const obj = {
+      // prodId, prodType, qty 這三個變數不可改
+      prodId: parseInt(1), //這邊放資料庫的商品id
+      prodType: 'hotels', //這邊放資料庫的商品類型 例如飯店傳hotel,
+      qty: parseInt(1), //商品數量 不需用字串
+    }
+    console.log(id, obj)
+    fetch(url, {
+      body: JSON.stringify(obj),
+      headers: {
+        'content-type': 'application/json',
+      },
+      method: 'POST',
+    }).then(response => {
+      // 如果response.status拿到200表示加入商品成功
+      if (response.status === 200) {
+        // 所以可以用此判斷, 後續要做的事情就是放這邊
+        console.log('商品加入成功')
+      }
+    })
+  }
+
   handleChange = (selectedOption_p, selectedOption_c) => {
     this.setState(
       { selectedOption_p },
-      () => console.log(`Option selected:`, this.state.selectedOption_p),
+      console.log(`Option selected:`, this.state.selectedOption_p),
       { selectedOption_c },
       () => console.log(`Option selected:`, this.state.selectedOption_c)
     )
@@ -77,7 +102,7 @@ class HotelRoomContent extends React.Component {
                   因為韓國人都很愛攜家帶眷去度假，因此房間大多可容納4個人以上，非常適合闔家出遊～除了西式的床外，房間內還有另外一個小房間可以鋪床睡，想要體驗韓國的『溫突』式火坑一定要來這裡！它是利用天然氣燃燒所產生的熱氣，通過房屋下面的管道來烘暖整個屋內，所以地板一點也不冷冰冰，還很溫暖呢！浴室是採乾溼分離的設計，還有小廚房跟餐桌，非常溫馨～渡假村裡附有旋轉木馬、保齡球館和超市等，像一個小型遊樂園，休閒娛樂都顧到！
                 </p>
               </div>
-              <p className="h4 hotel_room_line_box">服務設施</p>
+              <p className="h4 hotel_room_`lin`e_box">服務設施</p>
               <Row className="mb-5">
                 <Col>
                   <p className="font-weight-bold h5">所有客房均提供:</p>
@@ -150,7 +175,7 @@ class HotelRoomContent extends React.Component {
               </Row>
             </Col>
             <Col md={4}>
-              <Form action="" method="get" className="hotel_room_order_area">
+              <Form id="hotel-id" className="hotel_room_order_area">
                 <p className="h5">
                   $ <span className="font-weight-bol h1">1,766</span> 一晚
                 </p>
@@ -255,7 +280,11 @@ class HotelRoomContent extends React.Component {
                     </li>
                   </ul>
                 </FormGroup>
-                <Button variant="primary" className="hotel_room_order_btn">
+                <Button
+                  variant="primary"
+                  className="hotel_room_order_btn"
+                  onClick={this.handleClick}
+                >
                   <span className="h4 font-weight-normal">預定</span>
                 </Button>
               </Form>

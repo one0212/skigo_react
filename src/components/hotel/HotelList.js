@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Checkbox from 'rc-checkbox'
 import '../../../node_modules/rc-checkbox/assets/index.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
@@ -24,6 +25,7 @@ class HotelList extends React.Component {
       isMouseMove5: false,
       isChangeOn: false,
       color: '#ccc',
+      hotels: '',
     }
   }
   ChangeBox = e => {
@@ -86,6 +88,18 @@ class HotelList extends React.Component {
       isMouseMove3: false,
       isMouseMove4: false,
     }))
+  }
+  componentWillMount() {
+    fetch(`http://localhost:3001/japi/hotels`, {
+      method: 'GET',
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        this.setState({ hotels: json })
+        console.log(this.state.hotels)
+      })
   }
 
   render() {
@@ -336,27 +350,17 @@ class HotelList extends React.Component {
                   </ul>
                 </Col>
               </Row>
-              <Row className="d-flex">
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
-                <HotelListCard />
+              <Row>
+                {this.state.hotels !== ''
+                  ? this.state.hotels.map((hotel, index) => {
+                      return (
+                        <>
+                          <HotelListCard key={index} hotelData={hotel} />
+                        </>
+                      )
+                    })
+                  : ''}
+
                 {/* <Card className="hotel_list_card" style={{border:'none'}}>
                 <Card.Img variant="top" src={require('../../image/hotel/hotel_slider/hotel_4.jpg')} alt="..." className="hotel_slider_img"/>
                 <Card.Body>

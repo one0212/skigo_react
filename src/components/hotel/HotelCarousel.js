@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../css/hotel/HotelCarousel.css'
 import UseAnimations from 'react-useanimations'
@@ -275,9 +276,25 @@ export default class HotelCarousel extends React.Component {
                       options={options_c}
                       placeholder="0位孩童"
                     />
-                    <Button style={{ position: 'relative' }}>
-                      搜出好房 GO
-                      <Ink key="__ink" />
+                    <Button
+                      variant="none"
+                      style={{
+                        position: 'relative',
+                        backgroundColor: '#fd702d',
+                        color: '#fff',
+                      }}
+                    >
+                      <Link
+                        to="/HotelList"
+                        style={{
+                          position: 'relative',
+                          backgroundColor: '#fd702d',
+                          color: '#fff',
+                        }}
+                      >
+                        搜出好飯店 GO
+                        <Ink key="__ink" />
+                      </Link>
                     </Button>
                   </div>
                 </Form>

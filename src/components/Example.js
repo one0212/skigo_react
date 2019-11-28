@@ -8,9 +8,9 @@ const Example = () => {
     const selectedValue = select.options[select.selectedIndex].value
     const obj = {
       // prodId, prodType, qty 這三個變數不可改
-      prodId: parseInt(id), //這邊放資料庫的商品id
+      prodId: parseInt(1), //這邊放資料庫的商品id
       prodType: 'products', //這邊放資料庫的商品類型 例如飯店傳hotel,
-      qty: parseInt(selectedValue), //商品數量 不需用字串
+      qty: parseInt(1), //商品數量 不需用字串
     }
     console.log(id, selectedValue, obj)
     fetch(url, {
