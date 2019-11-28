@@ -5,15 +5,14 @@ import {
 import { Link } from 'react-router-dom';
 import '../../scss/product_card.scss'
 import 'bootstrap/dist/css/bootstrap.css'
+import { isThisWeek } from 'date-fns';
 
 
 class ProductCard2 extends React.Component{
     constructor(props){
       super(props)
       this.state = {
-        
       }
-      console.log(this.props.productData)
     }
     
   
@@ -23,9 +22,9 @@ class ProductCard2 extends React.Component{
             <Card className="product_card">
                 <div className="overlay">
                   <a href="#" className="item">加入購物車</a>
-                  <Link to={`/product/${this.props.productData.No}`} className="item">查看商品</Link>
+                  <Link to="#" className="item">查看商品</Link>
                 </div>
-                <Card.Img variant="top" src={this.props.productData.img[0]} />
+                <Card.Img variant="top" src="/images/Product/10707106000150_1.png" />
                 <Card.Body>
                   <Card.Title>{this.props.productData.name}</Card.Title>
                   <div className="product-card-pice">

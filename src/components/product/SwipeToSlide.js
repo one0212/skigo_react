@@ -45,7 +45,7 @@ class SwipeToSlide extends Component {
       className: 'center',
       infinite: true,
       // centerPadding: "80px",
-      slidesToShow: 4,
+      slidesToShow: 2,
       swipeToSlide: true,
       responsive: [
         {
@@ -76,24 +76,16 @@ class SwipeToSlide extends Component {
     return (
       <div>
         <Slider {...settings}>
-          <div>
-            <ProductCard2 />
-          </div>
-          <div>
-            <ProductCard2 />
-          </div>
-          <div>
-            <ProductCard2 />
-          </div>
-          <div>
-            <ProductCard2 />
-          </div>
-          <div>
-            <ProductCard2 />
-          </div>
-          <div>
-            <ProductCard2 />
-          </div>
+        { this.state.products !== '' ?
+          this.state.products.map((product, index)=>{
+          return<>
+            <div key={index}>
+              <ProductCard2 productData={product}/>
+            </div>
+          </>
+        }) : ''
+        }
+          
         </Slider>
       </div>
     )
