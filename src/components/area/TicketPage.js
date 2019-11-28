@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/ticket_page.css'
 import { Form } from 'react-bootstrap'
-import FilterBread2 from '../goods/FilterBread2'
+// import FilterBread2 from '../goods/FilterBread2'
 
 class TicketPage extends React.Component {
   constructor() {
@@ -98,7 +98,13 @@ class TicketPage extends React.Component {
         ) : (
           <div class="ticket_book_out container">
             {/* 麵包屑 */}
-            <FilterBread2 />
+            {/* <FilterBread2 /> */}
+            <div className="row mb-4">
+              <div className="col-md-2 col-sm-0"> </div>
+              <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
+                首頁 / 雪場票券 / {this.state.total[0].area_name} / {this.state.total[0].ticket_name}
+              </div>
+            </div>
             <div id="ticket-id" style={{ display: 'none' }}>
               {this.state.total[0].ticket_sid}
               {console.log('id:' + this.state.total[0].ticket_sid)}
