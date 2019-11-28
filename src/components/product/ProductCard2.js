@@ -24,7 +24,7 @@ class ProductCard2 extends React.Component{
                   <a href="#" className="item">加入購物車</a>
                   <Link to="#" className="item">查看商品</Link>
                 </div>
-                <Card.Img variant="top" src="/images/Product/10707106000150_1.png" />
+                <Card.Img variant="top" src={this.props.productData.img[0]} />
                 <Card.Body>
                   <Card.Title>{this.props.productData.name}</Card.Title>
                   <div className="product-card-pice">
