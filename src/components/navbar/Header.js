@@ -114,7 +114,7 @@ class Header extends Component {
                   <Nav.Link href="/HotelHome" className="nav-item mx-3">
                     找飯店
                   </Nav.Link>
-                  <Nav.Link href="/store" className="nav-item mx-3">
+                  <Nav.Link href="/product" className="nav-item mx-3">
                     雪具裝備
                   </Nav.Link>
                   <Nav.Link href="#" className="nav-item mx-3">
