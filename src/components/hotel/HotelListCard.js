@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../css/hotel/HotelListCard.css'
 import {
@@ -10,9 +11,10 @@ import {
 import UseAnimations from 'react-useanimations'
 
 class HotelListCard extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
+    console.log(this.props.hotelData)
   }
 
   render() {
@@ -26,11 +28,10 @@ class HotelListCard extends React.Component {
         />
         <Card.Body>
           <Card.Title>
-            <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
+            <h6>{this.props.hotelData.name}</h6>
           </Card.Title>
           <Card.Text className="hotel_list_card_text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {this.props.hotelData.text}
           </Card.Text>
           <div className="d-flex justify-content-between">
             <ul class="list-unstyled d-flex hotel_list_card_star">
@@ -59,11 +60,15 @@ class HotelListCard extends React.Component {
             </span>
           </div>
           <span class="hotel_card_money">
-            約 $<span>2,400</span>TWD / 晚
+            約 $<span>{this.props.hotelData.price}</span>TWD / 晚
           </span>
-          <Button variant="light" className="badge-pill hotel_list_card_btn">
-            more
-          </Button>
+          <Link
+            to={`/HotelIntroductionContent/all_room/${this.props.hotelData.id}`}
+          >
+            <Button variant="light" className="badge-pill hotel_list_card_btn">
+              more
+            </Button>
+          </Link>
         </Card.Body>
       </Card>
     )
