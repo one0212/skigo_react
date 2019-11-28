@@ -54,54 +54,70 @@ class FilterLeftMenu2 extends React.Component {
         <Accordion className="left-accordion" defaultActiveKey="0">
           <Card>
             <div className="coach-select">
-              <Accordion.Toggle as={Card.Header} eventKey="6">
-                <div className="coach-react-item d-flex justify-content-between ">
+              <Accordion.Toggle
+                as={Card.Header}
+                eventKey="6"
+                style={{ background: '#F5F5F5' }}
+              >
+                <div className="coach-react-item d-flex justify-content-between">
                   <div>地區</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
                 </div>
               </Accordion.Toggle>
             </div>
-            <Accordion.Collapse eventKey="6">
+            <Accordion.Collapse eventKey="6" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <input
-                  onChange={this.changeBox(1)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class1}
-                />
-                北海道
-                <br />
-                <input
-                  onChange={this.changeBox(2)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class2}
-                />
-                青森縣
-                <br />
-                <input
-                  onChange={this.changeBox(3)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class3}
-                />
-                山形縣
-                <br />
-                <input
-                  onChange={this.changeBox(4)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class4}
-                />
-                新瀉縣
-                <br />
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(1)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class1}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>北海道</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(2)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class2}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>青森縣</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(3)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class3}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>山形縣</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(4)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class4}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>新瀉縣</p>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <div className="coach-select">
-              <Accordion.Toggle as={Card.Header} eventKey="1">
+              <Accordion.Toggle
+                as={Card.Header}
+                eventKey="1"
+                style={{ background: '#F5F5F5' }}
+              >
                 <div className="coach-react-item d-flex justify-content-between ">
                   <div>商品</div>
                   <i className="fas fa-angle-up"></i>
@@ -109,38 +125,48 @@ class FilterLeftMenu2 extends React.Component {
                 </div>
               </Accordion.Toggle>
             </div>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="1" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <input
-                  onChange={this.changeBox(5)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class5}
-                />
-                纜車券
-                <br />
-                <input
-                  onChange={this.changeBox(6)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class6}
-                />
-                租借券
-                <br />
-                <input
-                  onChange={this.changeBox(7)}
-                  type="checkbox"
-                  name="class"
-                  checked={this.state.class7}
-                />
-                超值套票
-                <br />
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(5)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class5}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>纜車券</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(6)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class6}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>租借券</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(7)}
+                    type="checkbox"
+                    name="class"
+                    checked={this.state.class7}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>超值套票</p>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <div className="coach-select">
-              <Accordion.Toggle as={Card.Header} eventKey="2">
+              <Accordion.Toggle
+                as={Card.Header}
+                eventKey="2"
+                style={{ background: '#F5F5F5' }}
+              >
                 <div className="coach-react-item d-flex justify-content-between">
                   <div>票種</div>
                   <i className="fas fa-angle-up"></i>
@@ -148,38 +174,48 @@ class FilterLeftMenu2 extends React.Component {
                 </div>
               </Accordion.Toggle>
             </div>
-            <Accordion.Collapse eventKey="2">
+            <Accordion.Collapse eventKey="2" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <input
-                  onChange={this.changeBox(8)}
-                  type="checkbox"
-                  name="class_board"
-                  checked={this.state.class8}
-                />
-                成人
-                <br />
-                <input
-                  onChange={this.changeBox(9)}
-                  type="checkbox"
-                  name="class_board"
-                  checked={this.state.class9}
-                />
-                兒童
-                <br />
-                <input
-                  onChange={this.changeBox(10)}
-                  type="checkbox"
-                  name="class_board"
-                  checked={this.state.class10}
-                />
-                敬老
-                <br />
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(8)}
+                    type="checkbox"
+                    name="class_board"
+                    checked={this.state.class8}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>成人</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(9)}
+                    type="checkbox"
+                    name="class_board"
+                    checked={this.state.class9}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>兒童</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(10)}
+                    type="checkbox"
+                    name="class_board"
+                    checked={this.state.class10}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />
+                  <p>敬老</p>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <div className="coach-select">
-              <Accordion.Toggle as={Card.Header} eventKey="3">
+              <Accordion.Toggle
+                as={Card.Header}
+                eventKey="3"
+                style={{ background: '#F5F5F5' }}
+              >
                 <div className="coach-react-item d-flex justify-content-between ">
                   <div>使用天數</div>
                   <i className="fas fa-angle-up"></i>
@@ -187,32 +223,38 @@ class FilterLeftMenu2 extends React.Component {
                 </div>
               </Accordion.Toggle>
             </div>
-            <Accordion.Collapse eventKey="3">
+            <Accordion.Collapse eventKey="3" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <input
-                  onChange={this.changeBox(11)}
-                  type="checkbox"
-                  name="class_language"
-                  checked={this.state.class11}
-                />{' '}
-                一日
-                <br />
-                <input
-                  onChange={this.changeBox(12)}
-                  type="checkbox"
-                  name="class_language"
-                  checked={this.state.class12}
-                />{' '}
-                二日
-                <br />
-                <input
-                  onChange={this.changeBox(13)}
-                  type="checkbox"
-                  name="class_language"
-                  checked={this.state.class13}
-                />{' '}
-                三日
-                <br />
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(11)}
+                    type="checkbox"
+                    name="class_language"
+                    checked={this.state.class11}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />{' '}
+                  <p>一日</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(12)}
+                    type="checkbox"
+                    name="class_language"
+                    checked={this.state.class12}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />{' '}
+                  <p>二日</p>
+                </div>
+                <div className="d-flex" style={{ padding: '5px' }}>
+                  <input
+                    onChange={this.changeBox(13)}
+                    type="checkbox"
+                    name="class_language"
+                    checked={this.state.class13}
+                    style={{ marginTop: '6px', marginRight: '8px' }}
+                  />{' '}
+                  <p>三日</p>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>

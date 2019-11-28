@@ -47,6 +47,12 @@ section{
     background: #FD702D;
     border: none;
 }
+.area_lesson .btn-primary:hover{
+    background: rgb(255, 131, 74);
+}
+.area_lesson .btn-primary:active{
+    background: rgb(255, 131, 74) !important;
+}
 /* card輪播 */
 .area_lesson .slick-prev:before,
 .area_lesson .slick-next:before {

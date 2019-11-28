@@ -123,7 +123,7 @@ class SlideTicket extends React.Component {
                         <div className="card-body">
                           <h5 className="card-title">{value.area_name}</h5>
                           <p className="card-text">
-                            {value.ticket_name}|{value.ticket_age}
+                            {value.ticket_name} | {value.ticket_age}
                           </p>
                           <p className="card-text">NT {this.thousandComma(value.ticket_price)}</p>
                           <Link

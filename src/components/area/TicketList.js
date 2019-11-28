@@ -212,12 +212,12 @@ class TicketList extends React.Component {
                 >
                   價格
                 </p>
-                <div>
+                <div style={{ marginTop: '9px' }}>
                   <a href="#" onClick={this.ChangeSort}>
-                    <MdKeyboardArrowUp />
+                    <MdKeyboardArrowUp style={{ height: '18px' }}/>
                   </a>
                   <a href="#" onClick={this.ChangeSort2}>
-                    <MdKeyboardArrowDown />
+                    <MdKeyboardArrowDown style={{ height: '18px',marginBottom:'20px' }}/>
                   </a>
                 </div>
               </div>

@@ -2,6 +2,8 @@ import React from 'react'
 import '../../css/area_home.css'
 import { Carousel, Form } from 'react-bootstrap'
 import SlideTicket from './SlideTicket'
+import SlideClass from './SlideClass'
+import SlideHotel from './SlideHotel'
 
 class TicketAreas extends React.Component {
   constructor() {
@@ -372,8 +374,10 @@ class TicketAreas extends React.Component {
               </section>
 
               <SlideTicket />
+              <SlideClass />
+              <SlideHotel />
 
-              <section className="area_access">
+              {/* <section className="area_access">
                 <div className="container">
                   <div className="access_title">
                     <div className="d-flex">
@@ -382,13 +386,13 @@ class TicketAreas extends React.Component {
                     </div>
                   </div>
                   <hr />
-                  {/* <iframe
+                  <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11607.988663140555!2d142.33874033325841!3d43.335248371799736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f73525ef98cb63d%3A0x9020eebf4f63234b!2z5a-M6Imv6YeO5ruR6Zuq5aC0!5e0!3m2!1szh-TW!2stw!4v1572185752833!5m2!1szh-TW!2stw"
                     frameborder="0"
                     style={{ border: '0', width: '100%', height: '600' }}
-                  /> */}
+                  />
                 </div>
-              </section>
+              </section> */}
             </div>
           </>
         )}

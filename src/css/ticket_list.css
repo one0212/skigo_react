@@ -13,6 +13,9 @@
             /* margin-bottom:20px;  */
             font-weight:bold;          
         }
+        .ticket_arrange a{
+            height: 25px;
+        }
         /* .coach-arrange a:hover{
             border-bottom: 2px solid  #FD702D;        
         } */
@@ -176,8 +179,8 @@
         display:none
     }
     /* 滑鼠點擊觸發 */
-    .coach-card:hover{
-        box-shadow: 0 1px 4px 0.5px #fd6f2db9;
+    .ticket-card:hover{
+        box-shadow: 0 1px 4px 0.5px #cfcfcfb9;
     }
 
     /* rwd */
