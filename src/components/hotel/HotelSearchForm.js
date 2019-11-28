@@ -98,9 +98,17 @@ class HotelSearchForm extends React.Component {
             options={options_c}
             placeholder="0位孩童"
           />
-          <Button style={{ position: 'relative' }}>
-            搜出好房 GO
+          <Button
+            variant="none"
+            onClick={this.changePage}
+            style={{
+              position: 'relative',
+              backgroundColor: '#fd702d',
+              color: '#fff',
+            }}
+          >
             <Ink key="__ink" />
+            搜出好飯店 GO
           </Button>
         </div>
       </Form>

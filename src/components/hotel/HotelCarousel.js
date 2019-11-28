@@ -109,6 +109,11 @@ export default class HotelCarousel extends React.Component {
       })
     }
   }
+  changePage = () => {
+    setTimeout(() => {
+      window.location.href = 'http://localhost:3000/HotelList'
+    }, 380)
+  }
   componentWillUnmount() {
     window.clearTimeout(this.changeTO)
     window.removeEventListener('scroll', this.handleScroll)
@@ -278,23 +283,15 @@ export default class HotelCarousel extends React.Component {
                     />
                     <Button
                       variant="none"
+                      onClick={this.changePage}
                       style={{
                         position: 'relative',
                         backgroundColor: '#fd702d',
                         color: '#fff',
                       }}
                     >
-                      <Link
-                        to="/HotelList"
-                        style={{
-                          position: 'relative',
-                          backgroundColor: '#fd702d',
-                          color: '#fff',
-                        }}
-                      >
-                        搜出好飯店 GO
-                        <Ink key="__ink" />
-                      </Link>
+                      <Ink key="__ink" />
+                      搜出好飯店 GO
                     </Button>
                   </div>
                 </Form>

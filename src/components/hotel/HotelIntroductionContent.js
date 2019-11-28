@@ -61,6 +61,7 @@ class HotelIntroductionContent extends React.Component {
   render() {
     return (
       <>
+        {console.log(this.state.hotels)}
         <HotelIntroductionCarousel hotelInt={this.state.hotels} />
         <div className="container">
           <section>
@@ -458,17 +459,27 @@ class HotelIntroductionContent extends React.Component {
               鉑爾曼倫的可預訂房型
             </p>
             <Row className="d-flex">
-              <HotelIntroductionContentCard hotelIntCard={this.state.hotels} />
-              {/* {this.state.hotel_rooms !== ''
-              ? this.state.hotel_rooms.map((hotel_room, index) => {
-                  return (
-                    <HotelIntroductionContentCard
-                      key={index}
-                      hotelRoomData={hotel_room}
-                    />
-                  )
-                })
-              : ''} */}
+              {this.state.hotels !== ''
+                ? this.state.hotels.rooms.map((rooms, index) => {
+                    return (
+                      <>
+                        <HotelIntroductionContentCard hotelIntCard={rooms} />
+                      </>
+                    )
+                  })
+                : ''}
+              {/* <HotelIntroductionContentCard
+                hotelIntCard={hotel.rooms}
+              /> */}
+              {/* {this.state.hotels !== ''
+                ? this.state.hotels.map((hotel, index) => {
+                    return (
+                      <>
+                        <HotelListCard key={index} hotelData={hotel} />
+                      </>
+                    )
+                  })
+                : ''} */}
               {/* <Card className="hotel_introduction_card">
               <Card.Img
                 variant="top"

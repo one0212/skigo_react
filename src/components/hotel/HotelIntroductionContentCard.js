@@ -61,7 +61,9 @@ class HotelIntroductionContentCard extends React.Component {
             <span class="hotel_introduction_money">
               約 $<span>jfdf</span>TWD / 晚
             </span>
-            <Link to="/HotelRoomOrder">
+            <Link
+              to={`/HotelRoomContent/roomInt/${this.props.hotelIntCard.id}`}
+            >
               <Button
                 variant="light"
                 className="badge-pill hotel_introduction_card_btn"
