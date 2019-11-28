@@ -197,7 +197,7 @@ class TicketList extends React.Component {
           <div className="row coach-rwd-active">
             <div className="col-3">
               <button id="menu_active" className="btn coach-btn-active">
-                <i className="fas fa-list"></i> 顯示
+                <i className="fas fa-list"></i> 
               </button>
             </div>
             <div className="ticket_arrange coach-arrange col-9 d-flex justify-content-between">

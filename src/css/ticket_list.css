@@ -216,7 +216,7 @@
         .coach-rwd-sort{
             position: absolute;
             background: rgb(255, 255, 255);
-            width: 95%;
+            /* width: 95%; */
             /* border: 1px solid pink; */
             margin-right:-10px;
         }
