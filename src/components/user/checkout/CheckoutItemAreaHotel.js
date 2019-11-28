@@ -31,7 +31,7 @@ class CheckoutItemAreaHotel extends Component {
                             <a href="" className="">
                               <img
                                 className=""
-                                src="/images/coach/coach.jpg"
+                                src={item.coverImg}
                                 alt="商品照片"
                               />
                             </a>

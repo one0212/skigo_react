@@ -18,7 +18,7 @@ class CartItemProductArea extends Component {
                 <a href="" className=" ">
                   <img
                     className=""
-                    src="/images/coach/coach.jpg"
+                    src={this.props.cartData.coverImg}
                     alt="商品照片"
                   />
                 </a>
