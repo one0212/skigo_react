@@ -45,7 +45,7 @@ class SwipeToSlide extends Component {
       className: 'center',
       infinite: true,
       // centerPadding: "80px",
-      slidesToShow: 2,
+      slidesToShow: 4,
       swipeToSlide: true,
       responsive: [
         {

@@ -88,7 +88,7 @@ class Product extends React.Component {
           <Row>
             <Breadcrumb>
               <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-              <Breadcrumb.Item href="/store">Store</Breadcrumb.Item>
+              <Breadcrumb.Item href="/product">Store</Breadcrumb.Item>
               <Breadcrumb.Item disabled>
                 {this.state.products.name}
               </Breadcrumb.Item>
