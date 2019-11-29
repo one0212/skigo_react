@@ -122,6 +122,14 @@ class UserLightbox extends Component {
     this.setState({ showModal: 4 })
   }
 
+  onSignIn = googleUser => {
+    var profile = googleUser.getBasicProfile()
+    console.log('ID: ' + profile.getId()) // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName())
+    console.log('Image URL: ' + profile.getImageUrl())
+    console.log('Email: ' + profile.getEmail()) // This is null if the 'email' scope is not present.
+  }
+
   render() {
     if (!this.props.isOpen) {
       return ''
@@ -219,11 +227,19 @@ class UserLightbox extends Component {
               <span className="text-center user-darkblue-text">Facebook</span>
               <span></span>
             </div>
-            <div className="mx-2 user-third-input py-2 mt-2 d-flex justify-content-around align-items-center flex-grow">
+            {/* <div
+              className="mx-2 user-third-input py-2 mt-2 d-flex justify-content-around align-items-center flex-grow g-signin2"
+              data-onsuccess="onSignIn"
+            >
               <FaGoogle className="user-fa-google"></FaGoogle>
               <span className="text-center user-darkblue-text">Google</span>
               <span></span>
-            </div>
+            </div> */}
+            <div
+              className="g-signin2"
+              data-onsuccess="onSignIn"
+              style={{ backgroung: '#000', width: '50px', height: '50px' }}
+            ></div>
           </div>
           <small
             className="user-darkblue-text position-absolute cursor-point login-text toggle-login"
