@@ -5,6 +5,7 @@ class CartToCheckout extends Component {
   render() {
     return (
       <>
+        {console.log(this.props)}
         <div className="shop-order-title card-header">訂單摘要</div>
         <div className="shop-order-body">
           <div className="shop-product-total d-flex justify-content-between">
