@@ -13,7 +13,7 @@ class CoachDate extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedDate: new Date('2019-11-22'),
+      selectedDate: new Date(),
     }
   }
 
@@ -32,6 +32,7 @@ class CoachDate extends React.Component {
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Grid container justify="space-around">
               <KeyboardDatePicker
+              minDate={this.state.selectedDate}
                 margin="normal"
                 id="date-picker-dialog"
                 label="Date picker dialog"

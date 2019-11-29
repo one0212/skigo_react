@@ -70,7 +70,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 5;
   /* display:flex; */
   justify-content: center;
   align-items: center;
@@ -153,6 +153,7 @@ body {
   /* bottom:2%; */
   top: 94%;
   left: 5%;
+  z-index:15;
 }
 /* 登入 */
 .login-content {

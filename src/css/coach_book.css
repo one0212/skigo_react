@@ -2,7 +2,7 @@
     margin-left:30px;
     }
     .coach_book_out h1{
-        margin-top:80px;
+        /* margin-top:80px; */
         font-size: 2rem;
     }
     .coach_book_out .coach-book-center{
@@ -204,6 +204,19 @@
         border-bottom:1px #fd702d solid;
         /* padding-bottom: 2px; */
     }
+
+    /* fb */
+    .coach-fb{
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+    }
+    .coach-fb img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
 
 
     @media (max-width: 1100px) {

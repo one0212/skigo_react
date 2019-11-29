@@ -4,6 +4,7 @@ class CartItemHotel extends Component {
   render() {
     return (
       <>
+        {console.log(this.props)}
         <div className="shop-item shop-box my-4 position-relative">
           <div className="shop-vendor-title">
             <span>{this.props.cartData.vendor}</span>
@@ -25,6 +26,7 @@ class CartItemHotel extends Component {
                   {this.props.cartData.name}
                 </a>
                 <span>{this.props.cartData.info}</span>
+                <span className="d-none">{this.props.cartData.qty}</span>
               </div>
 
               <div className="shop-item-price mt-2">
