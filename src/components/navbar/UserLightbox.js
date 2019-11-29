@@ -18,7 +18,7 @@ const cursorPoint = {
 class UserLightbox extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
+    // console.log(props)
     this.state = {
       showModal: 1,
       text: {
@@ -99,7 +99,6 @@ class UserLightbox extends Component {
       },
       method: 'POST',
     }).then(response => {
-      console.log(response)
       if (response.status === 200) {
         this.props.onClose()
         this.props.refreshLoginState()
