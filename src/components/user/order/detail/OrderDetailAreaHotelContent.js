@@ -23,42 +23,44 @@ class OrderDetailProductContent extends Component {
           <div className="shop-vendor-title ml-2">
             <span className="fw-700">電子票券商品</span>
           </div>
-          {this.props.orderData.products.map((product, index) => {
-            return (
-              <>
-                <div className="ml-2" style={text}>
-                  <div className="d-flex justify-content-between p-2">
-                    <div style={photoStyle}>
-                      <a href="" className="">
-                        <img
-                          className=""
-                          src={product.coverImg}
-                          alt="商品照片"
-                          style={{ width: '100%', height: '100%' }}
-                        />
-                      </a>
+          {this.props.detailData.products.map((product, index) => {
+            if (product.prodType === 'products') {
+              return ''
+            } else {
+              return (
+                <>
+                  <div className="ml-2" style={text}>
+                    <div className="d-flex justify-content-between p-2">
+                      <div style={photoStyle}>
+                        <a href="" className="">
+                          <img
+                            className=""
+                            src={product.coverImg}
+                            alt="商品照片"
+                            style={{ width: '100%', height: '100%' }}
+                          />
+                        </a>
+                      </div>
+                      <div className="d-flex flex-column">
+                        <span>{product.vendor}</span>
+                        <a href="" className="text-decoration-none text-dark">
+                          {product.name}
+                        </a>
+                        <span>{product.info}</span>
+                      </div>
+                      <div>X {product.qty}</div>
+                      <div>NT$ {product.price}</div>
                     </div>
-                    <div className="d-flex flex-column">
-                      <span>{product.vendor}</span>
-                      <a href="" className="text-decoration-none text-dark">
-                        {product.name}
-                      </a>
-                      <span>{product.info}</span>
-                    </div>
-                    <div>X {product.qty}</div>
-                    <div>NT$ {product.price}</div>
                   </div>
-                </div>
-              </>
-            )
+                </>
+              )
+            }
           })}
 
           <div>
             <Col md={6} className="d-flex pl-4 ml-auto justify-content-between">
               <span className="">小計</span>
-              <span className="">
-                $ {this.props.orderData.products.orderAmt}
-              </span>
+              <span className="">$ {this.props.detailData.orderAmt}</span>
             </Col>
             <Col
               style={text}
@@ -70,9 +72,7 @@ class OrderDetailProductContent extends Component {
             </Col>
             <Col md={6} className="pl-4 d-flex ml-auto justify-content-between">
               <span className="fw-700">總計</span>
-              <span className="fw-700">
-                $ {this.props.orderData.products.orderAmt}
-              </span>
+              <span className="fw-700">$ {this.props.detailData.orderAmt}</span>
             </Col>
           </div>
         </div>

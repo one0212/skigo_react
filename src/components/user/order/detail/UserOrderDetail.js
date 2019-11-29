@@ -36,7 +36,7 @@ class UserOrderDetail extends Component {
             <>
               <OrderDetailProductContent
                 key={index}
-                orderData={this.state.orderDetail}
+                detailData={this.state.orderDetail}
               />
               <OrderDetailRecipient detailData={this.state.orderDetail} />
             </>
@@ -45,7 +45,7 @@ class UserOrderDetail extends Component {
           areaHotel = (
             <OrderDetailAreaHotelContent
               key={index}
-              orderData={this.state.orderDetail}
+              detailData={this.state.orderDetail}
             />
           )
         }

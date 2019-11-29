@@ -11,15 +11,15 @@ class OrderDetailRecipient extends Component {
           <div className="p-3">
             <div className="order-list-status my-3 d-flex align-items-center">
               <span className="col-3 text-right mr-4 fw-500">收件人</span>
-              <span>收件人name</span>
+              <span>{this.props.detailData.receiver}</span>
             </div>
             <div className="order-list-number my-3 d-flex align-items-center">
               <span className="col-3 text-right mr-4 fw-500">收件人地址</span>
-              <span>address</span>
+              <span>{this.props.detailData.address}</span>
             </div>
             <div className="order-list-status my-3 d-flex align-items-center">
               <span className="col-3 text-right mr-4 fw-500">收件人電話</span>
-              <span>mobile</span>
+              <span>{this.props.detailData.mobile}</span>
             </div>
             <div className="order-list-status my-3 d-flex align-items-center">
               <span className="col-3 text-right mr-4 fw-500">寄送方式</span>

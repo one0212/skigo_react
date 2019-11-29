@@ -45,10 +45,7 @@ class Header extends Component {
   }
 
   componentWillMount() {
-    if (
-      cookies.get('role') === 'undefined' ||
-      cookies.get('role') === 'VISITOR'
-    ) {
+    if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
