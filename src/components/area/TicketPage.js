@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/ticket_page.css'
 import { Form } from 'react-bootstrap'
+import SweetAlert from 'sweetalert2-react'
 // import FilterBread2 from '../goods/FilterBread2'
 
 class TicketPage extends React.Component {
@@ -37,6 +38,7 @@ class TicketPage extends React.Component {
         // 所以可以用此判斷, 後續要做的事情就是放這邊
         console.log('商品加入成功')
         this.props.setCartItemQty()
+        this.setState({ show: true })
       }
     })
   }
@@ -103,7 +105,8 @@ class TicketPage extends React.Component {
             <div className="row mb-4">
               <div className="col-md-2 col-sm-0"> </div>
               <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
-                首頁 / 雪場票券 / {this.state.total[0].area_name} / {this.state.total[0].ticket_name}
+                首頁 / 雪場票券 / {this.state.total[0].area_name} /{' '}
+                {this.state.total[0].ticket_name}
               </div>
             </div>
             <div id="ticket-id" style={{ display: 'none' }}>
@@ -182,6 +185,12 @@ class TicketPage extends React.Component {
                       <button className="btn" onClick={this.handleClick}>
                         <i className="fas fa-shopping-cart"></i> 放入購物車
                       </button>
+                      <SweetAlert
+                        show={this.state.show}
+                        title="成功"
+                        text="加入購物車成功!"
+                        onConfirm={() => this.setState({ show: false })}
+                      />
                       <button className="btn">
                         <i className="far fa-heart"></i> 收藏商品
                       </button>
