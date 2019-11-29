@@ -29,10 +29,8 @@
     "react-scripts": "3.2.0",
     "react-select": "^3.0.8",
     "react-slick": "^0.25.2",
-    "react-trip-date": "0.0.3",
     "react-useanimations": "^1.2.11",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^4.4.1",
     "universal-cookie": "^4.0.2"
   },
   "scripts": {

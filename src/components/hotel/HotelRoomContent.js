@@ -16,9 +16,6 @@ import Select from 'react-select'
 import HotelRoomSlide from './HotelRoomSlide'
 import HotelsRoomCarousel from './HotelRoomCarousel'
 
-import { DatePicker, RangePicker, theme } from 'react-trip-date'
-import { ThemeProvider } from 'styled-components'
-
 const hotelDateSearchStyles = {
   hotelDateSearch: base => ({
     ...base,
@@ -58,6 +55,14 @@ class HotelRoomContent extends React.Component {
       selectedOption_c: null,
       room: {},
     }
+  }
+  changeDate = (start, end) => {
+    console.log(start)
+    console.log(end)
+    // let s = start
+    // let e = end
+    // console.log(s)
+    // console.log(e)
   }
 
   handleClick = () => {
@@ -113,10 +118,13 @@ class HotelRoomContent extends React.Component {
 
   render() {
     const { selectedOption } = this.state
-    const m = this.state.room.price
+    const p = this.state.room.price
     const d = 4
+    const t = this.state.room.tax
+    const o = this.state.room.otherPrice
 
-    const addM = m * d
+    const addM = p * d
+    const total = addM + t + o
     return (
       <>
         <HotelsRoomCarousel />
@@ -238,6 +246,7 @@ class HotelRoomContent extends React.Component {
                         startPlaceholder="入住日期..."
                         endPlaceholder="退房日期..."
                         disableDay={disableDay}
+                        onChange={this.changeDate}
                       />
                     </div>
                   </FormGroup>
@@ -309,7 +318,7 @@ class HotelRoomContent extends React.Component {
                       </li>
                       <li>
                         <p className="font-weight-bold">
-                          $<span>6,279</span>
+                          $<span>{total}</span>
                         </p>
                       </li>
                     </ul>

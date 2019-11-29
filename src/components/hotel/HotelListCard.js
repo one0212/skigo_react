@@ -22,7 +22,7 @@ class HotelListCard extends React.Component {
       <Card className="hotel_list_card" style={{ border: 'none' }}>
         <Card.Img
           variant="top"
-          src="/images/hotel/hotel_slider/hotel_4.jpg"
+          src={this.props.hotelData.img[0]}
           alt="..."
           className="hotel_slider_img"
         />

@@ -14,16 +14,16 @@ class HotelIntroductionContentCard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
+    // console.log(this.props.hotelIntCard.img[0])
   }
 
   render() {
     return (
       <>
-        {console.log(this.props.hotelIntCard)}
         <Card className="hotel_introduction_card">
           <Card.Img
             variant="top"
-            src="/image/hotel/hotel_slider/hotel_4.jpg"
+            src={this.props.hotelIntCard.img}
             alt="..."
             className="hotel_slider_img"
           />
