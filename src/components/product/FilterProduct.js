@@ -11,33 +11,29 @@ class  FilterProduct extends React.Component{
   constructor(){
     super()
     this.state = {
-      products: ''
+      products: '',
     }
   }
-  handleClick = () => {
-    const url = 'http://localhost:3001/api/cart/items'
-    const id = document.querySelector('#product-id').textContent
-    const select = document.querySelector('#product-select')
-    const selectedValue = select.options[select.selectedIndex].value
-    const obj = {
-      // prodId, prodType, qty 這三個變數不可改
-      prodId: parseInt(id), //這邊放資料庫的商品id
-      prodType: 'products', //這邊放資料庫的商品類型 例如飯店傳hotel,
-      qty: parseInt(selectedValue), //商品數量 不需用字串
-    }
-    console.log(id, selectedValue, obj)
-    fetch(url, {
-      body: JSON.stringify(obj),
-      headers: {
-        'content-type': 'application/json',
-      },
-      method: 'POST',
-    }).then(response => {
-      // 如果response.status拿到200表示加入商品成功
-      if (response.status === 200) {
-        // 所以可以用此判斷, 後續要做的事情就是放這邊
-        console.log('商品加入成功')
-      }
+  handleClick = e => {
+    const url = `http://localhost:3001/japi/products?type=${e.target.id}`
+    console.log(e.target)
+    // const obj = {
+    //   // prodId, prodType, qty 這三個變數不可改
+    // }
+    fetch(url).then(response => {
+      return response.json()
+    }).then(json=>{
+      const uniqueNo = [];
+      const uniqueProd = [];
+      json.map(prod => {
+          if (uniqueNo.indexOf(prod.No) === -1) {
+            uniqueNo.push(prod.No);
+            uniqueProd.push(prod);
+          }
+      });
+      console.log(uniqueNo);
+      this.setState({ products: uniqueProd})
+      console.log(this.state.products)
     })
   }
   
@@ -80,42 +76,42 @@ class  FilterProduct extends React.Component{
                 <Nav className="justify-content-center align-items-center" activeKey="/home">
                     <Nav.Item>
                       <Nav.Link href="#">
-                      <div className="product-svg"><img src="/images/svg/Snowboards.svg"/>
+                      <div className="product-svg"><img id="snowboards" onClick={this.handleClick} src="/images/svg/Snowboards.svg"/>
                         <span>滑雪板</span>
                       </div>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link href="#">
-                      <div className="product-svg"><img src="/images/svg/Bindings.svg"/>
+                      <div className="product-svg"><img id="bindings" onClick={this.handleClick} src="/images/svg/Bindings.svg"/>
                         <span>雪板固定器</span>
                       </div>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="link-2">
-                      <div className="product-svg"><img className="p-svg" src="/images/svg/Boots.svg"/>
+                      <Nav.Link >
+                      <div className="product-svg"><img className="p-svg" id="boots" onClick={this.handleClick}  src="/images/svg/Boots.svg"/>
                       <span>雪靴</span>
                       </div>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="disabled">
-                      <div className="product-svg"><img src="/images/svg/Jackets.svg"/>
+                      <div className="product-svg"><img id="jackets" onClick={this.handleClick} src="/images/svg/Jackets.svg"/>
                       <span>雪衣</span>
                       </div>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="disabled">
-                      <div className="product-svg"><img src="/images/svg/Snowboard-Pants.svg"/>
+                      <div className="product-svg"><img id="pants" onClick={this.handleClick} src="/images/svg/Snowboard-Pants.svg"/>
                       <span>雪褲</span>
                       </div>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="disabled">
-                      <div className="product-svg"><img src="/images/svg/Gloves.svg"/>
+                      <div className="product-svg"><img id="Helmets" onClick={this.handleClick} src="/images/svg/Gloves.svg"/>
                       <span>配件</span>
                       </div>
                       </Nav.Link>
@@ -125,7 +121,7 @@ class  FilterProduct extends React.Component{
           </Row>
         <Row className="product-main">
 
-          {/* <Col sm={3}>
+          <Col sm={3}>
             <Accordion defaultActiveKey="0">
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="1">
@@ -189,9 +185,9 @@ class  FilterProduct extends React.Component{
                 </Accordion.Collapse>
               </Card>
             </Accordion>
-          </Col> */}
-          <Col sm={12}>
-          <div className="d-flex flex-wrap">
+          </Col> 
+          <Col sm={9} style={{border:"1px solid #ccc"}}>
+          <div className="d-flex flex-wrap" >
         {this.state.products !== '' ?
         this.state.products.map((product,index)=>{
           return <ProductCard key={index} productData={product}/>
