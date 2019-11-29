@@ -197,10 +197,14 @@ class CoachList extends React.Component {
   // 排序從高到低 sort = true
   ChangeSort = () => {
     this.setState({ sort: true }, this.filterfetch)
+    $('#pcHtoL').hide();
+    $('#pcLtoH').show();
   }
   // 排序從低到高 sort = false
   ChangeSort2 = () => {
     this.setState({ sort: false }, this.filterfetch)
+    $('#pcHtoL').show();
+    $('#pcLtoH').hide();
   }
 
   render() {
@@ -219,10 +223,10 @@ class CoachList extends React.Component {
               </button>
             </div>
             <div className="coach-arrange col-9 d-flex justify-content-between">
-              <a href="#" onClick={this.ChangeSort}>
+              <a href="#" id="pcHtoL"  onClick={this.ChangeSort}>
                 價格 ： 從高到低
               </a>
-              <a href="#" onClick={this.ChangeSort2}>
+              <a href="#" id="pcLtoH" onClick={this.ChangeSort2}>
                 價格 ： 從低到高
               </a>
               <span className="coach-item-num">{this.state.allnum}項目</span>
