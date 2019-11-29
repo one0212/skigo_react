@@ -70,12 +70,13 @@ const CheckoutItemProduct = props => {
     )
   }
   const handleSubmit = () => {
+    console.log(changeText)
     if (
-      changeText.receiveName === '' &&
-      changeText.receivePhone === '' &&
-      changeText.receiveAddress === '' &&
-      changeText.buyName === '' &&
-      changeText.buyPhone === '' &&
+      changeText.receiveName === '' ||
+      changeText.receivePhone === '' ||
+      changeText.receiveAddress === '' ||
+      changeText.buyName === '' ||
+      changeText.buyPhone === '' ||
       changeText.buyAddress === ''
     ) {
       let borderState = {}
@@ -312,7 +313,7 @@ const CheckoutItemProduct = props => {
                         <Form.Text className="text-danger">
                           {errMsg.buyAddress}
                         </Form.Text>
-                      </Form.Group>{' '}
+                      </Form.Group>
                     </>
                   ) : (
                     ''
