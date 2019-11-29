@@ -7,6 +7,13 @@ import $ from 'jquery'
 import { exportDefaultSpecifier } from '@babel/types'
 import SlideClass from './SlideClass'
 import { Link } from 'react-router-dom'
+import {
+  FacebookShareButton,
+  FacebookShareCount,
+  FacebookIcon,
+} from 'react-share'
+
+import ReactShare from './ReactShare'
 
 // import pickers from '@material-ui/pickers';
 
@@ -40,10 +47,6 @@ class CoachBook extends React.Component {
           }),
         }
       )
-
-      // if (response) {
-      //   console.log('get data!')
-      // }
 
       if (!response.ok) throw new Error(response.statusText)
 
@@ -172,7 +175,6 @@ class CoachBook extends React.Component {
       loveState: loveClick,
       coachSid: this.state.total[0].coach_sid,
     }
-
     fetch('http://localhost:3001/coach-love', {
       body: JSON.stringify(loveActive), // must match 'Content-Type' header
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -365,8 +367,10 @@ class CoachBook extends React.Component {
                     ) : (
                       ''
                     )}
+                    {/* <FacebookShareCount url={http://localhost:3000/CoachBook/4} /> */}
+                    <ReactShare url="www.google.com" text="我找到了一個超棒的滑雪網站"/>
                   </p>
-                  <div className="coach-snowfield">
+                  <div className="coach-snowfield ">
                     {this.state.total[0].class_field}
                     {this.state.total[0].class_snow_field}雪場
                   </div>
