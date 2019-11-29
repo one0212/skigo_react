@@ -15,6 +15,7 @@ class TicketAreas extends React.Component {
       snow: '',
       novice: '',
       activity: '',
+      activeIndex: 0,
     }
   }
 
@@ -136,7 +137,11 @@ class TicketAreas extends React.Component {
                   <div className="row">
                     <div className="col-xl-9 col-lg-12">
                       <div className="area_carousel">
-                        <Carousel>
+                        <Carousel
+                          onSelect={(ek, d, e) => {
+                            this.setState({ activeIndex: ek })
+                          }}
+                        >
                           <Carousel.Item>
                             <img
                               className="d-block w-100"
@@ -197,7 +202,8 @@ class TicketAreas extends React.Component {
                     </div>
                     <div className="number_box">
                       <p className="slider_number">
-                        {this.state.total[0].area_pic2 ? '02' : ''}
+                        {/* {this.state.total[0].area_pic2 ? '02' : ''} */}
+                        {this.state.activeIndex + 1}
                       </p>
                       <p className="symbol">/</p>
                       <p className="total_number">03</p>
