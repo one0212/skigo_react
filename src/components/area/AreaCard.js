@@ -54,13 +54,13 @@ class AreaCard extends React.Component {
               //return `<h2>${value.ticket_sid}</h2>`
               return (
                 <Link
-                  className="coach-card ticket-card"
+                  className="ticket-card"
                   key={value.ticket_sid}
                   to={'/ticketarea/' + value.area_sid}
                 >
                   <div className="hot_img" data-ticket_sid={value.ticket_sid}>
                     <img
-                      className="coach_img_pic ticket_img_pic"
+                      className="ticket_img_pic"
                       src={'/images/areas/' + value.ticket_pic}
                       alt=""
                     />
