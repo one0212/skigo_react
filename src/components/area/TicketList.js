@@ -189,7 +189,7 @@ class TicketList extends React.Component {
   render() {
     return (
       <>
-        <div className="container">
+        <div className="container ticket_checkbox">
           {/* part1 麵包屑 */}
           <FilterBread2 />
 
