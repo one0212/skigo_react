@@ -183,6 +183,35 @@
         box-shadow: 0 1px 4px 0.5px #cfcfcfb9;
     }
 
+    /* 篩選樣式 */
+    .ticket_checkbox input[type=checkbox] {
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        width: 15px;
+        height: 12px;
+        position: relative;
+    }
+      
+    .ticket_checkbox input[type=checkbox]:after {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 0;
+        content: " ";
+        background-color: #aaa;
+        color: #fff;
+        display: inline-block;
+        visibility: visible;
+        padding: 0px 3px;
+        border-radius: 3px;
+    }
+      
+    .ticket_checkbox input[type=checkbox]:checked:after {
+        content: "✓";
+        font-size: 15px;
+    }
+      
     /* rwd */
     /* RWD消失 */
     .btn-rwd{
