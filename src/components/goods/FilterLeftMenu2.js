@@ -51,15 +51,19 @@ class FilterLeftMenu2 extends React.Component {
   render() {
     return (
       <>
-        <Accordion className="left-accordion" defaultActiveKey="0">
+        <Accordion
+          className="left-accordion"
+          defaultActiveKey="0"
+          style={{ paddingTop: '10px' }}
+        >
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="6"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between">
+                <div className="ticket-react-item d-flex justify-content-between">
                   <div>地區</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -68,43 +72,43 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="6" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(1)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class1}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>北海道</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(2)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class2}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>青森縣</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(3)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class3}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>山形縣</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(4)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class4}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>新瀉縣</p>
                 </div>
@@ -112,13 +116,13 @@ class FilterLeftMenu2 extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="1"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between ">
+                <div className="ticket-react-item d-flex justify-content-between ">
                   <div>商品</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -127,33 +131,33 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="1" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(5)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class5}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>纜車券</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(6)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class6}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>租借券</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(7)}
                     type="checkbox"
                     name="class"
                     checked={this.state.class7}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>超值套票</p>
                 </div>
@@ -161,13 +165,13 @@ class FilterLeftMenu2 extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="2"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between">
+                <div className="ticket-react-item d-flex justify-content-between">
                   <div>票種</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -176,33 +180,33 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="2" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(8)}
                     type="checkbox"
                     name="class_board"
                     checked={this.state.class8}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>成人</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(9)}
                     type="checkbox"
                     name="class_board"
                     checked={this.state.class9}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>兒童</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(10)}
                     type="checkbox"
                     name="class_board"
                     checked={this.state.class10}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />
                   <p>敬老</p>
                 </div>
@@ -210,13 +214,13 @@ class FilterLeftMenu2 extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="3"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between ">
+                <div className="ticket-react-item d-flex justify-content-between ">
                   <div>使用天數</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -225,33 +229,33 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="3" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(11)}
                     type="checkbox"
                     name="class_language"
                     checked={this.state.class11}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />{' '}
                   <p>一日</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(12)}
                     type="checkbox"
                     name="class_language"
                     checked={this.state.class12}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />{' '}
                   <p>二日</p>
                 </div>
-                <div className="d-flex" style={{ padding: '5px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(13)}
                     type="checkbox"
                     name="class_language"
                     checked={this.state.class13}
-                    style={{ marginTop: '6px', marginRight: '8px' }}
+                    style={{ marginTop: '3px', marginRight: '20px' }}
                   />{' '}
                   <p>三日</p>
                 </div>
