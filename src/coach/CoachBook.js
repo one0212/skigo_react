@@ -154,12 +154,10 @@ class CoachBook extends React.Component {
       mode: 'cors', // no-cors, cors, *same-origin
     })
       .then(response => {
-        console.log(response)
         console.log('hihihi')
-        //   if (response.status === 200) {
-        //   // 所以可以用此判斷, 後續要做的事情就是放這邊
-        //   console.log('商品加入成功')
-        // }
+        if (response.status === 200) {
+          this.props.setCartItemQty()
+        }
       }) // 輸出成 json
       .then(json => {})
   }
@@ -368,7 +366,10 @@ class CoachBook extends React.Component {
                       ''
                     )}
                     {/* <FacebookShareCount url={http://localhost:3000/CoachBook/4} /> */}
-                    <ReactShare url="www.google.com" text="我找到了一個超棒的滑雪網站"/>
+                    <ReactShare
+                      url="www.google.com"
+                      text="我找到了一個超棒的滑雪網站"
+                    />
                   </p>
                   <div className="coach-snowfield ">
                     {this.state.total[0].class_field}

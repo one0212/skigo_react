@@ -131,33 +131,49 @@ class Header extends Component {
                       ''
                     )}
                     {this.state.showLoginIcon ? (
-                      <FaRegUserCircle
-                        style={iconStyle}
-                        onClick={() =>
-                          this.setState({
-                            userDropdown: !this.state.userDropdown,
-                          })
-                        }
-                      />
+                      <span>
+                        <FaRegUserCircle
+                          style={iconStyle}
+                          onClick={() =>
+                            this.setState({
+                              userDropdown: !this.state.userDropdown,
+                            })
+                          }
+                        />
+                      </span>
                     ) : (
                       ''
                     )}
 
                     {this.state.showLoginIcon ? (
-                      <FiMail style={iconStyle} />
+                      <span>
+                        <FiMail style={iconStyle} />
+                      </span>
                     ) : (
                       ''
                     )}
                     {this.state.showLoginIcon ? (
-                      <AiOutlineHeart style={iconStyle} />
+                      <span>
+                        <AiOutlineHeart style={iconStyle} />
+                      </span>
                     ) : (
                       ''
                     )}
-                    <FiShoppingCart
-                      style={iconStyle}
-                      className="m-3"
-                      onClick={this.cartVerify}
-                    />
+                    <span className="position-relative">
+                      <FiShoppingCart
+                        style={iconStyle}
+                        className="m-3"
+                        onClick={this.cartVerify}
+                      />
+                      <span
+                        className="red-point position-absolute text-center"
+                        style={{
+                          opacity: this.props.cartItem !== 0 ? '1' : '0',
+                        }}
+                      >
+                        {this.props.cartItem !== 0 ? this.props.cartItem : 0}
+                      </span>
+                    </span>
                   </Nav.Link>
                 </Nav>
                 <Nav>

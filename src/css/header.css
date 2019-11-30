@@ -159,5 +159,15 @@ body {
 .login-content {
   min-height: 500px;
 }
-
 /* ＝＝＝＝＝光箱＝＝＝＝＝ */
+.red-point {
+  background-color: red;
+  color:#fff;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  border-radius:50%;
+  line-height: 15px;
+  right: 6px;
+  top: -4px;
+}

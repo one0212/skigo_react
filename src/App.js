@@ -1,6 +1,5 @@
-import React from 'react'
-// import { Container } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import Example from './components/Example'
 
@@ -38,39 +37,42 @@ import HotelListCard from './components/hotel/HotelListCard'
 import HotelIntroduction from './components/hotel/HotelIntroduction'
 import HotelIntroductionContent from './components/hotel/HotelIntroductionContent'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
-
+import HotelRoomContent from './components/hotel/HotelRoomContent'
 
 import AttractionsIndex from './components/AttractionComp/AttractionsIndex'
 import Attractionslist from './components/AttractionComp/Attractionslist'
+
 function App() {
+  const [cartItemQty, addQty] = useState(0)
+
+  const setCartItemQty = () => addQty(cartItemQty + 1)
+
   return (
     <>
       <Router>
         <>
-          <Header />
-          {/* <Link to="/ticketlist">●ticketlist</Link> */}
-          {/* <Link to="/coachlist">●1.coach_list</Link> */}
-          {/* <Link to="/coachclass">●2.coach_class</Link>
-        <Link to="/CoachBook">●3.CoachBook</Link>
-        <br></br>
-        <Link to="/CoachDate">●CoachDate</Link>
-        <Link to="/CoachCarousels2">●CoachCarousels2</Link>
-        <Link to="/area">●area</Link>
-        <br></br> */}
-           {/* <Link to="/AttractionsIndex">●AttractionsIndex</Link> */}
-           {/* <Link to="/Attractionslist">●Attractionslist</Link> */}
-
+          <Header cartItem={cartItemQty} />
           <Switch>
             <Route path="/" exact component={home} />
             <Route path="/coachlist" component={CoachList} />
             <Route path="/coachclass/:id?" component={CoachClass} />
-            <Route path="/CoachBook/:id2?" component={CoachBook} />
+            <Route
+              path="/CoachBook/:id2?"
+              render={props => (
+                <CoachBook {...props} setCartItemQty={setCartItemQty} />
+              )}
+            />
             <Route path="/CoachDate" component={CoachDate} />
             <Route path="/CoachCarousels2" component={CoachCarousels2} />
 
             <Route path="/ticketlist" component={TicketList} />
             <Route path="/ticketarea/:areaid?" component={TicketAreas} />
-            <Route path="/ticketpage/:ticketid?" component={TicketPage} />
+            <Route
+              path="/ticketpage/:ticketid?"
+              render={props => (
+                <TicketPage {...props} setCartItemQty={setCartItemQty} />
+              )}
+            />
 
             <Route path="/cart" component={UserCart} />
             <Route path="/checkout" component={UserCheckout} />
@@ -81,7 +83,12 @@ function App() {
             <Route path="/activeUser" component={AccountActiveResult} />
 
             <Route path="/product/:prodNo" component={Product} />
-            <Route path="/product" component={FilterProduct} />
+            <Route
+              path="/product"
+              render={props => (
+                <Product {...props} setCartItemQty={setCartItemQty} />
+              )}
+            />
             <Route path="/333" component={ProductAsNavFor} />
 
             <Route path="/HotelHome" component={HotelHome} />
@@ -91,6 +98,12 @@ function App() {
               component={HotelIntroductionContent}
             />
             <Route path="/HotelListCard" component={HotelListCard} />
+            <Route
+              path="/HotelRoomContent"
+              render={props => (
+                <HotelRoomContent {...props} setCartItemQty={setCartItemQty} />
+              )}
+            />
 
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
             <Route
