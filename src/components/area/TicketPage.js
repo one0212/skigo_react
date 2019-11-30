@@ -15,6 +15,8 @@ class TicketPage extends React.Component {
   }
 
   handleClick = () => {
+    // this.props.handleCartItemQtyChange()
+    // return
     const url = 'http://localhost:3001/api/cart/items'
     const id = document.querySelector('#ticket-id').textContent
     const select = document.querySelector('#ticket-select')
@@ -37,8 +39,8 @@ class TicketPage extends React.Component {
       if (response.status === 200) {
         // 所以可以用此判斷, 後續要做的事情就是放這邊
         console.log('商品加入成功')
-        this.props.setCartItemQty()
         this.setState({ show: true })
+        this.props.handleCartItemQtyChange()
       }
     })
   }
@@ -99,7 +101,7 @@ class TicketPage extends React.Component {
             資料載入中
           </div>
         ) : (
-          <div class="ticket_book_out container">
+          <div className="ticket_book_out container">
             {/* 麵包屑 */}
             {/* <FilterBread2 /> */}
             <div className="row mb-4">
@@ -114,9 +116,9 @@ class TicketPage extends React.Component {
               {console.log('id:' + this.state.total[0].ticket_sid)}
             </div>
             {/* 圖+內容 */}
-            <div class="ticket_head row mb-5">
+            <div className="ticket_head row mb-5">
               {/* 圖 */}
-              <div class="class_img col-xl-7 col-lg-6 col-md-12">
+              <div className="class_img col-xl-7 col-lg-6 col-md-12">
                 <img
                   className="class_pic"
                   src={'/images/areas/' + this.state.total[0].ticket_pic}
@@ -124,9 +126,9 @@ class TicketPage extends React.Component {
                 />
               </div>
               {/* 內容 */}
-              <div class="ski_class col-xl-5 col-lg-6 col-md-12 mt-2">
-                <div class="row">
-                  <div class="col-12">
+              <div className="ski_class col-xl-5 col-lg-6 col-md-12 mt-2">
+                <div className="row">
+                  <div className="col-12">
                     <div className="d-flex">
                       <div className="d-flex">
                         <h1>{this.state.total[0].ticket_name} |</h1>

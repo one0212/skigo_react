@@ -3,15 +3,17 @@ import HotelRoomCarousel from './HotelRoomCarousel'
 import HotelRoomContent from './HotelRoomContent'
 
 class HotelRoomOrder extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
   }
   render() {
     return (
       <>
         <HotelRoomCarousel />
-        <HotelRoomContent />
+        <HotelRoomContent
+          handleCartItemQtyChange={this.props.handleCartItemQtyChange}
+        />
       </>
     )
   }

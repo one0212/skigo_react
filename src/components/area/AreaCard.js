@@ -37,8 +37,8 @@ class AreaCard extends React.Component {
   render() {
     return (
       <>
-        {console.log('123')}
-        {console.log(this.props.filter)}
+        {/* {console.log('123')} */}
+        {/* {console.log(this.props.filter)} */}
         {/* { if( this.props.filter == true ){} } */}
         {this.state.loading ? (
           <div>
@@ -48,7 +48,7 @@ class AreaCard extends React.Component {
         ) : (
           <>
             {this.props.filter.map((value, index) => {
-              console.log('ticket_sid:', value.ticket_sid, value.area_sid)
+              {/* console.log('ticket_sid:', value.ticket_sid, value.area_sid) */}
               //if (!value) return <></>
 
               //return `<h2>${value.ticket_sid}</h2>`

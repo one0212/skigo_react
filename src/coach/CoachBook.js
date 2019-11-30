@@ -18,8 +18,8 @@ import ReactShare from './ReactShare'
 // import pickers from '@material-ui/pickers';
 
 class CoachBook extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       loading: true,
       total: [],
@@ -156,7 +156,7 @@ class CoachBook extends React.Component {
       .then(response => {
         console.log('hihihi')
         if (response.status === 200) {
-          this.props.setCartItemQty()
+          this.props.handleCartItemQtyChange()
         }
       }) // 輸出成 json
       .then(json => {})
