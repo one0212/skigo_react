@@ -29,18 +29,6 @@ class Header extends Component {
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log(
-      `Header - will update. nextProps=${nextProps}, nextState=${nextState}`
-    )
-  }
-
-  componentWillUnmount() {
-    console.log(
-      `Header - will unmount. props=${this.props}, state=${this.state}`
-    )
-  }
-
   componentWillReceiveProps(nextProps) {
     this.syncCartItemQty()
   }
