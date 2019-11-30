@@ -19,12 +19,18 @@ let iconStyle = {
 const cookies = new Cookies()
 class Header extends Component {
   constructor(props) {
+    console.log(`Header - constructor`)
     super(props)
     this.state = {
       isOpen: false,
       showLoginIcon: false,
       userDropdown: false,
+      cartItemQty: props.cartItemQty,
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.syncCartItemQty()
   }
 
   refreshLoginState = () => {
@@ -44,13 +50,33 @@ class Header extends Component {
     }
   }
 
+  syncCartItemQty = () => {
+    // if (cookies.get('role') && cookies.get('role') !== 'VISITOR') {
+    fetch('http://localhost:3001/api/cart', {
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(resp => resp.json())
+      .then(json => {
+        console.log(json)
+        this.setState({ cartItemQty: json.items.length })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    // }
+  }
+
   componentWillMount() {
+    console.log(`Header - will mount. props=${this.props}, state=${this.state}`)
     if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
       // todo: 購物車點選跳轉頁
     }
+    this.syncCartItemQty()
   }
 
   logout = () => {
@@ -67,6 +93,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log(`Header - do render. props=${this.props}, state=${this.state}`)
     return (
       <>
         {/* {console.log(window.location)} */}
@@ -168,10 +195,10 @@ class Header extends Component {
                       <span
                         className="red-point position-absolute text-center"
                         style={{
-                          opacity: this.props.cartItem !== 0 ? '1' : '0',
+                          opacity: this.state.cartItemQty !== 0 ? '1' : '0',
                         }}
                       >
-                        {this.props.cartItem !== 0 ? this.props.cartItem : 0}
+                        {this.state.cartItemQty}
                       </span>
                     </span>
                   </Nav.Link>
@@ -219,12 +246,12 @@ class Header extends Component {
                         </Link>
                       </li>
                       <li className="my-3">
-                        <a
-                          href="#"
+                        <Link
+                          to="#"
                           className="user-darkblue-text text-decoration-none"
                         >
                           紅利點數
-                        </a>
+                        </Link>
                       </li>
                       <li className="my-3">
                         <Link

@@ -64,7 +64,7 @@ class TicketList extends React.Component {
         $('#ticket-btn-rwd1-1').show()
         ticket_rwd_btn_state = false
       }
-      console.log(ticket_rwd_btn_state)
+      // console.log(coach_rwd_btn_state)
     })
 
     $('#ticket-btn-rwd2').click(e => {
@@ -99,8 +99,8 @@ class TicketList extends React.Component {
         move = true
       }
 
-      const img_width = $('.ticket-card').width()
-      console.log(img_width)
+      const img_width = $('.coach-card').width()
+      // console.log(img_width)
       const img_height = (150 * 4) / 3
     })
     // 左方側欄手風琴上下
@@ -148,8 +148,8 @@ class TicketList extends React.Component {
     })
       .then(response => response.json()) // 輸出成 json
       .then(json => {
-        console.log(json)
-        console.log(this)
+        // console.log(json)
+        // console.log(this)
         this.setState({
           total: json,
         })
@@ -162,7 +162,7 @@ class TicketList extends React.Component {
         }
         this.setState({ allnum: num2 }, function() {})
       })
-    console.log('what???' + this.state.name)
+    // console.log('what???' + this.state.name)
   }
   //篩選
   changeName = (pos, value) => {
@@ -303,7 +303,7 @@ class TicketList extends React.Component {
               className="content_rwd d-flex  right_content bg_white "
             >
               <AreaCard filter={this.state.total} />
-              {console.log('total:' + this.state.total)}
+              {/* {console.log('total:' + this.state.total)} */}
             </div>
             {/* 右邊內容列END */}
           </div>
