@@ -16,7 +16,7 @@
         .ticket_arrange a{
             height: 25px;
         }
-        /* .coach-arrange a:hover{
+        /* .ticket-arrange a:hover{
             border-bottom: 2px solid  #FD702D;        
         } */
         /* .btn-rwd , .btn-active{
@@ -24,12 +24,15 @@
             margin-top:30px;
         } */
 
-        .coach-btn-active , .coach-btn-rwd-logo{
+        .ticket-btn-active , .ticket-btn-rwd-logo{
             font-size:1.25rem
         }
         
-        .coach-btn-active , .coach-btn-rwd-logo, .coach-arrange{
+        .ticket-btn-active , .ticket-btn-rwd-logo, .ticket-arrange{
             margin-top:30px;
+        }
+        .ticket_arrange{
+            border-bottom: 1px solid #aaa;
         }
 
         .btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus { 
@@ -39,18 +42,18 @@
 
 }
 
-        /* .coach-btn-active:focus,
-        .coach-btn-active:active:focus,
-        .coach-btn-active.active:focus,
-        .coach-btn-active.focus,
-        .coach-btn-active:active.focus,
-        .coach-btn-active.active.focus,
-        .coach-btn-rwd-logo:focus,
-        .coach-btn-rwd-logo:active:focus,
-        .coach-btn-rwd-logo.active:focus,
-        .coach-btn-rwd-logo.focus,
-        .coach-btn-rwd-logo:active.focus,
-        .coach-btn-rwd-logo.active.focus,{ 
+        /* .ticket-btn-active:focus,
+        .ticket-btn-active:active:focus,
+        .ticket-btn-active.active:focus,
+        .ticket-btn-active.focus,
+        .ticket-btn-active:active.focus,
+        .ticket-btn-active.active.focus,
+        .ticket-btn-rwd-logo:focus,
+        .ticket-btn-rwd-logo:active:focus,
+        .ticket-btn-rwd-logo.active:focus,
+        .ticket-btn-rwd-logo.focus,
+        .ticket-btn-rwd-logo:active.focus,
+        .ticket-btn-rwd-logo.active.focus,{ 
             outline: none;   
             border-color: transparent;  
             box-shadow:none;
@@ -69,11 +72,11 @@
             width: 75%;
             transition: 1s;
         }
-        .coach-all-content{
+        .ticket-all-content{
             overflow: hidden;
         }
         /* 手風琴CSS -old */
-        /* .coach-select {
+        /* .ticket-select {
             font-size :1.5rem;
             display:block;
             width: 100%;
@@ -85,14 +88,14 @@
             padding-right:20px ;
         } */
 
-        .coach-select2{
+        .ticket-select2{
             margin-left:40px; 
             font-size :1.5rem;
         }
 
 
 
-        .coach-select-item{
+        .ticket-select-item{
             font-size:1.25rem;
             margin-left:20px;
         }
@@ -103,19 +106,19 @@
         .card-header{
             background:white;
         }
-        .coach-react-item{
+        .ticket-react-item{
             font-weight: bold;
             margin:0px;
         }
 
-    /* 右邊內容CARD - 參考 coach.html的熱門商品 */
-    .content-rwd{
+    /* 右邊內容CARD - 參考 ticket.html的熱門商品 */
+    .content_rwd{
         justify-content: start;
         flex-wrap: wrap;
-        margin-left:40px;
+        margin-left:60px;
     }
     /* classcard */
-    .coach-card{
+    .ticket-card{
         width: 30%;
         transition: 1s;
         margin:10px;
@@ -128,33 +131,33 @@
     .ticket-card:hover{
         opacity: 0.7;
     }
-    .coach-card .hot_card_word{
+    .ticket-card .hot_card_word{
             padding: 15px;
         }
-    .coach-card .ticket_name{
+    .ticket-card .ticket_name{
         font-weight: 700;
         font-size: 1.3rem;
     }
-    .coach-card .hot_img {
+    .ticket-card .hot_img {
             width:100%;
-            height: 150px;
+            height: 250px;
             overflow: hidden;
             transition: 1s;
     }
-    .coach-card .font-blue{
+    .ticket-card .font-blue{
             color:#4c95eb
         }
 
-    .coach-card .coach_img_pic{
+    .ticket-card .ticket_img_pic{
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-    .coach-card .ticket_img_pic{
+    .ticket-card .ticket_img_pic{
             transform:scale(1,1);
             transition: all 1s ease-out;
     }
-    .coach-card .ticket_img_pic:hover{
+    .ticket-card .ticket_img_pic:hover{
             transform:scale(1.2,1.2);
     }
     .ticket-card .language span{
@@ -167,7 +170,7 @@
             margin-bottom:0px;
             
     }
-    .coach-card .language{
+    .ticket-card .language{
             margin-bottom:10px;
         }
         
@@ -175,7 +178,7 @@
                 color: #fff;
         }
     /*classcard END  */
-    .coach-btn-rwd{
+    .ticket-btn-rwd{
         display:none
     }
     /* 滑鼠點擊觸發 */
@@ -218,17 +221,25 @@
         display:none; 
             }
     /* RWD出現 */
-    @media (max-width: 1100px) {
-        /* .coach-bread{color:pink} */
-        .content-rwd{
+    /* @media (max-width: 1300px) {
+        .content_rwd{
+        justify-content: start;
+        flex-wrap: wrap;
+        margin-left:60px;
+    }
+    } */
+    
+    @media (max-width: 1300px) {
+        /* .ticket-bread{color:pink} */
+        .content_rwd{
         margin-left:0px;
         justify-content: space-around;
         }
-        .coach-rwd-active , .coach-bread , .left_menu {
+        .ticket-rwd-active , .ticket-bread , .left_menu {
             display:none;
         }
 
-        .coach-btn-rwd{
+        .ticket-btn-rwd{
             display:block; 
             width: 45%;  
             margin:0 auto; 
@@ -236,21 +247,21 @@
             position: relative;
         }
 
-        .coach-btn-rwd .coach-btn-rwd-logo{
+        .ticket-btn-rwd .ticket-btn-rwd-logo{
             width: 100%;
             background: #ccc;
             border:none;
             /* margin:10px */
         }
-        .coach-rwd-sort{
+        .ticket-rwd-sort{
             position: absolute;
             background: rgb(255, 255, 255);
-            /* width: 95%; */
+            width: 100%;
             /* border: 1px solid pink; */
             margin-right:-10px;
         }
 
-        .coach-rwd-sort a{
+        .ticket-rwd-sort a{
             font-size :1.25rem;
             padding: 20px;
             line-height: 50px;
@@ -277,18 +288,24 @@
         .hot_img{
             height: 300px;
         }
-        .coach-card{
-        width: 45%;
-        margin: 10px;
+        .ticket-card{
+        width: 35%;
+        margin: 20px;
         }
-        .content-rwd{
+        .content_rwd{
             /* flex-direction: column; */
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
     }
-    @media  (max-width: 450px) {
+    @media (max-width: 1300px) {
+        .ticket-card{
+            width: 45%;
+            margin: 10px;
+            }
+    }
+    @media  (max-width: 767px) {
         
         /* .container{
             padding: 0px;
@@ -298,7 +315,7 @@
         /* .col-sm-11{
             padding-right: 0px;
         } */
-        .coach-card{
+        .ticket-card{
         width: 80%;
         /* margin: 10px; */
         }
@@ -308,33 +325,33 @@
         .hot_img{
             height:200px;
         }
-        .coach-rwd-search{
+        .ticket-rwd-search{
             flex-direction:column;
         }
-        .coach-btn-rwd{
+        .ticket-btn-rwd{
             width: 100%;
             margin-left:0px;
             margin-right:0px;      
         }
 
-        .coach-btn-rwd .coach-btn-rwd-logo{
+        .ticket-btn-rwd .ticket-btn-rwd-logo{
             background: white;
             border-bottom:1px solid #ccc;
         }
-        .coach-btn-active, .coach-arrange {
+        .ticket-btn-active, .ticket-arrange {
             margin-top: 0px;
         }
 
-        /* #coach-btn-rwd3{
+        /* #ticket-btn-rwd3{
             display:none;
         } */
 
-        #coach-btn-rwd1 , #coach-btn-rwd2{
+        #ticket-btn-rwd1 , #ticket-btn-rwd2{
             position: relative;
             z-index: 1;
             margin-top:10px
         }
-        #coach-btn-rwd1-1 , #coach-btn-rwd2-1{
+        #ticket-btn-rwd1-1 , #ticket-btn-rwd2-1{
             position: absolute;
             z-index: 2;
         }
