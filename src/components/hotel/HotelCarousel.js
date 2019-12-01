@@ -98,7 +98,7 @@ export default class HotelCarousel extends React.Component {
   handleScroll = () => {
     let scrollTop = window.pageYOffset,
       windowHeight = Math.round(scrollTop / 2)
-    console.log(windowHeight)
+    // console.log(windowHeight)
     if (windowHeight > 140) {
       this.setState({
         windowHeight: true,

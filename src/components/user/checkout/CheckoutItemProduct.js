@@ -172,7 +172,7 @@ const CheckoutItemProduct = props => {
       <div className="shop-box mb-3">
         <div className="shop-vendor-name">宅配商品</div>
         <Row className="flex-row-reverse">
-          <Col md={5} className="d-flex mt-0 flex-column px-5 py-3">
+          <Col md={4} className="d-flex mt-0 flex-column px-5 py-3">
             <h5>收件資訊</h5>
             <div style={addressData} className="p-3">
               {addressMsg}
@@ -344,7 +344,7 @@ const CheckoutItemProduct = props => {
             if (item.prodType === 'products') {
               return (
                 <>
-                  <Col md={7} key={index} className="shop-item m-0 px-4 mb-5">
+                  <Col md={8} key={index} className="shop-item m-0 px-4 mb-5">
                     <div className="d-flex mt-2 justify-content-between">
                       <div className="d-flex">
                         <div className="shop-product-photo">

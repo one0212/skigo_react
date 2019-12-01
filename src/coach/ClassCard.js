@@ -61,7 +61,7 @@ class ClassCard extends React.Component {
           <>
             {this.props.filter.map((value, index) => {
               if (!value) return <></>
-              console.log(value.class_sid)
+              {/* console.log(value.class_sid) */}
               return (
                 <Link
                   className="coach-card"
