@@ -30,12 +30,14 @@ class Header extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.syncCartItemQty()
+    if (cookies.get('role') && cookies.get('role') !== 'VISITOR') {
+      this.syncCartItemQty()
+    }
   }
 
   refreshLoginState = () => {
     // console.log(this.props)
-    if (cookies.get('role') === 'VISITOR') {
+    if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
@@ -43,7 +45,7 @@ class Header extends Component {
   }
 
   cartVerify = () => {
-    if (cookies.get('role') === 'VISITOR') {
+    if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ isOpen: true })
     } else {
       window.location.href = '/cart'
@@ -57,9 +59,15 @@ class Header extends Component {
         'content-type': 'application/json',
       },
     })
-      .then(resp => resp.json())
+      .then(resp => {
+        if (resp.status === 200) {
+          return resp.json()
+        } else {
+          throw new Error('get cart api status !== error')
+        }
+      })
       .then(json => {
-        // console.log(json)
+        console.log(json)
         this.setState({ cartItemQty: json.items.length })
       })
       .catch(err => {
@@ -69,14 +77,12 @@ class Header extends Component {
   }
 
   componentWillMount() {
-    // console.log(`Header - will mount. props=${this.props}, state=${this.state}`)
     if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
-      // todo: 購物車點選跳轉頁
+      this.syncCartItemQty()
     }
-    this.syncCartItemQty()
   }
   // componentDidMount() {
   //   window.gapi.load('auth2', () => {
@@ -102,7 +108,7 @@ class Header extends Component {
       if (response.status === 200) {
         this.refreshLoginState()
         this.setState({ userDropdown: false })
-        // window.location.href = '/'
+        window.location.href = '/'
       }
     })
   }
