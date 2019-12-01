@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
+import { GoogleLogout } from 'react-google-login'
 
 import UserLightbox from './UserLightbox'
 import '../../css/header.css'
@@ -19,7 +20,6 @@ let iconStyle = {
 const cookies = new Cookies()
 class Header extends Component {
   constructor(props) {
-    console.log(`Header - constructor`)
     super(props)
     this.state = {
       isOpen: false,
@@ -59,7 +59,7 @@ class Header extends Component {
     })
       .then(resp => resp.json())
       .then(json => {
-        console.log(json)
+        // console.log(json)
         this.setState({ cartItemQty: json.items.length })
       })
       .catch(err => {
@@ -69,7 +69,7 @@ class Header extends Component {
   }
 
   componentWillMount() {
-    console.log(`Header - will mount. props=${this.props}, state=${this.state}`)
+    // console.log(`Header - will mount. props=${this.props}, state=${this.state}`)
     if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
@@ -78,8 +78,23 @@ class Header extends Component {
     }
     this.syncCartItemQty()
   }
+  // componentDidMount() {
+  //   window.gapi.load('auth2', () => {
+  //     this.auth2 = gapi.auth2.init({
+  //       client_id:
+  //         '71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com',
+  //     })
+  //   })
+  // }
+  logOut = () => {
+    // var auth2 = window.gapi.auth2.getAuthInstance()
+    // auth2.signOut().then(function() {
+    //   console.log('User signed out.')
+    // })
+    console.log('google已登出')
+  }
 
-  logout = () => {
+  signout = () => {
     const url = 'http://localhost:3001/api/user/logout'
     fetch(url, {
       method: 'put',
@@ -93,7 +108,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log(`Header - do render. props=${this.props}, state=${this.state}`)
     return (
       <>
         {/* {console.log(window.location)} */}
@@ -254,13 +268,21 @@ class Header extends Component {
                         </Link>
                       </li>
                       <li className="my-3">
-                        <Link
-                          to="/"
-                          onClick={this.logout}
-                          className="cursor-point user-darkblue-text text-decoration-none"
-                        >
-                          登出
-                        </Link>
+                        <GoogleLogout
+                          clientId="71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com"
+                          buttonText="Logout"
+                          onLogoutSuccess={this.logout}
+                          onFailure={err => console.log(err)}
+                          // render={renderProps => (
+                          //   <Link
+                          //     to="/"
+                          //     onClick={this.signout}
+                          //     className="cursor-point user-darkblue-text text-decoration-none"
+                          //   >
+                          //     登出
+                          //   </Link>
+                          // )}
+                        ></GoogleLogout>
                       </li>
                     </ul>
                   </Nav.Link>

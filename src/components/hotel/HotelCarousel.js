@@ -111,7 +111,7 @@ export default class HotelCarousel extends React.Component {
   }
   changePage = () => {
     setTimeout(() => {
-      window.location.href = 'http://localhost:3000/HotelList？region=北海道'
+      window.location.href = '/HotelList?region=北海道'
     }, 380)
   }
   componentWillUnmount() {

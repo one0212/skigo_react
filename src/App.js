@@ -38,8 +38,6 @@ import HotelIntroduction from './components/hotel/HotelIntroduction'
 import HotelIntroductionContent from './components/hotel/HotelIntroductionContent'
 import HotelRoomContent from './components/hotel/HotelRoomContent'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
-import HotelRoomContent from './components/hotel/HotelRoomContent'
-
 
 import AttractionsIndex from './components/AttractionComp/AttractionsIndex'
 import Attractionslist from './components/AttractionComp/Attractionslist'
@@ -51,26 +49,10 @@ function App() {
     setCartItemQty(cartItemQty + 1)
     console.log(cartItemQty)
   }
-
-  console.log(`App.js Init - ${cartItemQty}`)
   return (
     <>
       <Router>
         <>
-
-          <Header />
-          {/* <Link to="/ticketlist">●ticketlist</Link> */}
-          {/* <Link to="/coachlist">●1.coach_list</Link> */}
-          {/* <Link to="/coachclass">●2.coach_class</Link>
-        <Link to="/CoachBook">●3.CoachBook</Link>
-        <br></br>
-        <Link to="/CoachDate">●CoachDate</Link>
-        <Link to="/CoachCarousels2">●CoachCarousels2</Link>
-        <Link to="/area">●area</Link>
-        <br></br> */}
-          {/* <Link to="/AttractionsIndex">●AttractionsIndex</Link> */}
-          {/* <Link to="/Attractionslist">●Attractionslist</Link> */}
-
           <Header cartItemQty={cartItemQty} />
 
           <Switch>
@@ -122,7 +104,7 @@ function App() {
             <Route path="/333" component={ProductAsNavFor} />
 
             <Route path="/HotelHome" component={HotelHome} />
-            <Route path="/HotelList？region=北海道" component={HotelList} />
+            <Route path="/HotelList" component={HotelList} />
 
             <Route
               path="/HotelIntroductionContent/all_room/:id"
@@ -130,23 +112,18 @@ function App() {
             />
             <Route path="/HotelListCard" component={HotelListCard} />
 
-            <Route path="/HotelRoomContent" component={HotelRoomContent} />
-
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
 
             <Route
               path="/HotelRoomContent/roomInt/:id"
-              component={HotelRoomContent}
-            />
-            <Route
-              path="/HotelRoomOrder"
               render={props => (
-                <HotelRoomOrder
+                <HotelRoomContent
                   {...props}
                   handleCartItemQtyChange={handleCartItemQtyChange}
                 />
               )}
             />
+            <Route path="/HotelRoomOrder" component={HotelRoomOrder} />
 
             <Route path="/AttractionsIndex" component={AttractionsIndex} />
             <Route path="/Attractionslist" component={Attractionslist} />
