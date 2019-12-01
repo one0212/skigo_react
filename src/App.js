@@ -39,7 +39,6 @@ import HotelIntroductionContent from './components/hotel/HotelIntroductionConten
 import HotelRoomContent from './components/hotel/HotelRoomContent'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
 
-
 import AttractionsIndex from './components/AttractionComp/AttractionsIndex'
 import Attractionslist from './components/AttractionComp/Attractionslist'
 
@@ -50,8 +49,6 @@ function App() {
     setCartItemQty(cartItemQty + 1)
     console.log(cartItemQty)
   }
-
-  console.log(`App.js Init - ${cartItemQty}`)
   return (
     <>
       <Router>
@@ -107,7 +104,7 @@ function App() {
             <Route path="/333" component={ProductAsNavFor} />
 
             <Route path="/HotelHome" component={HotelHome} />
-            <Route path="/HotelList？region=北海道" component={HotelList} />
+            <Route path="/HotelList" component={HotelList} />
 
             <Route
               path="/HotelIntroductionContent/all_room/:id"
@@ -115,23 +112,18 @@ function App() {
             />
             <Route path="/HotelListCard" component={HotelListCard} />
 
-            <Route path="/HotelRoomContent" component={HotelRoomContent} />
-
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
 
             <Route
               path="/HotelRoomContent/roomInt/:id"
-              component={HotelRoomContent}
-            />
-            <Route
-              path="/HotelRoomOrder"
               render={props => (
-                <HotelRoomOrder
+                <HotelRoomContent
                   {...props}
                   handleCartItemQtyChange={handleCartItemQtyChange}
                 />
               )}
             />
+            <Route path="/HotelRoomOrder" component={HotelRoomOrder} />
 
             <Route path="/AttractionsIndex" component={AttractionsIndex} />
             <Route path="/Attractionslist" component={Attractionslist} />

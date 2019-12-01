@@ -66,7 +66,7 @@ html {
     width: 1045px;
 }
 .home_areas .card {
-    margin: 0px 1.5rem;
+    /* margin: 0px 1.5rem; */
     border: none;
 }
 .home_areas .slick-slide img {
@@ -117,7 +117,7 @@ html {
     left: -4rem;
 }
 .home_areas .slick-next{
-    right: -2.1rem;
+    right: -3rem;
 }
 
 /* 視差捲動-scrolling */
@@ -449,7 +449,7 @@ html {
     left: -3.8rem;
 }
 .home_areas .slick-next{
-    right: -1.5rem;
+    right: -2.5rem;
 }
 }
 @media screen and (max-width: 1200px) {
@@ -548,9 +548,9 @@ html {
         /* margin-left: 0; */
         width: 312px;
     }
-    .home_areas .card {
+    /* .home_areas .card {
         margin: 0px 0.7rem;
-    }
+    } */
     .home_areas .card-body h5{
         font-size: 1.4rem;
     }
@@ -848,11 +848,11 @@ html {
 /* card輪播 */
 .home_areas .slick-prev{
     left: 5.5rem;
-    top: 30.5rem;
+    top: 28rem;
 }
 .home_areas .slick-next{
-    right: 5.5rem;
-    top: 30.5rem;
+    right: 6.3rem;
+    top: 28rem;
 }
     .home_third .home_skiing p{
         /* color: #fff; */

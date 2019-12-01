@@ -518,6 +518,10 @@ section{
     }
 }
 @media screen and (max-width: 576px) {
+    .rwd-p{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .area_header .introduction2 h5{
         font-size: 1rem;
     }

@@ -132,7 +132,7 @@ class TicketAreas extends React.Component {
         ) : (
           <>
             <div className="wrap">
-              <div className="area_header">
+              <div className="area_header rwd-p">
                 <div className="container-fluid area_slider">
                   <div className="row">
                     <div className="col-xl-9 col-lg-12">
@@ -241,7 +241,7 @@ class TicketAreas extends React.Component {
                 </div>
               </div>
 
-              <section>
+              <section className="rwd-p">
                 <div className="container">
                   <div className="row">
                     <div className="col-lg-8 col-md-12">
@@ -344,7 +344,7 @@ class TicketAreas extends React.Component {
                 </div>
               </section>
               {/* <img src="/images/areas/ski-map.jpg" alt="" /> */}
-              <section>
+              <section className="rwd-p">
                 <div className="container">
                   <div className="area_characteristic">
                     <div className="d-flex">

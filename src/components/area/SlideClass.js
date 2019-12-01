@@ -95,7 +95,7 @@ class SlideClass extends React.Component {
             資料載入中
           </div>
         ) : (
-          <section className="area_slide">
+          <section className="area_slide rwd-p">
             <div className="container">
               <div className="slide_title">
                 <div className="d-flex">
@@ -112,7 +112,7 @@ class SlideClass extends React.Component {
                 {/* if (!value) return <></>
                 console.log('ok') console.log(value.length) return ( */}
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
                       src="/images/coach/c1.jpg"
@@ -127,7 +127,7 @@ class SlideClass extends React.Component {
                   </div>
                 </div>
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
                       src="/images/coach/c1.jpg"
@@ -142,7 +142,7 @@ class SlideClass extends React.Component {
                   </div>
                 </div>
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
                       src="/images/coach/c1.jpg"
@@ -157,7 +157,7 @@ class SlideClass extends React.Component {
                   </div>
                 </div>
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
                       src="/images/coach/c1.jpg"
