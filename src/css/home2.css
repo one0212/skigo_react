@@ -41,9 +41,6 @@ html {
     font-size: 5.5rem;
     font-weight: 900;
 }
-.home_areas .h640{
-    display: none;
-}
 .home_areas .areas_title p{
     font-size: 1.8rem;
     font-weight: 600;
@@ -53,7 +50,7 @@ html {
     margin-left: 10px;
 }
 .home_areas .areas_title .line_s{
-    margin-left: 20px;
+    margin-left: 30px;
     margin-right: 20px;
 }
 .home_areas .areas{
@@ -195,6 +192,9 @@ html {
     font-size: 5.5rem;
     font-weight: 900;
 }
+.home_featured .h1100{
+    margin-left: 1.5rem;
+}
 .home_featured .featured_title p{
     font-size: 1.8rem;
     font-weight: 600;
@@ -204,8 +204,8 @@ html {
     margin-left: 10px;
 }
 .home_featured .featured_title .line_s{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .home_featured .featured{
     margin-top: 20px;
@@ -310,9 +310,6 @@ html {
     font-size: 5.5rem;
     font-weight: 900;
 }
-.home_recommend .h640{
-    display: none;
-}
 .home_recommend .recommend_title p{
     font-size: 1.8rem;
     font-weight: 600;
@@ -322,8 +319,8 @@ html {
     margin-left: 10px;
 }
 .home_recommend .recommend_title .line_s{
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
 }
 .home_recommend .recommend{
     margin-top: 20px;
@@ -396,6 +393,31 @@ html {
 
 
 /* RWD */
+@media screen and (max-width: 1640px) {
+    .home_third .home_skiing{
+        /* position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 65vh;
+        background: #FD702D;
+        z-index: 2;
+        flex-direction: column; */
+        padding: 3.4rem 0 0 3.5rem;
+    }
+    .home_third .home_skiing p{
+        /* color: #fff;
+        font-weight: 800; */
+        font-size: 4.6rem;
+        line-height: 4.8rem;
+    }
+    .home_featured .featured_title{
+        /* position: relative;
+        z-index: 3;
+        display: flex; */
+        margin: 3rem 0 5rem 24rem;
+    }
+}
 @media screen and (max-width: 1400px) {
     /* .home_third .home_skiing{
         position: absolute;
@@ -406,19 +428,19 @@ html {
         background: #FD702D;
         z-index: 2;
         flex-direction: column;
-        padding: 4.5rem 0 0 4.5rem;
+        padding: 3.4rem 0 0 3.5rem;
     } */
     .home_third .home_skiing p{
         /* color: #fff;
         font-weight: 800; */
-        font-size: 4.5rem;
-        line-height: 4.5rem;
+        font-size: 4rem;
+        line-height: 4rem;
     }
     .home_featured .featured_title{
         /* position: relative;
         z-index: 3;
         display: flex; */
-        margin: 3rem 0 5rem 20rem;
+        margin: 3rem 0 5rem 17.5rem;
     }
     .home_featured .featured_slide{
         /* position: relative;
@@ -450,7 +472,25 @@ html {
 }
 .home_areas .slick-next{
     right: -2.5rem;
+}   
+.home_featured .featured_title{
+    /* position: relative;
+    z-index: 3;
+    display: flex; */
+    margin: 3rem 0 5rem 12.5rem;
 }
+
+.home_third .home_skiing{
+    /* position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 65vh;
+    background: #FD702D;
+    z-index: 2;
+    flex-direction: column; */
+    padding: 3.2rem 0 0 3.3rem;
+} 
 }
 @media screen and (max-width: 1200px) {
     .home_areas .areas_main{
@@ -489,6 +529,10 @@ html {
     .home_featured .featured_main{
         /* flex-direction: column; */
         align-items: center;
+    }
+    .home_featured .h1100{
+        /* margin-left: 1.5rem; */
+        display: none;
     }
     .home_featured .featured_title{
         /* position: relative;
@@ -622,8 +666,8 @@ html {
         margin-left: 10px; */
     }
     /* .home_featured .featured_title .line_s{
-        margin-left: 20px;
-        margin-right: 20px;
+         margin-left: 30px;
+         margin-right: 30px;
     } */
     .home_featured .featured_card{
         width: 250px;
@@ -672,8 +716,8 @@ html {
         margin-left: 10px; */
     }
     /* .home_recommend .recommend_title .line_s{
-        margin-left: 20px;
-        margin-right: 10px;
+        margin-left: 30px;
+        margin-right: 20px;
     } */
     .home_recommend .recommend_card{
         width: 250px;
@@ -709,42 +753,41 @@ html {
     }
 }
 @media screen and (max-width: 640px) {
+    .home_areas .areas_title{
+        /* position: relative;
+        z-index: 3; */
+        display: block;
+        /* margin: 3rem 0 5rem 0; */
+    }
     .home_areas h4{
         /* color: #FF5200; */
         font-size: 3.5rem;
         /* font-weight: 900; */
     }
-    .home_areas .h640{
-        display: block;
-        margin-left: 0.5rem;
+    .home_areas .areas_title .line_s{
+        margin-left: 5px;
+        margin-right: 20px;
     }
-    .home_areas .areas_title p{
-        /* font-size: 1.4rem;
-        font-weight: 600;
-        color: #272F43;
+    .home_featured .featured_title{
+        /* position: relative;
+        z-index: 3; */
         display: flex;
-        align-items: flex-end;
-        margin-left: 10px; */
-        display: none;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        /* margin: 3rem 0 5rem 0; */
     }
     .home_featured h4{
         /* color: #FF5200; */
         font-size: 3.5rem;
         /* font-weight: 900; */
     }
-    .home_featured .featured_title p{
-        /* font-size: 1.4rem; */
-        /* font-weight: 600;
-        color: #272F43;
-        display: flex;
-        align-items: flex-end;
-        margin-left: 10px; */
-        display: none;
+    .home_featured .featured_title .d-flex{
+        flex-direction: row-reverse;
     }
-    /* .home_featured .featured_title .line_s{
-        margin-left: 20px;
-        margin-right: 20px;
-    } */
+    .home_featured .featured_title .line_s{
+         margin-left: 5px;
+         margin-right: 20px;
+    }
     .home_featured .featured2{
         display: none;
     }
@@ -781,28 +824,21 @@ html {
         /* margin: 20px 0 0 24px; */
     } 
 
+    .home_recommend .recommend_title{
+        /* position: relative;
+        z-index: 3; */
+        display: block;
+        /* margin: 3rem 0 5rem 0; */
+    }
     .home_recommend h4{
         /* color: #FF5200; */
         font-size: 3.5rem;
         /* font-weight: 900; */
     }
-    .home_recommend .h640{
-        display: block;
-        margin-left: 0.8rem;
-    }
-    .home_recommend .recommend_title p{
-        /* font-size: 1.4rem; */
-        /* font-weight: 600;
-        color: #272F43;
-        display: flex;
-        align-items: flex-end;
-        margin-left: 10px; */
-        display: none;
-    }
-    /* .home_recommend .recommend_title .line_s{
-        margin-left: 20px;
+    .home_recommend .recommend_title .line_s{
+        margin-left: 5px;
         margin-right: 20px;
-    } */
+    }
     .home_recommend .recommend2{
         display: none;
     }

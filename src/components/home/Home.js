@@ -437,9 +437,10 @@ class Home extends React.Component {
                   <div className="d-flex areas_main">
                     <div className="areas_title">
                       <h4>Popularity</h4>
-                      <h4 className="h640">Ski Area</h4>
-                      <p className="line_s">|</p>
-                      <p>熱門雪場</p>
+                      <div className="d-flex">
+                        <p className="line_s">|</p>
+                        <p>熱門雪場</p>
+                      </div>
                     </div>
                     <div className="areas_slide">
                       <Slider {...settings}>
@@ -560,9 +561,11 @@ class Home extends React.Component {
                 <div className="home_featured">
                   <div className="d-flex featured_main">
                     <div className="featured_title">
-                      <p>精選課程</p>
-                      <p className="line_s">|</p>
-                      <h4>Featured Course</h4>
+                      <div className="d-flex">
+                        <p>精選課程</p>
+                        <p className="line_s">|</p>
+                      </div>
+                      <h4>Featured</h4><h4 className="h1100"> Course</h4>
                     </div>
                     <div className="featured_slide">
                       <div className="d-flex justify-content-start">
@@ -631,9 +634,10 @@ class Home extends React.Component {
                   <div className="d-flex recommend_main">
                     <div className="recommend_title">
                       <h4>Recommend</h4>
-                      <h4 className="h640"> Hotel</h4>
-                      <p className="line_s">|</p>
-                      <p>推薦飯店</p>
+                      <div className="d-flex">
+                        <p className="line_s">|</p>
+                        <p>推薦飯店</p>
+                      </div>
                     </div>
                     <div className="recommend_slide">
                       <div className="d-flex justify-content-start">
