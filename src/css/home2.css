@@ -23,7 +23,7 @@ html {
     height: 100vh;
     overflow: hidden;
     z-index: 2;
-    background: url(../images/home/toa-heftiba.jpg) no-repeat center 0;
+    background: url(../images/home/areas.jpg) no-repeat 0;
     background-size: cover;
 }
 .home_areas .areas_main{
@@ -77,9 +77,24 @@ html {
 .home_areas .card-body h5{
     font-size: 1.6rem;
 }
+.home_areas .card-body img{
+    height: 30px;
+    width: 30px;
+}
+.home_areas .card-body .d-flex p{
+    color: #FD702D;
+    margin-top: 4px;
+    margin-left: 3px;
+}
 .home_areas .btn-primary{
     background: #FF5200;
     border: none;
+}
+.home_areas .btn-primary:hover{
+    background: rgb(255, 131, 74);
+}
+.home_areas .btn-primary:active{
+    background: rgb(255, 131, 74) !important;
 }
 /* card輪播 */
 .home_areas .slick-prev:before{
@@ -162,7 +177,7 @@ html {
     height: 100vh;
     overflow: hidden;
     z-index: 2;
-    background: url(../images/home/toa-heftiba.jpg) no-repeat center 0;
+    background: url(../images/home/lesson.jpeg) no-repeat left 0;
     background-size: cover;
 }
 .home_featured .featured_main{

@@ -328,61 +328,53 @@ class Home extends React.Component {
                               <Slider {...settings}>
                                 <div>
                                     <div className="card" style={{width: "18rem"}}>
-                                        <img className="home_img" src="./images/home/toa-heftiba.jpg" alt=""/>
+                                        <img className="home_img" src="./images/home/areas1.jpg" alt=""/>
                                         <div className="card-body">
                                             <h5 className="card-title">富良野滑雪場</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                                            <div className="d-flex">
+                                                <img src="./images/home/placeholder0.svg" alt=""/>
+                                                <p>北海道</p>
+                                            </div>
+                                            <a href="#" className="btn btn-primary">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="card" style={{width: "18rem"}}>
-                                        <img className="home_img" src="./images/home/toa-heftiba.jpg" alt=""/>
+                                        <img className="home_img" src="./images/home/areas2.jpg" alt=""/>
                                         <div className="card-body">
-                                            <h5 className="card-title">富良野滑雪場</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                                            <h5 className="card-title">苗場滑雪場</h5>
+                                            <div className="d-flex">
+                                                <img src="./images/home/placeholder0.svg" alt=""/>
+                                                <p>新瀉縣</p>
+                                            </div>
+                                            <a href="#" className="btn btn-primary">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="card" style={{width: "18rem"}}>
-                                        <img className="home_img" src="./images/home/toa-heftiba.jpg" alt=""/>
+                                        <img className="home_img" src="./images/home/areas3.jpg" alt=""/>
                                         <div className="card-body">
-                                            <h5 className="card-title">富良野滑雪場</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                                            <h5 className="card-title">上越國際滑雪場</h5>
+                                            <div className="d-flex">
+                                                <img src="./images/home/placeholder0.svg" alt=""/>
+                                                <p>新瀉縣</p>
+                                            </div>
+                                            <a href="#" className="btn btn-primary">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="card" style={{width: "18rem"}}>
-                                        <img className="home_img" src="./images/home/toa-heftiba.jpg" alt=""/>
+                                        <img className="home_img" src="./images/home/areas4.jpg" alt=""/>
                                         <div className="card-body">
-                                            <h5 className="card-title">富良野滑雪場</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img className="home_img" src="./images/home/toa-heftiba.jpg" alt=""/>
-                                        <div className="card-body">
-                                            <h5 className="card-title">富良野滑雪場</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img className="home_img" src="./images/home/toa-heftiba.jpg" alt=""/>
-                                        <div className="card-body">
-                                            <h5 className="card-title">富良野滑雪場</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                                            <h5 className="card-title">札幌國際滑雪場</h5>
+                                            <div className="d-flex">
+                                                <img src="./images/home/placeholder0.svg" alt=""/>
+                                                <p>北海道</p>
+                                            </div>
+                                            <a href="#" className="btn btn-primary">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -426,10 +418,10 @@ class Home extends React.Component {
                                             <div className="featured_card">
                                                 <a href="#">
                                                     <div className="featured_img">
-                                                        <img className="home_img_pic" src="./images/home/toa-heftiba.jpg" alt=""/>
+                                                        <img className="home_img_pic" src="./images/home/coach1.jpg" alt=""/>
                                                     </div>
                                                     <div className="featured_card_word">
-                                                        <p className="areas">初級雙板滑雪</p>
+                                                        <p className="areas">中級雙板滑雪</p>
                                                         <div className="d-flex">
                                                             <img src="./images/home/clock.svg" alt=""/>&nbsp;&nbsp;
                                                             <p>2小時課程</p>
@@ -441,10 +433,10 @@ class Home extends React.Component {
                                             <div className="featured_card featured2">
                                                 <a href="#">
                                                     <div className="featured_img">
-                                                        <img className="home_img_pic" src="./images/home/nicolai-berntsen.jpg" alt=""/>
+                                                        <img className="home_img_pic" src="./images/home/coach2.jpeg" alt=""/>
                                                     </div>
                                                     <div className="featured_card_word">
-                                                        <p className="areas">初級雙板滑雪</p>
+                                                        <p className="areas">高級雙板滑雪</p>
                                                         <div className="d-flex">
                                                             <img src="./images/home/clock.svg" alt=""/>&nbsp;&nbsp;
                                                             <p>2小時課程</p>
@@ -453,7 +445,7 @@ class Home extends React.Component {
                                                 </a>
                                             </div>
                                         </div>
-                                        <a className="explore justify-content-center align-items-center" href="">Explore More</a>
+                                        <a className="explore justify-content-center align-items-center" href="">Learn More</a>
                                     </div>   
                                 </div>
                             </div>
@@ -481,7 +473,7 @@ class Home extends React.Component {
                                             <div className="recommend_card">
                                                 <a href="#">
                                                     <div className="recommend_img">
-                                                        <img className="home_img_pic" src="./images/home/toa-heftiba.jpg" alt=""/>
+                                                        <img className="home_img_pic" src="./images/home/hotel1.jpg" alt=""/>
                                                     </div>
                                                     <div className="recommend_card_word">
                                                         <p className="areas">富良野滑雪場飯店</p>
@@ -496,19 +488,19 @@ class Home extends React.Component {
                                             <div className="recommend_card recommend2">
                                                 <a href="#">
                                                     <div className="recommend_img">
-                                                        <img className="home_img_pic" src="./images/home/nicolai-berntsen.jpg" alt=""/>
+                                                        <img className="home_img_pic" src="./images/home/hotel2.jpg" alt=""/>
                                                     </div>
                                                     <div className="recommend_card_word">
-                                                        <p className="areas">富良野滑雪場飯店</p>
+                                                        <p className="areas">苗場王子大飯店</p>
                                                         <div className="d-flex">
                                                             <img src="./images/home/placeholder0.svg" alt=""/>
-                                                            <p>北海道</p>
+                                                            <p>新瀉縣</p>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
-                                        <a className="explore justify-content-center align-items-center" href="">Explore More</a>
+                                        <a className="explore justify-content-center align-items-center" href="">Learn More</a>
                                     </div>   
                                 </div>
                             </div>
