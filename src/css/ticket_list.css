@@ -140,7 +140,7 @@
     }
     .ticket-card .hot_img {
             width:100%;
-            height: 250px;
+            height: 200px;
             overflow: hidden;
             transition: 1s;
     }
@@ -259,6 +259,7 @@
             width: 100%;
             /* border: 1px solid pink; */
             margin-right:-10px;
+            z-index: 1;
         }
 
         .ticket-rwd-sort a{
@@ -301,7 +302,13 @@
     }
     @media (max-width: 1300px) {
         .ticket-card{
-            width: 45%;
+            width: 33%;
+            margin: 15px;
+            }
+    }
+    @media (max-width: 992px) {
+        .ticket-card{
+            width: 40%;
             margin: 10px;
             }
     }
@@ -316,7 +323,7 @@
             padding-right: 0px;
         } */
         .ticket-card{
-        width: 80%;
+        width: 70%;
         /* margin: 10px; */
         }
         .card-header{
