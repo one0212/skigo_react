@@ -54,7 +54,7 @@ export default class HotelCarousel extends React.Component {
     this.IMAGE_PARTS = 4
 
     this.changeTO = null
-    this.AUTOCHANGE_TIME = 10000
+    this.AUTOCHANGE_TIME = 5000
 
     this.state = {
       activeSlide: -1,

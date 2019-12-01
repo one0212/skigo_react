@@ -120,7 +120,7 @@ class HotelRoomContent extends React.Component {
   render() {
     const { selectedOption } = this.state
     const p = this.state.room.price
-    const d = 4
+    const d = 2
     const t = this.state.room.tax
     const o = this.state.room.otherPrice
 
