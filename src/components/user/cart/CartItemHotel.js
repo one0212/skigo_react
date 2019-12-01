@@ -25,7 +25,15 @@ class CartItemHotel extends Component {
                 <a href="" className="text-decoration-none text-dark">
                   {this.props.cartData.name}
                 </a>
-                <span>{this.props.cartData.info}</span>
+                <div>
+                  {this.props.cartData.info.map((info, index) => {
+                    return (
+                      <p className="m-0" key={index}>
+                        {info}
+                      </p>
+                    )
+                  })}
+                </div>
                 <span className="d-none">{this.props.cartData.qty}</span>
               </div>
 
