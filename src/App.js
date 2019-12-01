@@ -1,6 +1,5 @@
-import React from 'react'
-// import { Container } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import Example from './components/Example'
 
@@ -39,14 +38,26 @@ import HotelIntroduction from './components/hotel/HotelIntroduction'
 import HotelIntroductionContent from './components/hotel/HotelIntroductionContent'
 import HotelRoomContent from './components/hotel/HotelRoomContent'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
+import HotelRoomContent from './components/hotel/HotelRoomContent'
+
 
 import AttractionsIndex from './components/AttractionComp/AttractionsIndex'
 import Attractionslist from './components/AttractionComp/Attractionslist'
+
 function App() {
+  const [cartItemQty, setCartItemQty] = useState(0)
+
+  const handleCartItemQtyChange = () => {
+    setCartItemQty(cartItemQty + 1)
+    console.log(cartItemQty)
+  }
+
+  console.log(`App.js Init - ${cartItemQty}`)
   return (
     <>
       <Router>
         <>
+
           <Header />
           {/* <Link to="/ticketlist">●ticketlist</Link> */}
           {/* <Link to="/coachlist">●1.coach_list</Link> */}
@@ -60,17 +71,35 @@ function App() {
           {/* <Link to="/AttractionsIndex">●AttractionsIndex</Link> */}
           {/* <Link to="/Attractionslist">●Attractionslist</Link> */}
 
+          <Header cartItemQty={cartItemQty} />
+
           <Switch>
             <Route path="/" exact component={home} />
             <Route path="/coachlist" component={CoachList} />
             <Route path="/coachclass/:id?" component={CoachClass} />
-            <Route path="/CoachBook/:id2?" component={CoachBook} />
+            <Route
+              path="/CoachBook/:id2?"
+              render={props => (
+                <CoachBook
+                  {...props}
+                  handleCartItemQtyChange={handleCartItemQtyChange}
+                />
+              )}
+            />
             <Route path="/CoachDate" component={CoachDate} />
             <Route path="/CoachCarousels2" component={CoachCarousels2} />
 
             <Route path="/ticketlist" component={TicketList} />
             <Route path="/ticketarea/:areaid?" component={TicketAreas} />
-            <Route path="/ticketpage/:ticketid?" component={TicketPage} />
+            <Route
+              path="/ticketpage/:ticketid?"
+              render={props => (
+                <TicketPage
+                  {...props}
+                  handleCartItemQtyChange={handleCartItemQtyChange}
+                />
+              )}
+            />
 
             <Route path="/cart" component={UserCart} />
             <Route path="/checkout" component={UserCheckout} />
@@ -80,7 +109,15 @@ function App() {
             <Route path="/user/order" component={UserOrder} />
             <Route path="/activeUser" component={AccountActiveResult} />
 
-            <Route path="/product/:prodNo" component={Product} />
+            <Route
+              path="/product/:prodNo"
+              render={props => (
+                <Product
+                  {...props}
+                  handleCartItemQtyChange={handleCartItemQtyChange}
+                />
+              )}
+            />
             <Route path="/product" component={FilterProduct} />
             <Route path="/333" component={ProductAsNavFor} />
 
@@ -92,13 +129,24 @@ function App() {
               component={HotelIntroductionContent}
             />
             <Route path="/HotelListCard" component={HotelListCard} />
+
+            <Route path="/HotelRoomContent" component={HotelRoomContent} />
+
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
 
             <Route
               path="/HotelRoomContent/roomInt/:id"
               component={HotelRoomContent}
             />
-            <Route path="/HotelRoomOrder" component={HotelRoomOrder} />
+            <Route
+              path="/HotelRoomOrder"
+              render={props => (
+                <HotelRoomOrder
+                  {...props}
+                  handleCartItemQtyChange={handleCartItemQtyChange}
+                />
+              )}
+            />
 
             <Route path="/AttractionsIndex" component={AttractionsIndex} />
             <Route path="/Attractionslist" component={Attractionslist} />

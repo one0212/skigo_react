@@ -37,8 +37,8 @@ class AreaCard extends React.Component {
   render() {
     return (
       <>
-        {console.log('123')}
-        {console.log(this.props.filter)}
+        {/* {console.log('123')} */}
+        {/* {console.log(this.props.filter)} */}
         {/* { if( this.props.filter == true ){} } */}
         {this.state.loading ? (
           <div>
@@ -48,19 +48,19 @@ class AreaCard extends React.Component {
         ) : (
           <>
             {this.props.filter.map((value, index) => {
-              console.log('ticket_sid:', value.ticket_sid, value.area_sid)
+              {/* console.log('ticket_sid:', value.ticket_sid, value.area_sid) */}
               //if (!value) return <></>
 
               //return `<h2>${value.ticket_sid}</h2>`
               return (
                 <Link
-                  className="coach-card ticket-card"
+                  className="ticket-card"
                   key={value.ticket_sid}
                   to={'/ticketarea/' + value.area_sid}
                 >
                   <div className="hot_img" data-ticket_sid={value.ticket_sid}>
                     <img
-                      className="coach_img_pic ticket_img_pic"
+                      className="ticket_img_pic"
                       src={'/images/areas/' + value.ticket_pic}
                       alt=""
                     />

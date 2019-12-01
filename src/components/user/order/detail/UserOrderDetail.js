@@ -12,7 +12,7 @@ class UserOrderDetail extends Component {
   constructor() {
     super()
     this.state = {
-      orderDetail: '',
+      orderDetail: undefined,
     }
   }
   componentWillMount() {
@@ -28,8 +28,30 @@ class UserOrderDetail extends Component {
       })
   }
   render() {
-    let product = '',
-      areaHotel = ''
+    let product, areaHotel
+    if (this.state.orderDetail) {
+      this.state.orderDetail.products.map((v, index) => {
+        if (v.prodType === 'products') {
+          product = (
+            <>
+              <OrderDetailProductContent
+                key={index}
+                detailData={this.state.orderDetail}
+              />
+              <OrderDetailRecipient detailData={this.state.orderDetail} />
+            </>
+          )
+        } else {
+          areaHotel = (
+            <OrderDetailAreaHotelContent
+              key={index}
+              detailData={this.state.orderDetail}
+            />
+          )
+        }
+        return true
+      })
+    }
     return (
       <>
         <Container>
@@ -37,37 +59,11 @@ class UserOrderDetail extends Component {
             <UserSidebar />
             <Col md={1}></Col>
             <Col md={8}>
-              {this.state.orderDetail !== '' ? (
+              {this.state.orderDetail ? (
                 <>
                   <OrderDetailState detailData={this.state.orderDetail} />
-                  {this.state.orderDetail.products.map((product, index) => {
-                    if (product.prodType === 'product') {
-                      product = (
-                        <>
-                          <OrderDetailProductContent
-                            key={index}
-                            detailData={this.state.orderDetail.products}
-                            orderData={this.state.orderDetail}
-                          />
-                          <OrderDetailRecipient
-                            detailData={this.state.orderDetail}
-                          />
-                        </>
-                      )
-                    } else {
-                      areaHotel = (
-                        <OrderDetailAreaHotelContent
-                          key={index}
-                          detailData={this.state.orderDetail.products}
-                          orderData={this.state.orderDetail}
-                        />
-                      )
-                    }
-                    return true
-                  })}
                   {areaHotel}
                   {product}
-
                   <OrderDetailPayment detailData={this.state.orderDetail} />
                 </>
               ) : (

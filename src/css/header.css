@@ -70,7 +70,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 5;
   /* display:flex; */
   justify-content: center;
   align-items: center;
@@ -153,10 +153,21 @@ body {
   /* bottom:2%; */
   top: 94%;
   left: 5%;
+  z-index:15;
 }
 /* 登入 */
 .login-content {
   min-height: 500px;
 }
-
 /* ＝＝＝＝＝光箱＝＝＝＝＝ */
+.red-point {
+  background-color: red;
+  color:#fff;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  border-radius:50%;
+  line-height: 16px;
+  right: 6px;
+  top: -4px;
+}

@@ -86,6 +86,7 @@ class HotelRoomContent extends React.Component {
       if (response.status === 200) {
         // 所以可以用此判斷, 後續要做的事情就是放這邊
         console.log('商品加入成功')
+        this.props.handleCartItemQtyChange()
       }
     })
   }

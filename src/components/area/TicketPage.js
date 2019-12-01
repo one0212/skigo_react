@@ -1,11 +1,12 @@
 import React from 'react'
 import '../../css/ticket_page.css'
 import { Form } from 'react-bootstrap'
+// import SweetAlert from 'sweetalert2-react'
 // import FilterBread2 from '../goods/FilterBread2'
 
 class TicketPage extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       loading: true,
       total: [],
@@ -14,6 +15,8 @@ class TicketPage extends React.Component {
   }
 
   handleClick = () => {
+    // this.props.handleCartItemQtyChange()
+    // return
     const url = 'http://localhost:3001/api/cart/items'
     const id = document.querySelector('#ticket-id').textContent
     const select = document.querySelector('#ticket-select')
@@ -36,6 +39,8 @@ class TicketPage extends React.Component {
       if (response.status === 200) {
         // 所以可以用此判斷, 後續要做的事情就是放這邊
         console.log('商品加入成功')
+        this.setState({ show: true })
+        this.props.handleCartItemQtyChange()
       }
     })
   }
@@ -96,23 +101,25 @@ class TicketPage extends React.Component {
             資料載入中
           </div>
         ) : (
-          <div class="ticket_book_out container">
+          <div class="ticket_book_out container" style={{ padding: '30px' }}>
             {/* 麵包屑 */}
             {/* <FilterBread2 /> */}
             <div className="row mb-4">
-              <div className="col-md-2 col-sm-0"> </div>
-              <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
-                首頁 / 雪場票券 / {this.state.total[0].area_name} / {this.state.total[0].ticket_name}
-              </div>
-            </div>
-            <div id="ticket-id" style={{ display: 'none' }}>
-              {this.state.total[0].ticket_sid}
-              {console.log('id:' + this.state.total[0].ticket_sid)}
+                <div className="col-md-2 col-sm-0">
+                  <div id="ticket-id" style={{ display: 'none' }}>
+                  {this.state.total[0].ticket_sid}
+                  {console.log('id:' + this.state.total[0].ticket_sid)}
+                  </div>
+                </div>
+                <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
+                首頁 / 雪場票券 / {this.state.total[0].area_name} /{' '}
+                {this.state.total[0].ticket_name}
+                </div>
             </div>
             {/* 圖+內容 */}
-            <div class="ticket_head row mb-5">
+            <div className="ticket_head row mb-5">
               {/* 圖 */}
-              <div class="class_img col-xl-7 col-lg-6 col-md-12">
+              <div className="class_img col-xl-7 col-lg-6 col-md-12">
                 <img
                   className="class_pic"
                   src={'/images/areas/' + this.state.total[0].ticket_pic}
@@ -120,9 +127,9 @@ class TicketPage extends React.Component {
                 />
               </div>
               {/* 內容 */}
-              <div class="ski_class col-xl-5 col-lg-6 col-md-12 mt-2">
-                <div class="row">
-                  <div class="col-12">
+              <div className="ski_class col-xl-5 col-lg-6 col-md-12 mt-2">
+                <div className="row">
+                  <div className="col-12">
                     <div className="d-flex">
                       <div className="d-flex">
                         <h1>{this.state.total[0].ticket_name} |</h1>
@@ -143,13 +150,13 @@ class TicketPage extends React.Component {
                       </span>
                     </div>
                     <div className="ticket-book row">
-                      <div className="col-3 d-flex flex-column justify-content-around">
+                      <div className="col-sm-3 col-4 d-flex flex-column justify-content-around">
                         <h5>數量</h5>
                         <h5>使用期限</h5>
                         <h5>販售期間</h5>
                       </div>
 
-                      <div className="ticket-page-style col-9">
+                      <div className="ticket-page-style col-sm-9 col-8">
                         {/* <input id="people" value={this.state.people} onChange={this.changepeople}
                                     name="people" className="ticket_book_num" type="number" /> */}
                         <Form.Group controlId="exampleForm.ControlSelect1">
@@ -181,6 +188,12 @@ class TicketPage extends React.Component {
                       <button className="btn" onClick={this.handleClick}>
                         <i className="fas fa-shopping-cart"></i> 放入購物車
                       </button>
+                      {/* <SweetAlert
+                        show={this.state.show}
+                        title="成功"
+                        text="加入購物車成功!"
+                        onConfirm={() => this.setState({ show: false })}
+                      /> */}
                       <button className="btn">
                         <i className="far fa-heart"></i> 收藏商品
                       </button>
