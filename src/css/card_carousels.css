@@ -31,7 +31,7 @@ section{
     margin-bottom: 20px;
 }
 .area_lesson .card{
-    margin: 0 1.5rem;
+    margin: 0 1.5rem 0 1rem;
     border: 1px solid #ddd;
     border-radius: 0;
 }
@@ -81,7 +81,7 @@ section{
         margin-bottom: 20px; */
     }
     .area_lesson .card{
-        margin: 0 1.3rem;
+        margin: 0 1.3rem 0 0.8rem;
         /* border: 1px solid #ddd;
         border-radius: 0; */
     }

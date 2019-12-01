@@ -45,6 +45,24 @@ class TicketList extends React.Component {
       await setTimeout(() => this.setState({ loading: false }))
       // console.log('total：' + JSON.stringify(this.state.total.length))
     }
+    // 至頂按鈕
+    $('#goTop').click(function() {
+      $('html,body').animate(
+        {
+          scrollTop: 0,
+        },
+        1000
+      )
+    })
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        $('#goTop').fadeIn('fast')
+      } else {
+        $('#goTop')
+          .stop()
+          .fadeOut('fast')
+      }
+    })
     //PC選單
     $('.ticket_arrange a').click(e => {
       $(e.currentTarget)
@@ -189,6 +207,7 @@ class TicketList extends React.Component {
   render() {
     return (
       <>
+      <div id="goTop">˄</div>
         <div className="container ticket_checkbox">
           {/* part1 麵包屑 */}
           <FilterBread2 />
