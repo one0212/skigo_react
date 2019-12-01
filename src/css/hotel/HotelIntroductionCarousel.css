@@ -27,7 +27,7 @@
 
 
 .hotel_introduction_bg{
-    background-image:url(/images/hotel/hotel_01.jpg);
+    /* background-image:url(/images/hotel/hotel_01.jpg); */
     background-size: cover;
     background-position: center;
     height: 900px;

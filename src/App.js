@@ -36,8 +36,10 @@ import HotelListCard from './components/hotel/HotelListCard'
 
 import HotelIntroduction from './components/hotel/HotelIntroduction'
 import HotelIntroductionContent from './components/hotel/HotelIntroductionContent'
+import HotelRoomContent from './components/hotel/HotelRoomContent'
 import HotelRoomOrder from './components/hotel/HotelRoomOrder'
 import HotelRoomContent from './components/hotel/HotelRoomContent'
+
 
 import AttractionsIndex from './components/AttractionComp/AttractionsIndex'
 import Attractionslist from './components/AttractionComp/Attractionslist'
@@ -55,7 +57,22 @@ function App() {
     <>
       <Router>
         <>
+
+          <Header />
+          {/* <Link to="/ticketlist">●ticketlist</Link> */}
+          {/* <Link to="/coachlist">●1.coach_list</Link> */}
+          {/* <Link to="/coachclass">●2.coach_class</Link>
+        <Link to="/CoachBook">●3.CoachBook</Link>
+        <br></br>
+        <Link to="/CoachDate">●CoachDate</Link>
+        <Link to="/CoachCarousels2">●CoachCarousels2</Link>
+        <Link to="/area">●area</Link>
+        <br></br> */}
+          {/* <Link to="/AttractionsIndex">●AttractionsIndex</Link> */}
+          {/* <Link to="/Attractionslist">●Attractionslist</Link> */}
+
           <Header cartItemQty={cartItemQty} />
+
           <Switch>
             <Route path="/" exact component={home} />
             <Route path="/coachlist" component={CoachList} />
@@ -105,18 +122,21 @@ function App() {
             <Route path="/333" component={ProductAsNavFor} />
 
             <Route path="/HotelHome" component={HotelHome} />
-            <Route path="/HotelList" component={HotelList} />
+            <Route path="/HotelList？region=北海道" component={HotelList} />
+
             <Route
-              path="HotelIntroductionContent/all_room/:id"
+              path="/HotelIntroductionContent/all_room/:id"
               component={HotelIntroductionContent}
             />
             <Route path="/HotelListCard" component={HotelListCard} />
+
             <Route path="/HotelRoomContent" component={HotelRoomContent} />
 
             <Route path="/HotelIntroduction" component={HotelIntroduction} />
+
             <Route
-              path="/HotelIntroductionContent"
-              component={HotelIntroductionContent}
+              path="/HotelRoomContent/roomInt/:id"
+              component={HotelRoomContent}
             />
             <Route
               path="/HotelRoomOrder"

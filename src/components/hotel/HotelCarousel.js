@@ -54,7 +54,7 @@ export default class HotelCarousel extends React.Component {
     this.IMAGE_PARTS = 4
 
     this.changeTO = null
-    this.AUTOCHANGE_TIME = 10000000
+    this.AUTOCHANGE_TIME = 10000
 
     this.state = {
       activeSlide: -1,
@@ -108,6 +108,11 @@ export default class HotelCarousel extends React.Component {
         windowHeight: false,
       })
     }
+  }
+  changePage = () => {
+    setTimeout(() => {
+      window.location.href = 'http://localhost:3000/HotelList？region=北海道'
+    }, 380)
   }
   componentWillUnmount() {
     window.clearTimeout(this.changeTO)
@@ -278,23 +283,15 @@ export default class HotelCarousel extends React.Component {
                     />
                     <Button
                       variant="none"
+                      onClick={this.changePage}
                       style={{
                         position: 'relative',
                         backgroundColor: '#fd702d',
                         color: '#fff',
                       }}
                     >
-                      <Link
-                        to="/HotelList"
-                        style={{
-                          position: 'relative',
-                          backgroundColor: '#fd702d',
-                          color: '#fff',
-                        }}
-                      >
-                        搜出好飯店 GO
-                        <Ink key="__ink" />
-                      </Link>
+                      <Ink key="__ink" />
+                      搜出好飯店 GO
                     </Button>
                   </div>
                 </Form>

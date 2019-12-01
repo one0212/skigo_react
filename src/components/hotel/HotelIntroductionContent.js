@@ -1,12 +1,22 @@
 import React from 'react'
-import { Row, Col, Card, Button } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import {
   TiStarFullOutline,
   TiStarHalfOutline,
   TiStarOutline,
 } from 'react-icons/ti'
 import { IoIosCar } from 'react-icons/io'
-import { FiCoffee } from 'react-icons/fi'
+import {
+  FiCoffee,
+  FiGlobe,
+  FiWifi,
+  FiBriefcase,
+  FiUser,
+  FiCheckSquare,
+} from 'react-icons/fi'
+import { FaSwimmingPool, FaSkiing } from 'react-icons/fa'
+import { MdDirectionsCar, MdLocalAirport, MdRestaurant } from 'react-icons/md'
+import { GiMountainCave, GiForestCamp } from 'react-icons/gi'
 import UseAnimations from 'react-useanimations'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../css/hotel/HotelIntroductionContent.css'
@@ -24,26 +34,6 @@ class HotelIntroductionContent extends React.Component {
     console.log(this.props)
   }
   componentWillMount() {
-    // fetch(`http://localhost:3001/japi/hotel_rooms`, {
-    //   method: 'GET',
-    // })
-    //   .then(response => {
-    //     return response.json()
-    //   })
-    //   .then(json => {
-    //     this.setState({ hotel_rooms: json })
-    //     // console.log(this.state.hotel_rooms)
-    //   })
-    // fetch(`http://localhost:3001/japi/hotels?id=${this.props.hotelId}`, {
-    //   method: 'GET',
-    // })
-    //   .then(response => {
-    //     return response.json()
-    //   })
-    //   .then(json => {
-    //     this.setState({ hotels: json })
-    //     console.log(json)
-    //   })
     const id = this.props.location.pathname.split('/')[3]
     console.log(id)
     fetch(`http://localhost:3001/japi/hotels?id=${id}`, {
@@ -61,6 +51,7 @@ class HotelIntroductionContent extends React.Component {
   render() {
     return (
       <>
+        {console.log(this.state.hotels)}
         <HotelIntroductionCarousel hotelInt={this.state.hotels} />
         <div className="container">
           <section>
@@ -93,12 +84,17 @@ class HotelIntroductionContent extends React.Component {
             </Row>
             <Row className="mt-3">
               <Col>
-                <ul className="list-unstyled d-flex">
+                <ul className="list-unstyled d-flex ">
                   <li className="mr-5">
-                    <p>{this.state.hotels.address}</p>
+                    <p>
+                      {this.state.hotels.address}
+                      <span style={{ cursor: 'pointer', color: 'STEELBLUE' }}>
+                        - 查看地圖&週邊景點
+                      </span>
+                    </p>
                   </li>
                   <li>
-                    <p>電話:{this.state.hotels.phone}</p>
+                    <p> 電話: {this.state.hotels.phone}</p>
                   </li>
                 </ul>
               </Col>
@@ -113,11 +109,11 @@ class HotelIntroductionContent extends React.Component {
                 <ul className="list-unstyled text-center">
                   <li>
                     <span>
-                      <IoIosCar />
+                      <GiForestCamp />
                     </span>
                   </li>
                   <li>
-                    <p class="mb-0">距離大眾運輸210公尺</p>
+                    <p class="mb-0">森林精靈陽臺170公尺</p>
                   </li>
                 </ul>
               </Col>
@@ -125,11 +121,11 @@ class HotelIntroductionContent extends React.Component {
                 <ul className="list-unstyled text-center">
                   <li>
                     <span>
-                      <IoIosCar />
+                      <FaSkiing />
                     </span>
                   </li>
                   <li>
-                    <p class="mb-0">距離大眾運輸210公尺</p>
+                    <p class="mb-0">滑雪場260公尺</p>
                   </li>
                 </ul>
               </Col>
@@ -137,11 +133,11 @@ class HotelIntroductionContent extends React.Component {
                 <ul className="list-unstyled text-center">
                   <li>
                     <span>
-                      <IoIosCar />
+                      <MdLocalAirport />
                     </span>
                   </li>
                   <li>
-                    <p class="mb-0">距離大眾運輸210公尺</p>
+                    <p class="mb-0">旭川機場39.4公里</p>
                   </li>
                 </ul>
               </Col>
@@ -149,11 +145,11 @@ class HotelIntroductionContent extends React.Component {
                 <ul className="list-unstyled text-center">
                   <li>
                     <span>
-                      <IoIosCar />
+                      <GiMountainCave />
                     </span>
                   </li>
                   <li>
-                    <p class="mb-0">距離大眾運輸210公尺</p>
+                    <p class="mb-0">富良野西岳</p>
                   </li>
                 </ul>
               </Col>
@@ -161,11 +157,11 @@ class HotelIntroductionContent extends React.Component {
                 <ul className="list-unstyled text-center">
                   <li>
                     <span>
-                      <IoIosCar />
+                      <MdRestaurant />
                     </span>
                   </li>
                   <li>
-                    <p class="mb-0">距離大眾運輸210公尺</p>
+                    <p class="mb-0">フラノマルシェ</p>
                   </li>
                 </ul>
               </Col>
@@ -180,8 +176,8 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <FiGlobe />
                       </p>
                     </div>
                   </Col>
@@ -218,8 +214,8 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <FiWifi />
                       </p>
                     </div>
                   </Col>
@@ -238,8 +234,8 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <FaSwimmingPool />
                       </p>
                     </div>
                   </Col>
@@ -270,7 +266,7 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
+                      <p className="h3 facility_icon">
                         <FiCoffee />
                       </p>
                     </div>
@@ -299,8 +295,8 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <div class="col-md-1">
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <FiBriefcase />
                       </p>
                     </div>
                   </div>
@@ -345,8 +341,8 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <FiUser />
                       </p>
                     </div>
                   </Col>
@@ -374,37 +370,31 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <MdDirectionsCar />
                       </p>
                     </div>
                   </Col>
                   <Col md={10} className="facility_items">
-                    <p className="font-weight-bold">可使用語言:</p>
+                    <p className="font-weight-bold">交通服務/設施:</p>
                     <ul className="list-unstyled">
                       <li>
-                        <span>中文</span>
+                        <span>代客叫車服務</span>
                       </li>
                       <li>
-                        <span>英文</span>
+                        <span>租車服務</span>
                       </li>
                       <li>
-                        <span>韓文</span>
+                        <span>停車場(館內)</span>
                       </li>
                       <li>
-                        <span>法文</span>
+                        <span>代客停車</span>
                       </li>
                       <li>
-                        <span>中文</span>
+                        <span>代客停車</span>
                       </li>
                       <li>
-                        <span>英文</span>
-                      </li>
-                      <li>
-                        <span>韓文</span>
-                      </li>
-                      <li>
-                        <span>法文</span>
+                        <span>代客停車</span>
                       </li>
                     </ul>
                   </Col>
@@ -412,37 +402,73 @@ class HotelIntroductionContent extends React.Component {
                 <Row className="mb-5">
                   <Col md={1}>
                     <div>
-                      <p className="h5 facility_icon">
-                        <FiCoffee />
+                      <p className="h3 facility_icon">
+                        <FiCheckSquare />
                       </p>
                     </div>
                   </Col>
                   <Col md={10} className="facility_items">
-                    <p className="font-weight-bold">可使用語言:</p>
+                    <p className="font-weight-bold">所有客房均提供:</p>
                     <ul className="list-unstyled">
                       <li>
-                        <span>中文</span>
+                        <span>Mini Bar</span>
                       </li>
                       <li>
-                        <span>英文</span>
+                        <span>免費瓶裝水</span>
                       </li>
                       <li>
-                        <span>韓文</span>
+                        <span>淋浴設備</span>
                       </li>
                       <li>
-                        <span>法文</span>
+                        <span>吹風機</span>
                       </li>
                       <li>
-                        <span>中文</span>
+                        <span>禁菸房</span>
                       </li>
                       <li>
-                        <span>英文</span>
+                        <span>Wi-Fi</span>
                       </li>
                       <li>
-                        <span>韓文</span>
+                        <span>電話休憩區</span>
                       </li>
                       <li>
-                        <span>法文</span>
+                        <span>房內保險箱</span>
+                      </li>
+                      <li>
+                        <span>冰箱</span>
+                      </li>
+                      <li>
+                        <span>空調</span>
+                      </li>
+                      <li>
+                        <span>衛星頻道/有線電視</span>
+                      </li>
+                      <li>
+                        <span>遮光窗簾</span>
+                      </li>
+                      <li>
+                        <span>地毯</span>
+                      </li>
+                      <li>
+                        <span>書桌</span>
+                      </li>
+                      <li>
+                        <span>鬧鐘</span>
+                      </li>
+                      <li>
+                        <span>衣櫥</span>
+                      </li>
+                      <li>
+                        <span>浴缸</span>
+                      </li>
+                      <li>
+                        <span>盥洗用品</span>
+                      </li>
+                      <li>
+                        <span>烘衣機</span>
+                      </li>
+                      <li>
+                        <span>熱水壺</span>
                       </li>
                     </ul>
                   </Col>
@@ -458,434 +484,18 @@ class HotelIntroductionContent extends React.Component {
               鉑爾曼倫的可預訂房型
             </p>
             <Row className="d-flex">
-              <HotelIntroductionContentCard hotelIntCard={this.state.hotels} />
-              {/* {this.state.hotel_rooms !== ''
-              ? this.state.hotel_rooms.map((hotel_room, index) => {
-                  return (
-                    <HotelIntroductionContentCard
-                      key={index}
-                      hotelRoomData={hotel_room}
-                    />
-                  )
-                })
-              : ''} */}
-              {/* <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="hotel_introduction_card">
-              <Card.Img
-                variant="top"
-                src="/image/hotel/hotel_slider/hotel_4.jpg"
-                alt="..."
-                className="hotel_slider_img"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6>
-                </Card.Title>
-                <Card.Text className="hotel_introduction_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex justify-content-between">
-                  <ul class="list-unstyled d-flex hotel_introduction_card_star">
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarFullOutline />
-                    </li>
-                    <li>
-                      <TiStarHalfOutline />
-                    </li>
-                    <li>
-                      <TiStarOutline />
-                    </li>
-                  </ul>
-                  <span class="hotel_card_heart">
-                    <UseAnimations
-                      animationKey="heart"
-                      size={15}
-                      style={{ color: 'red' }}
-                    />
-                  </span>
-                </div>
-                <span class="hotel_introduction_money">
-                  約 $<span>2,400</span>TWD / 晚
-                </span>
-                <Button
-                  variant="light"
-                  className="badge-pill hotel_introduction_card_btn"
-                >
-                  more
-                </Button>
-              </Card.Body>
-            </Card> */}
+              {this.state.hotels !== ''
+                ? this.state.hotels.rooms.map((room, index) => {
+                    return (
+                      <>
+                        <HotelIntroductionContentCard
+                          key={index}
+                          hotelIntCard={room}
+                        />
+                      </>
+                    )
+                  })
+                : ''}
             </Row>
           </section>
         </div>

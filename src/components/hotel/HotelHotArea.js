@@ -30,7 +30,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">日本</p>
+                      <p className="btn hot_area_title">北海道</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -48,7 +48,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">美國</p>
+                      <p className="btn hot_area_title">關西</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -66,7 +66,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">韓國</p>
+                      <p className="btn hot_area_title">關東</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -84,7 +84,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">法國</p>
+                      <p className="btn hot_area_title">長野</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -104,7 +104,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">加拿大</p>
+                      <p className="btn hot_area_title">新瀉</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -122,7 +122,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">英國</p>
+                      <p className="btn hot_area_title">群馬</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -140,7 +140,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">澳洲</p>
+                      <p className="btn hot_area_title">岩手</p>
                     </div>
                   </Card.Body>
                 </Card>
@@ -158,7 +158,7 @@ class HotelHotArea extends React.Component {
                       alt=" Card image"
                     />
                     <div className="card-img-overlay text_overlay text-center">
-                      <p className="btn hot_area_title">瑞士</p>
+                      <p className="btn hot_area_title">山梨</p>
                     </div>
                   </Card.Body>
                 </Card>

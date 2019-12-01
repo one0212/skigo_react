@@ -1,6 +1,6 @@
 .hotel_introduction_card{
     width: 24%;
-    height: 430px;
+    height: 450px;
     margin:  2% 0.5% 0;
     border: none;
     position: relative;
@@ -13,21 +13,28 @@
     letter-spacing: 0.5px;
     font-size: 0.8rem;
     font-weight: lighter;
-    color: #aaa;
+    /* color: #aaa; */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+    margin-bottom: 8px;
 }
 .hotel_introduction_card_star{
+    font-size: 1.3rem;
     color: orange;
 }
 .hotel_introduction_money{
+    font-size: 1rem;
     position: absolute;
     padding: 0;
     bottom: 2%;
     left: 6%;
-    color: #aaa;
+    /* color: #aaa; */
+}
+.hotel_introduction_money span {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 .hotel_introduction_card_btn{
     position: absolute;
