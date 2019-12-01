@@ -12,9 +12,12 @@ class HotelRoomCarousel extends React.Component {
   constructor(props) {
     super(props)
     this.imgArray = [
-      'https://os.alipayobjects.com/rmsportal/IhCNTqPpLeTNnwr.jpg',
-      'https://os.alipayobjects.com/rmsportal/uaQVvDrCwryVlbb.jpg',
-      'https://os.alipayobjects.com/rmsportal/IhCNTqPpLeTNnwr.jpg',
+      'https://www.thesharehotels.com/rakuro/img/gallery/pic_gallery23.jpg',
+      'https://www.thesharehotels.com/rakuro/img/gallery/pic_gallery17.jpg',
+      'https://www.thesharehotels.com/rakuro/img/gallery/pic_gallery21.jpg',
+      'https://www.thesharehotels.com/rakuro/img/gallery/pic_gallery24.jpg',
+      'https://www.thesharehotels.com/rakuro/img/gallery/pic_gallery25.jpg',
+      'https://www.thesharehotels.com/rakuro/img/gallery/pic_gallery28.jpg',
     ]
     this.state = {
       enter: false,
@@ -83,6 +86,39 @@ class HotelRoomCarousel extends React.Component {
             className="bg"
             style={{
               backgroundImage: `url(${this.imgArray[2]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </Element>
+        <Element key="ccc" prefixCls="banner-user-elem">
+          <BgElement
+            key="bg"
+            className="bg"
+            style={{
+              backgroundImage: `url(${this.imgArray[3]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </Element>
+        <Element key="ccc" prefixCls="banner-user-elem">
+          <BgElement
+            key="bg"
+            className="bg"
+            style={{
+              backgroundImage: `url(${this.imgArray[4]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </Element>
+        <Element key="ccc" prefixCls="banner-user-elem">
+          <BgElement
+            key="bg"
+            className="bg"
+            style={{
+              backgroundImage: `url(${this.imgArray[5]})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

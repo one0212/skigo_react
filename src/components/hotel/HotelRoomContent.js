@@ -125,6 +125,10 @@ class HotelRoomContent extends React.Component {
 
     const addM = p * d
     const total = addM + t + o
+    // const roomMap = this.state.hotels.rooms.map((room, index) => (
+    //   <span key={index} roomInt={room}></span>
+    // ))
+    // console.log(roomMap)
     return (
       <>
         <HotelsRoomCarousel />

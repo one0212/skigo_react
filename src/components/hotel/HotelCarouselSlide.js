@@ -10,23 +10,23 @@ const HotelSlides = [
     // img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg',
   },
   {
-    city: 'Paris',
-    country: 'France',
+    city: 'Furano',
+    country: '富良野飯店',
     img: hotelHomeImg01,
   },
   {
-    city: 'Singapore',
-    country: 'France',
+    city: 'Vessel',
+    country: '船舶花園薄野飯店',
     img: hotelHomeImg02,
   },
   {
-    city: 'Prague',
-    country: 'Czech Republic',
+    city: 'KEIO PRELIA',
+    country: '京王普雷利亞飯店',
     img: hotelHomeImg03,
   },
   {
-    city: 'Amsterdam',
-    country: 'Netherlands',
+    city: 'AYA Niseko',
+    country: '綾二世谷旅館',
     img: hotelHomeImg04,
   },
 ]

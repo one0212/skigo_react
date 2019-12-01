@@ -28,10 +28,23 @@ class HotelIntroductionContentCard extends React.Component {
             className="hotel_slider_img"
           />
           <Card.Body>
-            <Card.Title>
+            <Card.Title className="d-flex justify-content-between">
               <h6>{this.props.hotelIntCard.name}</h6>
+              <p
+                style={{
+                  fontSize: '0.3rem',
+                  paddingTop: '2px',
+                  marginBottom: '5px',
+                  fontWeight: 'normal',
+                }}
+              >
+                房型面積: {this.props.hotelIntCard.roomSize}平方公尺
+              </p>
             </Card.Title>
-            <Card.Text className="hotel_introduction_card_text">skd</Card.Text>
+
+            <Card.Text className="hotel_introduction_card_text">
+              {this.props.hotelIntCard.text}
+            </Card.Text>
             <div className="d-flex justify-content-between">
               <ul class="list-unstyled d-flex hotel_introduction_card_star">
                 <li>
@@ -53,13 +66,13 @@ class HotelIntroductionContentCard extends React.Component {
               <span class="hotel_card_heart">
                 <UseAnimations
                   animationKey="heart"
-                  size={15}
+                  size={18}
                   style={{ color: 'red' }}
                 />
               </span>
             </div>
             <span class="hotel_introduction_money">
-              約 $<span>jfdf</span>TWD / 晚
+              NT <span>{this.props.hotelIntCard.price}</span> / 晚
             </span>
             <Link
               to={`/HotelRoomContent/roomInt/${this.props.hotelIntCard.id}`}

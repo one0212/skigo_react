@@ -85,7 +85,7 @@ function App() {
             <Route path="/333" component={ProductAsNavFor} />
 
             <Route path="/HotelHome" component={HotelHome} />
-            <Route path="/HotelList" component={HotelList} />
+            <Route path="/HotelList？region=北海道" component={HotelList} />
 
             <Route
               path="/HotelIntroductionContent/all_room/:id"

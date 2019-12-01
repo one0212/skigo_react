@@ -26,6 +26,7 @@ class HotelList extends React.Component {
       isChangeOn: false,
       color: '#ccc',
       hotels: '',
+      toggleOn: false,
     }
   }
   ChangeBox = e => {
@@ -89,6 +90,34 @@ class HotelList extends React.Component {
       isMouseMove4: false,
     }))
   }
+
+  handleClick = e => {
+    const url = `http://localhost:3001/japi/hotels?type=${e.target.value}`
+    // console.log(e.type)
+    fetch(url, {
+      method: 'GET',
+    })
+      .then(res => {
+        return res.json()
+      })
+      .then(json => {
+        this.setState({ hotels: json })
+        console.log(this.state.hotels)
+      })
+  }
+  handleBlur = () => {
+    fetch(`http://localhost:3001/japi/hotels`, {
+      method: 'GET',
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        this.setState({ hotels: json })
+        console.log(this.state.hotels)
+      })
+  }
+
   componentWillMount() {
     fetch(`http://localhost:3001/japi/hotels`, {
       method: 'GET',
@@ -134,9 +163,10 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Resort"
+                        value="度假村"
+                        onClick={this.handleClick}
                       />
-                      &nbsp; 渡假村 Resort
+                      &nbsp; 度假村 Resort
                     </label>
                   </li>
                   <li>
@@ -144,9 +174,10 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="gardenHotels"
+                        value="飯店"
+                        onClick={this.handleClick}
                       />
-                      &nbsp; 花園飯店 garden hotels
+                      &nbsp; 飯店 Hotels
                     </label>
                   </li>
                   <li>
@@ -154,7 +185,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Villa"
+                        value="別墅"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 別墅 Villa
                     </label>
@@ -164,7 +196,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="ApartmentHotel"
+                        value="公寓"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 公寓旅館 Apartment Hotel
                     </label>
@@ -174,7 +207,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="小木屋"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 小木屋 Cabin
                     </label>
@@ -191,7 +225,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Resort"
+                        value="初學者雪道"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 初學者雪道豐富
                     </label>
@@ -201,7 +236,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="gardenHotels"
+                        value="溫泉"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 溫泉
                     </label>
@@ -211,7 +247,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Villa"
+                        value="親子同樂"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 親子同樂
                     </label>
@@ -221,7 +258,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="ApartmentHotel"
+                        value="購物"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 購物
                     </label>
@@ -231,7 +269,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="粉雪"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 粉雪
                     </label>
@@ -241,7 +280,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="外語"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 外語滑雪課程
                     </label>
@@ -251,7 +291,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="夜間/晨間滑雪"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 有夜間/晨間滑雪
                     </label>

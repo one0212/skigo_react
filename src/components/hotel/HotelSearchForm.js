@@ -67,18 +67,14 @@ class HotelSearchForm extends React.Component {
       >
         <div className="d-flex">
           <div className="search_date_area_input search_setting_bg">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="搜尋地區..."
-            />
+            <input type="text" className="form-control" placeholder="北海道" />
           </div>
           <div className="hotel_room_date_search">
             <RangeDatePicker
               styles={hotelDateSearchStyles}
               dateFormat="YYYY/MM/DD"
-              startPlaceholder="入住日期..."
-              endPlaceholder="退房日期..."
+              startPlaceholder="2019/12/13"
+              endPlaceholder="2019/12/15"
               disableDay={disableDay}
             />
           </div>
@@ -88,7 +84,7 @@ class HotelSearchForm extends React.Component {
             value={selectedOption}
             onChange={this.handleChange}
             options={options_p}
-            placeholder="1位成人"
+            placeholder="4位成人"
           />
           <Select
             className="search_select_p"

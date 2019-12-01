@@ -60,7 +60,7 @@ class HotelListCard extends React.Component {
             </span>
           </div>
           <span class="hotel_card_money">
-            約 $<span>{this.props.hotelData.price}</span>TWD / 晚
+            約 NT <span>{this.props.hotelData.price}</span> / 晚
           </span>
           <Link
             to={`/HotelIntroductionContent/all_room/${this.props.hotelData.id}`}
