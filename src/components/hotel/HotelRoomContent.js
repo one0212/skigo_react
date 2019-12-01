@@ -70,7 +70,7 @@ class HotelRoomContent extends React.Component {
     const id = document.querySelector('#hotel-id').textContent
     const obj = {
       // prodId, prodType, qty 這三個變數不可改
-      prodId: parseInt(1), //這邊放資料庫的商品id
+      prodId: parseInt(5), //這邊放資料庫的商品id
       prodType: 'hotels', //這邊放資料庫的商品類型 例如飯店傳hotel,
       qty: parseInt(1), //商品數量 不需用字串
     }
