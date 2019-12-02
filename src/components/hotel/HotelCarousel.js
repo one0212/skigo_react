@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Row, Col, Form, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../css/hotel/HotelCarousel.css'
 import UseAnimations from 'react-useanimations'
@@ -14,6 +14,7 @@ import {
 import '../../../node_modules/@y0c/react-datepicker/assets/styles/calendar.scss'
 import Select from 'react-select'
 import Ink from 'react-ink'
+import { animateScroll as scroll, scroller } from 'react-scroll'
 
 // 這裡是人數選單
 const options_p = [
@@ -113,6 +114,13 @@ export default class HotelCarousel extends React.Component {
     setTimeout(() => {
       window.location.href = '/HotelList?region=北海道'
     }, 380)
+  }
+  scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuint',
+    })
   }
   componentWillUnmount() {
     window.clearTimeout(this.changeTO)
@@ -305,7 +313,7 @@ export default class HotelCarousel extends React.Component {
             <div className="carousel_number">
               <ul className="list-unstyled d-flex">
                 <li>
-                  <span>01</span>
+                  <span>0{activeSlide + 1}</span>
                 </li>
                 <li>/</li>
                 <li>
@@ -330,7 +338,7 @@ export default class HotelCarousel extends React.Component {
             </div>
             <div className="text-center hotel_scroll_down_btn">
               {/* <UseAnimations animationKey="scrollDown" size={50} style={{cursor: "pointer"}}/> */}
-              <span></span>
+              <span onClick={() => scroll.scrollTo(1110)}></span>
             </div>
           </div>
           <div
