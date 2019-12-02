@@ -3,7 +3,6 @@ import '../../scss/home.scss'
 import '../../css/home2.css'
 import $ from 'jquery'
 import Slider from 'react-slick'
-// import Footer from '../Footer'
 
 class Home extends React.Component {
   constructor() {

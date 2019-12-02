@@ -50,7 +50,7 @@ section{
 /* card輪播 */
 .area_lesson .slick-prev:before,
 .area_lesson .slick-next:before {
-    color: #797979; 
+    color: #FD702D; 
     font-size: 40px;
 }
 .area_lesson .slick-prev{

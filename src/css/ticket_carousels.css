@@ -33,8 +33,13 @@ section{
     font-size: 1.4rem;
 }
 .area_slide .btn-primary{
-    background: #FD702D;
     border: none;
+    width: 100%;
+    background: #fd702d;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0px;
+    font-size: 1.25rem;
 }
 .area_slide .btn-primary:hover{
     background: rgb(255, 131, 74);
@@ -45,7 +50,7 @@ section{
 /* card輪播 */
 .area_slide .slick-prev:before,
 .area_slide .slick-next:before {
-    color: #797979 !important; 
+    color: #FD702D !important; 
     font-size: 40px !important;
 }
 .area_slide .slick-prev{
@@ -123,10 +128,10 @@ section{
     /* card輪播 */
     .area_slide .slick-prev{
         left: 6rem !important;
-        top: 30.5rem !important;
+        top: 31.5rem !important;
     }
     .area_slide .slick-next{
         right: 6rem !important;
-        top: 30.5rem !important;
+        top: 31.5rem !important;
     }
 }
