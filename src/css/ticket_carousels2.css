@@ -1,0 +1,132 @@
+/* 外層 */
+section{
+    margin: 40px 0;
+}
+.area_slide2{
+    margin-top: 50px;
+}
+.area_slide2 .slide_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.area_slide2 h4{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.area_slide2 .slide{
+    width: 990px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.area_slide2 .card{
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+.area_slide2 .slide img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.area_slide2 .card-body h5{
+    font-size: 1.4rem;
+}
+.area_slide2 .btn-primary{
+    background: #FD702D;
+    border: none;
+}
+.area_slide2 .btn-primary:hover{
+    background: rgb(255, 131, 74);
+}
+.area_slide2 .btn-primary:active{
+    background: rgb(255, 131, 74) !important;
+}
+/* card輪播 */
+.area_slide2 .slick-prev:before,
+.area_slide2 .slick-next:before {
+    color: #797979 !important; 
+    font-size: 40px !important;
+}
+.area_slide2 .slick-prev{
+    width: 40px !important;
+    height: 40px !important;
+}
+.area_slide2 .slick-next{
+    width: 40px !important;
+    height: 40px !important;
+}
+.area_slide2 .slick-prev{
+    left: -3.4rem !important;
+}
+.area_slide2 .slick-next{
+    right: -3.4rem !important;
+}
+@media screen and (max-width: 1300px) {
+    .area_slide2 .slide{
+        width: 710px;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+    }
+}
+@media screen and (max-width: 896px) {
+    .area_slide2 .slide{
+        width: 360px;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+    }
+    /* .area_slide2 .card{
+        margin: 0 1.3rem;
+        border: 1px solid #ddd;
+        border-radius: 0;
+    } */
+}
+@media screen and (max-width: 768px) {
+    /* 外層 */
+    .area_slide2 h4{
+        color: #000;
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        width: 10px;
+        height: 33px;
+        background: #FD702D;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    /* 外層 */
+    .area_slide2 h4{
+        font-size: 1.5rem;
+    }
+    /* 標題線 */
+    .title_sign{
+        height: 28px;
+        margin-right: 11px;
+    }
+    /* card輪播 */
+    .area_slide2 .slick-prev{
+        left: -2.5rem !important;
+
+    }
+    .area_slide2 .slick-next{
+        right: -2.5rem !important;
+    }
+}
+@media screen and (max-width: 501px) {
+    .area_slide2{
+        margin-bottom: 85px;
+    }
+    /* card輪播 */
+    .area_slide2 .slick-prev{
+        left: 6rem !important;
+        top: 31.5rem !important;
+    }
+    .area_slide2 .slick-next{
+        right: 6rem !important;
+        top: 31.5rem !important;
+    }
+}

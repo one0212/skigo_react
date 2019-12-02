@@ -117,7 +117,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-1.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -132,7 +132,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-2.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -147,7 +147,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-3.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -162,7 +162,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-4.jpg"
                       alt=""
                     />
                     <div className="card-body">
