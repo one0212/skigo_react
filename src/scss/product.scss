@@ -134,11 +134,11 @@ $blue-color:#AECAD9;
         }
     }
     .slick-prev{
-        left: 0 !important;
+        left: -20px !important;
         z-index: 99 !important;
     }
     .slick-next{
-        right: 0 !important;
+        right: -20px !important;
     }
 
     .slick-prev:before,
@@ -175,6 +175,19 @@ $blue-color:#AECAD9;
     //     font-size: 30px;
     //   }
 
+}
+
+.t01{
+    img{
+        width: 100%;
+    }
+}
+.t02{
+    img{
+        height: 350px;
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 @media screen and (max-width: 760px){

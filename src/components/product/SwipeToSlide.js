@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import ProductCard2 from './ProductCard2'
+import '../../scss/product_s.scss'
 
 class SwipeToSlide extends Component {
   constructor() {
@@ -42,7 +43,7 @@ class SwipeToSlide extends Component {
 
   render() {
     const settings = {
-      className: 'center',
+      className: 'pro_s',
       infinite: true,
       // centerPadding: "80px",
       slidesToShow: 4,
