@@ -12,6 +12,7 @@ import {
   FacebookShareCount,
   FacebookIcon,
 } from 'react-share'
+// import SweetAlert from 'sweetalert2-react'
 
 import ReactShare from './ReactShare'
 
@@ -154,9 +155,11 @@ class CoachBook extends React.Component {
       mode: 'cors', // no-cors, cors, *same-origin
     })
       .then(response => {
-        console.log('hihihi')
         if (response.status === 200) {
-          this.props.handleCartItemQtyChange()
+          // 所以可以用此判斷, 後續要做的事情就是放這邊
+          console.log('商品加入成功')
+          this.props.setCartItemQty()
+          // this.setState({ show: true })
         }
       }) // 輸出成 json
       .then(json => {})
@@ -433,6 +436,12 @@ class CoachBook extends React.Component {
                   <button className="btn" onClick={this.CoachCart}>
                     <i className="fas fa-shopping-cart"></i> 放入購物車
                   </button>
+                  {/* <SweetAlert
+                        show={this.state.show}
+                        title="成功"
+                        text="加入購物車成功!"
+                        onConfirm={() => this.setState({ show: false })}
+                      /> */}
                   <button className="btn" onClick={this.addLove}>
                     <i id="no-love" className="far fa-heart"></i>
                     <i id="have-love" class="fas fa-heart"></i> 收藏商品
