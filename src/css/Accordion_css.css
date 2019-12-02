@@ -1,303 +1,303 @@
-    body{
-      width: 100%;
-      height: 100%;
-    }
+body{
+  width: 100%;
+  height: 100%;
+}
 
 
-    /* 暫時的ski-container*/
-    .ski-container {
-      max-width: 1440px;
-      margin: 0 auto;
+/* 暫時的ski-container*/
+.ski-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.box{
+  height: 100%;
+  
+}
+
+.Anavbar {
+  width: 100%;
+  height: 140px;
+  background: red;
+}
+
+
+.outer-list-card-first{
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  
+}
+
+.inner-list-card-first{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: -19px;
+  bottom: 0;
+}
+
+
+
+.CardHeaderFrame {
+  width: 100%;
+}
+
+.CardHearderBox {
+  width: 30%;
+  height: 40px;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+
+.CardHearderBox2{
+ 
+  height: 40px;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+
+.CardHearderBox2-W1{
+  width: 30%;
+}
+
+.CardHearderBox2-W2{
+  width:30%;
+}
+
+.CardHearderBox2-W3{
+  width: 30%;
+}
+
+.CardHearderBox2-W4{
+  width: 10%;
+}
+
+.CardHearderBox2Img {
+  width: 25px;
+  color: gray;
+}
+
+
+.CardHearderBoxOrange {
+  width: 20px;
+  height: 20px;
+  background: #FD702D;
+}
+
+.CardHearderBoxicon {
+  width: 16px;
+  color: gray;
+}
+
+.CardHearderDown {
+  width: 10%;
+}
+
+.Aup {
+  width: 30px;
+  padding: 0px;
+}
+
+.CardbodyBoxImg {
+  width: 20px;
+}
+
+.VerticalLine{
+  width: 50%;
+  border-right: 2px solid black;
+  height: 20px;
+}
+
+.Aplus{
+    width: 40px;
+}
+
+.AselectOneWidth{
+  width: 20%;
+  padding-left:10px;
+}
+
+.AselectTwoWidth{
+  width: 60%;
+}
+
+.AselectThreeWidth{
+  width: 15%;
+}
+
+
+
+.AselectUnderline{
+  border-bottom:solid 3px #FD702D;
+}   
+
+.AselectUnderline p{
+  font-size:1rem;
+}
+
+.AmapButton{
+  background: #FD702D;
+  color: white;
+}
+
+.AmapImg{
+  height: 30px;
+  
+}
+
+.AcardBodyTop{
+  width: 2%;
+}
+
+.AcardBodyImg{
+  height: 200px;
+  object-fit: cover;
+}
+
+.AcardBodyBottom{
+  width: 1%;
+}
+
+.Acard{
+  width: 30%;
+  margin-top:15px;
+  box-shadow: 5px 5px 10px #cccccc;
+}
+
+.outer-list-card{
+  position: relative;
+  overflow: hidden;
+  height: 77vh;
+  width: 99%;
+}
+
+.inner-list-card{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: -17px;
+  bottom: 0;
+}
+
+.AcardBody{
+  margin-bottom: 5PX;
+}
+
+.AcardBody img{
+  width: 20px;
+}
+
+
+.AGoogleMaps{
+    width: 100%;
+    height: 77vh;
+    
+    
+}
+@media screen and (max-width:1390px){
+
+  .CardHearderBox2-W1{
+    width: 20%;
   }
 
-    .Abox{
-      height: 100%;
-      
-    }
+  .CardHearderBox2-W2{
+    width:30%;
+  }
 
-    .Anavbar {
-      width: 100%;
-      height: 140px;
-      background: red;
-    }
+  .CardHearderBox2-W3{
+    width: 30%;
+  }
 
+  .CardHearderBox2-W4{
+    width: 20%;
+  }
 
-    .outer-list-card-first{
-      position: relative;
-      overflow: hidden;
-      height: 80vh;
-      
-    }
-
-    .inner-list-card-first{
-      position: absolute;
-	    left: 0;
-	    top: 0;
-	    right: -19px;
-      bottom: 0;
-    }
-
-
-    
-    .CardHeaderFrame {
-      width: 100%;
-    }
-
-    .CardHearderBox {
-      width: 30%;
-      height: 40px;
-      margin: 0px 5px;
-      display: flex;
-      align-items: center;
-      color: gray;
-    }
-
-    .CardHearderBox2{
-     
-      height: 40px;
-      margin: 0px 5px;
-      display: flex;
-      align-items: center;
-      color: gray;
-    }
-
-    .CardHearderBox2-W1{
-      width: 30%;
-    }
-
-    .CardHearderBox2-W2{
-      width:30%;
-    }
-
-    .CardHearderBox2-W3{
-      width: 30%;
-    }
-
-    .CardHearderBox2-W4{
-      width: 10%;
-    }
-
-    .CardHearderBox2Img {
-      width: 25px;
-      color: gray;
-    }
-
-
-    .CardHearderBoxOrange {
-      width: 20px;
-      height: 20px;
-      background: #FD702D;
-    }
-
-    .CardHearderBoxicon {
-      width: 16px;
-      color: gray;
-    }
-
-    .CardHearderDown {
-      width: 10%;
-    }
-
-    .Aup {
-      width: 30px;
-      padding: 0px;
-    }
-
-    .CardbodyBoxImg {
-      width: 20px;
-    }
-
-    .VerticalLine{
-      width: 50%;
-      border-right: 2px solid black;
-      height: 20px;
-    }
  
-    .Aplus{
-        width: 40px;
-    }
-    
-    .AselectOneWidth{
-      width: 20%;
-      padding-left:10px;
-    }
-
-    .AselectTwoWidth{
-      width: 60%;
-    }
-
-    .AselectThreeWidth{
-      width: 15%;
-    }
 
 
 
-    .AselectUnderline{
-      border-bottom:solid 3px #FD702D;
-    }   
 
-    .AselectUnderline p{
-      font-size:1rem;
-    }
 
-    .AmapButton{
-      background: #FD702D;
-      color: white;
-    }
 
-    .AmapImg{
-      height: 30px;
-      
-    }
+  .AselectOneWidth{
+    width: 25%;
+  }
 
-    .AcardBodyTop{
-      width: 2%;
-    }
+  .AselectTwoWidth{
+    width: 50%;
+  }
 
-    .AcardBodyImg{
-      height: 200px;
-      object-fit: cover;
-    }
+  .AselectThreeWidth{
+    width: 20%;
+  }
 
-    .AcardBodyBottom{
-      width: 1%;
-    }
 
-    .Acard{
-      width: 30%;
-      margin-top:15px;
-      box-shadow: 5px 5px 10px #cccccc;
-    }
 
-    .outer-list-card{
-      position: relative;
-      overflow: hidden;
-      height: 77vh;
-      width: 99%;
-    }
 
-    .inner-list-card{
-      position: absolute;
-	    left: 0;
-	    top: 0;
-	    right: -17px;
-      bottom: 0;
-    }
 
-    .AcardBody{
-      margin-bottom: 5PX;
-    }
-
-    .AcardBody img{
-      width: 20px;
-    }
-    
-
-    .AGoogleMaps{
-        width: 100%;
-        height: 77vh;
-        
-        
-    }
-    @media screen and (max-width:1390px){
-
-      .CardHearderBox2-W1{
-        width: 20%;
-      }
+  .Acard{
+    width: 40%;
+  }
   
-      .CardHearderBox2-W2{
-        width:30%;
-      }
+  .AcardBodyTop{
+    width: 5%;
+  }
+
+  .AcardBodyBottom{
+    width: 5%;
+  }
+}
+
+@media screen and (max-width:1050px){
+
+  .CardHearderBox2-W1{
+    width: 23%;
+  }
+
+  .CardHearderBox2-W2{
+    width:34%;
+  }
+
+  .CardHearderBox2-W3{
+    width: 33%;
+  }
+
+  .CardHearderBox2-W4{
+    width: 20%;
+  }
+
+
+
+  .AselectOneWidth{
+    width: 50%;
+  }
+
+  .AselectTwoWidth{
+    width: 70%;
+  }
+
+  .AselectThreeWidth{
+    width: 20%;
+    display: none;
+  }
+
+
+
+
+  .Acard{
+    width: 70%;
+  }
   
-      .CardHearderBox2-W3{
-        width: 30%;
-      }
-  
-      .CardHearderBox2-W4{
-        width: 20%;
-      }
-  
-     
+  .AcardBodyTop{
+    width: 15%;
+  }
 
-
-
-
-
-
-      .AselectOneWidth{
-        width: 25%;
-      }
-  
-      .AselectTwoWidth{
-        width: 50%;
-      }
-  
-      .AselectThreeWidth{
-        width: 20%;
-      }
-  
-
-
-
-
-      .Acard{
-        width: 40%;
-      }
-      
-      .AcardBodyTop{
-        width: 5%;
-      }
-  
-      .AcardBodyBottom{
-        width: 5%;
-      }
-    }
-
-    @media screen and (max-width:1050px){
-
-      .CardHearderBox2-W1{
-        width: 23%;
-      }
-  
-      .CardHearderBox2-W2{
-        width:34%;
-      }
-  
-      .CardHearderBox2-W3{
-        width: 33%;
-      }
-  
-      .CardHearderBox2-W4{
-        width: 20%;
-      }
-
-
-
-      .AselectOneWidth{
-        width: 50%;
-      }
-  
-      .AselectTwoWidth{
-        width: 70%;
-      }
-  
-      .AselectThreeWidth{
-        width: 20%;
-        display: none;
-      }
-  
-
-
-
-      .Acard{
-        width: 70%;
-      }
-      
-      .AcardBodyTop{
-        width: 15%;
-      }
-  
-      .AcardBodyBottom{
-        width: 15%;
-      }
-    }
+  .AcardBodyBottom{
+    width: 15%;
+  }
+}
