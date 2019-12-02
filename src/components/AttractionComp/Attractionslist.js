@@ -46,6 +46,8 @@ class Attractionslist extends Component {
     this.setState({ dayclick: day }, () => {
       console.log("選擇目前天數 : " + day);
     });
+    
+    
   };
 
   handler(e) {
@@ -383,6 +385,7 @@ class Attractionslist extends Component {
       })
     })
 
+    
 
     // -----------------------------JQ---------------------
   }
@@ -611,8 +614,9 @@ class Attractionslist extends Component {
                                         className="CardHearderBox"
                                         onClick={this.dayClick}
                                         style={{cursor:'pointer'}}
+                                       
                                       >
-                                        <div className="CardHearderBoxOrange" ></div>
+                                        <div className="CardHearderBoxOrange"  daychoose={index + 2}></div>
                                         DAY{index + 2}
                                       </div>
 
@@ -748,7 +752,9 @@ class Attractionslist extends Component {
                                                   </InputGroup.Prepend>
 
                                                   <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="時" data-hr2={index} data-day={JSON.stringify(day.id)}  onChange={this.startHr2}/>
-                                                   <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="分"  data-min2={index}  data-day={JSON.stringify(day.id)}  onChange={this.startMin2}/>
+                                                  
+                                                   <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="分"  data-min2={index}  data-day={JSON.stringify(day.id)}  />
+                                                   {/* onChange={this.startMin2} */}
                                                   {/* <input
                                                     aria-label="Small"
                                                     aria-describedby="inputGroup-sizing-sm"
