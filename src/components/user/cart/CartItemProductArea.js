@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+const productInfo = {
+  color: '#a8a8ab',
+}
 class CartItemProductArea extends Component {
   constructor(props) {
     super(props)
@@ -27,7 +30,15 @@ class CartItemProductArea extends Component {
                 <a href="#" className="text-decoration-none text-dark">
                   {this.props.cartData.name}
                 </a>
-                <span>{this.props.cartData.info}</span>
+                <div>
+                  {this.props.cartData.info.map((info, index) => {
+                    return (
+                      <p className="m-0" key={index} style={productInfo}>
+                        {info}
+                      </p>
+                    )
+                  })}
+                </div>
               </div>
               <div className="shop-select position-relative mt-2">
                 <select className="position-absolute d-inline-block">

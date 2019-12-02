@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
+const productInfo = {
+  color: '#a8a8ab',
+}
 class CheckoutItemAreaHotel extends Component {
   render() {
     return (
@@ -37,11 +40,16 @@ class CheckoutItemAreaHotel extends Component {
                         </div>
                         <div>
                           <div className="d-flex flex-column ml-2">
+                            <div className="fw-500">{item.vendor}</div>
                             <div>{item.name}</div>
                             <div>
                               {item.info.map((info, index) => {
                                 return (
-                                  <p className="m-0" key={index}>
+                                  <p
+                                    className="m-0"
+                                    key={index}
+                                    style={productInfo}
+                                  >
                                     {info}
                                   </p>
                                 )
