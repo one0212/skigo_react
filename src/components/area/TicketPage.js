@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/ticket_page.css'
 import { Form } from 'react-bootstrap'
+import SlideTicket2 from './SlideTicket2'
 // import SweetAlert from 'sweetalert2-react'
 // import FilterBread2 from '../goods/FilterBread2'
 
@@ -208,6 +209,11 @@ class TicketPage extends React.Component {
                 <hr></hr>
                 <p>{this.state.total[0].ticket_intro}</p>
               </div>
+            </div>
+            <div className="row">
+                <din className="col-12">
+                  <SlideTicket2  sameticket={this.state.total[0].ticket_name}/>
+                </din>
             </div>
           </div>
         )}

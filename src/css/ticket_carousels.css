@@ -40,7 +40,7 @@ section{
     background: rgb(255, 131, 74);
 }
 .area_slide .btn-primary:active{
-    background: rgb(255, 131, 74);
+    background: rgb(255, 131, 74) !important;
 }
 /* card輪播 */
 .area_slide .slick-prev:before,
