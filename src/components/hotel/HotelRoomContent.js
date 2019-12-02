@@ -54,11 +54,17 @@ class HotelRoomContent extends React.Component {
       selectedOption_p: null,
       selectedOption_c: null,
       room: {},
+      date: '',
     }
   }
   changeDate = (start, end) => {
-    console.log(start)
-    console.log(end)
+    const endMS = +end
+    const startMS = +start
+    const dayMS = endMS - startMS
+    console.log(dayMS)
+    const day = dayMS / (24 * 60 * 60 * 1000)
+    console.log(day)
+    this.setState({ date: day })
     // let s = start
     // let e = end
     // console.log(s)
@@ -120,16 +126,12 @@ class HotelRoomContent extends React.Component {
   render() {
     const { selectedOption } = this.state
     const p = this.state.room.price
-    const d = 2
+    const d = this.state.date
     const t = this.state.room.tax
     const o = this.state.room.otherPrice
 
     const addM = p * d
     const total = addM + t + o
-    // const roomMap = this.state.hotels.rooms.map((room, index) => (
-    //   <span key={index} roomInt={room}></span>
-    // ))
-    // console.log(roomMap)
     return (
       <>
         <HotelsRoomCarousel />
