@@ -34,7 +34,9 @@
     "react-useanimations": "^1.2.11",
     "slick-carousel": "^1.8.1",
     "sweetalert2-react": "^0.8.3",
-    "universal-cookie": "^4.0.2"
+    "universal-cookie": "^4.0.2",
+    "react-iframe": "^1.8.0",
+    "react-responsive-carousel": "^3.1.51"
   },
   "scripts": {
     "start": "react-scripts start",
