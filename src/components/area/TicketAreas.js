@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../css/area_home.css'
 import { Carousel, Form } from 'react-bootstrap'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import SlideTicket from './SlideTicket'
 import SlideClass from './SlideClass'
 import SlideHotel from './SlideHotel'
@@ -108,6 +110,11 @@ class TicketAreas extends React.Component {
         activity: 'none',
       })
     }
+    AOS.init({
+      duration : 1000,
+      easing: 'ease-out-back',  
+      delay: 600
+  })
   }
 
   // 金額轉千分位
@@ -192,7 +199,7 @@ class TicketAreas extends React.Component {
                     </div>
                   </div>
                   <div className="introduction">
-                    <div className="d-flex">
+                    <div className="d-flex" data-aos="fade-left">
                       <h5>{this.state.total[0].area_addr}</h5>
                       <h1>{this.state.total[0].area_name}</h1>
                       <p className="article">
@@ -244,7 +251,7 @@ class TicketAreas extends React.Component {
               <section className="rwd-p">
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-8 col-md-12">
+                    <div className="col-lg-8 col-md-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="150">
                       <div className="area_icon d-flex justify-content-center">
                         <div>
                           <img
@@ -292,7 +299,7 @@ class TicketAreas extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4 col-md-12 area_info">
+                    <div className="col-lg-4 col-md-12 area_info" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="150">
                       <div className="d-flex">
                         <div className="title_sign"></div>
                         <h4>滑雪場資訊</h4>
@@ -346,7 +353,7 @@ class TicketAreas extends React.Component {
               {/* <img src="/images/areas/ski-map.jpg" alt="" /> */}
               <section className="rwd-p">
                 <div className="container">
-                  <div className="area_characteristic">
+                  <div className="area_characteristic" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="150">
                     <div className="d-flex">
                       <div
                         className="box"
@@ -383,7 +390,7 @@ class TicketAreas extends React.Component {
               <SlideClass />
               <SlideHotel />
 
-              <section className="area_access">
+              <section className="area_access"  data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true">
                 <div className="container">
                   <div className="access_title">
                     <div className="d-flex">

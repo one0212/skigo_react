@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class AreaCard extends React.Component {
   constructor(props) {
@@ -15,6 +17,11 @@ class AreaCard extends React.Component {
     this.setState({ total: this.props.filter ? this.props.filter : '' }, () => {
       this.setState({ loading: false })
     })
+    AOS.init({
+      duration : 1000,
+      easing: 'ease-out-back',  
+      delay: 600
+  })
   }
   // async componentDidUpdate(prevProps) {
 
@@ -43,7 +50,6 @@ class AreaCard extends React.Component {
         {this.state.loading ? (
           <div>
             {/* <i className="fas fa-spinner fa-spin" /> */}
-            資料載入中
           </div>
         ) : (
           <>
@@ -56,7 +62,7 @@ class AreaCard extends React.Component {
                 <Link
                   className="ticket-card"
                   key={value.ticket_sid}
-                  to={'/ticketarea/' + value.area_sid}
+                  to={'/ticketarea/' + value.area_sid} data-aos="fade-up"
                 >
                   <div className="hot_img" data-ticket_sid={value.ticket_sid}>
                     <img

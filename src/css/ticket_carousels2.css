@@ -12,6 +12,7 @@ section{
 }
 .area_slide2 h4{
     margin-bottom: 0;
+    font-weight: 600;
     font-size: 2rem;
 }
 .area_slide2 .slide{
@@ -32,9 +33,14 @@ section{
 .area_slide2 .card-body h5{
     font-size: 1.4rem;
 }
-.area_slide2 .btn-primary{
-    background: #FD702D;
+.area_slide2 .btn{
     border: none;
+    width: 100%;
+    background: #fd702d;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0px;
+    font-size: 1.25rem;
 }
 .area_slide2 .btn-primary:hover{
     background: rgb(255, 131, 74);
@@ -45,7 +51,7 @@ section{
 /* card輪播 */
 .area_slide2 .slick-prev:before,
 .area_slide2 .slick-next:before {
-    color: #797979 !important; 
+    color: #FD702D !important; 
     font-size: 40px !important;
 }
 .area_slide2 .slick-prev{
