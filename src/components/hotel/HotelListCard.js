@@ -28,7 +28,7 @@ class HotelListCard extends React.Component {
         />
         <Card.Body>
           <Card.Title>
-            <h6>{this.props.hotelData.name}</h6>
+            <h6>{this.props.hotelData.showName}</h6>
           </Card.Title>
           <Card.Text className="hotel_list_card_text">
             {this.props.hotelData.text}
@@ -60,7 +60,7 @@ class HotelListCard extends React.Component {
             </span>
           </div>
           <span class="hotel_card_money">
-            約 NT <span>{this.props.hotelData.price}</span> / 晚
+            約 NT <span>{this.props.hotelData.showPrice}</span> / 晚
           </span>
           <Link
             to={`/HotelIntroductionContent/all_room/${this.props.hotelData.id}`}

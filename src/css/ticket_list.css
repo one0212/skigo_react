@@ -1,3 +1,21 @@
+        /* 至頂按鈕 */
+        #goTop {
+            display: none;
+            position: fixed;
+            border-radius: 50px;
+            right: 20px;
+            bottom: 30px;
+            padding: 10px 16px;
+            font-size: 25px;
+            background: #FD702D;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #goTop:hover {
+            background: rgb(246, 133, 81);
+            color: #fff;
+        }
         /* a 原生樣式處理 */
         a , a:hover{
             color:black;

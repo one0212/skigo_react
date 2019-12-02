@@ -111,3 +111,6 @@
 .hotel_room_search{
     margin: 100px 0 50px 0;
 }
+.list_last_card:last-child{
+    margin-bottom: 300px;
+}

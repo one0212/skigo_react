@@ -4,51 +4,33 @@ import Slider from 'react-slick'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-class SlideTicket extends React.Component {
-  constructor() {
-    super()
+class SlideTicket2 extends React.Component {
+  constructor(props) {
+    super(props)
     this.state = {
-      loading: true,
       total: [],
     }
   }
 
-  async componentWillMount() {
-    try {
-      await this.setState({ loading: true })
-
-      // const response = await fetch('http://localhost:5000/try-db', {
-      const response = await fetch(
-        `http://localhost:3001/ticket-area/${this.props.match.params.areaid}`,
-        {
-          method: 'GET',
-          headers: new Headers({
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          }),
-        }
-      )
-
-      if (response) {
-        console.log('get data!')
-      }
-
-      if (!response.ok) throw new Error(response.statusText)
-
-      const jsonObject = await response.json()
-
-      await this.setState({ total: jsonObject }, function() {
-        console.log(this.state.total.class_board)
+  componentDidMount() {
+    const sameticket = { ticket: this.props.sameticket }
+    fetch('http://localhost:3001/ticket-same', {
+      body: JSON.stringify(sameticket), // must match 'Content-Type' header
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, same-origin, *omit
+      headers: {
+        'user-agent': 'Mozilla/4.0 MDN Example',
+        'content-type': 'application/json',
+      },
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, cors, *same-origin
+    })
+      .then(response => response.json()) // 輸出成 json
+      .then(json => {
+        this.setState({ total: json }, () => {
+          console.log(this.state.total)
+        })
       })
-    } catch (e) {
-      console.log(e)
-    } finally {
-      await setTimeout(() => this.setState({ loading: false }))
-      // await this.setState({ loading: false })
-      // console.log('看我')
-      console.log('slideticket : ')
-      console.log(this.state.total)
-    }
   }
 
   // 金額轉千分位
@@ -89,18 +71,13 @@ class SlideTicket extends React.Component {
     }
     return (
       <>
-        {this.state.loading ? (
-          <div>
-            {/* <i className="fas fa-spinner fa-spin" /> */}
-            資料載入中
-          </div>
-        ) : (
+      {console.log('同樣的票券 : ' + this.props.sameticket)}
           <section className="area_slide rwd-p">
             <div className="container">
               <div className="slide_title">
                 <div className="d-flex">
                   <div className="title_sign"></div>
-                  <h4>票券</h4>
+                  <h4>其他相關票券</h4>
                 </div>
               </div>
               <hr />
@@ -140,10 +117,10 @@ class SlideTicket extends React.Component {
               </Slider>
             </div>
           </section>
-        )}
+      
       </>
     )
   }
 }
 
-export default withRouter(SlideTicket)
+export default withRouter(SlideTicket2)

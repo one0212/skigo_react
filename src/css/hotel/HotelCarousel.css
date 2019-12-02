@@ -9,7 +9,7 @@
     /* background: #000;
   } */
   .container_area{
-    height: 900px;
+    height: 1000px;
     width: 100%;
     position: absolute;
     z-index: 999;
@@ -19,7 +19,7 @@
   }
   .carousel_area{
   position: relative;
-  min-height: 900px;
+  min-height: 1000px;
   }
 .year{
   position: absolute;
@@ -204,7 +204,7 @@
   .slider {
     overflow: hidden;
     position: relative;
-    height: 900px;
+    height: 1000px;
     color: #fff;
     background: #000;
   }
@@ -230,7 +230,7 @@
   }
   .slider__slides {
     position: relative;
-    height: 900px;
+    height: 1000px;
   }
   .slider__slide {
     position: absolute;

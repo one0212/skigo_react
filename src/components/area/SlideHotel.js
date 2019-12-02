@@ -95,7 +95,7 @@ class SlideHotel extends React.Component {
             資料載入中
           </div>
         ) : (
-          <section className="area_slide">
+          <section className="area_slide rwd-p">
             <div className="container">
               <div className="slide_title">
                 <div className="d-flex">
@@ -114,10 +114,10 @@ class SlideHotel extends React.Component {
                   console.log(value.length)
                   return ( */}
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/hotel/hotel_slider/hotel_2.jpg"
+                      src="/images/home/hotel1.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -129,10 +129,10 @@ class SlideHotel extends React.Component {
                   </div>
                 </div>
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/hotel/hotel_slider/hotel_2.jpg"
+                      src="/images/home/hotel1.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -144,10 +144,10 @@ class SlideHotel extends React.Component {
                   </div>
                 </div>
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/hotel/hotel_slider/hotel_2.jpg"
+                      src="/images/home/hotel1.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -159,10 +159,10 @@ class SlideHotel extends React.Component {
                   </div>
                 </div>
                 <div>
-                  <div className="card" style={{ width: '18rem' }}>
+                  <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/hotel/hotel_slider/hotel_2.jpg"
+                      src="/images/home/hotel1.jpg"
                       alt=""
                     />
                     <div className="card-body">
