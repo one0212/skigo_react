@@ -45,6 +45,24 @@ class TicketList extends React.Component {
       await setTimeout(() => this.setState({ loading: false }))
       // console.log('total：' + JSON.stringify(this.state.total.length))
     }
+    // 至頂按鈕
+    $('#goTop').click(function() {
+      $('html,body').animate(
+        {
+          scrollTop: 0,
+        },
+        1000
+      )
+    })
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        $('#goTop').fadeIn('fast')
+      } else {
+        $('#goTop')
+          .stop()
+          .fadeOut('fast')
+      }
+    })
     //PC選單
     $('.ticket_arrange a').click(e => {
       $(e.currentTarget)
@@ -53,27 +71,27 @@ class TicketList extends React.Component {
         .css('color', '#000')
     })
     // rwd 上方選單*2
-    let coach_rwd_btn_state = true
-    $('.coach-rwd-sort').hide()
+    let ticket_rwd_btn_state = true
+    $('.ticket-rwd-sort').hide()
 
-    $('#coach-btn-rwd1').click(e => {
-      if (coach_rwd_btn_state === false) {
-        $('#coach-btn-rwd1-1').hide()
-        coach_rwd_btn_state = true
+    $('#ticket-btn-rwd1').click(e => {
+      if (ticket_rwd_btn_state === false) {
+        $('#ticket-btn-rwd1-1').hide()
+        ticket_rwd_btn_state = true
       } else {
-        $('#coach-btn-rwd1-1').show()
-        coach_rwd_btn_state = false
+        $('#ticket-btn-rwd1-1').show()
+        ticket_rwd_btn_state = false
       }
-      console.log(coach_rwd_btn_state)
+      // console.log(coach_rwd_btn_state)
     })
 
-    $('#coach-btn-rwd2').click(e => {
-      if (coach_rwd_btn_state === false) {
-        $('#coach-btn-rwd2-1').hide()
-        coach_rwd_btn_state = true
+    $('#ticket-btn-rwd2').click(e => {
+      if (ticket_rwd_btn_state === false) {
+        $('#ticket-btn-rwd2-1').hide()
+        ticket_rwd_btn_state = true
       } else {
-        $('#coach-btn-rwd2-1').show()
-        coach_rwd_btn_state = false
+        $('#ticket-btn-rwd2-1').show()
+        ticket_rwd_btn_state = false
       }
     })
 
@@ -100,7 +118,7 @@ class TicketList extends React.Component {
       }
 
       const img_width = $('.coach-card').width()
-      console.log(img_width)
+      // console.log(img_width)
       const img_height = (150 * 4) / 3
     })
     // 左方側欄手風琴上下
@@ -109,7 +127,7 @@ class TicketList extends React.Component {
     $('.fa-angle-up').show()
     $('.fa-angle-down').hide()
 
-    $('.coach-select').click(e => {
+    $('.ticket-select').click(e => {
       if (up_down_icon === false) {
         up_down_icon = true
         $(e.currentTarget)
@@ -148,8 +166,8 @@ class TicketList extends React.Component {
     })
       .then(response => response.json()) // 輸出成 json
       .then(json => {
-        console.log(json)
-        console.log(this)
+        // console.log(json)
+        // console.log(this)
         this.setState({
           total: json,
         })
@@ -162,7 +180,7 @@ class TicketList extends React.Component {
         }
         this.setState({ allnum: num2 }, function() {})
       })
-    console.log('what???' + this.state.name)
+    // console.log('what???' + this.state.name)
   }
   //篩選
   changeName = (pos, value) => {
@@ -189,67 +207,77 @@ class TicketList extends React.Component {
   render() {
     return (
       <>
+      <div id="goTop">˄</div>
         <div className="container ticket_checkbox">
           {/* part1 麵包屑 */}
           <FilterBread2 />
 
           {/* part2 篩選btn + 排列選擇 + 總項目欄位 */}
-          <div className="row coach-rwd-active">
+          <div className="row ticket-rwd-active">
             <div className="col-3">
-              <button id="menu_active" className="btn coach-btn-active">
-                <i className="fas fa-list"></i> 
+              <button
+                id="menu_active"
+                className="btn ticket-btn-active"
+                style={{ display: 'none' }}
+              >
+                <i className="fas fa-list"></i>
               </button>
             </div>
-            <div className="ticket_arrange coach-arrange col-9 d-flex justify-content-between">
+            <div className="ticket_arrange col-9 mb-3 d-flex justify-content-between">
               <div className="d-flex">
                 <p
                   style={{
                     fontSize: '1.25rem',
                     fontWeight: 'bold',
-                    marginTop: '1rem',
+                    marginTop: '35.4px',
                     marginRight: '0.3rem',
+                    marginBottom: '0',
                   }}
                 >
                   價格
                 </p>
-                <div style={{ marginTop: '9px' }}>
+                <div style={{ marginTop: '25px' }}>
                   <a href="#" onClick={this.ChangeSort}>
-                    <MdKeyboardArrowUp style={{ height: '18px' }}/>
+                    <MdKeyboardArrowUp style={{ height: '18px' }} />
                   </a>
                   <a href="#" onClick={this.ChangeSort2}>
-                    <MdKeyboardArrowDown style={{ height: '18px',marginBottom:'20px' }}/>
+                    <MdKeyboardArrowDown
+                      style={{ height: '18px', marginBottom: '20px' }}
+                    />
                   </a>
                 </div>
               </div>
               <span
                 style={{
-                  marginTop: '1rem',
-                  marginLeft: '0.3rem',
+                  marginTop: '36px',
+                  marginLeft: ' 0.3rem',
+                  marginBottom: ' 0px',
+                  paddingBottom: ' 0px',
                 }}
-                className="coach-item-num"
+                className="ticket-item-num"
               >
                 {this.state.allnum}項目
               </span>
             </div>
           </div>
           {/*  rwd 最上方搜尋 bar */}
-          <div className="coach-rwd-search d-flex">
+          <div className="ticket-rwd-search d-flex">
             {/* btn1 */}
-            <div className="coach-btn-rwd">
-              <div id="coach-btn-rwd1" className="btn coach-btn-rwd-logo">
+            <div className="ticket-btn-rwd">
+              <div id="ticket-btn-rwd1" className="btn ticket-btn-rwd-logo">
                 <i className="fas fa-list"></i>篩選
               </div>
-              <div id="coach-btn-rwd1-1" className="accordion coach-rwd-sort">
+              <div id="ticket-btn-rwd1-1" className="accordion ticket-rwd-sort">
                 <FilterLeftMenu2 partentfc={this.changeName} />
               </div>
             </div>
 
             {/* btn2  */}
-            <div className="coach-btn-rwd">
-              <div id="coach-btn-rwd2" className="btn coach-btn-rwd-logo">
+            <div className="ticket-btn-rwd">
+              <div id="ticket-btn-rwd2" className="btn ticket-btn-rwd-logo">
                 <i className="fas fa-sort-amount-down-alt"></i>排序
               </div>
-              <div id="coach-btn-rwd2-1" className="coach-rwd-sort">
+              <div id="ticket-btn-rwd2-1" className="ticket-rwd-sort">
                 <Accordion defaultActiveKey="0">
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="1">
@@ -283,7 +311,7 @@ class TicketList extends React.Component {
             </div>
           </div>
           {/* 左邊篩選列 + 右邊內容頁 */}
-          <div className="coach-all-content d-flex justify-content-end ">
+          <div className="ticket-all-content d-flex justify-content-end ">
             {/* 左邊篩選列 */}
             <div id="left" className=" left_menu ">
               <FilterLeftMenu2 partentfc={this.changeName} />
@@ -291,10 +319,10 @@ class TicketList extends React.Component {
             {/* 右邊內容列 */}
             <div
               id="right"
-              className="content-rwd d-flex  right_content bg_white "
+              className="content_rwd d-flex  right_content bg_white "
             >
               <AreaCard filter={this.state.total} />
-              {console.log('total:' + this.state.total)}
+              {/* {console.log('total:' + this.state.total)} */}
             </div>
             {/* 右邊內容列END */}
           </div>

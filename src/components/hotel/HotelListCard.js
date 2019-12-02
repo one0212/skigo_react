@@ -14,7 +14,7 @@ class HotelListCard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
-    console.log(this.props.hotelData)
+    // console.log(this.props.hotelData)
   }
 
   render() {
@@ -22,13 +22,13 @@ class HotelListCard extends React.Component {
       <Card className="hotel_list_card" style={{ border: 'none' }}>
         <Card.Img
           variant="top"
-          src="/images/hotel/hotel_slider/hotel_4.jpg"
+          src={this.props.hotelData.img[0]}
           alt="..."
           className="hotel_slider_img"
         />
         <Card.Body>
           <Card.Title>
-            <h6>{this.props.hotelData.name}</h6>
+            <h6>{this.props.hotelData.showName}</h6>
           </Card.Title>
           <Card.Text className="hotel_list_card_text">
             {this.props.hotelData.text}
@@ -60,7 +60,7 @@ class HotelListCard extends React.Component {
             </span>
           </div>
           <span class="hotel_card_money">
-            約 $<span>{this.props.hotelData.price}</span>TWD / 晚
+            約 NT <span>{this.props.hotelData.showPrice}</span> / 晚
           </span>
           <Link
             to={`/HotelIntroductionContent/all_room/${this.props.hotelData.id}`}

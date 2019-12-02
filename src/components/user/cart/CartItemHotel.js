@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+const productInfo = {
+  color: '#a8a8ab',
+}
 class CartItemHotel extends Component {
   render() {
     return (
@@ -25,7 +28,15 @@ class CartItemHotel extends Component {
                 <a href="" className="text-decoration-none text-dark">
                   {this.props.cartData.name}
                 </a>
-                <span>{this.props.cartData.info}</span>
+                <div>
+                  {this.props.cartData.info.map((info, index) => {
+                    return (
+                      <p className="m-0" key={index} style={productInfo}>
+                        {info}
+                      </p>
+                    )
+                  })}
+                </div>
                 <span className="d-none">{this.props.cartData.qty}</span>
               </div>
 

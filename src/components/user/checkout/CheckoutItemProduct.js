@@ -167,12 +167,15 @@ const CheckoutItemProduct = props => {
     background: 'rgb(240, 240, 240)',
     borderRadius: '5px',
   }
+  const productInfo = {
+    color: '#a8a8ab',
+  }
   return (
     <>
       <div className="shop-box mb-3">
         <div className="shop-vendor-name">宅配商品</div>
         <Row className="flex-row-reverse">
-          <Col md={5} className="d-flex mt-0 flex-column px-5 py-3">
+          <Col md={4} className="d-flex mt-0 flex-column px-5 py-3">
             <h5>收件資訊</h5>
             <div style={addressData} className="p-3">
               {addressMsg}
@@ -344,37 +347,41 @@ const CheckoutItemProduct = props => {
             if (item.prodType === 'products') {
               return (
                 <>
-                  <Col md={7} key={index} className="shop-item m-0 px-4 mb-5">
+                  <Col md={8} key={index} className="shop-item m-0 px-4 mb-5">
                     <div className="d-flex mt-2 justify-content-between">
-                      <div className="d-flex">
-                        <div className="shop-product-photo">
-                          <a href="" className="">
-                            <img
-                              className=""
-                              src={item.coverImg}
-                              alt="商品照片"
-                            />
-                          </a>
-                        </div>
-                        <div className="d-flex">
-                          <div className="d-flex flex-column justify-content-between ml-2">
-                            <div className="d-flex flex-column">
-                              <a
-                                href=""
-                                className="text-decoration-none text-dark"
+                      <div className="shop-product-photo">
+                        <a href="" className="">
+                          <img
+                            className=""
+                            src={item.coverImg}
+                            alt="商品照片"
+                          />
+                        </a>
+                      </div>
+
+                      <div className="d-flex flex-column ml-2">
+                        <div className="fw-500">{item.vendor}</div>
+                        <div>{item.name}</div>
+                        <div>
+                          {item.info.map((info, index) => {
+                            return (
+                              <p
+                                className="m-0"
+                                key={index}
+                                style={productInfo}
                               >
-                                {item.name}
-                              </a>
-                              <span>品項內容</span>
-                            </div>
-                            <div>X {item.qty}</div>
-                          </div>
+                                {info}
+                              </p>
+                            )
+                          })}
                         </div>
                       </div>
-                      <div className="align-self-end flex-grow text-right">
-                        NT$ {item.price}
-                      </div>
+                      <div>X {item.qty}</div>
                     </div>
+                    <div className="align-self-end flex-grow text-right">
+                      NT$ {item.price}
+                    </div>
+
                     <div className="shop-subtotal text-right pt-3">
                       商品小計
                       <span className="ml-2 user-darkblue-text">
@@ -382,7 +389,7 @@ const CheckoutItemProduct = props => {
                       </span>
                     </div>
                   </Col>
-                  <Col md={5} key={index}></Col>
+                  <Col md={4} key={index}></Col>
                 </>
               )
             } else return ''

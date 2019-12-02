@@ -29,7 +29,11 @@
     padding: 0;
     bottom: 2%;
     left: 6%;
-    color: #aaa;
+    /* color: #000 ;  */
+}
+.hotel_card_money span{
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .hotel_list_card_btn {

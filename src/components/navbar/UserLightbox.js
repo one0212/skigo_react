@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { FaFacebookF, FaGoogle, FaEyeSlash } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
+import GoogleLogin from 'react-google-login'
 
 import ForgotPwdModal from './ForgotPwdModal'
 import SignUpSuccModal from './SignUpSuccModal'
@@ -227,19 +228,23 @@ class UserLightbox extends Component {
               <span className="text-center user-darkblue-text">Facebook</span>
               <span></span>
             </div>
-            {/* <div
-              className="mx-2 user-third-input py-2 mt-2 d-flex justify-content-around align-items-center flex-grow g-signin2"
-              data-onsuccess="onSignIn"
-            >
-              <FaGoogle className="user-fa-google"></FaGoogle>
-              <span className="text-center user-darkblue-text">Google</span>
-              <span></span>
-            </div> */}
-            <div
-              className="g-signin2"
-              data-onsuccess="onSignIn"
-              style={{ backgroung: '#000', width: '50px', height: '50px' }}
-            ></div>
+            <GoogleLogin
+              clientId="71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com"
+              onSuccess={this.onSignIn}
+              onFailure={err => console.log(err)}
+              cookiePolicy={'single_host_origin'}
+              render={renderProps => (
+                <div
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                  className="mx-2 user-third-input py-2 mt-2 d-flex justify-content-around align-items-center flex-grow"
+                >
+                  <FaGoogle className="user-fa-google"></FaGoogle>
+                  <span className="text-center user-darkblue-text">Google</span>
+                  <span></span>
+                </div>
+              )}
+            />
           </div>
           <small
             className="user-darkblue-text position-absolute cursor-point login-text toggle-login"

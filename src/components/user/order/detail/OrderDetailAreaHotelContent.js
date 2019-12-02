@@ -10,6 +10,9 @@ const photoStyle = {
   width: '6rem',
   height: '6rem',
 }
+const productInfo = {
+  color: '#a8a8ab',
+}
 class OrderDetailProductContent extends Component {
   constructor(props) {
     super(props)
@@ -46,7 +49,19 @@ class OrderDetailProductContent extends Component {
                         <a href="" className="text-decoration-none text-dark">
                           {product.name}
                         </a>
-                        <span>{product.info}</span>
+                        <div>
+                          {product.info.map((info, index) => {
+                            return (
+                              <p
+                                className="m-0"
+                                key={index}
+                                style={productInfo}
+                              >
+                                {info}
+                              </p>
+                            )
+                          })}
+                        </div>
                       </div>
                       <div>X {product.qty}</div>
                       <div>NT$ {product.price}</div>

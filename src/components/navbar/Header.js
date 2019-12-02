@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
+import { GoogleLogout } from 'react-google-login'
 
 import UserLightbox from './UserLightbox'
 import '../../css/header.css'
@@ -24,12 +25,19 @@ class Header extends Component {
       isOpen: false,
       showLoginIcon: false,
       userDropdown: false,
+      cartItemQty: props.cartItemQty,
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (cookies.get('role') && cookies.get('role') !== 'VISITOR') {
+      this.syncCartItemQty()
     }
   }
 
   refreshLoginState = () => {
     // console.log(this.props)
-    if (cookies.get('role') === 'VISITOR') {
+    if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
@@ -37,11 +45,35 @@ class Header extends Component {
   }
 
   cartVerify = () => {
-    if (cookies.get('role') === 'VISITOR') {
+    if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ isOpen: true })
     } else {
       window.location.href = '/cart'
     }
+  }
+
+  syncCartItemQty = () => {
+    // if (cookies.get('role') && cookies.get('role') !== 'VISITOR') {
+    fetch('http://localhost:3001/api/cart', {
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(resp => {
+        if (resp.status === 200) {
+          return resp.json()
+        } else {
+          throw new Error('get cart api status !== error')
+        }
+      })
+      .then(json => {
+        console.log(json)
+        this.setState({ cartItemQty: json.items.length })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    // }
   }
 
   componentWillMount() {
@@ -49,11 +81,26 @@ class Header extends Component {
       this.setState({ showLoginIcon: false })
     } else {
       this.setState({ showLoginIcon: true })
-      // todo: 購物車點選跳轉頁
+      this.syncCartItemQty()
     }
   }
+  // componentDidMount() {
+  //   window.gapi.load('auth2', () => {
+  //     this.auth2 = gapi.auth2.init({
+  //       client_id:
+  //         '71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com',
+  //     })
+  //   })
+  // }
+  logOut = () => {
+    // var auth2 = window.gapi.auth2.getAuthInstance()
+    // auth2.signOut().then(function() {
+    //   console.log('User signed out.')
+    // })
+    console.log('google已登出')
+  }
 
-  logout = () => {
+  signout = () => {
     const url = 'http://localhost:3001/api/user/logout'
     fetch(url, {
       method: 'put',
@@ -61,7 +108,7 @@ class Header extends Component {
       if (response.status === 200) {
         this.refreshLoginState()
         this.setState({ userDropdown: false })
-        // window.location.href = '/'
+        window.location.href = '/'
       }
     })
   }
@@ -168,10 +215,10 @@ class Header extends Component {
                       <span
                         className="red-point position-absolute text-center"
                         style={{
-                          opacity: this.props.cartItem !== 0 ? '1' : '0',
+                          opacity: this.state.cartItemQty !== 0 ? '1' : '0',
                         }}
                       >
-                        {this.props.cartItem !== 0 ? this.props.cartItem : 0}
+                        {this.state.cartItemQty}
                       </span>
                     </span>
                   </Nav.Link>
@@ -219,21 +266,29 @@ class Header extends Component {
                         </Link>
                       </li>
                       <li className="my-3">
-                        <a
-                          href="#"
+                        <Link
+                          to="#"
                           className="user-darkblue-text text-decoration-none"
                         >
                           紅利點數
-                        </a>
+                        </Link>
                       </li>
                       <li className="my-3">
-                        <Link
-                          to="/"
-                          onClick={this.logout}
-                          className="cursor-point user-darkblue-text text-decoration-none"
-                        >
-                          登出
-                        </Link>
+                        <GoogleLogout
+                          clientId="71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com"
+                          buttonText="Logout"
+                          onLogoutSuccess={this.logout}
+                          onFailure={err => console.log(err)}
+                          // render={renderProps => (
+                          //   <Link
+                          //     to="/"
+                          //     onClick={this.signout}
+                          //     className="cursor-point user-darkblue-text text-decoration-none"
+                          //   >
+                          //     登出
+                          //   </Link>
+                          // )}
+                        ></GoogleLogout>
                       </li>
                     </ul>
                   </Nav.Link>

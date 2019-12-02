@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
+const productInfo = {
+  color: '#a8a8ab',
+}
 class CheckoutItemAreaHotel extends Component {
   render() {
     return (
@@ -9,7 +12,7 @@ class CheckoutItemAreaHotel extends Component {
           <div className="shop-vendor-name">電子票券商品</div>
           <Row className="flex-row-reverse">
             <Col
-              md={5}
+              md={4}
               className="d-flex flex-column px-5 py-3 justify-content-center"
             >
               <h5>收件資訊</h5>
@@ -24,34 +27,38 @@ class CheckoutItemAreaHotel extends Component {
               ) {
                 return (
                   <>
-                    <Col key={index} md={7} className="shop-item m-0 px-4 mb-5">
+                    <Col key={index} md={8} className="shop-item m-0 px-4 mb-5">
                       <div className="d-flex mt-2 justify-content-between">
-                        <div className="d-flex">
-                          <div className="shop-product-photo">
-                            <a href="" className="">
-                              <img
-                                className=""
-                                src={item.coverImg}
-                                alt="商品照片"
-                              />
-                            </a>
-                          </div>
-                          <div className="d-flex">
-                            <div className="d-flex flex-column justify-content-between ml-2">
-                              <div className="d-flex flex-column">
-                                <a
-                                  href=""
-                                  className="text-decoration-none text-dark"
-                                >
-                                  {item.name}
-                                </a>
-                                <span>{item.info}</span>
-                              </div>
-                              <div>X {item.qty}</div>
+                        <div className="shop-product-photo">
+                          <a href="" className="">
+                            <img
+                              className=""
+                              src={item.coverImg}
+                              alt="商品照片"
+                            />
+                          </a>
+                        </div>
+                        <div>
+                          <div className="d-flex flex-column ml-2">
+                            <div className="fw-500">{item.vendor}</div>
+                            <div>{item.name}</div>
+                            <div>
+                              {item.info.map((info, index) => {
+                                return (
+                                  <p
+                                    className="m-0"
+                                    key={index}
+                                    style={productInfo}
+                                  >
+                                    {info}
+                                  </p>
+                                )
+                              })}
                             </div>
+                            <div>X {item.qty}</div>
                           </div>
                         </div>
-                        <div className="align-self-end flex-grow text-right">
+                        <div className="align-self-end text-right">
                           NT$ {item.price}
                         </div>
                       </div>
@@ -62,7 +69,7 @@ class CheckoutItemAreaHotel extends Component {
                         </span>
                       </div>
                     </Col>
-                    <Col md={5}></Col>
+                    <Col md={4}></Col>
                   </>
                 )
               } else return ''

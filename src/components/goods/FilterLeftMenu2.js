@@ -51,15 +51,19 @@ class FilterLeftMenu2 extends React.Component {
   render() {
     return (
       <>
-        <Accordion className="left-accordion" defaultActiveKey="0">
+        <Accordion
+          className="left-accordion"
+          defaultActiveKey="0"
+          style={{ paddingTop: '10px' }}
+        >
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="6"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between">
+                <div className="ticket-react-item d-flex justify-content-between">
                   <div>地區</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -68,7 +72,7 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="6" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-              <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(1)}
                     type="checkbox"
@@ -112,13 +116,13 @@ class FilterLeftMenu2 extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="1"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between ">
+                <div className="ticket-react-item d-flex justify-content-between ">
                   <div>商品</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -127,7 +131,7 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="1" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-              <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(5)}
                     type="checkbox"
@@ -161,13 +165,13 @@ class FilterLeftMenu2 extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="2"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between">
+                <div className="ticket-react-item d-flex justify-content-between">
                   <div>票種</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>
@@ -176,7 +180,7 @@ class FilterLeftMenu2 extends React.Component {
             </div>
             <Accordion.Collapse eventKey="2" style={{ background: '#F5F5F5' }}>
               <Card.Body>
-              <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
+                <div className="d-flex" style={{ padding: '5px 5px 5px 25px' }}>
                   <input
                     onChange={this.changeBox(8)}
                     type="checkbox"
@@ -210,13 +214,13 @@ class FilterLeftMenu2 extends React.Component {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <div className="coach-select">
+            <div className="ticket-select">
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey="3"
                 style={{ background: '#F5F5F5' }}
               >
-                <div className="coach-react-item d-flex justify-content-between ">
+                <div className="ticket-react-item d-flex justify-content-between ">
                   <div>使用天數</div>
                   <i className="fas fa-angle-up"></i>
                   <i className="fas fa-angle-down"></i>

@@ -26,6 +26,7 @@ class HotelList extends React.Component {
       isChangeOn: false,
       color: '#ccc',
       hotels: '',
+      toggleOn: false,
     }
   }
   ChangeBox = e => {
@@ -89,6 +90,58 @@ class HotelList extends React.Component {
       isMouseMove4: false,
     }))
   }
+
+  handleClick = e => {
+    const url = `http://localhost:3001/japi/hotels?type=${e.target.value}`
+    // console.log(e.type)
+    fetch(url, {
+      method: 'GET',
+    })
+      .then(res => {
+        return res.json()
+      })
+      .then(json => {
+        this.setState({ hotels: json })
+        console.log(this.state.hotels)
+      })
+  }
+  // handleBlur = () => {
+  //   fetch(`http://localhost:3001/japi/hotels`, {
+  //     method: 'GET',
+  //   })
+  //     .then(response => {
+  //       return response.json()
+  //     })
+  //     .then(json => {
+  //       this.setState({ hotels: json })
+  //       console.log(this.state.hotels)
+  //     })
+  // }
+  handleSortDesc = () => {
+    fetch(`http://localhost:3001/japi/hotels?_sort=showPrice&_order=desc`, {
+      method: 'GET',
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        this.setState({ hotels: json })
+        console.log(this.state.hotels)
+      })
+  }
+  handleSortAsc = () => {
+    fetch(`http://localhost:3001/japi/hotels?_sort=showPrice&_order=asc`, {
+      method: 'GET',
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        this.setState({ hotels: json })
+        console.log(this.state.hotels)
+      })
+  }
+
   componentWillMount() {
     fetch(`http://localhost:3001/japi/hotels`, {
       method: 'GET',
@@ -134,9 +187,10 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Resort"
+                        value="度假村"
+                        onClick={this.handleClick}
                       />
-                      &nbsp; 渡假村 Resort
+                      &nbsp; 度假村 Resort
                     </label>
                   </li>
                   <li>
@@ -144,9 +198,10 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="gardenHotels"
+                        value="飯店"
+                        onClick={this.handleClick}
                       />
-                      &nbsp; 花園飯店 garden hotels
+                      &nbsp; 飯店 Hotels
                     </label>
                   </li>
                   <li>
@@ -154,7 +209,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Villa"
+                        value="別墅"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 別墅 Villa
                     </label>
@@ -164,7 +220,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="ApartmentHotel"
+                        value="公寓"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 公寓旅館 Apartment Hotel
                     </label>
@@ -174,7 +231,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="小木屋"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 小木屋 Cabin
                     </label>
@@ -191,7 +249,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Resort"
+                        value="初學者雪道"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 初學者雪道豐富
                     </label>
@@ -201,7 +260,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="gardenHotels"
+                        value="溫泉"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 溫泉
                     </label>
@@ -211,7 +271,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Villa"
+                        value="親子同樂"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 親子同樂
                     </label>
@@ -221,7 +282,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="ApartmentHotel"
+                        value="購物"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 購物
                     </label>
@@ -231,7 +293,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="粉雪"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 粉雪
                     </label>
@@ -241,7 +304,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="外語"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 外語滑雪課程
                     </label>
@@ -251,7 +315,8 @@ class HotelList extends React.Component {
                       <Checkbox
                         onChange={this.ChangeBox}
                         disabled={this.state.disabled}
-                        value="Cabin"
+                        value="夜間/晨間滑雪"
+                        onClick={this.handleClick}
                       />
                       &nbsp; 有夜間/晨間滑雪
                     </label>
@@ -286,6 +351,7 @@ class HotelList extends React.Component {
                         className={btnAddClass2}
                         style={{ color: this.state.isMouseMove2 ? '#fff' : '' }}
                         value="由低到高"
+                        onMouseMove={this.handleSortAsc}
                       >
                         <span>價格:由低到高</span>
                       </p>
@@ -295,6 +361,7 @@ class HotelList extends React.Component {
                         className={btnAddClass3}
                         style={{ color: this.state.isMouseMove3 ? '#fff' : '' }}
                         value="由高到低"
+                        onMouseMove={this.handleSortDesc}
                       >
                         <span>價格:由高到低</span>
                       </p>
@@ -350,7 +417,7 @@ class HotelList extends React.Component {
                   </ul>
                 </Col>
               </Row>
-              <Row>
+              <Row className="list_last_card">
                 {this.state.hotels !== ''
                   ? this.state.hotels.map((hotel, index) => {
                       return (
@@ -360,29 +427,6 @@ class HotelList extends React.Component {
                       )
                     })
                   : ''}
-
-                {/* <Card className="hotel_list_card" style={{border:'none'}}>
-                <Card.Img variant="top" src={require('../../image/hotel/hotel_slider/hotel_4.jpg')} alt="..." className="hotel_slider_img"/>
-                <Card.Body>
-                    <Card.Title><h6>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h6></Card.Title>
-                    <Card.Text className="hotel_list_card_text">
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                    </Card.Text>
-                    <div className="d-flex justify-content-between">
-                        <ul class="list-unstyled d-flex hotel_list_card_star">
-                            <li><TiStarFullOutline /></li>
-                            <li><TiStarFullOutline /></li>
-                            <li><TiStarFullOutline /></li>
-                            <li><TiStarHalfOutline /></li>
-                            <li><TiStarOutline /></li>
-                        </ul>
-                        <span class="hotel_card_heart"><UseAnimations animationKey="heart" size={15} style={{color:"red"}}/></span>
-                    </div>
-                    <span class="hotel_card_money">約 $<span>2,400</span>TWD / 晚</span>
-                    <Button variant="light" className="badge-pill hotel_list_card_btn">more</Button>
-                </Card.Body>
-            </Card> */}
               </Row>
             </Col>
           </Row>
