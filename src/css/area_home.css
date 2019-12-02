@@ -45,6 +45,12 @@ section{
     margin-left: 15px;
     border-radius: 50%;
 }
+.area_slider .carousel-control-prev{
+    display: none !important;
+}
+.area_slider .carousel-control-next{
+    display: none !important;
+}
 /* .area_slider .weather{
     display: flex;
     flex-direction: column;
