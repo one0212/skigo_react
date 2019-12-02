@@ -88,8 +88,8 @@ class Product extends React.Component {
         <Container>
           <Row>
             <Breadcrumb>
-              <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-              <Breadcrumb.Item href="/product">Store</Breadcrumb.Item>
+              <Breadcrumb.Item href="/">SKIGO</Breadcrumb.Item>
+              <Breadcrumb.Item href="/product">雪具裝備</Breadcrumb.Item>
               <Breadcrumb.Item disabled>
                 {this.state.products.name}
               </Breadcrumb.Item>
@@ -146,7 +146,7 @@ class Product extends React.Component {
             <Col lg={5}>
               <div className="product-info">
                 <div className="product-title">
-                  <h2>{this.state.products.info}</h2>
+                  <h2>{this.state.products.info_name}</h2>
                   <h1 className="product-name">{this.state.products.name}</h1>
                 </div>
                 <div className="product-price">

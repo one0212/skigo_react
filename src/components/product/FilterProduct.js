@@ -121,8 +121,8 @@ class  FilterProduct extends React.Component{
           </Row>
         <Row className="product-main">
 
-          <Col sm={3}>
-            <Accordion defaultActiveKey="0">
+          <Col sm={3} style={{border:"1px solid #ccc"}}>
+            <Accordion defaultActiveKey="0" className="product-filter">
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="1">
                   類型
@@ -186,7 +186,7 @@ class  FilterProduct extends React.Component{
               </Card>
             </Accordion>
           </Col> 
-          <Col sm={9} style={{border:"1px solid #ccc"}}>
+          <Col sm={9}>
           <div className="d-flex flex-wrap" >
         {this.state.products !== '' ?
         this.state.products.map((product,index)=>{
