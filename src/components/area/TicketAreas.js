@@ -19,7 +19,7 @@ class TicketAreas extends React.Component {
     }
   }
 
-  async componentDidMount() {
+  async componentWillMount() {
     try {
       await this.setState({ loading: true })
 
@@ -202,7 +202,7 @@ class TicketAreas extends React.Component {
                     </div>
                     <div className="number_box">
                       <p className="slider_number">
-                        {/* {this.state.total[0].area_pic2 ? '02' : ''} */}
+                        {/* {this.state.total[0].area_pic2 ? '02' : ''} */}0
                         {this.state.activeIndex + 1}
                       </p>
                       <p className="symbol">/</p>
@@ -383,7 +383,7 @@ class TicketAreas extends React.Component {
               <SlideClass />
               <SlideHotel />
 
-              {/* <section className="area_access">
+              <section className="area_access">
                 <div className="container">
                   <div className="access_title">
                     <div className="d-flex">
@@ -392,13 +392,15 @@ class TicketAreas extends React.Component {
                     </div>
                   </div>
                   <hr />
-                  <iframe
+                  <div className="d-flex justify-content-center">
+                    <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11607.988663140555!2d142.33874033325841!3d43.335248371799736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f73525ef98cb63d%3A0x9020eebf4f63234b!2z5a-M6Imv6YeO5ruR6Zuq5aC0!5e0!3m2!1szh-TW!2stw!4v1572185752833!5m2!1szh-TW!2stw"
                     frameborder="0"
-                    style={{ border: '0', width: '100%', height: '600' }}
+                    style={{ border: '0', width: '100%', height: '600px' }}
                   />
+                  </div>
                 </div>
-              </section> */}
+              </section>
             </div>
           </>
         )}

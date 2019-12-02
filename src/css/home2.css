@@ -25,6 +25,7 @@ html {
     z-index: 2;
     background: url(../images/home/areas.jpg) no-repeat 0;
     background-size: cover;
+    opacity: .8;
 }
 .home_areas .areas_main{
     flex-direction: column;
@@ -176,6 +177,7 @@ html {
     z-index: 2;
     background: url(../images/home/lesson.jpeg) no-repeat left 0;
     background-size: cover;
+    opacity: .8;
 }
 .home_featured .featured_main{
     flex-direction: column;
@@ -294,6 +296,7 @@ html {
     z-index: 2;
     background: url(../images/home/hotel.jpg) no-repeat center 0;
     background-size: cover;
+    opacity: .8;
 }
 .home_recommend .recommend_main{
     flex-direction: column;

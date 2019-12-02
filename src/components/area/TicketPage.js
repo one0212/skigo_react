@@ -106,16 +106,16 @@ class TicketPage extends React.Component {
             {/* 麵包屑 */}
             {/* <FilterBread2 /> */}
             <div className="row mb-4">
-                <div className="col-md-2 col-sm-0">
-                  <div id="ticket-id" style={{ display: 'none' }}>
+              <div className="col-md-2 col-sm-0">
+                <div id="ticket-id" style={{ display: 'none' }}>
                   {this.state.total[0].ticket_sid}
                   {console.log('id:' + this.state.total[0].ticket_sid)}
-                  </div>
                 </div>
-                <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
+              </div>
+              <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
                 首頁 / 雪場票券 / {this.state.total[0].area_name} /{' '}
                 {this.state.total[0].ticket_name}
-                </div>
+              </div>
             </div>
             {/* 圖+內容 */}
             <div className="ticket_head row mb-5">
@@ -144,8 +144,12 @@ class TicketPage extends React.Component {
                         </p>
                       </div>
                     </div>
-                    <div className="ticket-snowfield d-flex align-items-center">
-                      <span>NT</span>
+                    <div className="ticket-snowfield d-flex align-items-end">
+                      <span
+                        style={{ paddingBottom: '5px', paddingRight: '5px' }}
+                      >
+                        NT
+                      </span>
                       <span className="ticket-price">
                         {this.state.total[0].ticket_price}
                       </span>
@@ -211,9 +215,9 @@ class TicketPage extends React.Component {
               </div>
             </div>
             <div className="row">
-                <din className="col-12">
-                  <SlideTicket2  sameticket={this.state.total[0].ticket_name}/>
-                </din>
+              <din className="col-12">
+                <SlideTicket2 sameticket={this.state.total[0].ticket_name} />
+              </din>
             </div>
           </div>
         )}
