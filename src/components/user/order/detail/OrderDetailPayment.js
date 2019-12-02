@@ -10,7 +10,7 @@ class OrderDetailPayment extends Component {
           </div>
           <div className="p-3">
             <div className="order-list-status my-3 d-flex align-items-center">
-              <span className="col-3 text-right mr-4 fw-500">付款方式</span>
+              <span className="col-4 text-right mr-4 fw-500">付款方式</span>
               <span>信用卡安全加密付款</span>
             </div>
           </div>
