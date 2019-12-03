@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../css/ticket_carousels.css'
+import '../../css/ticket_carousels2.css'
 import Slider from 'react-slick'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -71,53 +71,56 @@ class SlideTicket2 extends React.Component {
     }
     return (
       <>
-      {console.log('同樣的票券 : ' + this.props.sameticket)}
-          <section className="area_slide rwd-p">
-            <div className="container">
-              <div className="slide_title">
-                <div className="d-flex">
-                  <div className="title_sign"></div>
-                  <h4>其他相關票券</h4>
-                </div>
+        <section className="area_slide2 rwd-p">
+          <div
+            className="container"
+            style={{ paddingRight: '0', paddingLeft: '0' }}
+          >
+            <div className="slide_title">
+              <div className="d-flex">
+                <div className="title_sign"></div>
+                <h4>其他相關票券</h4>
               </div>
-              <hr />
             </div>
-            <div className="container slide">
-              <Slider {...settings}>
-                {/* card */}
-                {this.state.total.map((value, index) => {
-                  if (!value) return <></>
-                  console.log('ok')
-                  console.log(value.length)
-                  return (
-                    <div>
-                      <div className="card" style={{ width: '100%' }}>
-                        <img
-                          className="home_img"
-                          src={'/images/areas/' + value.ticket_pic}
-                          alt=""
-                        />
-                        <div className="card-body">
-                          <h5 className="card-title">{value.area_name}</h5>
-                          <p className="card-text">
-                            {value.ticket_name} | {value.ticket_age}
-                          </p>
-                          <p className="card-text">NT {this.thousandComma(value.ticket_price)}</p>
-                          <Link
-                            to={'/ticketpage/' + value.ticket_sid}
-                            className="btn btn-primary"
-                          >
-                            查看商品
-                          </Link>
-                        </div>
+            <hr />
+          </div>
+          <div className="container slide">
+            <Slider {...settings}>
+              {/* card */}
+              {this.state.total.map((value, index) => {
+                if (!value) return <></>
+                console.log('ok')
+                console.log(value.length)
+                return (
+                  <div>
+                    <div className="card" style={{ width: '100%' }}>
+                      <img
+                        className="home_img"
+                        src={'/images/areas/' + value.ticket_pic}
+                        alt=""
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">{value.area_name}</h5>
+                        <p className="card-text">
+                          {value.ticket_name} | {value.ticket_age}
+                        </p>
+                        <p className="card-text">
+                          NT {this.thousandComma(value.ticket_price)}
+                        </p>
+                        <Link
+                          to={'/ticketpage/' + value.ticket_sid}
+                          className="btn btn-primary"
+                        >
+                          查看商品
+                        </Link>
                       </div>
                     </div>
-                  )
-                })}
-              </Slider>
-            </div>
-          </section>
-      
+                  </div>
+                )
+              })}
+            </Slider>
+          </div>
+        </section>
       </>
     )
   }

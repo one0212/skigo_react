@@ -80,6 +80,7 @@ class Product extends React.Component {
       nav1: this.slider1,
       nav2: this.slider2,
     })
+
   }
 
   render() {
@@ -88,8 +89,8 @@ class Product extends React.Component {
         <Container>
           <Row>
             <Breadcrumb>
-              <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-              <Breadcrumb.Item href="/product">Store</Breadcrumb.Item>
+              <Breadcrumb.Item href="/">SKIGO</Breadcrumb.Item>
+              <Breadcrumb.Item href="/product">雪具裝備</Breadcrumb.Item>
               <Breadcrumb.Item disabled>
                 {this.state.products.name}
               </Breadcrumb.Item>
@@ -146,7 +147,7 @@ class Product extends React.Component {
             <Col lg={5}>
               <div className="product-info">
                 <div className="product-title">
-                  <h2>{this.state.products.info}</h2>
+                  <h2>{this.state.products.info_name}</h2>
                   <h1 className="product-name">{this.state.products.name}</h1>
                 </div>
                 <div className="product-price">
@@ -206,6 +207,30 @@ class Product extends React.Component {
                 <p>付款後，從備貨到寄出商品為 4 個工作天。（不包含假日）</p>
               </div>
               <ProductShare />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12} className="recommend-product">
+            <div className="t01">
+                <img src="/images/Product/012.png"/>
+            </div>
+            </Col>
+            <Col sm={6} >
+            <div className="t02">
+                <img src="/images/Product/011.png"/>
+            </div>
+            </Col>
+            <Col sm={6} >
+            <h4 >{this.state.products.name}</h4>
+            <p>有史以來最受信任的滑雪板，得到了眾多滑雪者廣大的信任。
+                自從不起眼的一開始，創新就定義了Burton Custom系列，
+                使其成為滑雪板中最受歡迎，用途最廣，銷售最高的滑雪板。 
+                自1996年以來，該圖標就一直佔據統治地位，並以久經考驗的配方不斷發展，
+                該配方結合了久經考驗的設計和推動信封的成分，從而打造出了輕巧，
+                罌粟花和多功能的木板。 自定義彎度提供兩種版本，精確度和穩定性是許多專業人士的首選，
+                而自定義飛行V™則將彎度的力量與輕鬆的搖桿浮動相結合，從而兼具兩者的優點。</p>  
+              <p>3年保固-雪板</p>
+              <p>從購買之日起，所有帶有Channel安裝系統的2014年及以後的Burton單板滑雪板（例如您在此處看到的那種）都享有三年保修。</p>
             </Col>
           </Row>
           <Row>

@@ -1,0 +1,16 @@
+.pro_s {
+    .slick-prev{
+        left: 0 !important;
+        z-index: 99 !important;
+    }
+    .slick-next{
+        right: 0 !important;
+    }
+    
+    .slick-prev:before,
+    .slick-next:before {
+        Font-size: 20px !important;
+    
+    }
+
+}

@@ -3,6 +3,8 @@ import '../../css/ticket_carousels.css'
 import Slider from 'react-slick'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class SlideTicket extends React.Component {
   constructor() {
@@ -49,6 +51,11 @@ class SlideTicket extends React.Component {
       console.log('slideticket : ')
       console.log(this.state.total)
     }
+    AOS.init({
+      duration : 1000,
+      easing: 'ease-out-back',  
+      delay: 600
+  })
   }
 
   // 金額轉千分位
@@ -92,11 +99,11 @@ class SlideTicket extends React.Component {
         {this.state.loading ? (
           <div>
             {/* <i className="fas fa-spinner fa-spin" /> */}
-            資料載入中
           </div>
         ) : (
-          <section className="area_slide rwd-p">
-            <div className="container">
+          <section className="area_slide rwd-p" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="150">
+            <div className="container" style={{paddingLeft: '20px', paddingRight: '20px'}}>
+
               <div className="slide_title">
                 <div className="d-flex">
                   <div className="title_sign"></div>

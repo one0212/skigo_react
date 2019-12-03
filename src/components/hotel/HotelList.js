@@ -223,7 +223,7 @@ class HotelList extends React.Component {
                         value="公寓"
                         onClick={this.handleClick}
                       />
-                      &nbsp; 公寓旅館 Apartment Hotel
+                      &nbsp; 公寓旅館 Apartment
                     </label>
                   </li>
                   <li>

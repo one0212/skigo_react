@@ -37,6 +37,32 @@ class  FilterProduct extends React.Component{
     })
   }
   
+
+
+  filterClick = e => {
+    const url = `http://localhost:3001/japi/products?type1=${e.target.id}`
+    console.log(e.target)
+    // const obj = {
+    //   // prodId, prodType, qty 這三個變數不可改
+    // }
+    fetch(url).then(response => {
+      return response.json()
+    }).then(json=>{
+      const uniqueNo = [];
+      const uniqueProd = [];
+      json.map(prod => {
+          if (uniqueNo.indexOf(prod.No) === -1) {
+            uniqueNo.push(prod.No);
+            uniqueProd.push(prod);
+          }
+      });
+      console.log(uniqueNo);
+      this.setState({ products: uniqueProd})
+      console.log(this.state.products)
+    })
+  }
+
+
   componentWillMount(){
      fetch(
       `http://localhost:3001/japi/products`,
@@ -122,49 +148,32 @@ class  FilterProduct extends React.Component{
         <Row className="product-main">
 
           <Col sm={3}>
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0" className="product-filter">
             <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="1">
+                <Accordion.Toggle as={Card.Header} eventKey="1" >
                   類型
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="1">
                   <Card.Body>
                     <Form.Group controlId="formBasicCheckbox">
-                      <Form.Check type="checkbox" label="Check me out" id="001"/>
-                      <Form.Check type="checkbox" label="Check me out" id="002"/>
-                      <Form.Check type="checkbox" label="Check me out" id="003"/>
-                      <Form.Check type="checkbox" label="Check me out" id="004"/>
+                      <Form.Check type="checkbox" label="ALL MOUNTAIN" id="ALL MOUNTAIN" onClick={this.filterClick}/>
+                      <Form.Check type="checkbox" label="Park" id="Park" onClick={this.filterClick}/>
+                      <Form.Check type="checkbox" label="Powder" id="Powder" onClick={this.filterClick}/>
                     </Form.Group>
 
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="2">
+                <Accordion.Toggle as={Card.Header} eventKey="2" >
                   特色
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="2">
                   <Card.Body>
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" id="005"/>
-                        <Form.Check type="checkbox" label="Check me out" id="006"/>
-                        <Form.Check type="checkbox" label="Check me out" id="007"/>
-                        <Form.Check type="checkbox" label="Check me out" id="008"/>
-                      </Form.Group>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="3">
-                  顏色
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="3">
-                  <Card.Body>
-                      <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" id="005"/>
-                        <Form.Check type="checkbox" label="Check me out" id="006"/>
-                        <Form.Check type="checkbox" label="Check me out" id="007"/>
-                        <Form.Check type="checkbox" label="Check me out" id="008"/>
+                        <Form.Check type="checkbox" label="Camber" id="005"/>
+                        <Form.Check type="checkbox" label="Directional Camber" id="006"/>
+                        <Form.Check type="checkbox" label="PurePop Camber" id="007"/>
                       </Form.Group>
                   </Card.Body>
                 </Accordion.Collapse>
@@ -175,18 +184,18 @@ class  FilterProduct extends React.Component{
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="4">
                   <Card.Body>
-                    <Form.Group controlId="formBasicCheckbox">
-                          <Form.Check type="checkbox" label="Check me out" id="005"/>
-                          <Form.Check type="checkbox" label="Check me out" id="006"/>
-                          <Form.Check type="checkbox" label="Check me out" id="007"/>
-                          <Form.Check type="checkbox" label="Check me out" id="008"/>
-                        </Form.Group>
+                  <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="160" id="005"/>
+                        <Form.Check type="checkbox" label="162" id="006"/>
+                        <Form.Check type="checkbox" label="163" id="007"/>
+                        <Form.Check type="checkbox" label="166" id="008"/>
+                      </Form.Group>
                     </Card.Body>
                 </Accordion.Collapse>
               </Card>
             </Accordion>
           </Col> 
-          <Col sm={9} style={{border:"1px solid #ccc"}}>
+          <Col sm={9}>
           <div className="d-flex flex-wrap" >
         {this.state.products !== '' ?
         this.state.products.map((product,index)=>{

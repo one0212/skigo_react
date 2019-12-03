@@ -3,6 +3,8 @@ import '../../css/ticket_carousels.css'
 import Slider from 'react-slick'
 import { withRouter } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class SlideHotel extends React.Component {
   constructor() {
@@ -12,7 +14,13 @@ class SlideHotel extends React.Component {
       // total: [],
     }
   }
-
+  componentDidMount(){
+    AOS.init({
+      duration : 1000,
+      easing: 'ease-out-back',  
+      delay: 600
+  })
+  }
   // async componentWillMount() {
   //   try {
   //     await this.setState({ loading: true })
@@ -92,11 +100,10 @@ class SlideHotel extends React.Component {
         {this.state.loading ? (
           <div>
             {/* <i className="fas fa-spinner fa-spin" /> */}
-            資料載入中
           </div>
         ) : (
-          <section className="area_slide rwd-p">
-            <div className="container">
+          <section className="area_slide rwd-p" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true">
+            <div className="container" style={{paddingLeft: '20px', paddingRight: '20px'}}>
               <div className="slide_title">
                 <div className="d-flex">
                   <div className="title_sign"></div>
@@ -117,7 +124,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-1.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -132,7 +139,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-2.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -147,7 +154,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-3.jpg"
                       alt=""
                     />
                     <div className="card-body">
@@ -162,7 +169,7 @@ class SlideHotel extends React.Component {
                   <div className="card" style={{ width: '100%' }}>
                     <img
                       className="home_img"
-                      src="/images/home/hotel1.jpg"
+                      src="/images/areas/h-4.jpg"
                       alt=""
                     />
                     <div className="card-body">

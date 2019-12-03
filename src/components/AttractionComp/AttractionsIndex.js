@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-// 掛載header元件
-// import Header from '../components/Header';
-// 掛載景點css
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import '../../css/AttractionsIndex_css.css';
 
+import ReactDOM from 'react-dom';
+// 掛載輪播套件
+import { Carousel } from 'react-responsive-carousel';
 
+import Iframe from 'react-iframe'
 
 class AttractionsIndex extends Component {
+  
   render() {
     return (
       <>
-      {/* <Header/> */}
-      <div className="ABoxImgPosition">
-            <img src={require('../../images/AttractionsImg/earth3-right.png')} alt="" className="ABoxImgPositionImg"/>
-            {/* <div className="AGlobal AGlobalIconPositionFu"><img src={require('../images/AttractionsImg/AmapMarker.svg')} alt="" /></div> */}
-            <div className="AGlobal AGlobalIconPositionJ"><img src={require('../../images/AttractionsImg/AmapMarker.svg')} alt="" /></div>
-            <div className="AGlobal AGlobalIconPositionSum"><img src={require('../../images/AttractionsImg/AmapMarker.svg')} alt="" /></div>
-            {/* <div className="AGlobal AGlobalIconPositionMia"><img src={require('../images/AttractionsImg/AmapMarker.svg')} alt="" /></div> */}
-            {/* <div className="AGlobal AGlobalIconPositionMia2"><img src={require('../images/AttractionsImg/AmapMarker.svg')} alt="" /></div> */}
-            <div className="AGlobal AGlobalIconPositionZun"><img src={require('../../images/AttractionsImg/AmapMarker.svg')} alt="" /></div>
-            {/* <div className="AGlobal AGlobalIconPositionBa"><img src={require('../images/AttractionsImg/AmapMarker.svg')} alt="" /></div> */}
+      <div style={{borderWidth: 0}}>
+       <Iframe url="http://localhost:3000/attractions/"
+            position="absolute"
+            width="100%"
+            id="myId"
+            className="myClassname"
+            height="100%"
+            styles={{ borderWidth: '0' }}
+            />
         </div>
-
-        <div className="Acloud"> </div>
-     
       </>
     );
   }
