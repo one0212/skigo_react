@@ -166,6 +166,14 @@
     .btn-rwd{
         display:none; 
             }
+    /* 滑鼠手型 */
+    .left-accordion{
+        cursor: pointer;
+        }
+    /* 篩選列開關 */
+    .filterOpen{
+        display:none;
+    }
     /* RWD出現 */
     @media (max-width: 1100px) {
         /* .coach-bread{color:pink} */

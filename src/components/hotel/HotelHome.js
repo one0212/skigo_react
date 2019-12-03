@@ -4,7 +4,6 @@ import HotelCarouselSlide from './HotelCarouselSlide'
 import HotelKeyword from './HotelKeyword'
 import HotelHotArea from './HotelHotArea'
 import HotelSlide from './HotelSlide'
-import Ex from '../Example'
 
 class HotelHome extends React.Component {
   constructor() {
@@ -18,7 +17,6 @@ class HotelHome extends React.Component {
         <HotelKeyword />
         <HotelSlide />
         <HotelHotArea />
-        <Ex />
       </>
     )
   }

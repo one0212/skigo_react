@@ -110,6 +110,7 @@ export default class HotelCarousel extends React.Component {
       })
     }
   }
+
   changePage = () => {
     setTimeout(() => {
       window.location.href = '/HotelList?region=北海道'
