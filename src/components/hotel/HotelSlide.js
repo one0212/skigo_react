@@ -41,11 +41,10 @@ class HotelSlider extends React.Component {
               />
               <Card.Body>
                 <Card.Title>
-                  <h4>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h4>
+                  <h4>【希爾頓飯店】 (Hilton Niseko Village)</h4>
                 </Card.Title>
                 <Card.Text className="hotel_slider_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  在這裡，旅客可輕鬆前往市區內各大旅遊、購物、餐飲地點。
                 </Card.Text>
                 <div className="hotel_slider_star">
                   <ul class="list-unstyled d-flex">
@@ -80,11 +79,10 @@ class HotelSlider extends React.Component {
               />
               <Card.Body>
                 <Card.Title>
-                  <h4>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h4>
+                  <h4>【京王飯店】 (KEIO PRELIA SAPPORO)</h4>
                 </Card.Title>
                 <Card.Text className="hotel_slider_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  無論您是來札幌出差還是休閒旅遊，都可以在此得到滿意的服務。
                 </Card.Text>
                 <div className="hotel_slider_star">
                   <ul class="list-unstyled d-flex">
@@ -119,11 +117,11 @@ class HotelSlider extends React.Component {
               />
               <Card.Body>
                 <Card.Title>
-                  <h4>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h4>
+                  <h4>【元町全景公寓】(Panoramique Motomachi)</h4>
                 </Card.Title>
                 <Card.Text className="hotel_slider_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  位於中島公園的Vessel
+                  Inn札幌中島公園是您旅遊探索札幌和其周邊地區的最佳選擇。
                 </Card.Text>
                 <div className="hotel_slider_star">
                   <ul class="list-unstyled d-flex">
@@ -158,11 +156,10 @@ class HotelSlider extends React.Component {
               />
               <Card.Body>
                 <Card.Title>
-                  <h4>【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)</h4>
+                  <h4>【二世谷村希爾頓飯店】(Hilton Niseko Village)</h4>
                 </Card.Title>
                 <Card.Text className="hotel_slider_card_text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  您將能真切地感受到下川溫之宿飯店的特有的氛圍，它體現在每一間精心規劃的客房中。
                 </Card.Text>
                 <div className="hotel_slider_star">
                   <ul class="list-unstyled d-flex">
