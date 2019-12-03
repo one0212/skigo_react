@@ -105,6 +105,8 @@ class CoachList extends React.Component {
         })
         $('.right_content').css('width', '100%')
         $('.hot_img').css('height', '200px')
+        $('.filterOpen').css('display','inline')
+        $('.filterClose').css('display','none')
         move = false
       } else {
         $('#left').css({
@@ -113,6 +115,8 @@ class CoachList extends React.Component {
         })
         $('.right_content').css('width', '75%')
         $('.hot_img').css('height', '150px')
+        $('.filterOpen').css('display','none')
+        $('.filterClose').css('display','inline')
         move = true
       }
 
@@ -219,7 +223,7 @@ class CoachList extends React.Component {
           <div className="row coach-rwd-active">
             <div className="col-3">
               <button id="menu_active" className="btn coach-btn-active">
-                <i className="fas fa-list"></i> 篩選列開關
+                <i className="fas fa-list"></i> 篩選列<span className="filterOpen">開</span><span className="filterClose">關</span>
               </button>
             </div>
             <div className="coach-arrange col-9 d-flex justify-content-between">
