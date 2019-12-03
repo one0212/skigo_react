@@ -215,9 +215,9 @@ class TicketPage extends React.Component {
               </div>
             </div>
             <div className="row">
-              <din className="col-12">
+              <div className="col-12">
                 <SlideTicket2 sameticket={this.state.total[0].ticket_name} />
-              </din>
+              </div>
             </div>
           </div>
         )}

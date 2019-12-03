@@ -32,14 +32,11 @@ class UserSidebar extends Component {
                 to="/user/address"
                 className="text-dark text-decoration-none"
               >
-                寄送地址
+                我的地址簿
               </Link>
             </li>
             <li className="m-2">
-              <Link
-                to="/user/order"
-                className="text-dark text-decoration-none"
-              >
+              <Link to="/user/order" className="text-dark text-decoration-none">
                 我的訂單
               </Link>
             </li>

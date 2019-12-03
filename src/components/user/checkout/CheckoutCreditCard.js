@@ -37,7 +37,7 @@ class CheckoutCreditCard extends React.Component {
           name={this.state.name}
           number={this.state.number}
         />
-        <form className="ml-4 mt-1">
+        <form className="ml-5 mt-1">
           <input
             autoComplete="off"
             className="btn-block p-2 user-text-input"

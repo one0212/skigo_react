@@ -4,6 +4,7 @@ import '../../css/home2.css'
 import $ from 'jquery'
 import Slider from 'react-slick'
 
+
 class Home extends React.Component {
   constructor() {
     super()

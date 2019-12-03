@@ -103,6 +103,7 @@ class SlideTicket extends React.Component {
         ) : (
           <section className="area_slide rwd-p" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="150">
             <div className="container" style={{paddingLeft: '20px', paddingRight: '20px'}}>
+
               <div className="slide_title">
                 <div className="d-flex">
                   <div className="title_sign"></div>

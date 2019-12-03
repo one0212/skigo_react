@@ -113,7 +113,7 @@ class UserCheckout extends Component {
         <Container>
           <CheckoutHeader />
           <Row className="justify-content-center">
-            <Col md={9}>
+            <Col md={10}>
               <span className="mx-4 my-2 d-inline-block">
                 <Link
                   to="/cart"

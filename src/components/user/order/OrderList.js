@@ -4,14 +4,42 @@ import { Link } from 'react-router-dom'
 class OrderList extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      time: '',
+    }
+  }
+
+  componentWillMount() {
+    const timestamp = this.props.orderData.orderTime
+    console.log(timestamp)
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ]
+    var a = new Date(timestamp)
+    var year = a.getFullYear()
+    var month = months[a.getMonth()]
+    var date = a.getDate()
+    var time = `${date} ${month} ${year}`
+    this.setState({ time: time })
   }
   render() {
     return (
       <>
+        {console.log(this.props.orderData)}
         <div className="px-5">
           <ul className="user-order-date list-unstyled p-3">
-            <li className="px-2 fw-700">訂購的日期</li>
+            <li className="px-2 fw-700">訂購日期：{this.state.time}</li>
           </ul>
 
           <div className="user-order-list py-2 px-2">
@@ -31,7 +59,7 @@ class OrderList extends Component {
             </div>
             <div className="order-list-status my-3 d-flex align-items-center">
               <span className="col-2 text-right mr-4">總計</span>
-              <span>{this.props.orderData.orderAmt}</span>
+              <span>NT$ {this.props.orderData.orderAmt + 300}</span>
             </div>
           </div>
         </div>

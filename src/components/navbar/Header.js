@@ -53,27 +53,27 @@ class Header extends Component {
   }
 
   syncCartItemQty = () => {
-    // if (cookies.get('role') && cookies.get('role') !== 'VISITOR') {
-    fetch('http://localhost:3001/api/cart', {
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-      .then(resp => {
-        if (resp.status === 200) {
-          return resp.json()
-        } else {
-          throw new Error('get cart api status !== error')
-        }
+    if (cookies.get('role') && cookies.get('role') !== 'VISITOR') {
+      fetch('http://localhost:3001/api/cart', {
+        headers: {
+          'content-type': 'application/json',
+        },
       })
-      .then(json => {
-        console.log(json)
-        this.setState({ cartItemQty: json.items.length })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    // }
+        .then(resp => {
+          if (resp.status === 200) {
+            return resp.json()
+          } else {
+            throw new Error('get cart api status !== error')
+          }
+        })
+        .then(json => {
+          console.log(json)
+          this.setState({ cartItemQty: json.items.length })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 
   componentWillMount() {
@@ -84,36 +84,25 @@ class Header extends Component {
       this.syncCartItemQty()
     }
   }
-  // componentDidMount() {
-  //   window.gapi.load('auth2', () => {
-  //     this.auth2 = gapi.auth2.init({
-  //       client_id:
-  //         '71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com',
-  //     })
-  //   })
-  // }
-  logOut = () => {
-    // var auth2 = window.gapi.auth2.getAuthInstance()
-    // auth2.signOut().then(function() {
-    //   console.log('User signed out.')
-    // })
-    console.log('google已登出')
-  }
 
-  signout = () => {
+  signOut = () => {
     const url = 'http://localhost:3001/api/user/logout'
     fetch(url, {
       method: 'put',
     }).then(response => {
       if (response.status === 200) {
-        this.refreshLoginState()
         this.setState({ userDropdown: false })
+        this.refreshLoginState()
+        window.FB.logout(resp => {
+          console.log(`fb-loged out. resp=${resp}`)
+        })
         window.location.href = '/'
       }
     })
   }
 
   render() {
+    const isGLogin = cookies.get('role') === 'GOOGLE'
     return (
       <>
         {/* {console.log(window.location)} */}
@@ -274,21 +263,31 @@ class Header extends Component {
                         </Link>
                       </li>
                       <li className="my-3">
-                        <GoogleLogout
-                          clientId="71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com"
-                          buttonText="Logout"
-                          onLogoutSuccess={this.logout}
-                          onFailure={err => console.log(err)}
-                          // render={renderProps => (
-                          //   <Link
-                          //     to="/"
-                          //     onClick={this.signout}
-                          //     className="cursor-point user-darkblue-text text-decoration-none"
-                          //   >
-                          //     登出
-                          //   </Link>
-                          // )}
-                        ></GoogleLogout>
+                        {isGLogin ? (
+                          <GoogleLogout
+                            clientId="71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com"
+                            buttonText="Logout"
+                            onLogoutSuccess={this.signOut}
+                            onFailure={err => console.log(err)}
+                            render={renderProps => (
+                              <Link
+                                to="/"
+                                onClick={renderProps.onClick}
+                                className="cursor-point user-darkblue-text text-decoration-none"
+                              >
+                                登出
+                              </Link>
+                            )}
+                          ></GoogleLogout>
+                        ) : (
+                          <Link
+                            to="/"
+                            onClick={this.signOut}
+                            className="cursor-point user-darkblue-text text-decoration-none"
+                          >
+                            登出
+                          </Link>
+                        )}
                       </li>
                     </ul>
                   </Nav.Link>

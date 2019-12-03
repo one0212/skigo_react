@@ -12,7 +12,7 @@ class CheckoutItemAreaHotel extends Component {
           <div className="shop-vendor-name">電子票券商品</div>
           <Row className="flex-row-reverse">
             <Col
-              md={4}
+              md={5}
               className="d-flex flex-column px-5 py-3 justify-content-center"
             >
               <h5>收件資訊</h5>
@@ -27,7 +27,7 @@ class CheckoutItemAreaHotel extends Component {
               ) {
                 return (
                   <>
-                    <Col key={index} md={8} className="shop-item m-0 px-4 mb-5">
+                    <Col key={index} md={7} className="shop-item m-0 px-4 mb-5">
                       <div className="d-flex mt-2 justify-content-between">
                         <div className="shop-product-photo">
                           <a href="" className="">
@@ -69,7 +69,7 @@ class CheckoutItemAreaHotel extends Component {
                         </span>
                       </div>
                     </Col>
-                    <Col md={4}></Col>
+                    <Col md={5}></Col>
                   </>
                 )
               } else return ''
