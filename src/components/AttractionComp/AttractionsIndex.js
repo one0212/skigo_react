@@ -19,7 +19,7 @@ class AttractionsIndex extends Component {
     return (
       <>
             <div >
-              <Iframe url="http://localhost:3000/attractions/"
+              <Iframe url="http://localhost:3001/attractions/"
                 position="absolute"
                 width="100%"
                 id="myId"
