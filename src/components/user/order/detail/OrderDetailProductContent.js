@@ -42,7 +42,10 @@ class OrderDetailProductContent extends Component {
                         />
                       </a>
                     </div>
-                    <div className="d-flex flex-column">
+                    <div
+                      className="d-flex flex-column"
+                      style={{ width: '16rem' }}
+                    >
                       <span>{product.vendor}</span>
                       <a href="" className="text-decoration-none text-dark">
                         {product.name}

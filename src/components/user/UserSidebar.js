@@ -12,8 +12,10 @@ class UserSidebar extends Component {
     return (
       <>
         <Col md={2} className="d-flex flex-column align-items-center ml-3">
-          <div className="user-photo"></div>
-          <ul className="user-list list-unstyled m-3 d-flex flex-column align-items-start">
+          <div className="user-sidebar-photo">
+            <img src="/images/avatar/default.png" alt="側邊欄頭像" />
+          </div>
+          <ul className="user-list list-unstyled m-3 mt-4 d-flex flex-column align-items-start">
             <li className="m-2">
               <Link
                 to="/user/profile"

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Cookies from 'universal-cookie'
-import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { GoogleLogout } from 'react-google-login'
@@ -216,8 +215,8 @@ class Header extends Component {
                             style={{
                               display: 'inline-block',
                               borderRadius: '50%',
-                              width: '40px',
-                              height: '40px',
+                              width: '30px',
+                              height: '30px',
                               border: '1px solid rgb(106,106,106)',
                               marginRight: '12.8px',
                             }}
