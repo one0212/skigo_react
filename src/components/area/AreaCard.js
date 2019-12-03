@@ -62,7 +62,7 @@ class AreaCard extends React.Component {
                 <Link
                   className="ticket-card"
                   key={value.ticket_sid}
-                  to={'/ticketarea/' + value.area_sid} data-aos="fade-up"
+                  to={'/ticketarea/' + value.area_sid} data-aos="fade-up" data-aos-offset="80" data-aos-duration=".5"
                 >
                   <div className="hot_img" data-ticket_sid={value.ticket_sid}>
                     <img
@@ -72,7 +72,7 @@ class AreaCard extends React.Component {
                     />
                   </div>
                   <div className="hot_card_word">
-                    <p className="ticket_name">{value.area_name}</p>
+                    <p className="ticket_name" style={{minHeight: '65px'}}>{value.area_name}-{value.ticket_name}</p>
                     <p className="language font-orange d-flex">
                       <span>{value.ticket_age}</span>
                     </p>

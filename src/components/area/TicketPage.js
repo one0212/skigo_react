@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/ticket_page.css'
 import { Form } from 'react-bootstrap'
 import SlideTicket2 from './SlideTicket2'
+import { Link, withRouter } from 'react-router-dom'
 // import SweetAlert from 'sweetalert2-react'
 // import FilterBread2 from '../goods/FilterBread2'
 
@@ -99,7 +100,6 @@ class TicketPage extends React.Component {
         {this.state.loading ? (
           <div>
             {/* <i className="fas fa-spinner fa-spin" /> */}
-            資料載入中
           </div>
         ) : (
           <div class="ticket_book_out container" style={{ padding: '30px' }}>
@@ -113,7 +113,7 @@ class TicketPage extends React.Component {
                 </div>
               </div>
               <div className="col-md-10{this.state.total[0].ticket_sid} col-sm-11">
-                首頁 / 雪場票券 / {this.state.total[0].area_name} /{' '}
+              <Link to={'/'}>首頁</Link> / <Link to={'/ticketlist/'}>雪場票券</Link> /<Link to={'/ticketarea/' + this.state.total[0].area_sid}>{this.state.total[0].area_name}</Link> /{' '}
                 {this.state.total[0].ticket_name}
               </div>
             </div>

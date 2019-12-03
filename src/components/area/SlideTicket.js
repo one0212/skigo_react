@@ -101,7 +101,7 @@ class SlideTicket extends React.Component {
             {/* <i className="fas fa-spinner fa-spin" /> */}
           </div>
         ) : (
-          <section className="area_slide rwd-p" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="150">
+          <section className="area_slide rwd-p" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-offset="130">
             <div className="container" style={{paddingLeft: '20px', paddingRight: '20px'}}>
 
               <div className="slide_title">

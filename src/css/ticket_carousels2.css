@@ -10,10 +10,10 @@ section{
     justify-content: space-between;
     align-items: flex-end;
 }
-.area_slide2 h4{
-    margin-bottom: 0;
-    font-weight: 600;
+.area_slide2 h5{
     font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 .area_slide2 .slide{
     width: 990px;
