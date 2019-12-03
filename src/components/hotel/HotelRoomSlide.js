@@ -43,7 +43,7 @@ class HotelRoomSlide extends React.Component {
               <Card.Body>
                 <Card.Title>
                   <h5 className="font-weight-light">
-                    【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)
+                    【二世谷村希爾頓飯店】 (Hilton Niseko Village)
                   </h5>
                 </Card.Title>
                 <div className="d-flex justify-content-between hotel_slider_star">
@@ -73,7 +73,7 @@ class HotelRoomSlide extends React.Component {
                   </span>
                 </div>
                 <span class="hotel_card_money">
-                  約 $<span>2,400</span>TWD / 晚
+                  約 NT <span>1,690</span>TWD / 晚
                 </span>
                 <Button
                   variant="light"
@@ -93,7 +93,7 @@ class HotelRoomSlide extends React.Component {
               <Card.Body>
                 <Card.Title>
                   <h5 className="font-weight-light">
-                    【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)
+                    【京王飯店】 (KEIO PRELIA SAPPORO)
                   </h5>
                 </Card.Title>
                 <div className="d-flex justify-content-between hotel_slider_star">
@@ -123,7 +123,7 @@ class HotelRoomSlide extends React.Component {
                   </span>
                 </div>
                 <span class="hotel_card_money">
-                  約 $<span>2,400</span>TWD / 晚
+                  約 NT <span>2,400</span>TWD / 晚
                 </span>
                 <Button
                   variant="light"
@@ -143,7 +143,7 @@ class HotelRoomSlide extends React.Component {
               <Card.Body>
                 <Card.Title>
                   <h5 className="font-weight-light">
-                    【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)
+                    【元町全景公寓】(Panoramique Motomachi)
                   </h5>
                 </Card.Title>
                 <div className="d-flex justify-content-between hotel_slider_star">
@@ -173,7 +173,7 @@ class HotelRoomSlide extends React.Component {
                   </span>
                 </div>
                 <span class="hotel_card_money">
-                  約 $<span>2,400</span>TWD / 晚
+                  約 NT <span>2,789</span>TWD / 晚
                 </span>
                 <Button
                   variant="light"
@@ -193,7 +193,7 @@ class HotelRoomSlide extends React.Component {
               <Card.Body>
                 <Card.Title>
                   <h5 className="font-weight-light">
-                    【鉑爾曼倫】敦聖潘克拉斯飯店(鉑爾曼)
+                    【二世谷村希爾頓飯店】(Hilton Niseko Village)
                   </h5>
                 </Card.Title>
                 <div className="d-flex justify-content-between hotel_slider_star">
@@ -223,7 +223,7 @@ class HotelRoomSlide extends React.Component {
                   </span>
                 </div>
                 <span class="hotel_card_money">
-                  約 $<span>2,400</span>TWD / 晚
+                  約 NT <span>2,376</span>TWD / 晚
                 </span>
                 <Button
                   variant="light"
@@ -273,7 +273,7 @@ class HotelRoomSlide extends React.Component {
                   </span>
                 </div>
                 <span class="hotel_card_money">
-                  約 $<span>2,400</span>TWD / 晚
+                  約 NT <span>2,400</span>TWD / 晚
                 </span>
                 <Button
                   variant="light"
