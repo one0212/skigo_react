@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap'
 import { FaFacebookF, FaGoogle, FaEyeSlash } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 import GoogleLogin from 'react-google-login'
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 import ForgotPwdModal from './ForgotPwdModal'
 import SignUpSuccModal from './SignUpSuccModal'
@@ -123,12 +124,50 @@ class UserLightbox extends Component {
     this.setState({ showModal: 4 })
   }
 
-  onSignIn = googleUser => {
-    var profile = googleUser.getBasicProfile()
-    console.log('ID: ' + profile.getId()) // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName())
-    console.log('Image URL: ' + profile.getImageUrl())
-    console.log('Email: ' + profile.getEmail()) // This is null if the 'email' scope is not present.
+  googleSignIn = googleUser => {
+    const url = new URL('http://localhost:3001/api/user/g-login')
+    fetch(url, {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ token: googleUser.getAuthResponse().id_token }),
+    })
+      .then(resp => {
+        if (resp.status === 200) {
+          return resp.json()
+        }
+        throw Error('Sign in with error')
+      })
+      .then(json => {
+        console.log(`Signed in. avatar=${json.avatar}`)
+        this.props.onClose()
+        this.props.refreshLoginState()
+      })
+      .catch(err => console.log(`google sign in failed. err=${err}`))
+  }
+
+  fbSignIn = resp => {
+    const url = new URL('http://localhost:3001/api/user/fb-login')
+    fetch(url, {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ token: resp.accessToken }),
+    })
+      .then(resp => {
+        if (resp.status === 200) {
+          return resp.json()
+        }
+        throw Error('Sign in with error')
+      })
+      .then(json => {
+        console.log('Signed in')
+        this.props.onClose()
+        this.props.refreshLoginState()
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -223,14 +262,26 @@ class UserLightbox extends Component {
             <div className="user-or-line d-inline-block"></div>
           </small>
           <div className="d-flex justify-content-between align-items-center">
-            <div className="mx-2 user-third-input py-2 mt-2 d-flex justify-content-around align-items-center">
-              <FaFacebookF className="user-fa-facebook" />
-              <span className="text-center user-darkblue-text">Facebook</span>
-              <span></span>
-            </div>
+            <FacebookLogin
+              appId="452562702328575"
+              autoLoad={false}
+              callback={this.fbSignIn}
+              render={renderProps => (
+                <div
+                  onClick={renderProps.onClick}
+                  className="mx-2 user-third-input py-2 mt-2 d-flex justify-content-around align-items-center"
+                >
+                  <FaFacebookF className="user-fa-facebook" />
+                  <span className="text-center user-darkblue-text">
+                    Facebook
+                  </span>
+                  <span></span>
+                </div>
+              )}
+            />
             <GoogleLogin
               clientId="71115162347-h4vb50788t99f79o1pata6n1u164m3ms.apps.googleusercontent.com"
-              onSuccess={this.onSignIn}
+              onSuccess={this.googleSignIn}
               onFailure={err => console.log(err)}
               cookiePolicy={'single_host_origin'}
               render={renderProps => (

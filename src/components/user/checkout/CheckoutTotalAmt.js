@@ -38,13 +38,10 @@ class CheckoutTotalAmt extends Component {
         <div className="shop-box my-3">
           <div className="shop-vendor-name">付款資訊</div>
           <Row className="align-items-center">
-            <Col
-              md={7}
-              className="d-flex align-items-center justify-content-center py-3"
-            >
+            <Col md={7} className="d-flex align-items-center py-3 pl-4">
               <CheckoutCreditCard />
             </Col>
-            <Col md={5} className="text-right pr-4">
+            <Col md={5} className="text-right pr-5">
               <div className="d-flex justify-content-between px-2">
                 <p>商品總計</p>
                 <p style={{ fontWeight: '500' }}>

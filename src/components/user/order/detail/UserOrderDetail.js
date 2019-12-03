@@ -28,30 +28,14 @@ class UserOrderDetail extends Component {
       })
   }
   render() {
-    let product, areaHotel
+    const ticketProducts = []
+    const commonProducts = []
     if (this.state.orderDetail) {
-      this.state.orderDetail.products.map((v, index) => {
-        if (v.prodType === 'products') {
-          product = (
-            <>
-              <OrderDetailProductContent
-                key={index}
-                detailData={this.state.orderDetail}
-              />
-              <OrderDetailRecipient detailData={this.state.orderDetail} />
-            </>
-          )
-        } else {
-          areaHotel = (
-            <OrderDetailAreaHotelContent
-              key={index}
-              detailData={this.state.orderDetail}
-            />
-          )
-        }
-        return true
-      })
+      this.state.orderDetail.products.forEach(v =>
+        (v.prodType === 'products' ? commonProducts : ticketProducts).push(v)
+      )
     }
+
     return (
       <>
         <Container>
@@ -62,8 +46,21 @@ class UserOrderDetail extends Component {
               {this.state.orderDetail ? (
                 <>
                   <OrderDetailState detailData={this.state.orderDetail} />
-                  {areaHotel}
-                  {product}
+                  {ticketProducts.length ? (
+                    <OrderDetailAreaHotelContent detailData={ticketProducts} />
+                  ) : (
+                    ''
+                  )}
+                  {commonProducts.length ? (
+                    <>
+                      <OrderDetailProductContent detailData={commonProducts} />
+                      <OrderDetailRecipient
+                        detailData={this.state.orderDetail}
+                      />
+                    </>
+                  ) : (
+                    ''
+                  )}
                   <OrderDetailPayment detailData={this.state.orderDetail} />
                 </>
               ) : (

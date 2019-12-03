@@ -90,7 +90,7 @@ class UserCart extends Component {
             </Col>
             <Col md={3} className="shop-order p-0 mt-4">
               {this.state.cartResponse !== '' ? (
-                <CartToCheckout totalAmt={this.state.cartResponse.totalAmt} />
+                <CartToCheckout cartData={this.state.cartResponse} />
               ) : (
                 ''
               )}
