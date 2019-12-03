@@ -27,7 +27,7 @@ class Header extends Component {
       showLoginIcon: false,
       userDropdown: false,
       cartItemQty: props.cartItemQty,
-      userAvatarUrl: 'aaa',
+      userAvatarUrl: '/images/avatar/default.png',
     }
   }
 
