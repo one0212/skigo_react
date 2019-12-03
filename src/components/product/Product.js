@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Form, Button, Breadcrumb } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Breadcrumb,Table } from 'react-bootstrap'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoMdHeartEmpty } from 'react-icons/io'
 // import Breadcrumb from '../Breadcrumb'
@@ -231,6 +231,43 @@ class Product extends React.Component {
                 而自定義飛行V™則將彎度的力量與輕鬆的搖桿浮動相結合，從而兼具兩者的優點。</p>  
               <p>3年保固-雪板</p>
               <p>從購買之日起，所有帶有Channel安裝系統的2014年及以後的Burton單板滑雪板（例如您在此處看到的那種）都享有三年保修。</p>
+            </Col>
+          </Row>
+          <Row>
+          <Col sm={12} >
+          <div className="pro-size">
+          <Table striped bordered hover >
+              <thead>
+                <tr style={{background:"#ccc"}}>
+                  <th>雪板尺寸</th>
+                  <th>150</th>
+                  <th>154</th>
+                  <th>156</th>
+                  <th>158</th>
+                  <th>162</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <th>重量範圍</th>
+                  <th>54~82kg</th>
+                  <th>54~82kg</th>
+                  <th>68~91kg</th>
+                  <th>68~91kg</th>
+                  <th>82~118kg</th>
+
+                </tr>
+                <tr>
+                <th>腰寬</th>
+                  <th>24.8公分</th>
+                  <th>25公分</th>
+                  <th>25.2公分</th>
+                  <th>25.4公分</th>
+                  <th>25.6公分</th>
+                </tr>
+              </tbody>
+            </Table>
+            </div>
             </Col>
           </Row>
           <Row>
