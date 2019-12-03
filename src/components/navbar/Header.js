@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Cookies from 'universal-cookie'
-import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { GoogleLogout } from 'react-google-login'
@@ -27,6 +26,7 @@ class Header extends Component {
       showLoginIcon: false,
       userDropdown: false,
       cartItemQty: props.cartItemQty,
+      userAvatarUrl: '/images/avatar/default.png',
     }
   }
 
@@ -115,12 +115,18 @@ class Header extends Component {
       if (response.status === 200) {
         this.setState({ userDropdown: false })
         this.refreshLoginState()
-        window.FB.logout(resp => {
-          console.log(`fb-loged out. resp=${resp}`)
-        })
+        if (window.FB) {
+          window.FB.logout(resp => {
+            console.log(`fb-loged out. resp=${resp}`)
+          })
+        }
         window.location.href = '/'
       }
     })
+  }
+
+  handleAvatarChange = url => {
+    this.setState({ userAvatarUrl: url })
   }
 
   render() {
@@ -195,15 +201,42 @@ class Header extends Component {
                         ''
                       )}
                       {this.state.showLoginIcon ? (
-                        <span>
-                          <FaRegUserCircle
+                        <span style={{ borderRadius: '50%' }}>
+                          {/* <FaRegUserCircle
                             style={iconStyle}
+                            avatarUrl={this.state.userAvatarUrl}
                             onClick={() =>
                               this.setState({
                                 userDropdown: !this.state.userDropdown,
                               })
                             }
-                          />
+                          /> */}
+                          <div
+                            style={{
+                              display: 'inline-block',
+                              borderRadius: '50%',
+                              width: '30px',
+                              height: '30px',
+                              border: '1px solid rgb(106,106,106)',
+                              marginRight: '12.8px',
+                            }}
+                          >
+                            <img
+                              style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '50%',
+                              }}
+                              src={this.state.userAvatarUrl}
+                              alt="avatar"
+                              onClick={() =>
+                                this.setState({
+                                  userDropdown: !this.state.userDropdown,
+                                })
+                              }
+                            />
+                          </div>
                         </span>
                       ) : (
                         ''
@@ -334,6 +367,7 @@ class Header extends Component {
           onClose={() => {
             this.setState({ isOpen: false })
           }}
+          handleAvatarChange={this.handleAvatarChange}
         />
       </>
     )
