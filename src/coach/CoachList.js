@@ -219,7 +219,7 @@ class CoachList extends React.Component {
           <div className="row coach-rwd-active">
             <div className="col-3">
               <button id="menu_active" className="btn coach-btn-active">
-                <i className="fas fa-list"></i> 顯示篩選列
+                <i className="fas fa-list"></i> 篩選列開關
               </button>
             </div>
             <div className="coach-arrange col-9 d-flex justify-content-between">
