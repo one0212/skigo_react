@@ -449,7 +449,10 @@ section{
     .area_icon .img_number{
         font-size: 1.5rem;
     }
-
+    .area_info{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .area_info h4{
         color: #000;
         padding-bottom: 25px;
@@ -458,7 +461,7 @@ section{
     .area_info .date{
         color: #000;
     }
-
+    
     .area_access h4{
         font-weight: 600;
         font-size: 1.7rem;

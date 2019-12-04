@@ -359,7 +359,10 @@ const CheckoutItemProduct = props => {
                         </a>
                       </div>
                       <div>
-                        <div className="d-flex flex-column ml-2">
+                        <div
+                          className="d-flex flex-column ml-2"
+                          style={{ width: '16rem' }}
+                        >
                           <div className="fw-500">{item.vendor}</div>
                           <div>{item.name}</div>
                           <div>

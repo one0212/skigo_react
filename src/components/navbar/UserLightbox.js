@@ -100,23 +100,27 @@ class UserLightbox extends Component {
         'content-type': 'application/json',
       },
       method: 'POST',
-    }).then(response => {
-      if (response.status === 200) {
+    })
+      .then(response => {
+        if (response.status === 200) {
+          return response.json()
+        }
+        this.setState({
+          borderRed: { email: true, pwd: true },
+          errMsg: {
+            email: '帳號密碼錯誤',
+            pwd: '帳號密碼錯誤',
+          },
+        })
+        throw Error('Sign in failed')
+      })
+      .then(json => {
+        this.props.handleAvatarChange(json.avatar)
         this.props.onClose()
         this.props.refreshLoginState()
         this.setState({ text: { email: '', pwd: '' } })
-      } else {
-        if (response.status === 400) {
-          this.setState({
-            borderRed: { email: true, pwd: true },
-            errMsg: {
-              email: '帳號密碼錯誤',
-              pwd: '帳號密碼錯誤',
-            },
-          })
-        }
-      }
-    })
+      })
+      .catch(err => console.log(err))
     // todo: 關閉Modal
   }
 
@@ -141,20 +145,21 @@ class UserLightbox extends Component {
       })
       .then(json => {
         console.log(`Signed in. avatar=${json.avatar}`)
+        this.props.handleAvatarChange(json.avatar)
         this.props.onClose()
         this.props.refreshLoginState()
       })
       .catch(err => console.log(`google sign in failed. err=${err}`))
   }
 
-  fbSignIn = resp => {
+  fbSignIn = fbResp => {
     const url = new URL('http://localhost:3001/api/user/fb-login')
     fetch(url, {
       method: 'post',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ token: resp.accessToken }),
+      body: JSON.stringify({ token: fbResp.accessToken }),
     })
       .then(resp => {
         if (resp.status === 200) {
@@ -164,6 +169,12 @@ class UserLightbox extends Component {
       })
       .then(json => {
         console.log('Signed in')
+        window.FB.api(
+          `/${fbResp.userID}/picture?redirect=false `,
+          'GET',
+          {},
+          resp => this.props.handleAvatarChange(resp.data.url)
+        )
         this.props.onClose()
         this.props.refreshLoginState()
       })
