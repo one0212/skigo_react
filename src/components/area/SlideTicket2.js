@@ -71,15 +71,14 @@ class SlideTicket2 extends React.Component {
     }
     return (
       <>
-        <section className="area_slide2 rwd-p">
+        <section className="area_slide2">
           <div
             className="container"
             style={{ paddingRight: '0', paddingLeft: '0' }}
           >
             <div className="slide_title">
               <div className="d-flex">
-                <div className="title_sign"></div>
-                <h4>其他相關票券</h4>
+                <h5>其他相關票券</h5>
               </div>
             </div>
             <hr />

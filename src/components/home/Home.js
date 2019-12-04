@@ -3,6 +3,8 @@ import '../../scss/home.scss'
 import '../../css/home2.css'
 import $ from 'jquery'
 import Slider from 'react-slick'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 class Home extends React.Component {
@@ -185,6 +187,11 @@ class Home extends React.Component {
 
       addLoadClass()
     })()
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-back',
+      delay: 600,
+    })
   }
   render() {
     const settings = {
@@ -435,14 +442,14 @@ class Home extends React.Component {
               <div className="col-12">
                 <div className="home_areas">
                   <div className="d-flex areas_main">
-                    <div className="areas_title">
+                    <div className="areas_title" data-aos="fade-right" data-aos-once="true">
                       <h4>Popularity</h4>
                       <div className="d-flex">
                         <p className="line_s">|</p>
                         <p>熱門雪場</p>
                       </div>
                     </div>
-                    <div className="areas_slide">
+                    <div className="areas_slide" data-aos="fade-up" data-aos-once="true">
                       <Slider {...settings}>
                         <div>
                           <div className="card" style={{ width: '100%' }}>
@@ -560,14 +567,14 @@ class Home extends React.Component {
               <div className="col-12">
                 <div className="home_featured">
                   <div className="d-flex featured_main">
-                    <div className="featured_title">
+                    <div className="featured_title" data-aos="fade-left" data-aos-once="true">
                       <div className="d-flex">
                         <p>精選課程</p>
                         <p className="line_s">|</p>
                       </div>
                       <h4>Featured</h4><h4 className="h1100"> Course</h4>
                     </div>
-                    <div className="featured_slide">
+                    <div className="featured_slide" data-aos="fade-up" data-aos-once="true">
                       <div className="d-flex justify-content-start">
                         <div className="d-flex">
                           {/* <!-- featured1 --> */}
@@ -632,14 +639,14 @@ class Home extends React.Component {
               <div className="col-12">
                 <div className="home_recommend">
                   <div className="d-flex recommend_main">
-                    <div className="recommend_title">
+                    <div className="recommend_title" data-aos="fade-right" data-aos-once="true">
                       <h4>Recommend</h4>
                       <div className="d-flex">
                         <p className="line_s">|</p>
                         <p>推薦飯店</p>
                       </div>
                     </div>
-                    <div className="recommend_slide">
+                    <div className="recommend_slide" data-aos="fade-up" data-aos-once="true">
                       <div className="d-flex justify-content-start">
                         <div className="d-flex">
                           {/* <!-- recommend1 --> */}

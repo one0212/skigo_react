@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, row, Accordion, Card } from 'react-bootstrap'
 import '../../css/ticket_list.css'
 import $ from 'jquery'
-import FilterBread2 from '../goods/FilterBread2'
 import FilterLeftMenu2 from '../goods/FilterLeftMenu2'
 import AreaCard from './AreaCard'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
@@ -210,7 +209,6 @@ class TicketList extends React.Component {
       <div id="goTop">˄</div>
         <div className="container ticket_checkbox">
           {/* part1 麵包屑 */}
-          <FilterBread2 />
 
           {/* part2 篩選btn + 排列選擇 + 總項目欄位 */}
           <div className="row ticket-rwd-active">

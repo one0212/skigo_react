@@ -396,7 +396,7 @@ class TicketAreas extends React.Component {
                 data-aos-anchor-placement="top-bottom"
                 data-aos-once="true"
               >
-                <div className="container">
+                <div className="container" style={{paddingLeft: '40px',paddingRight: '40px'}}>
                   <div className="access_title">
                     <div className="d-flex">
                       <div className="title_sign"></div>
