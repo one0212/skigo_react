@@ -173,7 +173,7 @@ const CheckoutItemProduct = props => {
   return (
     <>
       <div className="shop-box mb-3">
-        <div className="shop-vendor-name">宅配商品</div>
+        <div className="shop-vendor-name">實體商品</div>
         <Row className="flex-row-reverse">
           <Col md={5} className="d-flex mt-0 flex-column px-5 py-3">
             <h5>收件資訊</h5>

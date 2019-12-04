@@ -98,7 +98,16 @@ class Header extends Component {
     if (!cookies.get('role') || cookies.get('role') === 'VISITOR') {
       this.setState({ showLoginIcon: false })
     } else {
-      this.setState({ showLoginIcon: true })
+      fetch('/api/user/avatar', {
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+        .then(resp => resp.json())
+        .then(json =>
+          this.setState({ showLoginIcon: true, userAvatarUrl: json.avatar })
+        )
+
       this.syncCartItemQty()
     }
   }
