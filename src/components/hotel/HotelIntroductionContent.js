@@ -481,7 +481,7 @@ class HotelIntroductionContent extends React.Component {
               className="h3"
               style={{ color: '#8DAEC1', letterSpacing: '5px' }}
             >
-              鉑爾曼倫的可預訂房型
+              新富良野王子大飯店可預訂房型
             </p>
             <Row className="d-flex">
               {this.state.hotels !== ''

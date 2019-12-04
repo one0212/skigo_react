@@ -36,8 +36,8 @@ body {
 .user-drop-list {
   width: 9rem;
   /* margin-left: -4rem; */
-  top:3.75rem;
-  right:24.5rem;
+  top:4.25rem;
+  right:19.5rem;
   z-index:15
 }
 .drop-menu {
